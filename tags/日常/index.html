@@ -100,7 +100,7 @@
   }
 
   a {
-    color: #00838F;
+    color: #108d99;
   }
 
   .mdl-card__media,
@@ -151,7 +151,7 @@
   }
 
   .post-toc a:hover {
-    color: #00838F;
+    color: #108d99;
     text-decoration: underline;
   }
 
@@ -162,7 +162,7 @@
 
     <style>
       body{
-        background-color: #F5F5F5;
+        background-color: ;
       }
 
       /* blog_info bottom background */
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Blue&#39;s Blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/tags/日常/">
+    <meta name="msapplication-starturl" content="www.bluelzy.com/tags/日常/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Blue&#39;s Blog">
@@ -230,7 +230,7 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/tags/日常/">
+    <meta property="og:url" content="www.bluelzy.com/tags/日常/">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="标签: 日常 | Blue&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
@@ -244,7 +244,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/tags/日常/index.html" />
+        <link rel="canonical" href="www.bluelzy.com/tags/日常/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -419,11 +419,20 @@
         <ul id="settings-dropdown" class="dropdown-menu">
             
                 <li>
-                    <a href="hobert: bluehobert@gmail.com" target="_blank" title="Email Me">
+                    <a href="mailto: bluehobert@gmail.com" target="_blank" title="Email Me">
                         
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
                         
                         Email Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="https://github.com/bluezzyy" target="_blank" title="Github">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">layers</i>
+                        
+                        Github
                     </a>
                 </li>
             
@@ -477,18 +486,42 @@
             </ul>
         </li>
         
+            <li class="divider"></li>
+        
     
 
     <!-- Pages  -->
     
         <li>
-            <a href="/about/index.html" title="关于">
+            <a href="/about.html" title="关于">
                 
                     <i class="material-icons sidebar-material-icons">person</i>
                 
                 关于
             </a>
         </li>
+        
+    
+        <li>
+            <a href="/about.html" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about.html" title="映像">
+                
+                    <i class="material-icons sidebar-material-icons">mapping</i>
+                
+                映像
+            </a>
+        </li>
+        
+            <li class="divider"></li>
         
     
 
@@ -518,17 +551,8 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Sidebar Divider -->
 
-    <div class="sidebar-divider"></div>
-
 
 <!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
 
 
 <!-- Help & Support -->
@@ -564,6 +588,12 @@ It will not impact the appearance and can give developers a lot of support :)
         <div class="mdl-mini-footer--left-section sns-list">
     <!-- Twitter -->
     
+        <a href="https://twitter.com/blue_zzyy" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
 
     <!-- Facebook -->
     
@@ -594,7 +624,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <!-- Zhihu -->
     
-        <a href="https://www.zhihu.com/people/zy-blue/activities" target="_blank">
+        <a href="https://www.zhihu.com/people/zy-blue" target="_blank">
             <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
                 <span class="visuallyhidden">Zhihu</span>
             </button><!--
@@ -657,14 +687,14 @@ It will not impact the appearance and can give developers a lot of support :)
     });
     NProgress.start();
     $('#nprogress .bar').css({
-        'background': '#29d'
+        'background': '#FF0000'
     });
     $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+        'box-shadow': '0 0 10px #FF0000, 0 0 15px #FF0000'
     });
     $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
+        'border-top-color': '#FF0000',
+        'border-left-color': '#FF0000'
     });
     setTimeout(function() {
         NProgress.done();
