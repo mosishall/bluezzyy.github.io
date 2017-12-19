@@ -30,6 +30,21 @@
     
     <entry>
       <title></title>
+      <url>/about.html</url>
+      <content type="html"><![CDATA[<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>关于</title>
+</head>
+<body>
+<p>这是Blue的博客</p>
+</body>
+</html>]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
       <url>/creativecommons.html</url>
       <content type="html"><![CDATA[<h1>关于知识共享协议的说明</h1>
 
@@ -90,21 +105,6 @@ The licensor cannot revoke these freedoms as long as you follow the license term
 <br>
 
 <p>你将会在我的博客的每一篇文章结尾，看到如下所示的版权说明：</p>]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>/about.html</url>
-      <content type="html"><![CDATA[<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>关于</title>
-</head>
-<body>
-<p>这是Blue的博客</p>
-</body>
-</html>]]></content>
     </entry>
     
   
