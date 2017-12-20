@@ -23,7 +23,11 @@
 
 
 
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
 
+
+
+        <link rel="dns-prefetch" href="https://cdn-city.livere.com"/>
 
 
 
@@ -388,15 +392,21 @@
         </button>
         <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
             
-                <a class="index_share-link" href="/about.html" title="关于">
+                <a class="index_share-link" href="/tags" title="标签云">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
-                        关于
+                        标签云
                     </li>
                 </a>
             
-                <a class="index_share-link" href="/about.html" title="标签">
+                <a class="index_share-link" href="/timeline" title="时间轴">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
-                        标签
+                        时间轴
+                    </li>
+                </a>
+            
+                <a class="index_share-link" href="/about.html" title="关于我">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        关于我
                     </li>
                 </a>
             
@@ -408,6 +418,15 @@
             <span class="visuallyhidden">show menu</span>
         </button>
         <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
+            
+                <!-- All Site UV -->
+                <a class="index_share-link" href="#">
+                    <li class="mdl-menu__item mdl-js-ripple-effect">
+                        <span id="busuanzi_container_site_uv">
+                            <span id="busuanzi_value_site_uv"></span>&nbsp;浏览量
+                        </span>
+                    </li>
+                </a>
             
 
             
@@ -660,21 +679,31 @@
     <!-- Pages  -->
     
         <li>
-            <a href="/about.html" title="关于">
+            <a href="/tags" title="标签云">
                 
-                    <i class="material-icons sidebar-material-icons">person</i>
+                    <i class="material-icons sidebar-material-icons">label</i>
                 
-                关于
+                标签云
             </a>
         </li>
         
     
         <li>
-            <a href="/about.html" title="标签">
+            <a href="/timeline" title="时间轴">
                 
-                    <i class="material-icons sidebar-material-icons">label</i>
+                    <i class="material-icons sidebar-material-icons">cloud</i>
                 
-                标签
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about.html" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
             </a>
         </li>
         
@@ -873,7 +902,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
+
+   
 
 
 
