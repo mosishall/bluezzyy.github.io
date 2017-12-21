@@ -47,6 +47,8 @@
     
     <title>
         
+            Shuttle安装以及配置简介 | 
+        
         BlueLzy&#39;s Blog
     </title>
 
@@ -56,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="Blue&#39;s Blog, Android, Python">
+    <meta name="keywords" content="Blue&#39;s Blog, Android, Python,开发工具,shuttle,linux,github">
     <meta name="theme-color" content="#EEAD0E">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="BlueLzy&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://www.bluelzy.com/about.html">
+    <meta name="msapplication-starturl" content="https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/">
     <meta name="msapplication-navbutton-color" content="#EEAD0E">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="BlueLzy&#39;s Blog">
@@ -232,13 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://www.bluelzy.com/about.html">
+    <meta property="og:url" content="https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="BlueLzy&#39;s Blog">
+    <meta property="og:title" content="Shuttle安装以及配置简介 | BlueLzy&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="开发工具"> <meta property="og:article:tag" content="shuttle"> <meta property="og:article:tag" content="linux"> <meta property="og:article:tag" content="github"> 
 
+    
+        <meta property="article:published_time" content="Thu Dec 21 2017 23:21:00 GMT+0800">
+        <meta property="article:modified_time" content="Thu Dec 21 2017 23:29:58 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -246,13 +251,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.bluelzy.com/about.html" />
+        <link rel="canonical" href="https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html",
+    "headline": "Shuttle安装以及配置简介",
+    "datePublished": "Thu Dec 21 2017 23:21:00 GMT+0800",
+    "dateModified": "Thu Dec 21 2017 23:29:58 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Blue_Lzy",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "醉后不知天在水，满船清梦压星河 。"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "BlueLzy&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",开发工具,shuttle,linux,githubBlue&#39;s Blog, Android, Python",
+    "description": "",
+}
+</script>
 
 
     
@@ -296,6 +331,39 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本文说明："><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;" class="headerlink" title="&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;"></a>&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Shuttle是什么"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"><a href="#Shuttle&#x662F;&#x4EC0;&#x4E48;" class="headerlink" title="Shuttle&#x662F;&#x4EC0;&#x4E48;"></a>Shuttle&#x662F;&#x4EC0;&#x4E48;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Shuttle怎么用"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"><a href="#Shuttle&#x600E;&#x4E48;&#x7528;" class="headerlink" title="Shuttle&#x600E;&#x4E48;&#x7528;"></a>Shuttle&#x600E;&#x4E48;&#x7528;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Shuttle"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text"><a href="#&#x5B89;&#x88C5;Shuttle" class="headerlink" title="&#x5B89;&#x88C5;Shuttle"></a>&#x5B89;&#x88C5;Shuttle</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Shuttle配置"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text"><a href="#Shuttle&#x914D;&#x7F6E;" class="headerlink" title="Shuttle&#x914D;&#x7F6E;"></a>Shuttle&#x914D;&#x7F6E;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Global-settings-全局配置"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text"><a href="#Global-settings-&#x5168;&#x5C40;&#x914D;&#x7F6E;" class="headerlink" title="Global settings &#x5168;&#x5C40;&#x914D;&#x7F6E;"></a>Global settings &#x5168;&#x5C40;&#x914D;&#x7F6E;</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Command-settings-命令配置"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text"><a href="#Command-settings-&#x547D;&#x4EE4;&#x914D;&#x7F6E;" class="headerlink" title="Command settings &#x547D;&#x4EE4;&#x914D;&#x7F6E;"></a>Command settings &#x547D;&#x4EE4;&#x914D;&#x7F6E;</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Shuttle示例"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"><a href="#Shuttle&#x793A;&#x4F8B;" class="headerlink" title="Shuttle&#x793A;&#x4F8B;"></a>Shuttle&#x793A;&#x4F8B;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
@@ -322,7 +390,7 @@
         
     
             <p class="article-headline-p">
-                
+                Shuttle安装以及配置简介
             </p>
         </div>
 
@@ -341,7 +409,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Blue_Lzy</strong>
-        <span>12月 18, 2017</span>
+        <span>12月 21, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -363,13 +431,22 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://www.bluelzy.com/about.html">
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/">
     
 </ul>
 
     
 
     <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/github/">github</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/linux/">linux</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/shuttle/">shuttle</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/开发工具/">开发工具</a>
+    </ul>
     
 
     <!-- Share -->
@@ -396,7 +473,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=https://www.bluelzy.com/about.html&pic=https://www.bluelzy.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Shuttle安装以及配置简介&url=https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html&pic=https://www.bluelzy.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -405,7 +482,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=https://www.bluelzy.com/about.html&via=Blue_Lzy" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Shuttle安装以及配置简介&url=https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html&via=Blue_Lzy" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -414,7 +491,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.bluelzy.com/about.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -429,7 +506,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=BlueLzy&#39;s Blog&title=&summary=&pics=https://www.bluelzy.com/img/favicon.png&url=https://www.bluelzy.com/about.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=BlueLzy&#39;s Blog&title=Shuttle安装以及配置简介&summary=&pics=https://www.bluelzy.com/img/favicon.png&url=https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -448,16 +525,73 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>关于</title>
-</head>
-<body>
-<p>这是Blue的博客</p>
-</body>
-</html>
+        <h1 id="本文说明："><a href="#本文说明：" class="headerlink" title="本文说明："></a>本文说明：</h1><p>本文介绍Shuttle的安装以及配置，主要是根据<strong><a href="https://github.com/fitztrev/shuttle/wiki" target="_blank" rel="noopener">Github上的官方文档</a></strong>进行翻译说明，还有自己的一些补充，如果习惯直接看文档的朋友，可以直接关掉这篇文章了~</p>
+<h2 id="Shuttle是什么"><a href="#Shuttle是什么" class="headerlink" title="Shuttle是什么"></a>Shuttle是什么</h2><p><a href="http://fitztrev.github.io/shuttle/" target="_blank" rel="noopener">点击我跳转到Shuttle的Github</a>  </p>
+<p>看一下官方简介，就一句话  </p>
+<pre><code>A simple SSH shortcut menu for macOS
+</code></pre><p>顾名思义，就是一个Mac上管理SSH的工具<br><br></p>
+<h2 id="Shuttle怎么用"><a href="#Shuttle怎么用" class="headerlink" title="Shuttle怎么用"></a>Shuttle怎么用</h2><p>接下来，让我给大家介绍一下Shuttle的用法 </p>
+<ol>
+<li><h3 id="安装Shuttle"><a href="#安装Shuttle" class="headerlink" title="安装Shuttle"></a>安装Shuttle</h3><p>首先到Shuttle的官网下载：<br><a href="http://fitztrev.github.io/shuttle/" target="_blank" rel="noopener">点击我跳转到下载地址</a><br>然后把Shuttle复制到Application文件夹下即可</p>
+</li>
+<li><h3 id="Shuttle配置"><a href="#Shuttle配置" class="headerlink" title="Shuttle配置"></a>Shuttle配置</h3><p><strong>这部分是本文的重点，敲黑板</strong><br>通过命令 <strong>open ~/.shuttle.json</strong> 打开.shuttle.json文件  </p>
+<h4 id="Global-settings-全局配置"><a href="#Global-settings-全局配置" class="headerlink" title="Global settings 全局配置"></a>Global settings 全局配置</h4><ul>
+<li><p>“editor”: “VALUE”,  设置编辑器，可选项default, nano, vi, vim  </p>
+</li>
+<li><p>“launch_at_login”: VALUE, 设置是否开机启动   </p>
+</li>
+<li><p>“terminal”: “VALUE”, 设置终端，一般是Terminal.app或者iTerm  </p>
+</li>
+<li><p>“iTerm_version”: “VALUE”, 设置iTerm版本，分别有三种  </p>
+<pre><code>      &quot;iTerm\_version&quot;: &quot;legacy&quot;,  2.14版本  
+   &quot;iTerm\_version&quot;: &quot;stable&quot;, 最新版本
+   &quot;iTerm\_version&quot;: &quot;nightly&quot;, nightly build 版本 
+</code></pre><ul>
+<li><p>“default_theme”: “Homebrew” 设置终端主题  </p>
+</li>
+<li><p>open_in”: “VALUE” 有两个可选项 Tab 或者 new 顾名思义，新建一个Tab 或者 在新窗口执行命令</p>
+</li>
+<li>“show_ssh_config_hosts”: VALUE 设置是否解析config文件，默认是true</li>
+<li>“ssh_config_ignore_keywords”: [“VALUE”] 设置忽略解析的关键字</li>
+</ul>
+<h4 id="Command-settings-命令配置"><a href="#Command-settings-命令配置" class="headerlink" title="Command settings 命令配置"></a>Command settings 命令配置</h4><ul>
+<li><p>“cmd”: “VALUE” 设置命令<br>例如 <strong>“cmd”: “ps aux | grep [s]sh”</strong></p>
+</li>
+<li><p>“name”: “VALUE” 设置菜单栏显示的名称</p>
+</li>
+<li><p>“inTerminal”: “VALUE” </p>
+<pre><code> new 新建一个窗口执行命令  
+ tab 新建一个Tab执行命令  
+ current 在当前窗口执行命令
+</code></pre></li>
+<li><p>“theme”: “VALUE” 设置主题~我用的是basic</p>
+</li>
+<li>“title”: “VALUE” 这个标题是显示在终端窗口的标题~</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Shuttle示例"><a href="#Shuttle示例" class="headerlink" title="Shuttle示例"></a>Shuttle示例</h2><pre><code>&quot;hosts&quot;: [
+    {
+      &quot;cmd&quot;: &quot;ssh root@127.0.0.1 -p 4000&quot;,
+      &quot;inTerminal&quot;: &quot;tab&quot;,
+      &quot;name&quot;: &quot;SSH - root用户&quot;,
+      &quot;theme&quot;: &quot;basic&quot;,
+      &quot;title&quot;: &quot;Blue&quot;
+    },
+    {
+      &quot;cmd&quot;: &quot;ssh root@127.0.0.1 -p 4000&quot;,
+      &quot;inTerminal&quot;: &quot;tab&quot;,
+      &quot;name&quot;: &quot;SSH - git用户&quot;,
+      &quot;theme&quot;: &quot;basic&quot;,
+      &quot;title&quot;: &quot;Blue&quot;
+    }
+    ]
+</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>shuttle 除了可以用来当SSH管理工具以外，还能执行多条命令操作，提高效率，只要用分号分隔即可    </p>
+<pre><code> 例如 pwd; ls; cd /; 就会按顺序执行以上三条命令。  
+</code></pre><p>好了，本文只是简单介绍了shuttle的基本用法，欢迎大家一起交流学习~</p>
+
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
                     <p><strong>
@@ -465,7 +599,7 @@
                             本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">CC BY-NC-SA 3.0 Unported License</a> 协议进行许可,阅读<a href="https://bluelzy.com/creativecommons.html" target="_blank">相关说明</a>
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="https://www.bluelzy.com/about.html">https://www.bluelzy.com/about.html</a>
+                        <strong>本文链接：</strong><a href="https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/">https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/</a>
                     </p>
                 </blockquote>
         
@@ -514,6 +648,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/12/17/第一篇文章/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -722,6 +864,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
