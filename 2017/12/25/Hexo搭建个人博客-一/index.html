@@ -47,7 +47,7 @@
     
     <title>
         
-            Shuttle安装以及配置简介 | 
+            使用Hexo搭建个人博客(一) | 
         
         BlueLzy&#39;s Blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="Blue&#39;s Blog, Android, Python,开发工具,shuttle,linux,github">
+    <meta name="keywords" content="Blue&#39;s Blog, Android, Python,hexo,博客,vps,godaddy">
     <meta name="theme-color" content="#EEAD0E">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -224,7 +224,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="BlueLzy&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/">
+    <meta name="msapplication-starturl" content="https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/">
     <meta name="msapplication-navbutton-color" content="#EEAD0E">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="BlueLzy&#39;s Blog">
@@ -239,16 +239,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/">
+    <meta property="og:url" content="https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Shuttle安装以及配置简介 | BlueLzy&#39;s Blog">
+    <meta property="og:title" content="使用Hexo搭建个人博客(一) | BlueLzy&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="开发工具"> <meta property="og:article:tag" content="shuttle"> <meta property="og:article:tag" content="linux"> <meta property="og:article:tag" content="github"> 
+    <meta property="og:article:tag" content="hexo"> <meta property="og:article:tag" content="博客"> <meta property="og:article:tag" content="vps"> <meta property="og:article:tag" content="godaddy"> 
 
     
-        <meta property="article:published_time" content="Thu Dec 21 2017 23:21:00 GMT+0800">
-        <meta property="article:modified_time" content="Thu Dec 21 2017 23:29:58 GMT+0800">
+        <meta property="article:published_time" content="Mon Dec 25 2017 20:45:40 GMT+0800">
+        <meta property="article:modified_time" content="Mon Dec 25 2017 22:22:58 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -256,7 +256,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html" />
+        <link rel="canonical" href="https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -268,10 +268,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html",
-    "headline": "Shuttle安装以及配置简介",
-    "datePublished": "Thu Dec 21 2017 23:21:00 GMT+0800",
-    "dateModified": "Thu Dec 21 2017 23:29:58 GMT+0800",
+    "mainEntityOfPage": "https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/index.html",
+    "headline": "使用Hexo搭建个人博客(一)",
+    "datePublished": "Mon Dec 25 2017 20:45:40 GMT+0800",
+    "dateModified": "Mon Dec 25 2017 22:22:58 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Blue_Lzy",
@@ -289,7 +289,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",开发工具,shuttle,linux,githubBlue&#39;s Blog, Android, Python",
+    "keywords": ",hexo,博客,vps,godaddyBlue&#39;s Blog, Android, Python",
     "description": "",
 }
 </script>
@@ -363,7 +363,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本文说明："><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;" class="headerlink" title="&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;"></a>&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Shuttle是什么"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"><a href="#Shuttle&#x662F;&#x4EC0;&#x4E48;" class="headerlink" title="Shuttle&#x662F;&#x4EC0;&#x4E48;"></a>Shuttle&#x662F;&#x4EC0;&#x4E48;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Shuttle怎么用"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"><a href="#Shuttle&#x600E;&#x4E48;&#x7528;" class="headerlink" title="Shuttle&#x600E;&#x4E48;&#x7528;"></a>Shuttle&#x600E;&#x4E48;&#x7528;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Shuttle"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text"><a href="#&#x5B89;&#x88C5;Shuttle" class="headerlink" title="&#x5B89;&#x88C5;Shuttle"></a>&#x5B89;&#x88C5;Shuttle</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Shuttle配置"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text"><a href="#Shuttle&#x914D;&#x7F6E;" class="headerlink" title="Shuttle&#x914D;&#x7F6E;"></a>Shuttle&#x914D;&#x7F6E;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Global-settings-全局配置"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text"><a href="#Global-settings-&#x5168;&#x5C40;&#x914D;&#x7F6E;" class="headerlink" title="Global settings &#x5168;&#x5C40;&#x914D;&#x7F6E;"></a>Global settings &#x5168;&#x5C40;&#x914D;&#x7F6E;</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Command-settings-命令配置"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text"><a href="#Command-settings-&#x547D;&#x4EE4;&#x914D;&#x7F6E;" class="headerlink" title="Command settings &#x547D;&#x4EE4;&#x914D;&#x7F6E;"></a>Command settings &#x547D;&#x4EE4;&#x914D;&#x7F6E;</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Shuttle示例"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"><a href="#Shuttle&#x793A;&#x4F8B;" class="headerlink" title="Shuttle&#x793A;&#x4F8B;"></a>Shuttle&#x793A;&#x4F8B;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本文说明："><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;" class="headerlink" title="&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;"></a>&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#购买VPS"><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#&#x8D2D;&#x4E70;VPS" class="headerlink" title="&#x8D2D;&#x4E70;VPS"></a>&#x8D2D;&#x4E70;VPS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#去哪里买"><span class="post-toc-number">2.1.</span> <span class="post-toc-text"><a href="#&#x53BB;&#x54EA;&#x91CC;&#x4E70;" class="headerlink" title="&#x53BB;&#x54EA;&#x91CC;&#x4E70;"></a>&#x53BB;&#x54EA;&#x91CC;&#x4E70;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#路线选择"><span class="post-toc-number">2.2.</span> <span class="post-toc-text"><a href="#&#x8DEF;&#x7EBF;&#x9009;&#x62E9;" class="headerlink" title="&#x8DEF;&#x7EBF;&#x9009;&#x62E9;"></a>&#x8DEF;&#x7EBF;&#x9009;&#x62E9;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#购买步骤"><span class="post-toc-number">2.3.</span> <span class="post-toc-text"><a href="#&#x8D2D;&#x4E70;&#x6B65;&#x9AA4;" class="headerlink" title="&#x8D2D;&#x4E70;&#x6B65;&#x9AA4;"></a>&#x8D2D;&#x4E70;&#x6B65;&#x9AA4;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他推荐"><span class="post-toc-number">2.4.</span> <span class="post-toc-text"><a href="#&#x5176;&#x4ED6;&#x63A8;&#x8350;" class="headerlink" title="&#x5176;&#x4ED6;&#x63A8;&#x8350;"></a>&#x5176;&#x4ED6;&#x63A8;&#x8350;</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注册域名"><span class="post-toc-number">3.</span> <span class="post-toc-text"><a href="#&#x6CE8;&#x518C;&#x57DF;&#x540D;" class="headerlink" title="&#x6CE8;&#x518C;&#x57DF;&#x540D;"></a>&#x6CE8;&#x518C;&#x57DF;&#x540D;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解析域名"><span class="post-toc-number">4.</span> <span class="post-toc-text"><a href="#&#x89E3;&#x6790;&#x57DF;&#x540D;" class="headerlink" title="&#x89E3;&#x6790;&#x57DF;&#x540D;"></a>&#x89E3;&#x6790;&#x57DF;&#x540D;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.</span> <span class="post-toc-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">6.</span> <span class="post-toc-text"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</span></a></li></ol>
     </ul>
     
 
@@ -395,7 +395,7 @@
         
     
             <p class="article-headline-p">
-                Shuttle安装以及配置简介
+                使用Hexo搭建个人博客(一)
             </p>
         </div>
 
@@ -414,7 +414,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Blue_Lzy</strong>
-        <span>12月 21, 2017</span>
+        <span>12月 25, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -436,7 +436,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/">
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/">
     
 </ul>
 
@@ -450,7 +450,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/github/">github</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/linux/">linux</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/shuttle/">shuttle</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/开发工具/">开发工具</a>
+        <a class="post_tag-link" href="/tags/godaddy/">godaddy</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/hexo/">hexo</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/vps/">vps</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/博客/">博客</a>
     </ul>
     
 
@@ -478,7 +478,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Shuttle安装以及配置简介&url=https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html&pic=https://www.bluelzy.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=使用Hexo搭建个人博客(一)&url=https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/index.html&pic=https://www.bluelzy.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -487,7 +487,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Shuttle安装以及配置简介&url=https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html&via=Blue_Lzy" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=使用Hexo搭建个人博客(一)&url=https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/index.html&via=Blue_Lzy" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -496,7 +496,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -511,7 +511,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=BlueLzy&#39;s Blog&title=Shuttle安装以及配置简介&summary=&pics=https://www.bluelzy.com/img/favicon.png&url=https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=BlueLzy&#39;s Blog&title=使用Hexo搭建个人博客(一)&summary=&pics=https://www.bluelzy.com/img/favicon.png&url=https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -530,72 +530,49 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="本文说明："><a href="#本文说明：" class="headerlink" title="本文说明："></a>本文说明：</h1><p>本文介绍Shuttle的安装以及配置，主要是根据<strong><a href="https://github.com/fitztrev/shuttle/wiki" target="_blank" rel="noopener">Github上的官方文档</a></strong>进行翻译说明，还有自己的一些补充，如果习惯直接看文档的朋友，可以直接关掉这篇文章了~</p>
-<h2 id="Shuttle是什么"><a href="#Shuttle是什么" class="headerlink" title="Shuttle是什么"></a>Shuttle是什么</h2><p><a href="http://fitztrev.github.io/shuttle/" target="_blank" rel="noopener">点击我跳转到Shuttle的Github</a>  </p>
-<p>看一下官方简介，就一句话  </p>
-<pre><code>A simple SSH shortcut menu for macOS
-</code></pre><p>顾名思义，就是一个Mac上管理SSH的工具<br><br></p>
-<h2 id="Shuttle怎么用"><a href="#Shuttle怎么用" class="headerlink" title="Shuttle怎么用"></a>Shuttle怎么用</h2><p>接下来，让我给大家介绍一下Shuttle的用法 </p>
-<ol>
-<li><h3 id="安装Shuttle"><a href="#安装Shuttle" class="headerlink" title="安装Shuttle"></a>安装Shuttle</h3><p>首先到Shuttle的官网下载：<br><a href="http://fitztrev.github.io/shuttle/" target="_blank" rel="noopener">点击我跳转到下载地址</a><br>然后把Shuttle复制到Application文件夹下即可</p>
-</li>
-<li><h3 id="Shuttle配置"><a href="#Shuttle配置" class="headerlink" title="Shuttle配置"></a>Shuttle配置</h3><p><strong>这部分是本文的重点，敲黑板</strong><br>通过命令 <strong>open ~/.shuttle.json</strong> 打开.shuttle.json文件  </p>
-<h4 id="Global-settings-全局配置"><a href="#Global-settings-全局配置" class="headerlink" title="Global settings 全局配置"></a>Global settings 全局配置</h4><ul>
-<li><p>“editor”: “VALUE”,  设置编辑器，可选项default, nano, vi, vim  </p>
-</li>
-<li><p>“launch_at_login”: VALUE, 设置是否开机启动   </p>
-</li>
-<li><p>“terminal”: “VALUE”, 设置终端，一般是Terminal.app或者iTerm  </p>
-</li>
-<li><p>“iTerm_version”: “VALUE”, 设置iTerm版本，分别有三种  </p>
-<pre><code>      &quot;iTerm\_version&quot;: &quot;legacy&quot;,  2.14版本  
-   &quot;iTerm\_version&quot;: &quot;stable&quot;, 最新版本
-   &quot;iTerm\_version&quot;: &quot;nightly&quot;, nightly build 版本 
-</code></pre><ul>
-<li><p>“default_theme”: “Homebrew” 设置终端主题  </p>
-</li>
-<li><p>open_in”: “VALUE” 有两个可选项 Tab 或者 new 顾名思义，新建一个Tab 或者 在新窗口执行命令</p>
-</li>
-<li>“show_ssh_config_hosts”: VALUE 设置是否解析config文件，默认是true</li>
-<li>“ssh_config_ignore_keywords”: [“VALUE”] 设置忽略解析的关键字</li>
+        <h1 id="本文说明："><a href="#本文说明：" class="headerlink" title="本文说明："></a>本文说明：</h1><p>本文是使用Hexo搭建个人博客系列的第一篇，主要是介绍一些准备工作，也是作为搭建<a href="https://www.bluelzy.com">本人博客</a>的过程回顾，主要包括   </p>
+<ul>
+<li>购买VPS</li>
+<li>注册域名</li>
+<li>解析域名</li>
 </ul>
-<h4 id="Command-settings-命令配置"><a href="#Command-settings-命令配置" class="headerlink" title="Command settings 命令配置"></a>Command settings 命令配置</h4><ul>
-<li><p>“cmd”: “VALUE” 设置命令<br>例如 <strong>“cmd”: “ps aux | grep [s]sh”</strong></p>
-</li>
-<li><p>“name”: “VALUE” 设置菜单栏显示的名称</p>
-</li>
-<li><p>“inTerminal”: “VALUE” </p>
-<pre><code> new 新建一个窗口执行命令  
- tab 新建一个Tab执行命令  
- current 在当前窗口执行命令
-</code></pre></li>
-<li><p>“theme”: “VALUE” 设置主题~我用的是basic</p>
-</li>
-<li>“title”: “VALUE” 这个标题是显示在终端窗口的标题~</li>
-</ul>
-</li>
-</ul>
-</li>
+<p>注意：如果不希望自己花费太多RMB的话，也可以选择部署到github pages上，可以参考<a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="noopener">手把手教你使用Hexo + Github Pages搭建个人独立博客</a>  </p>
+<p>原理其实都是类似的，本博客的搭建使用VPS + Hexo</p>
+<p>OK，接下来就一步步来准备这些所需的搭建环境。</p>
+<h1 id="购买VPS"><a href="#购买VPS" class="headerlink" title="购买VPS"></a>购买VPS</h1><h2 id="去哪里买"><a href="#去哪里买" class="headerlink" title="去哪里买"></a>去哪里买</h2><p>我是在搬瓦工上购买的,最便宜的9.9和19.9美元/年的方案已经卖完了，所以我选择的是29.9$/年的，折算下来大概是185RMB，毕竟有自己的服务器，搭建博客只是其中一个小用途而已，还能用他做很多别的事情，所以我觉得还是很划算的。最重要的是 <strong>他支持支付宝啊~</strong></p>
+<p>附上链接：<a href="https://bwh1.net/index.php" target="_blank" rel="noopener">搬瓦工VPS官网</a></p>
+<h2 id="路线选择"><a href="#路线选择" class="headerlink" title="路线选择"></a>路线选择</h2><p>推荐选择KVM + CN2 ping值稳定在150ms左右，速度还是可以接受的</p>
+<h2 id="购买步骤"><a href="#购买步骤" class="headerlink" title="购买步骤"></a>购买步骤</h2><p>进入搬瓦工的官网，选择VPS Hosting 看到下面有不同配置和价格的主机，选择适合自己的，然后点击 <strong>order kvm</strong></p>
+<p><img src="http://img.blog.csdn.net/20171225221244083?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="购买vps"></p>
+<p>确认订单，然后点击add to cart 加入购物车</p>
+<p><img src="http://img.blog.csdn.net/20171225221058577?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="购买VPS"></p>
+<p>确认无误后，点击checkout</p>
+<p><img src="http://img.blog.csdn.net/20171225221313656?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="购买VPS"></p>
+<p>填写个人信息，这里邮箱要写真实的，其他可以随便写<br>付款方式选择alipay 也就是支付宝，然后扫码完成付款即可</p>
+<p><img src="http://img.blog.csdn.net/20171225221336305?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="购买VPS"></p>
+<h2 id="其他推荐"><a href="#其他推荐" class="headerlink" title="其他推荐"></a>其他推荐</h2><ol>
+<li><strong>Vultr</strong><br><a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr官网地址</a><br>支持Paypal、信用卡或比特币付款。需要充值验证后才能开通VPS.  </li>
+<li><strong>Linode</strong><br><a href="https://www.linode.com/" target="_blank" rel="noopener">Linode官网地址</a><br>老牌VPS提供商，价格也会比较贵，配置高，服务好.</li>
 </ol>
-<h2 id="Shuttle示例"><a href="#Shuttle示例" class="headerlink" title="Shuttle示例"></a>Shuttle示例</h2><pre><code>&quot;hosts&quot;: [
-    {
-      &quot;cmd&quot;: &quot;ssh root@127.0.0.1 -p 4000&quot;,
-      &quot;inTerminal&quot;: &quot;tab&quot;,
-      &quot;name&quot;: &quot;SSH - root用户&quot;,
-      &quot;theme&quot;: &quot;basic&quot;,
-      &quot;title&quot;: &quot;Blue&quot;
-    },
-    {
-      &quot;cmd&quot;: &quot;ssh root@127.0.0.1 -p 4000&quot;,
-      &quot;inTerminal&quot;: &quot;tab&quot;,
-      &quot;name&quot;: &quot;SSH - git用户&quot;,
-      &quot;theme&quot;: &quot;basic&quot;,
-      &quot;title&quot;: &quot;Blue&quot;
-    }
-    ]
-</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>shuttle 除了可以用来当SSH管理工具以外，还能执行多条命令操作，提高效率，只要用分号分隔即可    </p>
-<pre><code> 例如 pwd; ls; cd /; 就会按顺序执行以上三条命令。  
-</code></pre><p>好了，本文只是简单介绍了shuttle的基本用法，欢迎大家一起交流学习~</p>
+<h1 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h1><p>关于购买域名，我是在大名鼎鼎的<strong>狗爹(godaddy)</strong>上买的，没有选择国内的万网，因为自己的网站也不打算备案。接下来简单的写一下购买步骤</p>
+<p>附上官网地址：<a href="https://sg.godaddy.com/zh/" target="_blank" rel="noopener">狗爹官网</a></p>
+<p>狗爹已经完全支持中文了，而且最重要的是，他也支持支付宝，按照步骤操作，应该是没太大问题的~</p>
+<h1 id="解析域名"><a href="#解析域名" class="headerlink" title="解析域名"></a>解析域名</h1><p>OK，现在我们有了服务器，也有了域名，需要做的就是把域名和服务器绑定起来，我使用的是<strong>Dnspod</strong></p>
+<ul>
+<li>官方教程：<a href="https://support.dnspod.cn/Kb/showarticle/tsid/177/" target="_blank" rel="noopener">DNSPOD域名解析</a></li>
+<li><p>修改Godaddy的DNS解析: <a href="https://support.dnspod.cn/Kb/showarticle/tsid/42/" target="_blank" rel="noopener">godaddy修改DNS</a></p>
+<p>总结一下，首先在Dnspod上注册账号，填入需要解析的域名和ip，然后会生成dns服务器，最后把godaddy的dns服务改成刚刚生成的那两个dnf服务器地址即可，输入域名应该就能访问到你的网站啦~<br><strong>上面的两个教程都说的很清楚了，还有困惑的欢迎留言~</strong></p>
+</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p> 这篇文章主要是搭建博客的前期准备，下一篇文章我们就正式开始使用hexo搭建博客了，主要介绍  </p>
+<ul>
+<li>本地安装hexo</li>
+<li>服务器配置nginx</li>
+<li>把个人博客部署到服务器</li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://www.jianshu.com/p/252b542b1abf" target="_blank" rel="noopener">Blog绑定域名——Godaddy + DNSPod</a></li>
+</ul>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -604,7 +581,7 @@
                             本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">CC BY-NC-SA 3.0 Unported License</a> 协议进行许可,阅读<a href="https://bluelzy.com/creativecommons.html" target="_blank">相关说明</a>
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/">https://www.bluelzy.com/2017/12/21/Shuttle安装以及配置简介/</a>
+                        <strong>本文链接：</strong><a href="https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/">https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/</a>
                     </p>
                 </blockquote>
         
@@ -654,7 +631,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/12/17/第一篇文章/" id="post_nav-older" class="next-content">
+        <a href="/2017/12/21/Shuttle使用简介/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -755,7 +732,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
@@ -773,7 +750,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/开发工具/">开发工具<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/日常/">日常<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/开发工具/">开发工具<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/日常/">日常<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -821,7 +798,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">2</span>
+                <span class="sidebar-badge">3</span>
             </a>
         </li>
         
