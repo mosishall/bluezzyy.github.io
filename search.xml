@@ -30,7 +30,8 @@ enabled=1
 </code></pre><p>现在应该就可以顺利安装了</p>
 <p>安装完成，下面直接就可以启动Nginx了：</p>
 <pre><code>/etc/init.d/nginx start
-</code></pre><p>现在Nginx已经启动，直接访问服务器就能看到Nginx欢迎页面了哟~</p>
+</code></pre><p>访问服务器，如无意外，应该就能看到Nginx欢迎页面了。  </p>
+<p>搞定收工~</p>
 <h1 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h1><p>如果对vim不熟悉的可以百度或者google一下<br>也可以看我写的这篇：<a href="">Vim简单入门</a></p>
 ]]></content>
       
