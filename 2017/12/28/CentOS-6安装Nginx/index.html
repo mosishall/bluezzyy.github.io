@@ -47,7 +47,7 @@
     
     <title>
         
-            标签云 | 
+            CentOS 6 安装Nginx | 
         
         BlueLzy&#39;s Blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="Blue&#39;s Blog, Android, Python">
+    <meta name="keywords" content="Blue&#39;s Blog, Android, Python,Linux,Nginx,CentOS 6">
     <meta name="theme-color" content="#EEAD0E">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -85,6 +85,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-estuary-light.min.css?ZQObwZXHH6Mt8MNbyQJYfQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -221,7 +224,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="BlueLzy&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://www.bluelzy.com/tags/">
+    <meta name="msapplication-starturl" content="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">
     <meta name="msapplication-navbutton-color" content="#EEAD0E">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="BlueLzy&#39;s Blog">
@@ -236,13 +239,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://www.bluelzy.com/tags/">
+    <meta property="og:url" content="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签云 | BlueLzy&#39;s Blog">
+    <meta property="og:title" content="CentOS 6 安装Nginx | BlueLzy&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="Linux"> <meta property="og:article:tag" content="Nginx"> <meta property="og:article:tag" content="CentOS 6"> 
 
+    
+        <meta property="article:published_time" content="Thu Dec 28 2017 10:47:05 GMT+0800">
+        <meta property="article:modified_time" content="Thu Dec 28 2017 11:07:06 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -250,13 +256,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.bluelzy.com/tags/index.html" />
+        <link rel="canonical" href="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html",
+    "headline": "CentOS 6 安装Nginx",
+    "datePublished": "Thu Dec 28 2017 10:47:05 GMT+0800",
+    "dateModified": "Thu Dec 28 2017 11:07:06 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Blue_Lzy",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "醉后不知天在水，满船清梦压星河 。"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "BlueLzy&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",Linux,Nginx,CentOS 6Blue&#39;s Blog, Android, Python",
+    "description": "",
+}
+</script>
 
 
     
@@ -300,60 +336,297 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题："><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x95EE;&#x9898;&#xFF1A;" class="headerlink" title="&#x95EE;&#x9898;&#xFF1A;"></a>&#x95EE;&#x9898;&#xFF1A;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决："><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#&#x89E3;&#x51B3;&#xFF1A;" class="headerlink" title="&#x89E3;&#x51B3;&#xFF1A;"></a>&#x89E3;&#x51B3;&#xFF1A;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#备注："><span class="post-toc-number">3.</span> <span class="post-toc-text"><a href="#&#x5907;&#x6CE8;&#xFF1A;" class="headerlink" title="&#x5907;&#x6CE8;&#xFF1A;"></a>&#x5907;&#x6CE8;&#xFF1A;</span></a></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
-        <a href="/tags/CentOS-6/" style="font-size: 16px; color: #757575">CentOS 6</a> <a href="/tags/Linux/" style="font-size: 16px; color: #757575">Linux</a> <a href="/tags/Nginx/" style="font-size: 16px; color: #757575">Nginx</a> <a href="/tags/github/" style="font-size: 16px; color: #757575">github</a> <a href="/tags/godaddy/" style="font-size: 16px; color: #757575">godaddy</a> <a href="/tags/hexo/" style="font-size: 16px; color: #757575">hexo</a> <a href="/tags/linux/" style="font-size: 16px; color: #757575">linux</a> <a href="/tags/shuttle/" style="font-size: 16px; color: #757575">shuttle</a> <a href="/tags/vps/" style="font-size: 16px; color: #757575">vps</a> <a href="/tags/博客/" style="font-size: 16px; color: #757575">博客</a> <a href="/tags/开发工具/" style="font-size: 16px; color: #757575">开发工具</a> <a href="/tags/日常/" style="font-size: 16px; color: #757575">日常</a>
+        
+    
+            <p class="article-headline-p">
+                CentOS 6 安装Nginx
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Blue_Lzy</strong>
+        <span>12月 28, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/CentOS-6/">CentOS 6</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Linux/">Linux</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Nginx/">Nginx</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CentOS 6 安装Nginx&url=https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html&pic=https://www.bluelzy.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CentOS 6 安装Nginx&url=https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html&via=Blue_Lzy" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=BlueLzy&#39;s Blog&title=CentOS 6 安装Nginx&summary=&pics=https://www.bluelzy.com/img/favicon.png&url=https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h1><blockquote>
+<p>直接yum install nginx -y 会报package not found 的错</p>
+</blockquote>
+<h1 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h1><ul>
+<li>在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo：</li>
+</ul>
+<pre><code>cd /etc/yum.repos.d/
+
+vim nginx.repo
+</code></pre><ul>
+<li>填写如下内容：</li>
+</ul>
+<pre><code>[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=0
+enabled=1
+</code></pre><ul>
+<li>保存，则会产生一个/etc/yum.repos.d/nginx.repo文件。</li>
+</ul>
+<p>我们现在再来执行Nginx安装命令：</p>
+<pre><code>yum install nginx -y
+</code></pre><p>现在应该就可以顺利安装了</p>
+<p>安装完成，下面直接就可以启动Nginx了：</p>
+<pre><code>/etc/init.d/nginx start
+</code></pre><p>现在Nginx已经启动，直接访问服务器就能看到Nginx欢迎页面了哟~</p>
+<h1 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h1><p>如果对vim不熟悉的可以百度或者google一下<br>也可以看我写的这篇：<a href="">Vim简单入门</a></p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            本文作者：<a href="https://bluelzy.com" target="_blank">BlueLzy</a> <br> 本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">CC BY-NC-SA 3.0 Unported License</a> 协议进行许可, 阅读<a href="https://bluelzy.com/creativecommons.html" target="_blank">相关说明</a> 
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
 </div>
 
 
-<script type="text/ls-javascript" id="page-tagcloud-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
+                
 
-    $(document).ready(function() {
-        adjustFooter();
-    });
-</script>
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjU1My85MTE0">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
 
+                
+            </div>
 
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/25/Hexo搭建个人博客-一/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
@@ -559,6 +832,14 @@ It will not impact the appearance and can give developers a lot of support :)
                     
 
                     
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
 
                     <!--Footer-->
 <footer class="mdl-mini-footer" id="bottom">
@@ -710,6 +991,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -722,6 +1007,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

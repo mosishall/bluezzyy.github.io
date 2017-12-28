@@ -3,6 +3,57 @@
   
     
     <entry>
+      <title><![CDATA[CentOS 6 安装Nginx]]></title>
+      <url>/2017/12/28/CentOS-6%E5%AE%89%E8%A3%85Nginx/</url>
+      <content type="html"><![CDATA[<h1 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h1><blockquote>
+<p>直接yum install nginx -y 会报package not found 的错</p>
+</blockquote>
+<h1 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h1><ul>
+<li>在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo：</li>
+</ul>
+<pre><code>cd /etc/yum.repos.d/
+
+vim nginx.repo
+</code></pre><ul>
+<li>填写如下内容：</li>
+</ul>
+<pre><code>[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=0
+enabled=1
+</code></pre><ul>
+<li>保存，则会产生一个/etc/yum.repos.d/nginx.repo文件。</li>
+</ul>
+<p>我们现在再来执行Nginx安装命令：</p>
+<pre><code>yum install nginx -y
+</code></pre><p>现在应该就可以顺利安装了</p>
+<p>安装完成，下面直接就可以启动Nginx了：</p>
+<pre><code>/etc/init.d/nginx start
+</code></pre><p>现在Nginx已经启动，直接访问服务器就能看到Nginx欢迎页面了哟~</p>
+<h1 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h1><p>如果对vim不熟悉的可以百度或者google一下<br>也可以看我写的这篇：<a href="">Vim简单入门</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术向 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Nginx </tag>
+            
+            <tag> CentOS 6 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用Hexo搭建个人博客(一)]]></title>
       <url>/2017/12/25/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E4%B8%80/</url>
       <content type="html"><![CDATA[<h1 id="本文说明："><a href="#本文说明：" class="headerlink" title="本文说明："></a>本文说明：</h1><p>本文是使用Hexo搭建个人博客系列的第一篇，主要是介绍一些准备工作，也是作为搭建<a href="https://www.bluelzy.com">本人博客</a>的过程回顾，主要包括   </p>
