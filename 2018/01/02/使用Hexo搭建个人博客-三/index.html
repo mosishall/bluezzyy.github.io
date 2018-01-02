@@ -47,7 +47,7 @@
     
     <title>
         
-            CentOS 6 安装Nginx | 
+            使用Hexo搭建个人博客(三) | 
         
         BlueLzy&#39;s Blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="Blue&#39;s Blog, Android, Python,Linux,Nginx,CentOS 6">
+    <meta name="keywords" content="Blue&#39;s Blog, Android, Python,hexo,博客,主题,material">
     <meta name="theme-color" content="#EEAD0E">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -224,7 +224,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="BlueLzy&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">
+    <meta name="msapplication-starturl" content="https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/">
     <meta name="msapplication-navbutton-color" content="#EEAD0E">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="BlueLzy&#39;s Blog">
@@ -239,16 +239,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">
+    <meta property="og:url" content="https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CentOS 6 安装Nginx | BlueLzy&#39;s Blog">
+    <meta property="og:title" content="使用Hexo搭建个人博客(三) | BlueLzy&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="Linux"> <meta property="og:article:tag" content="Nginx"> <meta property="og:article:tag" content="CentOS 6"> 
+    <meta property="og:article:tag" content="hexo"> <meta property="og:article:tag" content="博客"> <meta property="og:article:tag" content="主题"> <meta property="og:article:tag" content="material"> 
 
     
-        <meta property="article:published_time" content="Thu Dec 28 2017 10:47:05 GMT+0800">
-        <meta property="article:modified_time" content="Thu Dec 28 2017 11:21:36 GMT+0800">
+        <meta property="article:published_time" content="Tue Jan 02 2018 11:36:10 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jan 02 2018 12:49:51 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -256,7 +256,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html" />
+        <link rel="canonical" href="https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -268,10 +268,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html",
-    "headline": "CentOS 6 安装Nginx",
-    "datePublished": "Thu Dec 28 2017 10:47:05 GMT+0800",
-    "dateModified": "Thu Dec 28 2017 11:21:36 GMT+0800",
+    "mainEntityOfPage": "https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/index.html",
+    "headline": "使用Hexo搭建个人博客(三)",
+    "datePublished": "Tue Jan 02 2018 11:36:10 GMT+0800",
+    "dateModified": "Tue Jan 02 2018 12:49:51 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Blue_Lzy",
@@ -289,7 +289,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Linux,Nginx,CentOS 6Blue&#39;s Blog, Android, Python",
+    "keywords": ",hexo,博客,主题,materialBlue&#39;s Blog, Android, Python",
     "description": "",
 }
 </script>
@@ -363,7 +363,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#问题："><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x95EE;&#x9898;&#xFF1A;" class="headerlink" title="&#x95EE;&#x9898;&#xFF1A;"></a>&#x95EE;&#x9898;&#xFF1A;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决："><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#&#x89E3;&#x51B3;&#xFF1A;" class="headerlink" title="&#x89E3;&#x51B3;&#xFF1A;"></a>&#x89E3;&#x51B3;&#xFF1A;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#备注："><span class="post-toc-number">3.</span> <span class="post-toc-text"><a href="#&#x5907;&#x6CE8;&#xFF1A;" class="headerlink" title="&#x5907;&#x6CE8;&#xFF1A;"></a>&#x5907;&#x6CE8;&#xFF1A;</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本文介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x672C;&#x6587;&#x4ECB;&#x7ECD;" class="headerlink" title="&#x672C;&#x6587;&#x4ECB;&#x7ECD;"></a>&#x672C;&#x6587;&#x4ECB;&#x7ECD;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#主题配置"><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#&#x4E3B;&#x9898;&#x914D;&#x7F6E;" class="headerlink" title="&#x4E3B;&#x9898;&#x914D;&#x7F6E;"></a>&#x4E3B;&#x9898;&#x914D;&#x7F6E;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本配置-–-Head-info"><span class="post-toc-number">2.1.</span> <span class="post-toc-text"><a href="#&#x57FA;&#x672C;&#x914D;&#x7F6E;-&#x2013;-Head-info" class="headerlink" title="&#x57FA;&#x672C;&#x914D;&#x7F6E; &#x2013; Head info"></a>&#x57FA;&#x672C;&#x914D;&#x7F6E; &#x2013; Head info</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#head"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text"><a href="#head" class="headerlink" title="head"></a>head</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#样式设定-–-Style-Settings"><span class="post-toc-number">2.2.</span> <span class="post-toc-text"><a href="#&#x6837;&#x5F0F;&#x8BBE;&#x5B9A;-&#x2013;-Style-Settings" class="headerlink" title="&#x6837;&#x5F0F;&#x8BBE;&#x5B9A;  &#x2013; Style Settings"></a>&#x6837;&#x5F0F;&#x8BBE;&#x5B9A;  &#x2013; Style Settings</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#scheme-–-Material主题样式"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text"><a href="#scheme-&#x2013;-Material&#x4E3B;&#x9898;&#x6837;&#x5F0F;" class="headerlink" title="scheme  &#x2013; Material&#x4E3B;&#x9898;&#x6837;&#x5F0F;"></a>scheme  &#x2013; Material&#x4E3B;&#x9898;&#x6837;&#x5F0F;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#uiux-–-设置主题UI"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text"><a href="#uiux-&#x2013;-&#x8BBE;&#x7F6E;&#x4E3B;&#x9898;UI" class="headerlink" title="uiux &#x2013; &#x8BBE;&#x7F6E;&#x4E3B;&#x9898;UI"></a>uiux &#x2013; &#x8BBE;&#x7F6E;&#x4E3B;&#x9898;UI</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#reading-–-设置阅读体验"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text"><a href="#reading-&#x2013;-&#x8BBE;&#x7F6E;&#x9605;&#x8BFB;&#x4F53;&#x9A8C;" class="headerlink" title="reading &#x2013; &#x8BBE;&#x7F6E;&#x9605;&#x8BFB;&#x4F53;&#x9A8C;"></a>reading &#x2013; &#x8BBE;&#x7F6E;&#x9605;&#x8BFB;&#x4F53;&#x9A8C;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#thumbnail-–-设置缩略图"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text"><a href="#thumbnail-&#x2013;-&#x8BBE;&#x7F6E;&#x7F29;&#x7565;&#x56FE;" class="headerlink" title="thumbnail &#x2013; &#x8BBE;&#x7F6E;&#x7F29;&#x7565;&#x56FE;"></a>thumbnail &#x2013; &#x8BBE;&#x7F6E;&#x7F29;&#x7565;&#x56FE;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#background-–-设置背景图"><span class="post-toc-number">2.2.5.</span> <span class="post-toc-text"><a href="#background-&#x2013;-&#x8BBE;&#x7F6E;&#x80CC;&#x666F;&#x56FE;" class="headerlink" title="background &#x2013; &#x8BBE;&#x7F6E;&#x80CC;&#x666F;&#x56FE;"></a>background &#x2013; &#x8BBE;&#x7F6E;&#x80CC;&#x666F;&#x56FE;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#img-–-设置站点图片"><span class="post-toc-number">2.2.6.</span> <span class="post-toc-text"><a href="#img-&#x2013;-&#x8BBE;&#x7F6E;&#x7AD9;&#x70B9;&#x56FE;&#x7247;" class="headerlink" title="img &#x2013; &#x8BBE;&#x7F6E;&#x7AD9;&#x70B9;&#x56FE;&#x7247;"></a>img &#x2013; &#x8BBE;&#x7F6E;&#x7AD9;&#x70B9;&#x56FE;&#x7247;</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义设定"><span class="post-toc-number">2.3.</span> <span class="post-toc-text"><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x8BBE;&#x5B9A;" class="headerlink" title="&#x81EA;&#x5B9A;&#x4E49;&#x8BBE;&#x5B9A;"></a>&#x81EA;&#x5B9A;&#x4E49;&#x8BBE;&#x5B9A;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#copyright-since-–-设置站点成立时间"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text"><a href="#copyright-since-&#x2013;-&#x8BBE;&#x7F6E;&#x7AD9;&#x70B9;&#x6210;&#x7ACB;&#x65F6;&#x95F4;" class="headerlink" title="copyright_since &#x2013; &#x8BBE;&#x7F6E;&#x7AD9;&#x70B9;&#x6210;&#x7ACB;&#x65F6;&#x95F4;"></a>copyright_since &#x2013; &#x8BBE;&#x7F6E;&#x7AD9;&#x70B9;&#x6210;&#x7ACB;&#x65F6;&#x95F4;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#footer-text-–-设置底部文字"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text"><a href="#footer-text-&#x2013;-&#x8BBE;&#x7F6E;&#x5E95;&#x90E8;&#x6587;&#x5B57;" class="headerlink" title="footer_text &#x2013; &#x8BBE;&#x7F6E;&#x5E95;&#x90E8;&#x6587;&#x5B57;"></a>footer_text &#x2013; &#x8BBE;&#x7F6E;&#x5E95;&#x90E8;&#x6587;&#x5B57;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Code-–-设置代码高亮"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text"><a href="#Code-&#x2013;-&#x8BBE;&#x7F6E;&#x4EE3;&#x7801;&#x9AD8;&#x4EAE;" class="headerlink" title="Code &#x2013; &#x8BBE;&#x7F6E;&#x4EE3;&#x7801;&#x9AD8;&#x4EAE;"></a>Code &#x2013; &#x8BBE;&#x7F6E;&#x4EE3;&#x7801;&#x9AD8;&#x4EAE;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Post-License-–-版权说明"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text"><a href="#Post-License-&#x2013;-&#x7248;&#x6743;&#x8BF4;&#x660E;" class="headerlink" title="Post License &#x2013; &#x7248;&#x6743;&#x8BF4;&#x660E;"></a>Post License &#x2013; &#x7248;&#x6743;&#x8BF4;&#x660E;</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#菜单设定"><span class="post-toc-number">2.4.</span> <span class="post-toc-text"><a href="#&#x83DC;&#x5355;&#x8BBE;&#x5B9A;" class="headerlink" title="&#x83DC;&#x5355;&#x8BBE;&#x5B9A;"></a>&#x83DC;&#x5355;&#x8BBE;&#x5B9A;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#sns-–-设置sns信息"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text"><a href="#sns-&#x2013;-&#x8BBE;&#x7F6E;sns&#x4FE1;&#x606F;" class="headerlink" title="sns &#x2013; &#x8BBE;&#x7F6E;sns&#x4FE1;&#x606F;"></a>sns &#x2013; &#x8BBE;&#x7F6E;sns&#x4FE1;&#x606F;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#sns-share-–-定义分享菜单中的项目"><span class="post-toc-number">2.4.2.</span> <span class="post-toc-text"><a href="#sns-share-&#x2013;-&#x5B9A;&#x4E49;&#x5206;&#x4EAB;&#x83DC;&#x5355;&#x4E2D;&#x7684;&#x9879;&#x76EE;" class="headerlink" title="sns_share &#x2013; &#x5B9A;&#x4E49;&#x5206;&#x4EAB;&#x83DC;&#x5355;&#x4E2D;&#x7684;&#x9879;&#x76EE;"></a>sns_share &#x2013; &#x5B9A;&#x4E49;&#x5206;&#x4EAB;&#x83DC;&#x5355;&#x4E2D;&#x7684;&#x9879;&#x76EE;</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sidebar-–-设置边栏菜单"><span class="post-toc-number">2.5.</span> <span class="post-toc-text"><a href="#sidebar-&#x2013;-&#x8BBE;&#x7F6E;&#x8FB9;&#x680F;&#x83DC;&#x5355;" class="headerlink" title="sidebar &#x2013; &#x8BBE;&#x7F6E;&#x8FB9;&#x680F;&#x83DC;&#x5355;"></a>sidebar &#x2013; &#x8BBE;&#x7F6E;&#x8FB9;&#x680F;&#x83DC;&#x5355;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三方服务"><span class="post-toc-number">2.6.</span> <span class="post-toc-text"><a href="#&#x7B2C;&#x4E09;&#x65B9;&#x670D;&#x52A1;" class="headerlink" title="&#x7B2C;&#x4E09;&#x65B9;&#x670D;&#x52A1;"></a>&#x7B2C;&#x4E09;&#x65B9;&#x670D;&#x52A1;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#评论系统"><span class="post-toc-number">2.6.1.</span> <span class="post-toc-text"><a href="#&#x8BC4;&#x8BBA;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x8BC4;&#x8BBA;&#x7CFB;&#x7EDF;"></a>&#x8BC4;&#x8BBA;&#x7CFB;&#x7EDF;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索系统"><span class="post-toc-number">2.6.2.</span> <span class="post-toc-text"><a href="#&#x641C;&#x7D22;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x641C;&#x7D22;&#x7CFB;&#x7EDF;"></a>&#x641C;&#x7D22;&#x7CFB;&#x7EDF;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据统计-Google-Analytics"><span class="post-toc-number">2.6.3.</span> <span class="post-toc-text"><a href="#&#x6570;&#x636E;&#x7EDF;&#x8BA1;-Google-Analytics" class="headerlink" title="&#x6570;&#x636E;&#x7EDF;&#x8BA1;(Google Analytics)"></a>&#x6570;&#x636E;&#x7EDF;&#x8BA1;(Google Analytics)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结"><span class="post-toc-number">3.</span> <span class="post-toc-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</span></a></li></ol>
     </ul>
     
 
@@ -395,7 +395,7 @@
         
     
             <p class="article-headline-p">
-                CentOS 6 安装Nginx
+                使用Hexo搭建个人博客(三)
             </p>
         </div>
 
@@ -414,7 +414,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Blue_Lzy</strong>
-        <span>12月 28, 2017</span>
+        <span>1月 02, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -436,7 +436,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/">
     
 </ul>
 
@@ -450,7 +450,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/CentOS-6/">CentOS 6</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Linux/">Linux</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Nginx/">Nginx</a>
+        <a class="post_tag-link" href="/tags/hexo/">hexo</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/material/">material</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/主题/">主题</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/博客/">博客</a>
     </ul>
     
 
@@ -478,7 +478,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CentOS 6 安装Nginx&url=https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html&pic=https://www.bluelzy.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=使用Hexo搭建个人博客(三)&url=https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/index.html&pic=https://www.bluelzy.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -487,7 +487,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CentOS 6 安装Nginx&url=https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html&via=Blue_Lzy" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=使用Hexo搭建个人博客(三)&url=https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/index.html&via=Blue_Lzy" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -496,7 +496,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -511,7 +511,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=BlueLzy&#39;s Blog&title=CentOS 6 安装Nginx&summary=&pics=https://www.bluelzy.com/img/favicon.png&url=https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=BlueLzy&#39;s Blog&title=使用Hexo搭建个人博客(三)&summary=&pics=https://www.bluelzy.com/img/favicon.png&url=https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -530,34 +530,184 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h1><blockquote>
-<p>直接yum install nginx -y 会报package not found 的错</p>
+        <h1 id="本文介绍"><a href="#本文介绍" class="headerlink" title="本文介绍"></a>本文介绍</h1><p><strong>2018年的第一篇博客，首先祝大家新年快乐，学习进步，工作顺利！</strong>  </p>
+<p>这是使用Hexo搭建个人博客系列的最后一篇文章，主要介绍<strong>Material主题</strong>的配置。</p>
+<p>Material主题配置文档：<a href="https://material.viosey.com/docs/#/start" target="_blank" rel="noopener">Click Me</a></p>
+<p>不了解Material主题的可以看这里：<a href="https://github.com/viosey/hexo-theme-material/" target="_blank" rel="noopener">Github地址</a></p>
+<p>前文：<br><a href="https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/">使用Hexo搭建个人博客(一)</a><br><a href="https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-二/">使用Hexo搭建个人博客(二)</a></p>
+<h1 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h1><blockquote>
+<p>主题配置文件在：/你的博客目录/themes/material/_config.yml<br>clone下来的时候把名字改成_config.yml即可</p>
 </blockquote>
-<h1 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h1><ul>
-<li>在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo：</li>
+<h2 id="基本配置-–-Head-info"><a href="#基本配置-–-Head-info" class="headerlink" title="基本配置 – Head info"></a>基本配置 – Head info</h2><h3 id="head"><a href="#head" class="headerlink" title="head"></a>head</h3><ul>
+<li>favicon: “/img/favicon.png”  网站的图标</li>
+<li>high_res_favicon: “/img/favicon.png” 高清版图标</li>
+<li>apple_touch_icon: “/img/favicon.png” IOS主屏图标</li>
+<li>keywords: Blue’s Blog, Android, Python 网站关键词</li>
+<li>site_verification:<br>   google: 谷歌 Search Console 验证<pre><code>baidu: 百度站长平台验证
+</code></pre></li>
 </ul>
-<pre><code>cd /etc/yum.repos.d/
+<h2 id="样式设定-–-Style-Settings"><a href="#样式设定-–-Style-Settings" class="headerlink" title="样式设定  – Style Settings"></a>样式设定  – Style Settings</h2><h3 id="scheme-–-Material主题样式"><a href="#scheme-–-Material主题样式" class="headerlink" title="scheme  – Material主题样式"></a>scheme  – Material主题样式</h3><p>一般使用Paradox</p>
+<h3 id="uiux-–-设置主题UI"><a href="#uiux-–-设置主题UI" class="headerlink" title="uiux – 设置主题UI"></a>uiux – 设置主题UI</h3><ul>
+<li>slogan: <pre><code>- 首页的标语
+</code></pre></li>
+<li>theme_color: “主题主要颜色”  </li>
+<li>theme_sub_color: “主题次要颜色” #00838F</li>
+<li>hyperlink_color: “超链颜色”</li>
+<li>button_color: “按钮颜色”</li>
+<li>android_chrome_color: “Chrome浏览器颜色”</li>
+<li>nprogress_color: “顶部进度条颜色”</li>
+<li>nprogress_buffer: “800”  – 加载缓存时间</li>
+</ul>
+<h3 id="reading-–-设置阅读体验"><a href="#reading-–-设置阅读体验" class="headerlink" title="reading – 设置阅读体验"></a>reading – 设置阅读体验</h3><ul>
+<li>entry_excerpt: 首页文章输出摘要的字符长度。</li>
+</ul>
+<h3 id="thumbnail-–-设置缩略图"><a href="#thumbnail-–-设置缩略图" class="headerlink" title="thumbnail – 设置缩略图"></a>thumbnail – 设置缩略图</h3><ul>
+<li>purecolor: 填入颜色代码。如果文章内无设置缩略图，此项又不为空，则使用纯色缩略图。</li>
+<li>random_amount: 随机图片数量，根据 主题所在文件夹/source/img/random 中的图片数量设置。Material 主题默认提供了 19 张 Material 风格的缩略图。</li>
+</ul>
+<h3 id="background-–-设置背景图"><a href="#background-–-设置背景图" class="headerlink" title="background – 设置背景图"></a>background – 设置背景图</h3><pre><code>purecolor: &quot;#F4F4F4&quot;    --纯色背景
+# bgimg: &quot;/img/bg.jpg&quot;  --图片背景
+bing:                          -- bing随机背景
+    enable: false
+    parameter:
+      color=: black, blue, brown, green, multi, orange, pink, purple, red, white, yellow.
+      type=: A (动物), C (人文), N (自然), S (太空), T (旅行).
+</code></pre><h3 id="img-–-设置站点图片"><a href="#img-–-设置站点图片" class="headerlink" title="img – 设置站点图片"></a>img – 设置站点图片</h3><ul>
+<li>logo: 显示于 blog_info 模块中。</li>
+<li>avatar: 你的头像设置。</li>
+<li>daily_pic: 显示于 daily_pic 模块中。</li>
+<li>sidebar_header: 显示于 sidebar 顶部。</li>
+<li>footerico: 设置 footer 中 SNS 图标的路径。</li>
+<li>random_thumbnail: 随机缩略图的路径。</li>
+<li>footer_image: 你可以在侧边栏底部放置任何你想要的图片。</li>
+</ul>
+<h2 id="自定义设定"><a href="#自定义设定" class="headerlink" title="自定义设定"></a>自定义设定</h2><h3 id="copyright-since-–-设置站点成立时间"><a href="#copyright-since-–-设置站点成立时间" class="headerlink" title="copyright_since – 设置站点成立时间"></a>copyright_since – 设置站点成立时间</h3><ul>
+<li>copyright_since: 2017 就会显示2017-2018</li>
+</ul>
+<h3 id="footer-text-–-设置底部文字"><a href="#footer-text-–-设置底部文字" class="headerlink" title="footer_text – 设置底部文字"></a>footer_text – 设置底部文字</h3><pre><code>例如：footer_text: &#39;&lt;a href=&quot;http://www.miitbeian.gov.cn&quot; rel=&quot;nofollow&quot;&gt;某ICP备xxxxxxxx号-x&lt;/a&gt;&#39;
+</code></pre><h3 id="Code-–-设置代码高亮"><a href="#Code-–-设置代码高亮" class="headerlink" title="Code – 设置代码高亮"></a>Code – 设置代码高亮</h3><p>Material内置两个选项 perttify 和 hanabi，个人比较喜欢perttify，因为hanabi太花哨了，附上配置文件</p>
+<pre><code>prettify:
+    enable: true
+    theme: &quot;atelier-estuary-light&quot;  # atelier-estuary-light  tomorrow-night-eighties
 
-vim nginx.repo
-</code></pre><ul>
-<li>填写如下内容：</li>
+这三个配色我都挺喜欢的，供参考：
+atelier-estuary-light  
+atelier-estuary-light  
+tomorrow-night-eighties
+</code></pre><h3 id="Post-License-–-版权说明"><a href="#Post-License-–-版权说明" class="headerlink" title="Post License – 版权说明"></a>Post License – 版权说明</h3><p>老规矩，直接附上配置：</p>
+<pre><code>  &#39;本文作者：&lt;a href=&quot;https://bluelzy.com&quot; target=&quot;_blank&quot;&gt;BlueLzy&lt;/a&gt;
+  &lt;br&gt;
+  本文采用 &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh&quot; target=&quot;_blank&quot;&gt;CC BY-NC-SA 3.0 Unported License&lt;/a&gt; 协议进行许可,
+   阅读&lt;a href=&quot;https://bluelzy.com/creativecommons.html&quot; target=&quot;_blank&quot;&gt;相关说明&lt;/a&gt;
+  &#39;
+</code></pre><h2 id="菜单设定"><a href="#菜单设定" class="headerlink" title="菜单设定"></a>菜单设定</h2><h3 id="sns-–-设置sns信息"><a href="#sns-–-设置sns信息" class="headerlink" title="sns – 设置sns信息"></a>sns – 设置sns信息</h3><blockquote>
+<p>用于填写你的 SNS 信息，其中 email 会显示在侧边栏，其他信息会以按钮的形式显示在 footer。</p>
+</blockquote>
+<ul>
+<li>email</li>
+<li>twitter</li>
+<li>facebook</li>
+<li>googleplus</li>
+<li>weibo</li>
+<li>instagram</li>
+<li>tumblr</li>
+<li>github</li>
+<li>linkedin</li>
+<li>facebook</li>
 </ul>
-<pre><code>[nginx]
-name=nginx repo
-baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
-gpgcheck=0
-enabled=1
-</code></pre><ul>
-<li>保存，则会产生一个/etc/yum.repos.d/nginx.repo文件。</li>
+<h3 id="sns-share-–-定义分享菜单中的项目"><a href="#sns-share-–-定义分享菜单中的项目" class="headerlink" title="sns_share – 定义分享菜单中的项目"></a>sns_share – 定义分享菜单中的项目</h3><blockquote>
+<p>这部分会出现在文章分享按钮菜单上</p>
+</blockquote>
+<ul>
+<li>twitter</li>
+<li>googleplus</li>
+<li>weibo</li>
+<li>linkedin</li>
+<li>qq</li>
+<li>telegram</li>
 </ul>
-<p>我们现在再来执行Nginx安装命令：</p>
-<pre><code>yum install nginx -y
-</code></pre><p>现在应该就可以顺利安装了</p>
-<p>安装完成，下面直接就可以启动Nginx了：</p>
-<pre><code>/etc/init.d/nginx start
-</code></pre><p>访问服务器，如无意外，应该就能看到Nginx欢迎页面了。  </p>
-<p>搞定收工~</p>
-<h1 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h1><p>如果对vim不熟悉的可以百度或者google一下<br>也可以看我写的这篇：<a href="https://www.bluelzy.com/2017/12/28/Vim简单入门/">Vim简单入门</a></p>
+<h2 id="sidebar-–-设置边栏菜单"><a href="#sidebar-–-设置边栏菜单" class="headerlink" title="sidebar – 设置边栏菜单"></a>sidebar – 设置边栏菜单</h2><p>这一块应该大家都能看懂，直接附上配置文件：</p>
+<pre><code>dropdown:
+        Email Me:
+            link: &quot;mailto: bluehobert@gmail.com&quot;
+            icon: email
+        Github:
+            link: &quot;https://github.com/bluezzyy&quot;
+            icon: layers
+    homepage:
+        use: true
+        icon: home
+        divider: false
+    archives:
+        use: true
+        icon: inbox
+        divider: false
+    categories:
+        use: true
+        icon: chrome_reader_mode
+        divider: true
+    pages:
+        标签云:
+            link: &quot;/tags&quot;
+            icon: label
+            divider: false
+        时间轴:
+            link: &quot;/timeline&quot;
+            icon: cloud
+            divider: false
+        关于我:
+            link: &quot;/about.html&quot;
+            icon: person
+            divider: true
+
+
+
+    article_num:
+        use: true
+        divider: false
+    footer:
+        divider: false
+        theme: false
+        support: false
+        feedback: false
+        material: false
+</code></pre><h2 id="第三方服务"><a href="#第三方服务" class="headerlink" title="第三方服务"></a>第三方服务</h2><blockquote>
+<p>其实Material内置的第三方服务已经基本足够使用了，RSS，评论系统，搜索系统，数据统计与分析等等</p>
+</blockquote>
+<p>这部分可以按照自己实际情况，以及配合<a href="https://material.viosey.com/docs/#/config_services" target="_blank" rel="noopener">官方文档</a>服用，效果更佳，在这里我只介绍自己博客用到的配置，包括：</p>
+<ul>
+<li>评论系统：来比力</li>
+<li>搜索系统：本地搜索</li>
+<li>数据统计：谷歌统计</li>
+</ul>
+<h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><p>首先注册来必力<br><a href="https://livere.com/login_form" target="_blank" rel="noopener">来必力官网</a></p>
+<p>然后登陆，安装city版本并获取uid：<br><a href="https://livere.com/apply" target="_blank" rel="noopener">安装地址</a>  </p>
+<p><img src="http://img.blog.csdn.net/20180102124646491?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="安装面板"></p>
+<p>最后修改站点的配置文件</p>
+<pre><code>comment:
+    use: livere
+    shortname: # duoshuo or disqus shortname
+    changyan_appid:
+    changyan_conf:
+    changyan_thread_key_type: path
+    livere_data_uid:  # 来必力的uid
+</code></pre><p>再刷新一下博客，就可以看到评论系统啦~</p>
+<h3 id="搜索系统"><a href="#搜索系统" class="headerlink" title="搜索系统"></a>搜索系统</h3><pre><code>search:
+    use: local
+    swiftype_key:
+</code></pre><p>即可通过关键字搜索本站</p>
+<h3 id="数据统计-Google-Analytics"><a href="#数据统计-Google-Analytics" class="headerlink" title="数据统计(Google Analytics)"></a>数据统计(Google Analytics)</h3><p><strong>我们只需要获取到跟踪ID即可</strong></p>
+<p>可以参考<a href="https://support.google.com/analytics/answer/1009694?hl=zh-Hans" target="_blank" rel="noopener">Google Analytics（分析）帮助</a></p>
+<p>或者按照以下步骤操作，登陆google analytics 找到管理 -&gt; 媒体资源 -&gt; 跟踪信息 -&gt; 跟踪代码</p>
+<p><img src="http://img.blog.csdn.net/20180102124739072?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="获取跟踪ID"></p>
+<p>获取到跟踪ID后，修改配置文件</p>
+<p>找到主题配置文件中的analytics字段：</p>
+<p>在google_site_id 字段加上你的跟踪ID，保存即可</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Material基本的配置介绍这么多，关于进阶配置，大家可以去看官方文档，或者自己再慢慢摸索，接下来我还会写一些关于博客优化的文章。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://material.viosey.com/docs/#/start" target="_blank" rel="noopener">Material主题配置文档</a></li>
+<li><a href="https://github.com/viosey/hexo-theme-material/" target="_blank" rel="noopener">Material主题 Github地址</a></li>
+</ul>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -566,7 +716,7 @@ enabled=1
                             本文作者：<a href="https://bluelzy.com" target="_blank">BlueLzy</a> <br> 本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">CC BY-NC-SA 3.0 Unported License</a> 协议进行许可, 阅读<a href="https://bluelzy.com/creativecommons.html" target="_blank">相关说明</a> 
                         </strong>
                         <br>
-                        <strong>本文链接：</strong><a href="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/</a>
+                        <strong>本文链接：</strong><a href="https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/">https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/</a>
                     </p>
                 </blockquote>
         
@@ -610,21 +760,13 @@ enabled=1
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/12/28/Vim简单入门/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/12/25/Hexo搭建个人博客-一/" id="post_nav-older" class="next-content">
+        <a href="/2017/12/29/使用Hexo搭建个人博客-二/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
