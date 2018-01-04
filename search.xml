@@ -3,6 +3,49 @@
   
     
     <entry>
+      <title><![CDATA[为博客提速-Nginx开启gzip压缩]]></title>
+      <url>/2018/01/04/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%8F%90%E9%80%9F-Nginx%E5%BC%80%E5%90%AFgzip%E5%8E%8B%E7%BC%A9/</url>
+      <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p>这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩</p>
+<h1 id="Nginx服务器启用gzip压缩"><a href="#Nginx服务器启用gzip压缩" class="headerlink" title="Nginx服务器启用gzip压缩"></a>Nginx服务器启用gzip压缩</h1><p>首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下：</p>
+<pre><code>vi /etc/nginx/conf.d/blog.conf
+</code></pre><p>然后在配置文件中加入这一段</p>
+<pre><code>gzip on;
+gzip_proxied any;
+gzip_min_length 1100;
+gzip_buffers 16 8k;
+gzip_types text/plain text/css application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+</code></pre><p>保存退出并重启nginx</p>
+<pre><code>sudo /etc/init.d/nginx reload
+</code></pre><p>接下来就可以看结果了：</p>
+<p>通过这个网址：<a href="https://nixcp.com/tools/gzip-test/" target="_blank" rel="noopener">https://nixcp.com/tools/gzip-test/</a> 测试是否成功开启gzip</p>
+<p>通过这个网址：<a href="http://www.whatsmyip.org/http-compression-test/" target="_blank" rel="noopener">http://www.whatsmyip.org/http-compression-test/</a> 看压缩效果</p>
+<p>最后经过测试，我的网页压缩效果如下：</p>
+<p><img src="http://s1.wailian.download/2018/01/05/artical_2018-01-05.png" alt="压缩效果"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>​    开启gzip，不仅可以提高网页加载速度，减少服务器的负载，还能提高网站排名，还没为自己的网站开启gzip压缩的童鞋，赶快去试试吧~</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术向 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> Nginx </tag>
+            
+            <tag> gzip </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用Hexo搭建个人博客(三)]]></title>
       <url>/2018/01/02/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E4%B8%89/</url>
       <content type="html"><![CDATA[<h1 id="本文介绍"><a href="#本文介绍" class="headerlink" title="本文介绍"></a>本文介绍</h1><p><strong>2018年的第一篇博客，首先祝大家新年快乐，学习进步，工作顺利！</strong>  </p>
@@ -468,9 +511,9 @@ enabled=1
         
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> Nginx </tag>
+            
+            <tag> Linux </tag>
             
             <tag> CentOS 6 </tag>
             

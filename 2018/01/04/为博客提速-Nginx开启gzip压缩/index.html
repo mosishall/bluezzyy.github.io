@@ -45,7 +45,7 @@
     
     <title>
         
-            归档: 2018 | 
+            为博客提速-Nginx开启gzip压缩 | 
         
         BlueLzy&#39;s Blog
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="Blue&#39;s Blog, Android, Python">
+    <meta name="keywords" content="Blue&#39;s Blog, Android, Python,hexo,博客,Nginx,gzip">
     <meta name="theme-color" content="#EEAD0E">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/atelier-estuary-light.min.css?ZQObwZXHH6Mt8MNbyQJYfQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -243,7 +246,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="BlueLzy&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://www.bluelzy.com/archives/2018/">
+    <meta name="msapplication-starturl" content="https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/">
     <meta name="msapplication-navbutton-color" content="#EEAD0E">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="BlueLzy&#39;s Blog">
@@ -258,13 +261,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://www.bluelzy.com/archives/2018/">
+    <meta property="og:url" content="https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018 | BlueLzy&#39;s Blog">
+    <meta property="og:title" content="为博客提速-Nginx开启gzip压缩 | BlueLzy&#39;s Blog">
     <meta property="og:image" content="http://s1.wailian.download/2018/01/04/logo.png">
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="hexo"> <meta property="og:article:tag" content="博客"> <meta property="og:article:tag" content="Nginx"> <meta property="og:article:tag" content="gzip"> 
 
+    
+        <meta property="article:published_time" content="Thu Jan 04 2018 23:48:36 GMT+0800">
+        <meta property="article:modified_time" content="Fri Jan 05 2018 00:13:59 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -272,13 +278,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://www.bluelzy.com/archives/2018/index.html" />
+        <link rel="canonical" href="https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/index.html",
+    "headline": "为博客提速-Nginx开启gzip压缩",
+    "datePublished": "Thu Jan 04 2018 23:48:36 GMT+0800",
+    "dateModified": "Fri Jan 05 2018 00:13:59 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Blue_Lzy",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://s1.wailian.download/2018/01/04/logo.png"
+        },
+        "description": "醉后不知天在水，满船清梦压星河 。"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "BlueLzy&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "http://s1.wailian.download/2018/01/04/logo.png"
+        }
+    },
+    "keywords": ",hexo,博客,Nginx,gzipBlue&#39;s Blog, Android, Python",
+    "description": "",
+}
+</script>
 
 
     
@@ -320,158 +356,264 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本文说明"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x672C;&#x6587;&#x8BF4;&#x660E;" class="headerlink" title="&#x672C;&#x6587;&#x8BF4;&#x660E;"></a>&#x672C;&#x6587;&#x8BF4;&#x660E;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Nginx服务器启用gzip压缩"><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#Nginx&#x670D;&#x52A1;&#x5668;&#x542F;&#x7528;gzip&#x538B;&#x7F29;" class="headerlink" title="Nginx&#x670D;&#x52A1;&#x5668;&#x542F;&#x7528;gzip&#x538B;&#x7F29;"></a>Nginx&#x670D;&#x52A1;&#x5668;&#x542F;&#x7528;gzip&#x538B;&#x7F29;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结"><span class="post-toc-number">3.</span> <span class="post-toc-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="http://s1.wailian.download/2018/01/05/artical_2018-01-05.png">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://s1.wailian.download/2018/01/05/artical_2018-01-05.png)">
+    
+            <p class="article-headline-p">
+                为博客提速-Nginx开启gzip压缩
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="http://s1.wailian.download/2018/01/04/logo.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Blue_Lzy</strong>
+        <span>1月 04, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/01/04/为博客提速-Nginx开启gzip压缩/">为博客提速-Nginx开启gzip压缩</a></p>
-    </div>
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Nginx/">Nginx</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/gzip/">gzip</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/hexo/">hexo</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/博客/">博客</a>
+    </ul>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本文说明这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/01/04/为博客提速-Nginx开启gzip压缩/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://s1.wailian.download/2018/01/04/logo.png" width="44px" height="44px" alt="Blue_Lzy's avatar">
-            </div>
-            <div>
-                <strong>Blue_Lzy</strong>
-                <span>1月 04, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/技术向/">技术向</a>
-              </span>
-            
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
 
-            
+    
 
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=为博客提速-Nginx开启gzip压缩&url=https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/index.html&pic=https://www.bluelzy.comhttp://s1.wailian.download/2018/01/04/logo.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=为博客提速-Nginx开启gzip压缩&url=https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/index.html&via=Blue_Lzy" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/index.html&text=为博客提速-Nginx开启gzip压缩" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
 </div>
 
-            
-            
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p>这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩</p>
+<h1 id="Nginx服务器启用gzip压缩"><a href="#Nginx服务器启用gzip压缩" class="headerlink" title="Nginx服务器启用gzip压缩"></a>Nginx服务器启用gzip压缩</h1><p>首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下：</p>
+<pre><code>vi /etc/nginx/conf.d/blog.conf
+</code></pre><p>然后在配置文件中加入这一段</p>
+<pre><code>gzip on;
+gzip_proxied any;
+gzip_min_length 1100;
+gzip_buffers 16 8k;
+gzip_types text/plain text/css application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+</code></pre><p>保存退出并重启nginx</p>
+<pre><code>sudo /etc/init.d/nginx reload
+</code></pre><p>接下来就可以看结果了：</p>
+<p>通过这个网址：<a href="https://nixcp.com/tools/gzip-test/" target="_blank" rel="noopener">https://nixcp.com/tools/gzip-test/</a> 测试是否成功开启gzip</p>
+<p>通过这个网址：<a href="http://www.whatsmyip.org/http-compression-test/" target="_blank" rel="noopener">http://www.whatsmyip.org/http-compression-test/</a> 看压缩效果</p>
+<p>最后经过测试，我的网页压缩效果如下：</p>
+<p><img src="http://s1.wailian.download/2018/01/05/artical_2018-01-05.png" alt="压缩效果"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>​    开启gzip，不仅可以提高网页加载速度，减少服务器的负载，还能提高网站排名，还没为自己的网站开启gzip压缩的童鞋，赶快去试试吧~</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            本文作者：<a href="https://bluelzy.com" target="_blank">BlueLzy</a> <br> 本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">CC BY-NC-SA 3.0 Unported License</a> 协议进行许可, 阅读<a href="https://bluelzy.com/creativecommons.html" target="_blank">相关说明</a> 
+                        </strong>
+                        <br>
+                        <strong>本文链接：</strong><a href="https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/">https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/</a>
+                    </p>
+                </blockquote>
         
     
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/01/02/使用Hexo搭建个人博客-三/">使用Hexo搭建个人博客(三)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            本文介绍2018年的第一篇博客，首先祝大家新年快乐，学习进步，工作顺利！  
-这是使用Hexo搭建个人博客系列的最后一...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/01/02/使用Hexo搭建个人博客-三/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="http://s1.wailian.download/2018/01/04/logo.png" width="44px" height="44px" alt="Blue_Lzy's avatar">
-            </div>
-            <div>
-                <strong>Blue_Lzy</strong>
-                <span>1月 02, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/技术向/">技术向</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
 </div>
 
-            
-            
-        
-    
 
-    
+                
 
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjU1My85MTE0">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
     }
-</script>
+</style>
 
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/01/02/使用Hexo搭建个人博客-三/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -832,6 +974,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","https://cdn.bootcss.com/prettify/r298/prettify.js", true)</script>
+        
+    
 
 
 
@@ -844,6 +990,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
