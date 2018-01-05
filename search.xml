@@ -511,9 +511,9 @@ enabled=1
         
         <tags>
             
-            <tag> Nginx </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> Nginx </tag>
             
             <tag> CentOS 6 </tag>
             
