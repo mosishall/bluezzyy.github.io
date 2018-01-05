@@ -19,6 +19,9 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
 </code></pre><p>接下来就可以看结果了：</p>
 <p>通过这个网址：<a href="https://nixcp.com/tools/gzip-test/" target="_blank" rel="noopener">https://nixcp.com/tools/gzip-test/</a> 测试是否成功开启gzip</p>
 <p>通过这个网址：<a href="http://www.whatsmyip.org/http-compression-test/" target="_blank" rel="noopener">http://www.whatsmyip.org/http-compression-test/</a> 看压缩效果</p>
+<p>最后经过测试，我的网页压缩效果如下：</p>
+<p><img src="http://s1.wailian.download/2018/01/05/artical_2018-01-05.png" alt="压缩效果"></p>
+<p>未开启之前是47K，开启以后只有12K，压缩了74%，效果杠杠的。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>​    开启gzip，不仅可以提高网页加载速度，减少服务器的负载，还能提高网站排名，还没为自己的网站开启gzip压缩的童鞋，赶快去试试吧~</p>
 ]]></content>
       
@@ -31,11 +34,11 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
         
         <tags>
             
+            <tag> Nginx </tag>
+            
             <tag> hexo </tag>
             
             <tag> 博客 </tag>
-            
-            <tag> Nginx </tag>
             
             <tag> gzip </tag>
             
