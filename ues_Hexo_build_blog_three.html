@@ -40,15 +40,57 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
 
 
 
+  
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
@@ -83,13 +125,13 @@
 <meta name="keywords" content="hexo,博客,主题,material">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Hexo搭建个人博客(三)">
-<meta property="og:url" content="https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/index.html">
+<meta property="og:url" content="https://www.bluelzy.com/ues_Hexo_build_blog_three.html">
 <meta property="og:site_name" content="BlueLzy&#39;s Blog">
 <meta property="og:description" content="本文介绍2018年的第一篇博客，首先祝大家新年快乐，学习进步，工作顺利！   这是使用Hexo搭建个人博客系列的最后一篇文章，主要介绍Material主题的配置。 Material主题配置文档：Click Me 不了解Material主题的可以看这里：Github地址 前文：使用Hexo搭建个人博客(一)使用Hexo搭建个人博客(二) 主题配置 主题配置文件在：/你的博客目录/themes/mat">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20180102124646491?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20180102124739072?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-01-12T06:55:53.978Z">
+<meta property="og:updated_time" content="2018-01-12T09:32:38.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo搭建个人博客(三)">
 <meta name="twitter:description" content="本文介绍2018年的第一篇博客，首先祝大家新年快乐，学习进步，工作顺利！   这是使用Hexo搭建个人博客系列的最后一篇文章，主要介绍Material主题的配置。 Material主题配置文档：Click Me 不了解Material主题的可以看这里：Github地址 前文：使用Hexo搭建个人博客(一)使用Hexo搭建个人博客(二) 主题配置 主题配置文件在：/你的博客目录/themes/mat">
@@ -103,7 +145,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -123,7 +165,7 @@
 
 
 
-  <link rel="canonical" href="https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/"/>
+  <link rel="canonical" href="https://www.bluelzy.com/ues_Hexo_build_blog_three.html"/>
 
 
 
@@ -203,12 +245,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            关于
+            分类
           </a>
         </li>
       
@@ -223,22 +265,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -309,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/ues_Hexo_build_blog_three.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -378,7 +420,7 @@
 
           
           
-             <span id="/2018/01/02/使用Hexo搭建个人博客-三/" class="leancloud_visitors" data-flag-title="使用Hexo搭建个人博客(三)">
+             <span id="/ues_Hexo_build_blog_three.html" class="leancloud_visitors" data-flag-title="使用Hexo搭建个人博客(三)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -392,6 +434,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,358 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -422,7 +495,7 @@
 <li>high_res_favicon: “/img/favicon.png” 高清版图标</li>
 <li>apple_touch_icon: “/img/favicon.png” IOS主屏图标</li>
 <li>keywords: Blue’s Blog, Android, Python 网站关键词</li>
-<li>site_verification:<br>   google: 谷歌 Search Console 验证<pre><code>    baidu: 百度站长平台验证
+<li>site_verification:<br>   google: 谷歌 Search Console 验证<pre><code>baidu: 百度站长平台验证
 </code></pre></li>
 </ul>
 <h2 id="样式设定-–-Style-Settings"><a href="#样式设定-–-Style-Settings" class="headerlink" title="样式设定  – Style Settings"></a>样式设定  – Style Settings</h2><h3 id="scheme-–-Material主题样式"><a href="#scheme-–-Material主题样式" class="headerlink" title="scheme  – Material主题样式"></a>scheme  – Material主题样式</h3><p>一般使用Paradox</p>
@@ -463,23 +536,12 @@ bing:                          -- bing随机背景
 <h2 id="自定义设定"><a href="#自定义设定" class="headerlink" title="自定义设定"></a>自定义设定</h2><h3 id="copyright-since-–-设置站点成立时间"><a href="#copyright-since-–-设置站点成立时间" class="headerlink" title="copyright_since – 设置站点成立时间"></a>copyright_since – 设置站点成立时间</h3><ul>
 <li>copyright_since: 2017 就会显示2017-2018</li>
 </ul>
-<h3 id="footer-text-–-设置底部文字"><a href="#footer-text-–-设置底部文字" class="headerlink" title="footer_text – 设置底部文字"></a>footer_text – 设置底部文字</h3><pre><code>例如：footer_text: &#39;&lt;a href=&quot;http://www.miitbeian.gov.cn&quot; rel=&quot;nofollow&quot;&gt;某ICP备xxxxxxxx号-x&lt;/a&gt;&#39;
+<h3 id="footer-text-–-设置底部文字"><a href="#footer-text-–-设置底部文字" class="headerlink" title="footer_text – 设置底部文字"></a>footer_text – 设置底部文字</h3><pre><code>例如：footer_text: &apos;&lt;a href=&quot;http://www.miitbeian.gov.cn&quot; rel=&quot;nofollow&quot;&gt;某ICP备xxxxxxxx号-x&lt;/a&gt;&apos;
 </code></pre><h3 id="Code-–-设置代码高亮"><a href="#Code-–-设置代码高亮" class="headerlink" title="Code – 设置代码高亮"></a>Code – 设置代码高亮</h3><p>Material内置两个选项 perttify 和 hanabi，个人比较喜欢perttify，因为hanabi太花哨了，附上配置文件</p>
-<pre><code>prettify:
-    enable: true
-    theme: &quot;atelier-estuary-light&quot;  # atelier-estuary-light  tomorrow-night-eighties
-
-这三个配色我都挺喜欢的，供参考：
-atelier-estuary-light  
-atelier-estuary-light  
-tomorrow-night-eighties
-</code></pre><h3 id="Post-License-–-版权说明"><a href="#Post-License-–-版权说明" class="headerlink" title="Post License – 版权说明"></a>Post License – 版权说明</h3><p>老规矩，直接附上配置：</p>
-<pre><code>  &#39;本文作者：&lt;a href=&quot;https://bluelzy.com&quot; target=&quot;_blank&quot;&gt;BlueLzy&lt;/a&gt;
-  &lt;br&gt;
-  本文采用 &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh&quot; target=&quot;_blank&quot;&gt;CC BY-NC-SA 3.0 Unported License&lt;/a&gt; 协议进行许可,
-   阅读&lt;a href=&quot;https://bluelzy.com/creativecommons.html&quot; target=&quot;_blank&quot;&gt;相关说明&lt;/a&gt;
-  &#39;
-</code></pre><h2 id="菜单设定"><a href="#菜单设定" class="headerlink" title="菜单设定"></a>菜单设定</h2><h3 id="sns-–-设置sns信息"><a href="#sns-–-设置sns信息" class="headerlink" title="sns – 设置sns信息"></a>sns – 设置sns信息</h3><blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">prettify:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    theme:</span> <span class="string">"atelier-estuary-light"</span>  <span class="comment"># atelier-estuary-light  tomorrow-night-eighties</span></span><br><span class="line"></span><br><span class="line"><span class="string">这三个配色我都挺喜欢的，供参考：</span></span><br><span class="line"><span class="string">atelier-estuary-light</span>  </span><br><span class="line"><span class="string">atelier-estuary-light</span>  </span><br><span class="line"><span class="string">tomorrow-night-eighties</span></span><br></pre></td></tr></table></figure>
+<h3 id="Post-License-–-版权说明"><a href="#Post-License-–-版权说明" class="headerlink" title="Post License – 版权说明"></a>Post License – 版权说明</h3><p>老规矩，直接附上配置：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">'本文作者：<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://bluelzy.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>BlueLzy<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">本文采用 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>CC BY-NC-SA 3.0 Unported License<span class="tag">&lt;/<span class="name">a</span>&gt;</span> 协议进行许可,</span><br><span class="line"> 阅读<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://bluelzy.com/creativecommons.html"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>相关说明<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">'</span><br></pre></td></tr></table></figure>
+<h2 id="菜单设定"><a href="#菜单设定" class="headerlink" title="菜单设定"></a>菜单设定</h2><h3 id="sns-–-设置sns信息"><a href="#sns-–-设置sns信息" class="headerlink" title="sns – 设置sns信息"></a>sns – 设置sns信息</h3><blockquote>
 <p>用于填写你的 SNS 信息，其中 email 会显示在侧边栏，其他信息会以按钮的形式显示在 footer。</p>
 </blockquote>
 <ul>
@@ -506,51 +568,8 @@ tomorrow-night-eighties
 <li>telegram</li>
 </ul>
 <h2 id="sidebar-–-设置边栏菜单"><a href="#sidebar-–-设置边栏菜单" class="headerlink" title="sidebar – 设置边栏菜单"></a>sidebar – 设置边栏菜单</h2><p>这一块应该大家都能看懂，直接附上配置文件：</p>
-<pre><code>dropdown:
-        Email Me:
-            link: &quot;mailto: bluehobert@gmail.com&quot;
-            icon: email
-        Github:
-            link: &quot;https://github.com/bluezzyy&quot;
-            icon: layers
-    homepage:
-        use: true
-        icon: home
-        divider: false
-    archives:
-        use: true
-        icon: inbox
-        divider: false
-    categories:
-        use: true
-        icon: chrome_reader_mode
-        divider: true
-    pages:
-        标签云:
-            link: &quot;/tags&quot;
-            icon: label
-            divider: false
-        时间轴:
-            link: &quot;/timeline&quot;
-            icon: cloud
-            divider: false
-        关于我:
-            link: &quot;/about.html&quot;
-            icon: person
-            divider: true
-
-
-
-    article_num:
-        use: true
-        divider: false
-    footer:
-        divider: false
-        theme: false
-        support: false
-        feedback: false
-        material: false
-</code></pre><h2 id="第三方服务"><a href="#第三方服务" class="headerlink" title="第三方服务"></a>第三方服务</h2><blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dropdown:</span></span><br><span class="line">        <span class="string">Email</span> <span class="attr">Me:</span></span><br><span class="line"><span class="attr">            link:</span> <span class="string">"mailto: bluehobert@gmail.com"</span></span><br><span class="line"><span class="attr">            icon:</span> <span class="string">email</span></span><br><span class="line"><span class="attr">        Github:</span></span><br><span class="line"><span class="attr">            link:</span> <span class="string">"https://github.com/bluezzyy"</span></span><br><span class="line"><span class="attr">            icon:</span> <span class="string">layers</span></span><br><span class="line"><span class="attr">    homepage:</span></span><br><span class="line"><span class="attr">        use:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        icon:</span> <span class="string">home</span></span><br><span class="line"><span class="attr">        divider:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    archives:</span></span><br><span class="line"><span class="attr">        use:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        icon:</span> <span class="string">inbox</span></span><br><span class="line"><span class="attr">        divider:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    categories:</span></span><br><span class="line"><span class="attr">        use:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        icon:</span> <span class="string">chrome_reader_mode</span></span><br><span class="line"><span class="attr">        divider:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    pages:</span></span><br><span class="line">        <span class="string">标签云:</span></span><br><span class="line"><span class="attr">            link:</span> <span class="string">"/tags"</span></span><br><span class="line"><span class="attr">            icon:</span> <span class="string">label</span></span><br><span class="line"><span class="attr">            divider:</span> <span class="literal">false</span></span><br><span class="line">        <span class="string">时间轴:</span></span><br><span class="line"><span class="attr">            link:</span> <span class="string">"/timeline"</span></span><br><span class="line"><span class="attr">            icon:</span> <span class="string">cloud</span></span><br><span class="line"><span class="attr">            divider:</span> <span class="literal">false</span></span><br><span class="line">        <span class="string">关于我:</span></span><br><span class="line"><span class="attr">            link:</span> <span class="string">"/about.html"</span></span><br><span class="line"><span class="attr">            icon:</span> <span class="string">person</span></span><br><span class="line"><span class="attr">            divider:</span> <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">    article_num:</span></span><br><span class="line"><span class="attr">        use:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        divider:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    footer:</span></span><br><span class="line"><span class="attr">        divider:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">        theme:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">        support:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">        feedback:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">        material:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="第三方服务"><a href="#第三方服务" class="headerlink" title="第三方服务"></a>第三方服务</h2><blockquote>
 <p>其实Material内置的第三方服务已经基本足够使用了，RSS，评论系统，搜索系统，数据统计与分析等等</p>
 </blockquote>
 <p>这部分可以按照自己实际情况，以及配合<a href="https://material.viosey.com/docs/#/config_services" target="_blank" rel="noopener">官方文档</a>服用，效果更佳，在这里我只介绍自己博客用到的配置，包括：<br>​    </p>
@@ -563,18 +582,10 @@ tomorrow-night-eighties
 <p>然后登陆，安装city版本并获取uid：<br><a href="https://livere.com/apply" target="_blank" rel="noopener">安装地址</a>  </p>
 <p><img src="http://img.blog.csdn.net/20180102124646491?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="安装面板"></p>
 <p>最后修改站点的配置文件</p>
-<pre><code>comment:
-    use: livere
-    shortname: # duoshuo or disqus shortname
-    changyan_appid:
-    changyan_conf:
-    changyan_thread_key_type: path
-    livere_data_uid:  # 来必力的uid
-</code></pre><p>再刷新一下博客，就可以看到评论系统啦~</p>
-<h3 id="搜索系统"><a href="#搜索系统" class="headerlink" title="搜索系统"></a>搜索系统</h3><pre><code>search:
-    use: local
-    swiftype_key:
-</code></pre><p>即可通过关键字搜索本站</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">comment:</span></span><br><span class="line"><span class="symbol">    use:</span> livere</span><br><span class="line"><span class="symbol">    shortname:</span> <span class="meta"># duoshuo or disqus shortname</span></span><br><span class="line"><span class="symbol">    changyan_appid:</span></span><br><span class="line"><span class="symbol">    changyan_conf:</span></span><br><span class="line"><span class="symbol">    changyan_thread_key_type:</span> path</span><br><span class="line"><span class="symbol">    livere_data_uid:</span>  <span class="meta"># 来必力的uid</span></span><br></pre></td></tr></table></figure>
+<p>再刷新一下博客，就可以看到评论系统啦~</p>
+<h3 id="搜索系统"><a href="#搜索系统" class="headerlink" title="搜索系统"></a>搜索系统</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">    use:</span> local</span><br><span class="line"><span class="symbol">    swiftype_key:</span></span><br></pre></td></tr></table></figure>
+<p>即可通过关键字搜索本站</p>
 <h3 id="数据统计-Google-Analytics"><a href="#数据统计-Google-Analytics" class="headerlink" title="数据统计(Google Analytics)"></a>数据统计(Google Analytics)</h3><p><strong>我们只需要获取到跟踪ID即可</strong></p>
 <p>可以参考<a href="https://support.google.com/analytics/answer/1009694?hl=zh-Hans" target="_blank" rel="noopener">Google Analytics（分析）帮助</a></p>
 <p>或者按照以下步骤操作，登陆google analytics 找到管理 -&gt; 媒体资源 -&gt; 跟踪信息 -&gt; 跟踪代码</p>
@@ -607,7 +618,7 @@ tomorrow-night-eighties
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/" title="使用Hexo搭建个人博客(三)">https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/</a>
+    <a href="https://www.bluelzy.com/ues_Hexo_build_blog_three.html" title="使用Hexo搭建个人博客(三)">https://www.bluelzy.com/ues_Hexo_build_blog_three.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -641,18 +652,18 @@ tomorrow-night-eighties
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/29/使用Hexo搭建个人博客-二/" rel="next" title="使用Hexo搭建个人博客(二)">
-                <i class="fa fa-chevron-left"></i> 使用Hexo搭建个人博客(二)
+              <a href="/open_gzip_for_nginx.html" rel="prev" title="为博客提速-Nginx开启gzip压缩">
+                <i class="fa fa-chevron-left"></i> 为博客提速-Nginx开启gzip压缩
               </a>
             
           </div>
 
           <span class="post-nav-divider"></span>
 
-          <div class="post-nav-prev post-nav-item">
+          <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/04/为博客提速-Nginx开启gzip压缩/" rel="prev" title="为博客提速-Nginx开启gzip压缩">
-                为博客提速-Nginx开启gzip压缩 <i class="fa fa-chevron-right"></i>
+              <a href="/ues_Hexo_build_blog_two.html" rel="prev" title="使用Hexo搭建个人博客(二)">
+                使用Hexo搭建个人博客(二) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -701,6 +712,8 @@ tomorrow-night-eighties
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -915,22 +928,22 @@ tomorrow-night-eighties
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 
 
   

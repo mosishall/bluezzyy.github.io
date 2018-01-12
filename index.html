@@ -40,15 +40,57 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
 
 
 
+  
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
@@ -98,7 +140,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -199,12 +241,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            关于
+            分类
           </a>
         </li>
       
@@ -219,22 +261,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -305,7 +347,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/open_gzip_for_nginx.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -324,7 +366,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/04/为博客提速-Nginx开启gzip压缩/" itemprop="url">为博客提速-Nginx开启gzip压缩</a></h2>
+                <a class="post-title-link" href="/open_gzip_for_nginx.html" itemprop="url">为博客提速-Nginx开启gzip压缩</a></h2>
         
 
         <div class="post-meta">
@@ -376,7 +418,7 @@
 
           
           
-             <span id="/2018/01/04/为博客提速-Nginx开启gzip压缩/" class="leancloud_visitors" data-flag-title="为博客提速-Nginx开启gzip压缩">
+             <span id="/open_gzip_for_nginx.html" class="leancloud_visitors" data-flag-title="为博客提速-Nginx开启gzip压缩">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,6 +432,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  327 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -414,7 +487,7 @@ Nginx服务器启用gzip压缩首先，打开nginx的配置文件，我的博客
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/04/为博客提速-Nginx开启gzip压缩/" rel="contents">
+            <a class="btn" href="/open_gzip_for_nginx.html" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -465,7 +538,7 @@ Nginx服务器启用gzip压缩首先，打开nginx的配置文件，我的博客
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2018/01/02/使用Hexo搭建个人博客-三/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/ues_Hexo_build_blog_three.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -484,7 +557,7 @@ Nginx服务器启用gzip压缩首先，打开nginx的配置文件，我的博客
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/02/使用Hexo搭建个人博客-三/" itemprop="url">使用Hexo搭建个人博客(三)</a></h2>
+                <a class="post-title-link" href="/ues_Hexo_build_blog_three.html" itemprop="url">使用Hexo搭建个人博客(三)</a></h2>
         
 
         <div class="post-meta">
@@ -536,7 +609,7 @@ Nginx服务器启用gzip压缩首先，打开nginx的配置文件，我的博客
 
           
           
-             <span id="/2018/01/02/使用Hexo搭建个人博客-三/" class="leancloud_visitors" data-flag-title="使用Hexo搭建个人博客(三)">
+             <span id="/ues_Hexo_build_blog_three.html" class="leancloud_visitors" data-flag-title="使用Hexo搭建个人博客(三)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -550,6 +623,37 @@ Nginx服务器启用gzip压缩首先，打开nginx的配置文件，我的博客
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,358 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -577,7 +681,7 @@ Material主题配置文档：Click Me
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/02/使用Hexo搭建个人博客-三/" rel="contents">
+            <a class="btn" href="/ues_Hexo_build_blog_three.html" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -628,7 +732,7 @@ Material主题配置文档：Click Me
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2017/12/29/使用Hexo搭建个人博客-二/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/ues_Hexo_build_blog_two.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -647,7 +751,7 @@ Material主题配置文档：Click Me
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/29/使用Hexo搭建个人博客-二/" itemprop="url">使用Hexo搭建个人博客(二)</a></h2>
+                <a class="post-title-link" href="/ues_Hexo_build_blog_two.html" itemprop="url">使用Hexo搭建个人博客(二)</a></h2>
         
 
         <div class="post-meta">
@@ -699,7 +803,7 @@ Material主题配置文档：Click Me
 
           
           
-             <span id="/2017/12/29/使用Hexo搭建个人博客-二/" class="leancloud_visitors" data-flag-title="使用Hexo搭建个人博客(二)">
+             <span id="/ues_Hexo_build_blog_two.html" class="leancloud_visitors" data-flag-title="使用Hexo搭建个人博客(二)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -713,6 +817,37 @@ Material主题配置文档：Click Me
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,541 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -744,7 +879,7 @@ Material主题配置文档：Click Me
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/29/使用Hexo搭建个人博客-二/" rel="contents">
+            <a class="btn" href="/ues_Hexo_build_blog_two.html" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -795,7 +930,7 @@ Material主题配置文档：Click Me
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2017/12/28/Vim简单入门/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/vim_guide.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -814,7 +949,7 @@ Material主题配置文档：Click Me
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/28/Vim简单入门/" itemprop="url">Vim简单入门</a></h2>
+                <a class="post-title-link" href="/vim_guide.html" itemprop="url">Vim简单入门</a></h2>
         
 
         <div class="post-meta">
@@ -866,7 +1001,7 @@ Material主题配置文档：Click Me
 
           
           
-             <span id="/2017/12/28/Vim简单入门/" class="leancloud_visitors" data-flag-title="Vim简单入门">
+             <span id="/vim_guide.html" class="leancloud_visitors" data-flag-title="Vim简单入门">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -880,6 +1015,37 @@ Material主题配置文档：Click Me
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  338 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -909,7 +1075,7 @@ B
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/28/Vim简单入门/" rel="contents">
+            <a class="btn" href="/vim_guide.html" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -960,7 +1126,7 @@ B
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/install_nginx_for_centos6.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -979,7 +1145,7 @@ B
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/28/CentOS-6安装Nginx/" itemprop="url">CentOS 6 安装Nginx</a></h2>
+                <a class="post-title-link" href="/install_nginx_for_centos6.html" itemprop="url">CentOS 6 安装Nginx</a></h2>
         
 
         <div class="post-meta">
@@ -1031,7 +1197,7 @@ B
 
           
           
-             <span id="/2017/12/28/CentOS-6安装Nginx/" class="leancloud_visitors" data-flag-title="CentOS 6 安装Nginx">
+             <span id="/install_nginx_for_centos6.html" class="leancloud_visitors" data-flag-title="CentOS 6 安装Nginx">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1045,6 +1211,37 @@ B
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  196 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -1070,17 +1267,15 @@ B
 解决：
 在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo：
 
-cd /etc/yum.repos.d/
-
-vim nginx.repo
+123cd /etc/yum.repos.d/ vim nginx.repo
 
 填写如下内容：
 
-[ngin
+123
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/28/CentOS-6安装Nginx/" rel="contents">
+            <a class="btn" href="/install_nginx_for_centos6.html" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1131,7 +1326,7 @@ vim nginx.repo
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/ues_Hexo_build_blog_one.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -1150,7 +1345,7 @@ vim nginx.repo
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/25/Hexo搭建个人博客-一/" itemprop="url">使用Hexo搭建个人博客(一)</a></h2>
+                <a class="post-title-link" href="/ues_Hexo_build_blog_one.html" itemprop="url">使用Hexo搭建个人博客(一)</a></h2>
         
 
         <div class="post-meta">
@@ -1202,7 +1397,7 @@ vim nginx.repo
 
           
           
-             <span id="/2017/12/25/Hexo搭建个人博客-一/" class="leancloud_visitors" data-flag-title="使用Hexo搭建个人博客(一)">
+             <span id="/ues_Hexo_build_blog_one.html" class="leancloud_visitors" data-flag-title="使用Hexo搭建个人博客(一)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1216,6 +1411,37 @@ vim nginx.repo
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  812 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -1245,7 +1471,7 @@ vim nginx.repo
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/25/Hexo搭建个人博客-一/" rel="contents">
+            <a class="btn" href="/ues_Hexo_build_blog_one.html" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1296,7 +1522,7 @@ vim nginx.repo
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2017/12/21/Shuttle使用简介/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/shuttle_brief_introduction.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -1315,7 +1541,7 @@ vim nginx.repo
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/21/Shuttle使用简介/" itemprop="url">Shuttle安装以及配置简介</a></h2>
+                <a class="post-title-link" href="/shuttle_brief_introduction.html" itemprop="url">Shuttle安装以及配置简介</a></h2>
         
 
         <div class="post-meta">
@@ -1367,7 +1593,7 @@ vim nginx.repo
 
           
           
-             <span id="/2017/12/21/Shuttle使用简介/" class="leancloud_visitors" data-flag-title="Shuttle安装以及配置简介">
+             <span id="/shuttle_brief_introduction.html" class="leancloud_visitors" data-flag-title="Shuttle安装以及配置简介">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1381,6 +1607,37 @@ vim nginx.repo
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  576 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -1403,11 +1660,11 @@ vim nginx.repo
           本文说明：本文介绍Shuttle的安装以及配置，主要是根据Github上的官方文档进行翻译说明，还有自己的一些补充，如果习惯直接看文档的朋友，可以直接关掉这篇文章了~
 Shuttle是什么点击我跳转到Shuttle的Github  
 看一下官方简介，就一句话  
-A simple SSH short
+1A simple SSH shor
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/21/Shuttle使用简介/" rel="contents">
+            <a class="btn" href="/shuttle_brief_introduction.html" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1458,7 +1715,7 @@ A simple SSH short
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2017/12/17/第一篇文章/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/first_article.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -1477,7 +1734,7 @@ A simple SSH short
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/17/第一篇文章/" itemprop="url">第一篇文章</a></h2>
+                <a class="post-title-link" href="/first_article.html" itemprop="url">第一篇文章</a></h2>
         
 
         <div class="post-meta">
@@ -1529,7 +1786,7 @@ A simple SSH short
 
           
           
-             <span id="/2017/12/17/第一篇文章/" class="leancloud_visitors" data-flag-title="第一篇文章">
+             <span id="/first_article.html" class="leancloud_visitors" data-flag-title="第一篇文章">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1543,6 +1800,37 @@ A simple SSH short
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  68 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -1569,7 +1857,7 @@ A simple SSH short
           
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/17/第一篇文章/" rel="contents">
+            <a class="btn" href="/first_article.html" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1631,6 +1919,8 @@ A simple SSH short
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -1820,22 +2110,22 @@ A simple SSH short
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 
 
   

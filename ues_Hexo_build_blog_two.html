@@ -40,15 +40,57 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
 
 
 
+  
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
@@ -68,7 +110,7 @@
 
 
 
-  <meta name="keywords" content="Linux,Vim," />
+  <meta name="keywords" content="hexo,博客,vps,godaddy," />
 
 
 
@@ -79,18 +121,20 @@
 
 
 
-<meta name="description" content="命令模式刚进入vim 都是该模式想要插入字符：请按键盘上的i 切换到插入模式键盘上的 “:” 切换到底线命令模式，在最底一行输入命令。 插入模式想要退出到命令模式请点击键盘上的esc  在输入模式中，可以使用以下按键：    字符按键以及Shift组合，输入字符   ENTER，回车键，换行   BACK SPACE，退格键，删除光标前一个字符   DEL，删除键，删除光标后一个字符     方向">
-<meta name="keywords" content="Linux,Vim">
+<meta name="description" content="本文说明：本文是使用Hexo搭建个人博客系列的第二篇，主要包括    本地安装hexo 服务器配置 把个人博客部署到服务器  关于购买VPS和注册域名，解析域名到IP请看：Hexo搭建个人博客(一) 接下来让我们一步步把博客给搭建起来，跟着这篇博客做，最终就可以把博客部署到服务器上，并且运行起来~ 本地环境配置安装依赖环境安装Hexo需要先安装node.js和git  下载Node.js : No">
+<meta name="keywords" content="hexo,博客,vps,godaddy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vim简单入门">
-<meta property="og:url" content="https://www.bluelzy.com/2017/12/28/Vim简单入门/index.html">
+<meta property="og:title" content="使用Hexo搭建个人博客(二)">
+<meta property="og:url" content="https://www.bluelzy.com/ues_Hexo_build_blog_two.html">
 <meta property="og:site_name" content="BlueLzy&#39;s Blog">
-<meta property="og:description" content="命令模式刚进入vim 都是该模式想要插入字符：请按键盘上的i 切换到插入模式键盘上的 “:” 切换到底线命令模式，在最底一行输入命令。 插入模式想要退出到命令模式请点击键盘上的esc  在输入模式中，可以使用以下按键：    字符按键以及Shift组合，输入字符   ENTER，回车键，换行   BACK SPACE，退格键，删除光标前一个字符   DEL，删除键，删除光标后一个字符     方向">
+<meta property="og:description" content="本文说明：本文是使用Hexo搭建个人博客系列的第二篇，主要包括    本地安装hexo 服务器配置 把个人博客部署到服务器  关于购买VPS和注册域名，解析域名到IP请看：Hexo搭建个人博客(一) 接下来让我们一步步把博客给搭建起来，跟着这篇博客做，最终就可以把博客部署到服务器上，并且运行起来~ 本地环境配置安装依赖环境安装Hexo需要先安装node.js和git  下载Node.js : No">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-12T06:56:19.980Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20171229235500131?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-01-12T09:32:09.332Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vim简单入门">
-<meta name="twitter:description" content="命令模式刚进入vim 都是该模式想要插入字符：请按键盘上的i 切换到插入模式键盘上的 “:” 切换到底线命令模式，在最底一行输入命令。 插入模式想要退出到命令模式请点击键盘上的esc  在输入模式中，可以使用以下按键：    字符按键以及Shift组合，输入字符   ENTER，回车键，换行   BACK SPACE，退格键，删除光标前一个字符   DEL，删除键，删除光标后一个字符     方向">
+<meta name="twitter:title" content="使用Hexo搭建个人博客(二)">
+<meta name="twitter:description" content="本文说明：本文是使用Hexo搭建个人博客系列的第二篇，主要包括    本地安装hexo 服务器配置 把个人博客部署到服务器  关于购买VPS和注册域名，解析域名到IP请看：Hexo搭建个人博客(一) 接下来让我们一步步把博客给搭建起来，跟着这篇博客做，最终就可以把博客部署到服务器上，并且运行起来~ 本地环境配置安装依赖环境安装Hexo需要先安装node.js和git  下载Node.js : No">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20171229235500131?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -100,7 +144,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -120,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="https://www.bluelzy.com/2017/12/28/Vim简单入门/"/>
+  <link rel="canonical" href="https://www.bluelzy.com/ues_Hexo_build_blog_two.html"/>
 
 
 
 
 
-  <title>Vim简单入门 | BlueLzy's Blog</title>
+  <title>使用Hexo搭建个人博客(二) | BlueLzy's Blog</title>
   
 
 
@@ -200,12 +244,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            关于
+            分类
           </a>
         </li>
       
@@ -220,22 +264,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -306,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2017/12/28/Vim简单入门/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/ues_Hexo_build_blog_two.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -323,7 +367,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Vim简单入门</h2>
+          <h2 class="post-title" itemprop="name headline">使用Hexo搭建个人博客(二)</h2>
         
 
         <div class="post-meta">
@@ -335,8 +379,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T11:14:54+08:00">
-                2017-12-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-29T23:50:20+08:00">
+                2017-12-29
               </time>
             
 
@@ -375,7 +419,7 @@
 
           
           
-             <span id="/2017/12/28/Vim简单入门/" class="leancloud_visitors" data-flag-title="Vim简单入门">
+             <span id="/ues_Hexo_build_blog_two.html" class="leancloud_visitors" data-flag-title="使用Hexo搭建个人博客(二)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,6 +433,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,541 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -406,34 +481,119 @@
       
 
       
-        <h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>刚进入vim 都是该模式<br>想要插入字符：请按键盘上的i 切换到插入模式<br>键盘上的 “:” 切换到底线命令模式，在最底一行输入命令。</p>
-<h3 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h3><p>想要退出到<strong>命令模式</strong><br>请点击键盘上的<strong>esc</strong> </p>
-<p>在输入模式中，可以使用以下按键：  </p>
+        <h1 id="本文说明："><a href="#本文说明：" class="headerlink" title="本文说明："></a>本文说明：</h1><p>本文是使用Hexo搭建个人博客系列的第二篇，主要包括  </p>
 <ul>
-<li>字符按键以及Shift组合，输入字符  </li>
-<li>ENTER，回车键，换行  </li>
-<li>BACK SPACE，退格键，删除光标前一个字符  </li>
-<li>DEL，删除键，删除光标后一个字符    </li>
-<li>方向键，在文本中移动光标  </li>
-<li>HOME/END，移动光标到行首/行尾  </li>
-<li>Page Up/Page Down，上/下翻页  </li>
-<li>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线  </li>
-<li>ESC，退出输入模式，切换到命令模式  </li>
+<li>本地安装hexo</li>
+<li>服务器配置</li>
+<li>把个人博客部署到服务器</li>
 </ul>
-<h3 id="底线命令模式"><a href="#底线命令模式" class="headerlink" title="底线命令模式"></a>底线命令模式</h3><ul>
-<li>q 不保存,直接退出  </li>
-<li>q! 不保存，并强制退出  </li>
-<li>e! 放弃所有修改，从上次保存文件开始再编辑  </li>
-<li>w 保存文件,但不退出  </li>
-<li>w! 强制保存，不退出  </li>
-<li>wq或x 保存，并退出  </li>
-<li>wq! 强制保存，并退出  </li>
+<p>关于购买VPS和注册域名，解析域名到IP请看：<a href="https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/">Hexo搭建个人博客(一)</a></p>
+<p>接下来让我们一步步把博客给搭建起来，跟着这篇博客做，最终就可以把博客部署到服务器上，并且运行起来~</p>
+<h1 id="本地环境配置"><a href="#本地环境配置" class="headerlink" title="本地环境配置"></a>本地环境配置</h1><h2 id="安装依赖环境"><a href="#安装依赖环境" class="headerlink" title="安装依赖环境"></a>安装依赖环境</h2><p>安装Hexo需要先安装node.js和git</p>
+<ul>
+<li>下载Node.js : <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js下载地址</a></li>
+<li>下载Git: <a href="https://git-scm.com/download/" target="_blank" rel="noopener">Git下载地址</a></li>
 </ul>
-<h3 id="一般操作步骤"><a href="#一般操作步骤" class="headerlink" title="一般操作步骤"></a>一般操作步骤</h3><ul>
-<li>vim file_name 打开文件</li>
-<li>此时是命令模式 按<strong>i</strong> 进入<strong>插入模式</strong>，进行自己需要的修改</li>
-<li>按<strong>esc</strong> 返回到命令模式，按 <strong>:</strong> 进入底线命令模式</li>
-<li>输入wq 保存并退出</li>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>只需要一行命令：</p>
+<pre><code>$ npm install hexo-cli -g
+</code></pre><p>例如我的博客目录是 /MyBlog<br>通过命令   </p>
+<pre><code>cd /MyBlog
+</code></pre><p>切换到博客目录</p>
+<p>然后在博客目录下初始化hexo博客，blog为博客名，可随意更改</p>
+<pre><code>hexo init blog  
+</code></pre><p>进入博客目录并安装插件依赖  </p>
+<pre><code>cd blog
+npm install
+</code></pre><p>最后执行命令</p>
+<pre><code>hexo g
+hexo s 
+</code></pre><p>顺利的话，应该能看到终端打印出地址：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
+<p>点击地址打开浏览器，应该能看到Hexo默认主题的界面了~当然，我的主题已经换了，所以打开是这样的：</p>
+<p><img src="http://img.blog.csdn.net/20171229235500131?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="首页"></p>
+<h2 id="安装部署依赖环境"><a href="#安装部署依赖环境" class="headerlink" title="安装部署依赖环境"></a>安装部署依赖环境</h2><p>部署Hexo使用</p>
+<pre><code>hexo deploy
+</code></pre><p>命令即可，但是在这之前，需要先安装依赖环境server和deploy-git</p>
+<p>在终端输入：</p>
+<pre><code>$ npm install hexo-server --save  #
+$ npm install hexo-deployer-git --save
+</code></pre><p>至此，本地环境就搭建好了，除了这个，我们还需要搭建服务器的环境，所以接下来就是服务器的配置。</p>
+<h1 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h1><h2 id="安装Git和NodeJS"><a href="#安装Git和NodeJS" class="headerlink" title="安装Git和NodeJS"></a>安装Git和NodeJS</h2><p>只需要两行命令</p>
+<pre><code>$ yum install git  # 安装git
+
+curl --silent --location https://rpm.nodesource.com/setup_5.x | bash -   # 安装NodeJS
+</code></pre><h2 id="创建Git用户"><a href="#创建Git用户" class="headerlink" title="创建Git用户"></a>创建Git用户</h2><blockquote>
+<p>为了能让Hexo直接部署到VPS上，需要在服务器新建用户git</p>
+</blockquote>
+<ul>
+<li>步骤：</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">adduser git    <span class="comment"># 添加git用户</span></span><br><span class="line">sudo passwd git  <span class="comment"># 给git用户设置密码  </span></span><br><span class="line">chmod <span class="number">740</span> <span class="regexp">/etc/</span>sudoers  </span><br><span class="line">vim <span class="regexp">/etc/</span>sudoers</span><br></pre></td></tr></table></figure>
+<p>然后找到这一行</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Allow root to run any commands anywhere</span></span><br><span class="line"><span class="attribute">root</span>    <span class="literal">ALL</span>=(<span class="literal">ALL</span>)     <span class="literal">ALL</span></span><br></pre></td></tr></table></figure>
+<p>并添加</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br></pre></td></tr></table></figure>
+<p>接下来我们需要把电脑的公钥配置到服务器，这样才能向服务器提交代码</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">su git</span><br><span class="line">mkdir ~<span class="string">/.ssh</span></span><br><span class="line">vim ~<span class="string">/.ssh/authorized_keys</span></span><br><span class="line"><span class="comment">#然后在本地执行 cat ~/.ssh/id_rsa.pub | pbcopy ,将公钥复制粘贴到authorized_keys</span></span><br><span class="line">chmod 600 ~<span class="string">/.ssh/authorzied_keys</span></span><br><span class="line">chmod 700 ~<span class="string">/.ssh</span></span><br></pre></td></tr></table></figure>
+<p>OK，到这里，我们就把服务器git用户给配置完了，可以通过命令</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssh</span> -v git<span class="variable">@SERVER</span>  <span class="comment"># SERVER是你的服务器地址</span></span><br></pre></td></tr></table></figure>
+<p>来测试一下，是不是可以免密码登陆到服务器，如果可以，那就说明没问题了。</p>
+<h2 id="安装和配置Nginx"><a href="#安装和配置Nginx" class="headerlink" title="安装和配置Nginx"></a>安装和配置Nginx</h2><h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><p>由于我的vps上运行的是CentOS 6 的系统，直接安装Nginx会报错，解决方法请参考这篇博客：<a href="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">CentOS 6 安装Nginx</a></p>
+<p>CentOS 7 可以直接执行命令：  </p>
+<pre><code>$ sudo yum install epel-release
+$ sudo yum install nginx    
+</code></pre><p>然后再启动Nginx：</p>
+<pre><code>sudo systemctl start nginx
+</code></pre><p>CentOS 6 启动Nginx的命令应该是：<br>​<br>    /etc/init.d/nginx start</p>
+<p>这个时候在浏览器输入服务器ip地址或者域名，就能看到Nginx欢迎页。</p>
+<h3 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h3><ul>
+<li>在 /etc/nginx/conf.d/ 创建虚拟主机配置文件 blog.conf</li>
+</ul>
+<p>加入以下内容： </p>
+<ul>
+<li>server_name: 改成你的服务器名字，或者域名  </li>
+<li>root: 改成你的博客根目录</li>
+</ul>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">server</span></span><br><span class="line">&#123;</span><br><span class="line">    listen <span class="number">80</span>;</span><br><span class="line">    <span class="meta">#listen [::]:80;</span></span><br><span class="line">    server_name  bluelzy.com www.bluelzy.com;</span><br><span class="line">    <span class="keyword">index</span> <span class="keyword">index</span>.html <span class="keyword">index</span>.htm <span class="keyword">index</span>.php <span class="keyword">default</span>.html <span class="keyword">default</span>.htm <span class="keyword">default</span>.php;</span><br><span class="line">    <span class="meta">#这里要改成网站的根目录</span></span><br><span class="line">    root  /var/www/hexo;  </span><br><span class="line"></span><br><span class="line">    include other.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后再重启一下Nginx，即可  </p>
+<pre><code>service nginx restart
+</code></pre><h2 id="创建Git仓库"><a href="#创建Git仓库" class="headerlink" title="创建Git仓库"></a>创建Git仓库</h2><p>既然本地环境配好了，服务器所需要的环境也配好了，那么现在就需要在服务器建一个仓库，用来管理博客的代码，这一块比较重要，关乎到能不能成功部署博客。  </p>
+<p>其实就是两步：  </p>
+<ul>
+<li>创建仓库  </li>
+<li>设置git hook</li>
+</ul>
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>执行以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~ </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir blog.git &amp;&amp; <span class="built_in">cd</span> blog.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git init --bare</span></span><br></pre></td></tr></table></figure>
+<p>解释一下这一行：</p>
+<pre><code>git init --bare
+</code></pre><p>意思是初始化一个裸仓库，创建一个裸仓库，并且这个仓库是可以被正常 clone 和 push 更新的， 裸仓库不包含工作区，所以并不会存在在裸仓库上直接提交变更的情况。</p>
+<h3 id="设置git-hook"><a href="#设置git-hook" class="headerlink" title="设置git hook"></a>设置git hook</h3><p>我们使用 post-receive这个钩子.在 ~/blog.git 裸库的 hooks文件夹中，<br>新建post-receive文件。</p>
+<pre><code>vim ~/blog.git/hooks/post-receive
+</code></pre><p>在文件中加入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">git --work-tree=/var/www/hexo --git-dir=~/blog.git checkout -f</span><br></pre></td></tr></table></figure>
+<p><strong>注意： –work-tree=/var/www/hexo 要改成你的博客根目录，也就是上面Nginx配置文件中的root</strong></p>
+<p>保存退出(wq)</p>
+<p>然后再赋予这个文件运行的权限</p>
+<pre><code>chmod +x post-receive
+</code></pre><p>​<br>OK,到这一步，服务器的配置也已经全部完成了。</p>
+<p><strong>恭喜你，如果能按着博客一步步看到这里，并且一切正常，那么你离成功搭建一个博客，还差最后一步….</strong></p>
+<h1 id="本地配置-config-yml"><a href="#本地配置-config-yml" class="headerlink" title="本地配置_config.yml"></a>本地配置_config.yml</h1><p>打开Hexo站点目录下的_config.yml文件，找到 <strong>deploy</strong>关键字</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">    <span class="attribute">type</span>: git</span><br><span class="line">    <span class="attribute">repo</span>: git<span class="variable">@SERVER</span>:/home/git/blog.git    <span class="comment">// 仓库地址</span></span><br><span class="line">    <span class="attribute">branch</span>: master      </span><br><span class="line">    <span class="attribute">message</span>: 提交的信息</span><br></pre></td></tr></table></figure>
+<p>把SERVER改成你的服务器地址，然后保存文件，大功告成！</p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>我们使用</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo clean</span></span><br><span class="line"><span class="attribute">hexo g</span></span><br><span class="line"><span class="attribute">hexo d</span></span><br></pre></td></tr></table></figure>
+<p>把Hexo从本地部署到服务器上，执行完之后，在浏览器访问你的服务器地址，应该就能看到博客首页了。</p>
+<p>以后写好文章，再执行上面这三句命令，就可以实现自动化部署了，真是人生一大乐事(捂嘴)</p>
+<h1 id="总结-amp-期望"><a href="#总结-amp-期望" class="headerlink" title="总结&amp;期望"></a>总结&amp;期望</h1><p>这篇文章从本地环境到服务器环境，再到自动化部署都作了一个详细的说明，从无到有搭建起了一个个人博客。接下来我会结合自己的博客，介绍一下</p>
+<ul>
+<li>主题选择</li>
+<li>主题配置</li>
+<li>第三方服务</li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://eliyar.biz/how_to_build_hexo_blog/" target="_blank" rel="noopener">从 0 开始搭建 hexo 博客</a></li>
+<li><a href="https://segmentfault.com/a/1190000005723321" target="_blank" rel="noopener">阿里云VPS搭建自己的的Hexo博客</a></li>
+<li><a href="http://sobaigu.com/Hexo-git-to-vps.html" target="_blank" rel="noopener">开始新的折腾，Hexo博客Git-VPS部署完整记录</a></li>
 </ul>
 
       
@@ -455,7 +615,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.bluelzy.com/2017/12/28/Vim简单入门/" title="Vim简单入门">https://www.bluelzy.com/2017/12/28/Vim简单入门/</a>
+    <a href="https://www.bluelzy.com/ues_Hexo_build_blog_two.html" title="使用Hexo搭建个人博客(二)">https://www.bluelzy.com/ues_Hexo_build_blog_two.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -470,9 +630,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
-            <a href="/tags/Vim/" rel="tag"># Vim</a>
+            <a href="/tags/博客/" rel="tag"># 博客</a>
+          
+            <a href="/tags/vps/" rel="tag"># vps</a>
+          
+            <a href="/tags/godaddy/" rel="tag"># godaddy</a>
           
         </div>
       
@@ -485,18 +649,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/28/CentOS-6安装Nginx/" rel="next" title="CentOS 6 安装Nginx">
-                <i class="fa fa-chevron-left"></i> CentOS 6 安装Nginx
+              <a href="/ues_Hexo_build_blog_three.html" rel="prev" title="使用Hexo搭建个人博客(三)">
+                <i class="fa fa-chevron-left"></i> 使用Hexo搭建个人博客(三)
               </a>
             
           </div>
 
           <span class="post-nav-divider"></span>
 
-          <div class="post-nav-prev post-nav-item">
+          <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/29/使用Hexo搭建个人博客-二/" rel="prev" title="使用Hexo搭建个人博客(二)">
-                使用Hexo搭建个人博客(二) <i class="fa fa-chevron-right"></i>
+              <a href="/vim_guide.html" rel="prev" title="Vim简单入门">
+                Vim简单入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -545,6 +709,8 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -663,7 +829,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x547D;&#x4EE4;&#x6A21;&#x5F0F;" class="headerlink" title="&#x547D;&#x4EE4;&#x6A21;&#x5F0F;"></a>&#x547D;&#x4EE4;&#x6A21;&#x5F0F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入模式"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x63D2;&#x5165;&#x6A21;&#x5F0F;" class="headerlink" title="&#x63D2;&#x5165;&#x6A21;&#x5F0F;"></a>&#x63D2;&#x5165;&#x6A21;&#x5F0F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#底线命令模式"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5E95;&#x7EBF;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;" class="headerlink" title="&#x5E95;&#x7EBF;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;"></a>&#x5E95;&#x7EBF;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一般操作步骤"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x4E00;&#x822C;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;" class="headerlink" title="&#x4E00;&#x822C;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;"></a>&#x4E00;&#x822C;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本文说明："><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;" class="headerlink" title="&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;"></a>&#x672C;&#x6587;&#x8BF4;&#x660E;&#xFF1A;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地环境配置"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x672C;&#x5730;&#x73AF;&#x5883;&#x914D;&#x7F6E;" class="headerlink" title="&#x672C;&#x5730;&#x73AF;&#x5883;&#x914D;&#x7F6E;"></a>&#x672C;&#x5730;&#x73AF;&#x5883;&#x914D;&#x7F6E;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装依赖环境"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x73AF;&#x5883;" class="headerlink" title="&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x73AF;&#x5883;"></a>&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x73AF;&#x5883;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;Hexo" class="headerlink" title="&#x5B89;&#x88C5;Hexo"></a>&#x5B89;&#x88C5;Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装部署依赖环境"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;&#x90E8;&#x7F72;&#x4F9D;&#x8D56;&#x73AF;&#x5883;" class="headerlink" title="&#x5B89;&#x88C5;&#x90E8;&#x7F72;&#x4F9D;&#x8D56;&#x73AF;&#x5883;"></a>&#x5B89;&#x88C5;&#x90E8;&#x7F72;&#x4F9D;&#x8D56;&#x73AF;&#x5883;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器配置"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;" class="headerlink" title="&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;"></a>&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Git和NodeJS"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;Git&#x548C;NodeJS" class="headerlink" title="&#x5B89;&#x88C5;Git&#x548C;NodeJS"></a>&#x5B89;&#x88C5;Git&#x548C;NodeJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Git用户"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#&#x521B;&#x5EFA;Git&#x7528;&#x6237;" class="headerlink" title="&#x521B;&#x5EFA;Git&#x7528;&#x6237;"></a>&#x521B;&#x5EFA;Git&#x7528;&#x6237;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装和配置Nginx"><span class="nav-number">3.3.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;&#x548C;&#x914D;&#x7F6E;Nginx" class="headerlink" title="&#x5B89;&#x88C5;&#x548C;&#x914D;&#x7F6E;Nginx"></a>&#x5B89;&#x88C5;&#x548C;&#x914D;&#x7F6E;Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Nginx"><span class="nav-number">3.3.1.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;Nginx" class="headerlink" title="&#x5B89;&#x88C5;Nginx"></a>&#x5B89;&#x88C5;Nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Nginx"><span class="nav-number">3.3.2.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;Nginx" class="headerlink" title="&#x914D;&#x7F6E;Nginx"></a>&#x914D;&#x7F6E;Nginx</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Git仓库"><span class="nav-number">3.4.</span> <span class="nav-text"><a href="#&#x521B;&#x5EFA;Git&#x4ED3;&#x5E93;" class="headerlink" title="&#x521B;&#x5EFA;Git&#x4ED3;&#x5E93;"></a>&#x521B;&#x5EFA;Git&#x4ED3;&#x5E93;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建仓库"><span class="nav-number">3.4.1.</span> <span class="nav-text"><a href="#&#x521B;&#x5EFA;&#x4ED3;&#x5E93;" class="headerlink" title="&#x521B;&#x5EFA;&#x4ED3;&#x5E93;"></a>&#x521B;&#x5EFA;&#x4ED3;&#x5E93;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置git-hook"><span class="nav-number">3.4.2.</span> <span class="nav-text"><a href="#&#x8BBE;&#x7F6E;git-hook" class="headerlink" title="&#x8BBE;&#x7F6E;git hook"></a>&#x8BBE;&#x7F6E;git hook</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地配置-config-yml"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x672C;&#x5730;&#x914D;&#x7F6E;-config-yml" class="headerlink" title="&#x672C;&#x5730;&#x914D;&#x7F6E;_config.yml"></a>&#x672C;&#x5730;&#x914D;&#x7F6E;_config.yml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x6D4B;&#x8BD5;" class="headerlink" title="&#x6D4B;&#x8BD5;"></a>&#x6D4B;&#x8BD5;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结-amp-期望"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x603B;&#x7ED3;-amp-&#x671F;&#x671B;" class="headerlink" title="&#x603B;&#x7ED3;&amp;&#x671F;&#x671B;"></a>&#x603B;&#x7ED3;&amp;&#x671F;&#x671B;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</span></a></li></ol></div>
             
 
           </div>
@@ -759,22 +925,22 @@
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 
 
   

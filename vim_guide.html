@@ -40,15 +40,57 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
 
 
 
+  
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
@@ -68,7 +110,7 @@
 
 
 
-  <meta name="keywords" content="Nginx,hexo,博客,gzip," />
+  <meta name="keywords" content="Linux,Vim," />
 
 
 
@@ -79,20 +121,18 @@
 
 
 
-<meta name="description" content="本文说明这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩 Nginx服务器启用gzip压缩首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下： vi /etc/nginx/conf.d/blog.conf 然后在">
-<meta name="keywords" content="Nginx,hexo,博客,gzip">
+<meta name="description" content="命令模式刚进入vim 都是该模式想要插入字符：请按键盘上的i 切换到插入模式键盘上的 “:” 切换到底线命令模式，在最底一行输入命令。 插入模式想要退出到命令模式请点击键盘上的esc  在输入模式中，可以使用以下按键：    字符按键以及Shift组合，输入字符   ENTER，回车键，换行   BACK SPACE，退格键，删除光标前一个字符   DEL，删除键，删除光标后一个字符     方向">
+<meta name="keywords" content="Linux,Vim">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为博客提速-Nginx开启gzip压缩">
-<meta property="og:url" content="https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/index.html">
+<meta property="og:title" content="Vim简单入门">
+<meta property="og:url" content="https://www.bluelzy.com/vim_guide.html">
 <meta property="og:site_name" content="BlueLzy&#39;s Blog">
-<meta property="og:description" content="本文说明这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩 Nginx服务器启用gzip压缩首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下： vi /etc/nginx/conf.d/blog.conf 然后在">
+<meta property="og:description" content="命令模式刚进入vim 都是该模式想要插入字符：请按键盘上的i 切换到插入模式键盘上的 “:” 切换到底线命令模式，在最底一行输入命令。 插入模式想要退出到命令模式请点击键盘上的esc  在输入模式中，可以使用以下按键：    字符按键以及Shift组合，输入字符   ENTER，回车键，换行   BACK SPACE，退格键，删除光标前一个字符   DEL，删除键，删除光标后一个字符     方向">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://s1.wailian.download/2018/01/05/artical_2018-01-05.png">
-<meta property="og:updated_time" content="2018-01-12T06:56:07.267Z">
+<meta property="og:updated_time" content="2018-01-12T09:32:53.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为博客提速-Nginx开启gzip压缩">
-<meta name="twitter:description" content="本文说明这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩 Nginx服务器启用gzip压缩首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下： vi /etc/nginx/conf.d/blog.conf 然后在">
-<meta name="twitter:image" content="http://s1.wailian.download/2018/01/05/artical_2018-01-05.png">
+<meta name="twitter:title" content="Vim简单入门">
+<meta name="twitter:description" content="命令模式刚进入vim 都是该模式想要插入字符：请按键盘上的i 切换到插入模式键盘上的 “:” 切换到底线命令模式，在最底一行输入命令。 插入模式想要退出到命令模式请点击键盘上的esc  在输入模式中，可以使用以下按键：    字符按键以及Shift组合，输入字符   ENTER，回车键，换行   BACK SPACE，退格键，删除光标前一个字符   DEL，删除键，删除光标后一个字符     方向">
 
 
 
@@ -102,7 +142,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -122,13 +162,13 @@
 
 
 
-  <link rel="canonical" href="https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/"/>
+  <link rel="canonical" href="https://www.bluelzy.com/vim_guide.html"/>
 
 
 
 
 
-  <title>为博客提速-Nginx开启gzip压缩 | BlueLzy's Blog</title>
+  <title>Vim简单入门 | BlueLzy's Blog</title>
   
 
 
@@ -202,12 +242,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            关于
+            分类
           </a>
         </li>
       
@@ -222,22 +262,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -308,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/vim_guide.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -325,7 +365,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">为博客提速-Nginx开启gzip压缩</h2>
+          <h2 class="post-title" itemprop="name headline">Vim简单入门</h2>
         
 
         <div class="post-meta">
@@ -337,8 +377,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-04T23:48:36+08:00">
-                2018-01-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T11:14:54+08:00">
+                2017-12-28
               </time>
             
 
@@ -377,7 +417,7 @@
 
           
           
-             <span id="/2018/01/04/为博客提速-Nginx开启gzip压缩/" class="leancloud_visitors" data-flag-title="为博客提速-Nginx开启gzip压缩">
+             <span id="/vim_guide.html" class="leancloud_visitors" data-flag-title="Vim简单入门">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -391,6 +431,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  338 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -408,24 +479,35 @@
       
 
       
-        <h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p>这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩</p>
-<h1 id="Nginx服务器启用gzip压缩"><a href="#Nginx服务器启用gzip压缩" class="headerlink" title="Nginx服务器启用gzip压缩"></a>Nginx服务器启用gzip压缩</h1><p>首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下：</p>
-<pre><code>vi /etc/nginx/conf.d/blog.conf
-</code></pre><p>然后在配置文件中加入这一段</p>
-<pre><code>gzip on;
-gzip_proxied any;
-gzip_min_length 1100;
-gzip_buffers 16 8k;
-gzip_types text/plain text/css application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;
-</code></pre><p>保存退出并重启nginx</p>
-<pre><code>sudo /etc/init.d/nginx reload
-</code></pre><p>接下来就可以看结果了：</p>
-<p>通过这个网址：<a href="https://nixcp.com/tools/gzip-test/" target="_blank" rel="noopener">https://nixcp.com/tools/gzip-test/</a> 测试是否成功开启gzip</p>
-<p>通过这个网址：<a href="http://www.whatsmyip.org/http-compression-test/" target="_blank" rel="noopener">http://www.whatsmyip.org/http-compression-test/</a> 看压缩效果</p>
-<p>最后经过测试，我的网页压缩效果如下：</p>
-<p><img src="http://s1.wailian.download/2018/01/05/artical_2018-01-05.png" alt="压缩效果"></p>
-<p>未开启之前是47K，开启以后只有12K，压缩了74%，效果杠杠的。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>​    开启gzip，不仅可以提高网页加载速度，减少服务器的负载，还能提高网站排名，还没为自己的网站开启gzip压缩的童鞋，赶快去试试吧~</p>
+        <h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>刚进入vim 都是该模式<br>想要插入字符：请按键盘上的i 切换到插入模式<br>键盘上的 “:” 切换到底线命令模式，在最底一行输入命令。</p>
+<h3 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h3><p>想要退出到<strong>命令模式</strong><br>请点击键盘上的<strong>esc</strong> </p>
+<p>在输入模式中，可以使用以下按键：  </p>
+<ul>
+<li>字符按键以及Shift组合，输入字符  </li>
+<li>ENTER，回车键，换行  </li>
+<li>BACK SPACE，退格键，删除光标前一个字符  </li>
+<li>DEL，删除键，删除光标后一个字符    </li>
+<li>方向键，在文本中移动光标  </li>
+<li>HOME/END，移动光标到行首/行尾  </li>
+<li>Page Up/Page Down，上/下翻页  </li>
+<li>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线  </li>
+<li>ESC，退出输入模式，切换到命令模式  </li>
+</ul>
+<h3 id="底线命令模式"><a href="#底线命令模式" class="headerlink" title="底线命令模式"></a>底线命令模式</h3><ul>
+<li>q 不保存,直接退出  </li>
+<li>q! 不保存，并强制退出  </li>
+<li>e! 放弃所有修改，从上次保存文件开始再编辑  </li>
+<li>w 保存文件,但不退出  </li>
+<li>w! 强制保存，不退出  </li>
+<li>wq或x 保存，并退出  </li>
+<li>wq! 强制保存，并退出  </li>
+</ul>
+<h3 id="一般操作步骤"><a href="#一般操作步骤" class="headerlink" title="一般操作步骤"></a>一般操作步骤</h3><ul>
+<li>vim file_name 打开文件</li>
+<li>此时是命令模式 按<strong>i</strong> 进入<strong>插入模式</strong>，进行自己需要的修改</li>
+<li>按<strong>esc</strong> 返回到命令模式，按 <strong>:</strong> 进入底线命令模式</li>
+<li>输入wq 保存并退出</li>
+</ul>
 
       
     </div>
@@ -446,7 +528,7 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/" title="为博客提速-Nginx开启gzip压缩">https://www.bluelzy.com/2018/01/04/为博客提速-Nginx开启gzip压缩/</a>
+    <a href="https://www.bluelzy.com/vim_guide.html" title="Vim简单入门">https://www.bluelzy.com/vim_guide.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -461,13 +543,9 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
       
         <div class="post-tags">
           
-            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-            <a href="/tags/博客/" rel="tag"># 博客</a>
-          
-            <a href="/tags/gzip/" rel="tag"># gzip</a>
+            <a href="/tags/Vim/" rel="tag"># Vim</a>
           
         </div>
       
@@ -480,15 +558,19 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/02/使用Hexo搭建个人博客-三/" rel="next" title="使用Hexo搭建个人博客(三)">
-                <i class="fa fa-chevron-left"></i> 使用Hexo搭建个人博客(三)
+              <a href="/ues_Hexo_build_blog_two.html" rel="prev" title="使用Hexo搭建个人博客(二)">
+                <i class="fa fa-chevron-left"></i> 使用Hexo搭建个人博客(二)
               </a>
             
           </div>
 
           <span class="post-nav-divider"></span>
 
-          <div class="post-nav-prev post-nav-item">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/install_nginx_for_centos6.html" rel="prev" title="CentOS 6 安装Nginx">
+                CentOS 6 安装Nginx <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -536,6 +618,8 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -654,7 +738,7 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本文说明"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x672C;&#x6587;&#x8BF4;&#x660E;" class="headerlink" title="&#x672C;&#x6587;&#x8BF4;&#x660E;"></a>&#x672C;&#x6587;&#x8BF4;&#x660E;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx服务器启用gzip压缩"><span class="nav-number">2.</span> <span class="nav-text"><a href="#Nginx&#x670D;&#x52A1;&#x5668;&#x542F;&#x7528;gzip&#x538B;&#x7F29;" class="headerlink" title="Nginx&#x670D;&#x52A1;&#x5668;&#x542F;&#x7528;gzip&#x538B;&#x7F29;"></a>Nginx&#x670D;&#x52A1;&#x5668;&#x542F;&#x7528;gzip&#x538B;&#x7F29;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令模式"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x547D;&#x4EE4;&#x6A21;&#x5F0F;" class="headerlink" title="&#x547D;&#x4EE4;&#x6A21;&#x5F0F;"></a>&#x547D;&#x4EE4;&#x6A21;&#x5F0F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入模式"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x63D2;&#x5165;&#x6A21;&#x5F0F;" class="headerlink" title="&#x63D2;&#x5165;&#x6A21;&#x5F0F;"></a>&#x63D2;&#x5165;&#x6A21;&#x5F0F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#底线命令模式"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5E95;&#x7EBF;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;" class="headerlink" title="&#x5E95;&#x7EBF;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;"></a>&#x5E95;&#x7EBF;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一般操作步骤"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x4E00;&#x822C;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;" class="headerlink" title="&#x4E00;&#x822C;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;"></a>&#x4E00;&#x822C;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;</span></a></li></ol></div>
             
 
           </div>
@@ -750,22 +834,22 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 
 
   

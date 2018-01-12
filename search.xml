@@ -4,19 +4,19 @@
     
     <entry>
       <title><![CDATA[为博客提速-Nginx开启gzip压缩]]></title>
-      <url>/2018/01/04/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%8F%90%E9%80%9F-Nginx%E5%BC%80%E5%90%AFgzip%E5%8E%8B%E7%BC%A9/</url>
+      <url>/open_gzip_for_nginx.html</url>
       <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p>这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩</p>
 <h1 id="Nginx服务器启用gzip压缩"><a href="#Nginx服务器启用gzip压缩" class="headerlink" title="Nginx服务器启用gzip压缩"></a>Nginx服务器启用gzip压缩</h1><p>首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下：</p>
-<pre><code>vi /etc/nginx/conf.d/blog.conf
-</code></pre><p>然后在配置文件中加入这一段</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vi</span> /etc/nginx/<span class="keyword">conf</span>.d/blog.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<p>然后在配置文件中加入这一段</p>
 <pre><code>gzip on;
 gzip_proxied any;
 gzip_min_length 1100;
 gzip_buffers 16 8k;
 gzip_types text/plain text/css application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;
 </code></pre><p>保存退出并重启nginx</p>
-<pre><code>sudo /etc/init.d/nginx reload
-</code></pre><p>接下来就可以看结果了：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="string">/etc/init.d/nginx</span> <span class="keyword">reload</span></span><br></pre></td></tr></table></figure>
+<p>接下来就可以看结果了：</p>
 <p>通过这个网址：<a href="https://nixcp.com/tools/gzip-test/" target="_blank" rel="noopener">https://nixcp.com/tools/gzip-test/</a> 测试是否成功开启gzip</p>
 <p>通过这个网址：<a href="http://www.whatsmyip.org/http-compression-test/" target="_blank" rel="noopener">http://www.whatsmyip.org/http-compression-test/</a> 看压缩效果</p>
 <p>最后经过测试，我的网页压缩效果如下：</p>
@@ -48,7 +48,7 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
     
     <entry>
       <title><![CDATA[使用Hexo搭建个人博客(三)]]></title>
-      <url>/2018/01/02/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E4%B8%89/</url>
+      <url>/ues_Hexo_build_blog_three.html</url>
       <content type="html"><![CDATA[<h1 id="本文介绍"><a href="#本文介绍" class="headerlink" title="本文介绍"></a>本文介绍</h1><p><strong>2018年的第一篇博客，首先祝大家新年快乐，学习进步，工作顺利！</strong>  </p>
 <p>这是使用Hexo搭建个人博客系列的最后一篇文章，主要介绍<strong>Material主题</strong>的配置。</p>
 <p>Material主题配置文档：<a href="https://material.viosey.com/docs/#/start" target="_blank" rel="noopener">Click Me</a></p>
@@ -62,7 +62,7 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
 <li>high_res_favicon: “/img/favicon.png” 高清版图标</li>
 <li>apple_touch_icon: “/img/favicon.png” IOS主屏图标</li>
 <li>keywords: Blue’s Blog, Android, Python 网站关键词</li>
-<li>site_verification:<br>   google: 谷歌 Search Console 验证<pre><code>    baidu: 百度站长平台验证
+<li>site_verification:<br>   google: 谷歌 Search Console 验证<pre><code>baidu: 百度站长平台验证
 </code></pre></li>
 </ul>
 <h2 id="样式设定-–-Style-Settings"><a href="#样式设定-–-Style-Settings" class="headerlink" title="样式设定  – Style Settings"></a>样式设定  – Style Settings</h2><h3 id="scheme-–-Material主题样式"><a href="#scheme-–-Material主题样式" class="headerlink" title="scheme  – Material主题样式"></a>scheme  – Material主题样式</h3><p>一般使用Paradox</p>
@@ -103,23 +103,12 @@ bing:                          -- bing随机背景
 <h2 id="自定义设定"><a href="#自定义设定" class="headerlink" title="自定义设定"></a>自定义设定</h2><h3 id="copyright-since-–-设置站点成立时间"><a href="#copyright-since-–-设置站点成立时间" class="headerlink" title="copyright_since – 设置站点成立时间"></a>copyright_since – 设置站点成立时间</h3><ul>
 <li>copyright_since: 2017 就会显示2017-2018</li>
 </ul>
-<h3 id="footer-text-–-设置底部文字"><a href="#footer-text-–-设置底部文字" class="headerlink" title="footer_text – 设置底部文字"></a>footer_text – 设置底部文字</h3><pre><code>例如：footer_text: &#39;&lt;a href=&quot;http://www.miitbeian.gov.cn&quot; rel=&quot;nofollow&quot;&gt;某ICP备xxxxxxxx号-x&lt;/a&gt;&#39;
+<h3 id="footer-text-–-设置底部文字"><a href="#footer-text-–-设置底部文字" class="headerlink" title="footer_text – 设置底部文字"></a>footer_text – 设置底部文字</h3><pre><code>例如：footer_text: &apos;&lt;a href=&quot;http://www.miitbeian.gov.cn&quot; rel=&quot;nofollow&quot;&gt;某ICP备xxxxxxxx号-x&lt;/a&gt;&apos;
 </code></pre><h3 id="Code-–-设置代码高亮"><a href="#Code-–-设置代码高亮" class="headerlink" title="Code – 设置代码高亮"></a>Code – 设置代码高亮</h3><p>Material内置两个选项 perttify 和 hanabi，个人比较喜欢perttify，因为hanabi太花哨了，附上配置文件</p>
-<pre><code>prettify:
-    enable: true
-    theme: &quot;atelier-estuary-light&quot;  # atelier-estuary-light  tomorrow-night-eighties
-
-这三个配色我都挺喜欢的，供参考：
-atelier-estuary-light  
-atelier-estuary-light  
-tomorrow-night-eighties
-</code></pre><h3 id="Post-License-–-版权说明"><a href="#Post-License-–-版权说明" class="headerlink" title="Post License – 版权说明"></a>Post License – 版权说明</h3><p>老规矩，直接附上配置：</p>
-<pre><code>  &#39;本文作者：&lt;a href=&quot;https://bluelzy.com&quot; target=&quot;_blank&quot;&gt;BlueLzy&lt;/a&gt;
-  &lt;br&gt;
-  本文采用 &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh&quot; target=&quot;_blank&quot;&gt;CC BY-NC-SA 3.0 Unported License&lt;/a&gt; 协议进行许可,
-   阅读&lt;a href=&quot;https://bluelzy.com/creativecommons.html&quot; target=&quot;_blank&quot;&gt;相关说明&lt;/a&gt;
-  &#39;
-</code></pre><h2 id="菜单设定"><a href="#菜单设定" class="headerlink" title="菜单设定"></a>菜单设定</h2><h3 id="sns-–-设置sns信息"><a href="#sns-–-设置sns信息" class="headerlink" title="sns – 设置sns信息"></a>sns – 设置sns信息</h3><blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">prettify:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    theme:</span> <span class="string">"atelier-estuary-light"</span>  <span class="comment"># atelier-estuary-light  tomorrow-night-eighties</span></span><br><span class="line"></span><br><span class="line"><span class="string">这三个配色我都挺喜欢的，供参考：</span></span><br><span class="line"><span class="string">atelier-estuary-light</span>  </span><br><span class="line"><span class="string">atelier-estuary-light</span>  </span><br><span class="line"><span class="string">tomorrow-night-eighties</span></span><br></pre></td></tr></table></figure>
+<h3 id="Post-License-–-版权说明"><a href="#Post-License-–-版权说明" class="headerlink" title="Post License – 版权说明"></a>Post License – 版权说明</h3><p>老规矩，直接附上配置：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">'本文作者：<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://bluelzy.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>BlueLzy<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">本文采用 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>CC BY-NC-SA 3.0 Unported License<span class="tag">&lt;/<span class="name">a</span>&gt;</span> 协议进行许可,</span><br><span class="line"> 阅读<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://bluelzy.com/creativecommons.html"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>相关说明<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">'</span><br></pre></td></tr></table></figure>
+<h2 id="菜单设定"><a href="#菜单设定" class="headerlink" title="菜单设定"></a>菜单设定</h2><h3 id="sns-–-设置sns信息"><a href="#sns-–-设置sns信息" class="headerlink" title="sns – 设置sns信息"></a>sns – 设置sns信息</h3><blockquote>
 <p>用于填写你的 SNS 信息，其中 email 会显示在侧边栏，其他信息会以按钮的形式显示在 footer。</p>
 </blockquote>
 <ul>
@@ -146,51 +135,8 @@ tomorrow-night-eighties
 <li>telegram</li>
 </ul>
 <h2 id="sidebar-–-设置边栏菜单"><a href="#sidebar-–-设置边栏菜单" class="headerlink" title="sidebar – 设置边栏菜单"></a>sidebar – 设置边栏菜单</h2><p>这一块应该大家都能看懂，直接附上配置文件：</p>
-<pre><code>dropdown:
-        Email Me:
-            link: &quot;mailto: bluehobert@gmail.com&quot;
-            icon: email
-        Github:
-            link: &quot;https://github.com/bluezzyy&quot;
-            icon: layers
-    homepage:
-        use: true
-        icon: home
-        divider: false
-    archives:
-        use: true
-        icon: inbox
-        divider: false
-    categories:
-        use: true
-        icon: chrome_reader_mode
-        divider: true
-    pages:
-        标签云:
-            link: &quot;/tags&quot;
-            icon: label
-            divider: false
-        时间轴:
-            link: &quot;/timeline&quot;
-            icon: cloud
-            divider: false
-        关于我:
-            link: &quot;/about.html&quot;
-            icon: person
-            divider: true
-
-
-
-    article_num:
-        use: true
-        divider: false
-    footer:
-        divider: false
-        theme: false
-        support: false
-        feedback: false
-        material: false
-</code></pre><h2 id="第三方服务"><a href="#第三方服务" class="headerlink" title="第三方服务"></a>第三方服务</h2><blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dropdown:</span></span><br><span class="line">        <span class="string">Email</span> <span class="attr">Me:</span></span><br><span class="line"><span class="attr">            link:</span> <span class="string">"mailto: bluehobert@gmail.com"</span></span><br><span class="line"><span class="attr">            icon:</span> <span class="string">email</span></span><br><span class="line"><span class="attr">        Github:</span></span><br><span class="line"><span class="attr">            link:</span> <span class="string">"https://github.com/bluezzyy"</span></span><br><span class="line"><span class="attr">            icon:</span> <span class="string">layers</span></span><br><span class="line"><span class="attr">    homepage:</span></span><br><span class="line"><span class="attr">        use:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        icon:</span> <span class="string">home</span></span><br><span class="line"><span class="attr">        divider:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    archives:</span></span><br><span class="line"><span class="attr">        use:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        icon:</span> <span class="string">inbox</span></span><br><span class="line"><span class="attr">        divider:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    categories:</span></span><br><span class="line"><span class="attr">        use:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        icon:</span> <span class="string">chrome_reader_mode</span></span><br><span class="line"><span class="attr">        divider:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    pages:</span></span><br><span class="line">        <span class="string">标签云:</span></span><br><span class="line"><span class="attr">            link:</span> <span class="string">"/tags"</span></span><br><span class="line"><span class="attr">            icon:</span> <span class="string">label</span></span><br><span class="line"><span class="attr">            divider:</span> <span class="literal">false</span></span><br><span class="line">        <span class="string">时间轴:</span></span><br><span class="line"><span class="attr">            link:</span> <span class="string">"/timeline"</span></span><br><span class="line"><span class="attr">            icon:</span> <span class="string">cloud</span></span><br><span class="line"><span class="attr">            divider:</span> <span class="literal">false</span></span><br><span class="line">        <span class="string">关于我:</span></span><br><span class="line"><span class="attr">            link:</span> <span class="string">"/about.html"</span></span><br><span class="line"><span class="attr">            icon:</span> <span class="string">person</span></span><br><span class="line"><span class="attr">            divider:</span> <span class="literal">true</span></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">    article_num:</span></span><br><span class="line"><span class="attr">        use:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">        divider:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    footer:</span></span><br><span class="line"><span class="attr">        divider:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">        theme:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">        support:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">        feedback:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">        material:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="第三方服务"><a href="#第三方服务" class="headerlink" title="第三方服务"></a>第三方服务</h2><blockquote>
 <p>其实Material内置的第三方服务已经基本足够使用了，RSS，评论系统，搜索系统，数据统计与分析等等</p>
 </blockquote>
 <p>这部分可以按照自己实际情况，以及配合<a href="https://material.viosey.com/docs/#/config_services" target="_blank" rel="noopener">官方文档</a>服用，效果更佳，在这里我只介绍自己博客用到的配置，包括：<br>​    </p>
@@ -203,18 +149,10 @@ tomorrow-night-eighties
 <p>然后登陆，安装city版本并获取uid：<br><a href="https://livere.com/apply" target="_blank" rel="noopener">安装地址</a>  </p>
 <p><img src="http://img.blog.csdn.net/20180102124646491?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="安装面板"></p>
 <p>最后修改站点的配置文件</p>
-<pre><code>comment:
-    use: livere
-    shortname: # duoshuo or disqus shortname
-    changyan_appid:
-    changyan_conf:
-    changyan_thread_key_type: path
-    livere_data_uid:  # 来必力的uid
-</code></pre><p>再刷新一下博客，就可以看到评论系统啦~</p>
-<h3 id="搜索系统"><a href="#搜索系统" class="headerlink" title="搜索系统"></a>搜索系统</h3><pre><code>search:
-    use: local
-    swiftype_key:
-</code></pre><p>即可通过关键字搜索本站</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">comment:</span></span><br><span class="line"><span class="symbol">    use:</span> livere</span><br><span class="line"><span class="symbol">    shortname:</span> <span class="meta"># duoshuo or disqus shortname</span></span><br><span class="line"><span class="symbol">    changyan_appid:</span></span><br><span class="line"><span class="symbol">    changyan_conf:</span></span><br><span class="line"><span class="symbol">    changyan_thread_key_type:</span> path</span><br><span class="line"><span class="symbol">    livere_data_uid:</span>  <span class="meta"># 来必力的uid</span></span><br></pre></td></tr></table></figure>
+<p>再刷新一下博客，就可以看到评论系统啦~</p>
+<h3 id="搜索系统"><a href="#搜索系统" class="headerlink" title="搜索系统"></a>搜索系统</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">    use:</span> local</span><br><span class="line"><span class="symbol">    swiftype_key:</span></span><br></pre></td></tr></table></figure>
+<p>即可通过关键字搜索本站</p>
 <h3 id="数据统计-Google-Analytics"><a href="#数据统计-Google-Analytics" class="headerlink" title="数据统计(Google Analytics)"></a>数据统计(Google Analytics)</h3><p><strong>我们只需要获取到跟踪ID即可</strong></p>
 <p>可以参考<a href="https://support.google.com/analytics/answer/1009694?hl=zh-Hans" target="_blank" rel="noopener">Google Analytics（分析）帮助</a></p>
 <p>或者按照以下步骤操作，登陆google analytics 找到管理 -&gt; 媒体资源 -&gt; 跟踪信息 -&gt; 跟踪代码</p>
@@ -252,7 +190,7 @@ tomorrow-night-eighties
     
     <entry>
       <title><![CDATA[使用Hexo搭建个人博客(二)]]></title>
-      <url>/2017/12/29/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E4%BA%8C/</url>
+      <url>/ues_Hexo_build_blog_two.html</url>
       <content type="html"><![CDATA[<h1 id="本文说明："><a href="#本文说明：" class="headerlink" title="本文说明："></a>本文说明：</h1><p>本文是使用Hexo搭建个人博客系列的第二篇，主要包括  </p>
 <ul>
 <li>本地安装hexo</li>
@@ -299,25 +237,16 @@ curl --silent --location https://rpm.nodesource.com/setup_5.x | bash -   # 安�
 <ul>
 <li>步骤：</li>
 </ul>
-<pre><code>adduser git    # 添加git用户
-sudo passwd git  # 给git用户设置密码  
-chmod 740 /etc/sudoers  
-vim /etc/sudoers
-</code></pre><p>然后找到这一行</p>
-<pre><code>## Allow root to run any commands anywhere
-root    ALL=(ALL)     ALL
-</code></pre><p>并添加</p>
-<pre><code>git ALL=(ALL) ALL
-</code></pre><p>接下来我们需要把电脑的公钥配置到服务器，这样才能向服务器提交代码</p>
-<pre><code>su git
-mkdir ~/.ssh
-vim ~/.ssh/authorized_keys
-#然后在本地执行 cat ~/.ssh/id_rsa.pub | pbcopy ,将公钥复制粘贴到authorized_keys
-chmod 600 ~/.ssh/authorzied_keys
-chmod 700 ~/.ssh
-</code></pre><p>OK，到这里，我们就把服务器git用户给配置完了，可以通过命令</p>
-<pre><code>ssh -v git@SERVER  # SERVER是你的服务器地址
-</code></pre><p>来测试一下，是不是可以免密码登陆到服务器，如果可以，那就说明没问题了。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">adduser git    <span class="comment"># 添加git用户</span></span><br><span class="line">sudo passwd git  <span class="comment"># 给git用户设置密码  </span></span><br><span class="line">chmod <span class="number">740</span> <span class="regexp">/etc/</span>sudoers  </span><br><span class="line">vim <span class="regexp">/etc/</span>sudoers</span><br></pre></td></tr></table></figure>
+<p>然后找到这一行</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Allow root to run any commands anywhere</span></span><br><span class="line"><span class="attribute">root</span>    <span class="literal">ALL</span>=(<span class="literal">ALL</span>)     <span class="literal">ALL</span></span><br></pre></td></tr></table></figure>
+<p>并添加</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br></pre></td></tr></table></figure>
+<p>接下来我们需要把电脑的公钥配置到服务器，这样才能向服务器提交代码</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">su git</span><br><span class="line">mkdir ~<span class="string">/.ssh</span></span><br><span class="line">vim ~<span class="string">/.ssh/authorized_keys</span></span><br><span class="line"><span class="comment">#然后在本地执行 cat ~/.ssh/id_rsa.pub | pbcopy ,将公钥复制粘贴到authorized_keys</span></span><br><span class="line">chmod 600 ~<span class="string">/.ssh/authorzied_keys</span></span><br><span class="line">chmod 700 ~<span class="string">/.ssh</span></span><br></pre></td></tr></table></figure>
+<p>OK，到这里，我们就把服务器git用户给配置完了，可以通过命令</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssh</span> -v git<span class="variable">@SERVER</span>  <span class="comment"># SERVER是你的服务器地址</span></span><br></pre></td></tr></table></figure>
+<p>来测试一下，是不是可以免密码登陆到服务器，如果可以，那就说明没问题了。</p>
 <h2 id="安装和配置Nginx"><a href="#安装和配置Nginx" class="headerlink" title="安装和配置Nginx"></a>安装和配置Nginx</h2><h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><p>由于我的vps上运行的是CentOS 6 的系统，直接安装Nginx会报错，解决方法请参考这篇博客：<a href="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">CentOS 6 安装Nginx</a></p>
 <p>CentOS 7 可以直接执行命令：  </p>
 <pre><code>$ sudo yum install epel-release
@@ -334,18 +263,8 @@ $ sudo yum install nginx
 <li>server_name: 改成你的服务器名字，或者域名  </li>
 <li>root: 改成你的博客根目录</li>
 </ul>
-<pre><code>server
-{
-    listen 80;
-    #listen [::]:80;
-    server_name  bluelzy.com www.bluelzy.com;
-    index index.html index.htm index.php default.html default.htm default.php;
-    #这里要改成网站的根目录
-    root  /var/www/hexo;  
-
-    include other.conf;
-}
-</code></pre><p>然后再重启一下Nginx，即可  </p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">server</span></span><br><span class="line">&#123;</span><br><span class="line">    listen <span class="number">80</span>;</span><br><span class="line">    <span class="meta">#listen [::]:80;</span></span><br><span class="line">    server_name  bluelzy.com www.bluelzy.com;</span><br><span class="line">    <span class="keyword">index</span> <span class="keyword">index</span>.html <span class="keyword">index</span>.htm <span class="keyword">index</span>.php <span class="keyword">default</span>.html <span class="keyword">default</span>.htm <span class="keyword">default</span>.php;</span><br><span class="line">    <span class="meta">#这里要改成网站的根目录</span></span><br><span class="line">    root  /var/www/hexo;  </span><br><span class="line"></span><br><span class="line">    include other.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后再重启一下Nginx，即可  </p>
 <pre><code>service nginx restart
 </code></pre><h2 id="创建Git仓库"><a href="#创建Git仓库" class="headerlink" title="创建Git仓库"></a>创建Git仓库</h2><p>既然本地环境配好了，服务器所需要的环境也配好了，那么现在就需要在服务器建一个仓库，用来管理博客的代码，这一块比较重要，关乎到能不能成功部署博客。  </p>
 <p>其实就是两步：  </p>
@@ -354,35 +273,26 @@ $ sudo yum install nginx
 <li>设置git hook</li>
 </ul>
 <h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>执行以下命令：</p>
-<pre><code>$ cd ~ 
-$ mkdir blog.git &amp;&amp; cd blog.git
-$ git init --bare
-</code></pre><p>解释一下这一行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~ </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir blog.git &amp;&amp; <span class="built_in">cd</span> blog.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git init --bare</span></span><br></pre></td></tr></table></figure>
+<p>解释一下这一行：</p>
 <pre><code>git init --bare
 </code></pre><p>意思是初始化一个裸仓库，创建一个裸仓库，并且这个仓库是可以被正常 clone 和 push 更新的， 裸仓库不包含工作区，所以并不会存在在裸仓库上直接提交变更的情况。</p>
 <h3 id="设置git-hook"><a href="#设置git-hook" class="headerlink" title="设置git hook"></a>设置git hook</h3><p>我们使用 post-receive这个钩子.在 ~/blog.git 裸库的 hooks文件夹中，<br>新建post-receive文件。</p>
 <pre><code>vim ~/blog.git/hooks/post-receive
 </code></pre><p>在文件中加入：</p>
-<pre><code>#!/bin/sh
-git --work-tree=/var/www/hexo --git-dir=~/blog.git checkout -f
-</code></pre><p><strong>注意： –work-tree=/var/www/hexo 要改成你的博客根目录，也就是上面Nginx配置文件中的root</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">git --work-tree=/var/www/hexo --git-dir=~/blog.git checkout -f</span><br></pre></td></tr></table></figure>
+<p><strong>注意： –work-tree=/var/www/hexo 要改成你的博客根目录，也就是上面Nginx配置文件中的root</strong></p>
 <p>保存退出(wq)</p>
 <p>然后再赋予这个文件运行的权限</p>
 <pre><code>chmod +x post-receive
 </code></pre><p>​<br>OK,到这一步，服务器的配置也已经全部完成了。</p>
 <p><strong>恭喜你，如果能按着博客一步步看到这里，并且一切正常，那么你离成功搭建一个博客，还差最后一步….</strong></p>
 <h1 id="本地配置-config-yml"><a href="#本地配置-config-yml" class="headerlink" title="本地配置_config.yml"></a>本地配置_config.yml</h1><p>打开Hexo站点目录下的_config.yml文件，找到 <strong>deploy</strong>关键字</p>
-<pre><code>deploy:
-    type: git
-    repo: git@SERVER:/home/git/blog.git    // 仓库地址
-    branch: master      
-    message: 提交的信息
-</code></pre><p>把SERVER改成你的服务器地址，然后保存文件，大功告成！</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">    <span class="attribute">type</span>: git</span><br><span class="line">    <span class="attribute">repo</span>: git<span class="variable">@SERVER</span>:/home/git/blog.git    <span class="comment">// 仓库地址</span></span><br><span class="line">    <span class="attribute">branch</span>: master      </span><br><span class="line">    <span class="attribute">message</span>: 提交的信息</span><br></pre></td></tr></table></figure>
+<p>把SERVER改成你的服务器地址，然后保存文件，大功告成！</p>
 <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>我们使用</p>
-<pre><code>hexo clean
-hexo g
-hexo d
-</code></pre><p>把Hexo从本地部署到服务器上，执行完之后，在浏览器访问你的服务器地址，应该就能看到博客首页了。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo clean</span></span><br><span class="line"><span class="attribute">hexo g</span></span><br><span class="line"><span class="attribute">hexo d</span></span><br></pre></td></tr></table></figure>
+<p>把Hexo从本地部署到服务器上，执行完之后，在浏览器访问你的服务器地址，应该就能看到博客首页了。</p>
 <p>以后写好文章，再执行上面这三句命令，就可以实现自动化部署了，真是人生一大乐事(捂嘴)</p>
 <h1 id="总结-amp-期望"><a href="#总结-amp-期望" class="headerlink" title="总结&amp;期望"></a>总结&amp;期望</h1><p>这篇文章从本地环境到服务器环境，再到自动化部署都作了一个详细的说明，从无到有搭建起了一个个人博客。接下来我会结合自己的博客，介绍一下</p>
 <ul>
@@ -420,7 +330,7 @@ hexo d
     
     <entry>
       <title><![CDATA[Vim简单入门]]></title>
-      <url>/2017/12/28/Vim%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</url>
+      <url>/vim_guide.html</url>
       <content type="html"><![CDATA[<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>刚进入vim 都是该模式<br>想要插入字符：请按键盘上的i 切换到插入模式<br>键盘上的 “:” 切换到底线命令模式，在最底一行输入命令。</p>
 <h3 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h3><p>想要退出到<strong>命令模式</strong><br>请点击键盘上的<strong>esc</strong> </p>
 <p>在输入模式中，可以使用以下按键：  </p>
@@ -471,25 +381,19 @@ hexo d
     
     <entry>
       <title><![CDATA[CentOS 6 安装Nginx]]></title>
-      <url>/2017/12/28/CentOS-6%E5%AE%89%E8%A3%85Nginx/</url>
+      <url>/install_nginx_for_centos6.html</url>
       <content type="html"><![CDATA[<h1 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h1><blockquote>
 <p>直接yum install nginx -y 会报package not found 的错</p>
 </blockquote>
 <h1 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h1><ul>
 <li>在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo：</li>
 </ul>
-<pre><code>cd /etc/yum.repos.d/
-
-vim nginx.repo
-</code></pre><ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/yum<span class="selector-class">.repos</span><span class="selector-class">.d</span>/</span><br><span class="line"> </span><br><span class="line">vim nginx.repo</span><br></pre></td></tr></table></figure>
+<ul>
 <li>填写如下内容：</li>
 </ul>
-<pre><code>[nginx]
-name=nginx repo
-baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
-gpgcheck=0
-enabled=1
-</code></pre><ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[nginx]</span></span><br><span class="line"><span class="attr">name</span>=nginx repo</span><br><span class="line"><span class="attr">baseurl</span>=http://nginx.org/packages/centos/<span class="variable">$releasever</span>/<span class="variable">$basearch</span>/</span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">0</span></span><br><span class="line"><span class="attr">enabled</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<ul>
 <li>保存，则会产生一个/etc/yum.repos.d/nginx.repo文件。</li>
 </ul>
 <p>我们现在再来执行Nginx安装命令：</p>
@@ -523,7 +427,7 @@ enabled=1
     
     <entry>
       <title><![CDATA[使用Hexo搭建个人博客(一)]]></title>
-      <url>/2017/12/25/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2-%E4%B8%80/</url>
+      <url>/ues_Hexo_build_blog_one.html</url>
       <content type="html"><![CDATA[<h1 id="本文说明："><a href="#本文说明：" class="headerlink" title="本文说明："></a>本文说明：</h1><p>本文是使用Hexo搭建个人博客系列的第一篇，主要是介绍一些准备工作，也是作为搭建<a href="https://www.bluelzy.com">本人博客</a>的过程回顾，主要包括   </p>
 <ul>
 <li>购买VPS</li>
@@ -592,12 +496,12 @@ enabled=1
     
     <entry>
       <title><![CDATA[Shuttle安装以及配置简介]]></title>
-      <url>/2017/12/21/Shuttle%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</url>
+      <url>/shuttle_brief_introduction.html</url>
       <content type="html"><![CDATA[<h1 id="本文说明："><a href="#本文说明：" class="headerlink" title="本文说明："></a>本文说明：</h1><p>本文介绍Shuttle的安装以及配置，主要是根据<strong><a href="https://github.com/fitztrev/shuttle/wiki" target="_blank" rel="noopener">Github上的官方文档</a></strong>进行翻译说明，还有自己的一些补充，如果习惯直接看文档的朋友，可以直接关掉这篇文章了~</p>
 <h2 id="Shuttle是什么"><a href="#Shuttle是什么" class="headerlink" title="Shuttle是什么"></a>Shuttle是什么</h2><p><a href="http://fitztrev.github.io/shuttle/" target="_blank" rel="noopener">点击我跳转到Shuttle的Github</a>  </p>
 <p>看一下官方简介，就一句话  </p>
-<pre><code>A simple SSH shortcut menu for macOS
-</code></pre><p>顾名思义，就是一个Mac上管理SSH的工具<br><br></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A<span class="built_in"> simple </span>SSH shortcut menu <span class="keyword">for</span> macOS</span><br></pre></td></tr></table></figure>
+<p>顾名思义，就是一个Mac上管理SSH的工具<br><br></p>
 <h2 id="Shuttle怎么用"><a href="#Shuttle怎么用" class="headerlink" title="Shuttle怎么用"></a>Shuttle怎么用</h2><p>接下来，让我给大家介绍一下Shuttle的用法 </p>
 <ol>
 <li><h3 id="安装Shuttle"><a href="#安装Shuttle" class="headerlink" title="安装Shuttle"></a>安装Shuttle</h3><p>首先到Shuttle的官网下载：<br><a href="http://fitztrev.github.io/shuttle/" target="_blank" rel="noopener">点击我跳转到下载地址</a><br>然后把Shuttle复制到Application文件夹下即可</p>
@@ -612,8 +516,8 @@ enabled=1
 </li>
 <li><p>“iTerm_version”: “VALUE”, 设置iTerm版本，分别有三种  </p>
 <p>   “iTerm_version”: “legacy”,  2.14版本  </p>
-<pre><code>   &quot;iTerm\_version&quot;: &quot;stable&quot;, 最新版本
-   &quot;iTerm\_version&quot;: &quot;nightly&quot;, nightly build 版本 
+<pre><code>&quot;iTerm\_version&quot;: &quot;stable&quot;, 最新版本
+&quot;iTerm\_version&quot;: &quot;nightly&quot;, nightly build 版本 
 </code></pre></li>
 <li><p>“default_theme”: “Homebrew” 设置终端主题  </p>
 </li>
@@ -638,24 +542,9 @@ current 在当前窗口执行命令
 </ul>
 </li>
 </ol>
-<h2 id="Shuttle示例"><a href="#Shuttle示例" class="headerlink" title="Shuttle示例"></a>Shuttle示例</h2><pre><code>&quot;hosts&quot;: [
-    {
-      &quot;cmd&quot;: &quot;ssh root@127.0.0.1 -p 4000&quot;,
-      &quot;inTerminal&quot;: &quot;tab&quot;,
-      &quot;name&quot;: &quot;SSH - root用户&quot;,
-      &quot;theme&quot;: &quot;basic&quot;,
-      &quot;title&quot;: &quot;Blue&quot;
-    },
-    {
-      &quot;cmd&quot;: &quot;ssh root@127.0.0.1 -p 4000&quot;,
-      &quot;inTerminal&quot;: &quot;tab&quot;,
-      &quot;name&quot;: &quot;SSH - git用户&quot;,
-      &quot;theme&quot;: &quot;basic&quot;,
-      &quot;title&quot;: &quot;Blue&quot;
-    }
-    ]
-</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>shuttle 除了可以用来当SSH管理工具以外，还能执行多条命令操作，提高效率，只要用分号分隔即可    </p>
-<pre><code> 例如 pwd; ls; cd /; 就会按顺序执行以上三条命令。  
+<h2 id="Shuttle示例"><a href="#Shuttle示例" class="headerlink" title="Shuttle示例"></a>Shuttle示例</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"hosts"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"cmd"</span>: <span class="string">"ssh root@127.0.0.1 -p 4000"</span>,</span><br><span class="line">      <span class="string">"inTerminal"</span>: <span class="string">"tab"</span>,</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"SSH - root用户"</span>,</span><br><span class="line">      <span class="string">"theme"</span>: <span class="string">"basic"</span>,</span><br><span class="line">      <span class="string">"title"</span>: <span class="string">"Blue"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"cmd"</span>: <span class="string">"ssh root@127.0.0.1 -p 4000"</span>,</span><br><span class="line">      <span class="string">"inTerminal"</span>: <span class="string">"tab"</span>,</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"SSH - git用户"</span>,</span><br><span class="line">      <span class="string">"theme"</span>: <span class="string">"basic"</span>,</span><br><span class="line">      <span class="string">"title"</span>: <span class="string">"Blue"</span></span><br><span class="line">    &#125;</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>shuttle 除了可以用来当SSH管理工具以外，还能执行多条命令操作，提高效率，只要用分号分隔即可    </p>
+<pre><code>例如 pwd; ls; cd /; 就会按顺序执行以上三条命令。  
 </code></pre><p>好了，本文只是简单介绍了shuttle的基本用法，欢迎大家一起交流学习~</p>
 <p>​    </p>
 ]]></content>
@@ -683,7 +572,7 @@ current 在当前窗口执行命令
     
     <entry>
       <title><![CDATA[第一篇文章]]></title>
-      <url>/2017/12/17/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      <url>/first_article.html</url>
       <content type="html"><![CDATA[<p>emmm….<br>接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末<br>这个博客不仅仅会写技术，也会记录日常生活~<br>反正就是一个想到什么写什么的地方<br><br><br><br><br><br></p>
 <p>我是Blue</p>
 <p>嘻嘻</p>

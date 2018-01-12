@@ -40,15 +40,57 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
 
 
 
+  
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
@@ -68,7 +110,7 @@
 
 
 
-  <meta name="keywords" content="Linux,Nginx,CentOS 6," />
+  <meta name="keywords" content="日常," />
 
 
 
@@ -79,18 +121,18 @@
 
 
 
-<meta name="description" content="问题： 直接yum install nginx -y 会报package not found 的错  解决： 在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo：  cd /etc/yum.repos.d/  vim nginx.repo  填写如下内容：  [nginx] name=nginx repo baseurl=http://nginx.org/packag">
-<meta name="keywords" content="Linux,Nginx,CentOS 6">
+<meta name="description" content="emmm….接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末这个博客不仅仅会写技术，也会记录日常生活~反正就是一个想到什么写什么的地方 我是Blue 嘻嘻">
+<meta name="keywords" content="日常">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS 6 安装Nginx">
-<meta property="og:url" content="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/index.html">
+<meta property="og:title" content="第一篇文章">
+<meta property="og:url" content="https://www.bluelzy.com/first_article.html">
 <meta property="og:site_name" content="BlueLzy&#39;s Blog">
-<meta property="og:description" content="问题： 直接yum install nginx -y 会报package not found 的错  解决： 在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo：  cd /etc/yum.repos.d/  vim nginx.repo  填写如下内容：  [nginx] name=nginx repo baseurl=http://nginx.org/packag">
+<meta property="og:description" content="emmm….接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末这个博客不仅仅会写技术，也会记录日常生活~反正就是一个想到什么写什么的地方 我是Blue 嘻嘻">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-12T06:56:10.249Z">
+<meta property="og:updated_time" content="2018-01-12T09:31:57.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS 6 安装Nginx">
-<meta name="twitter:description" content="问题： 直接yum install nginx -y 会报package not found 的错  解决： 在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo：  cd /etc/yum.repos.d/  vim nginx.repo  填写如下内容：  [nginx] name=nginx repo baseurl=http://nginx.org/packag">
+<meta name="twitter:title" content="第一篇文章">
+<meta name="twitter:description" content="emmm….接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末这个博客不仅仅会写技术，也会记录日常生活~反正就是一个想到什么写什么的地方 我是Blue 嘻嘻">
 
 
 
@@ -100,7 +142,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -120,13 +162,13 @@
 
 
 
-  <link rel="canonical" href="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/"/>
+  <link rel="canonical" href="https://www.bluelzy.com/first_article.html"/>
 
 
 
 
 
-  <title>CentOS 6 安装Nginx | BlueLzy's Blog</title>
+  <title>第一篇文章 | BlueLzy's Blog</title>
   
 
 
@@ -200,12 +242,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            关于
+            分类
           </a>
         </li>
       
@@ -220,22 +262,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -306,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/first_article.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -323,7 +365,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">CentOS 6 安装Nginx</h2>
+          <h2 class="post-title" itemprop="name headline">第一篇文章</h2>
         
 
         <div class="post-meta">
@@ -335,8 +377,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T10:47:05+08:00">
-                2017-12-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-17T18:33:48+08:00">
+                2017-12-17
               </time>
             
 
@@ -358,8 +400,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术向/" itemprop="url" rel="index">
-                    <span itemprop="name">技术向</span>
+                  <a href="/categories/日常说/" itemprop="url" rel="index">
+                    <span itemprop="name">日常说</span>
                   </a>
                 </span>
 
@@ -375,7 +417,7 @@
 
           
           
-             <span id="/2017/12/28/CentOS-6安装Nginx/" class="leancloud_visitors" data-flag-title="CentOS 6 安装Nginx">
+             <span id="/first_article.html" class="leancloud_visitors" data-flag-title="第一篇文章">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,6 +431,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  68 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -406,34 +479,9 @@
       
 
       
-        <h1 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h1><blockquote>
-<p>直接yum install nginx -y 会报package not found 的错</p>
-</blockquote>
-<h1 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h1><ul>
-<li>在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo：</li>
-</ul>
-<pre><code>cd /etc/yum.repos.d/
-
-vim nginx.repo
-</code></pre><ul>
-<li>填写如下内容：</li>
-</ul>
-<pre><code>[nginx]
-name=nginx repo
-baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
-gpgcheck=0
-enabled=1
-</code></pre><ul>
-<li>保存，则会产生一个/etc/yum.repos.d/nginx.repo文件。</li>
-</ul>
-<p>我们现在再来执行Nginx安装命令：</p>
-<pre><code>yum install nginx -y
-</code></pre><p>现在应该就可以顺利安装了</p>
-<p>安装完成，下面直接就可以启动Nginx了：</p>
-<pre><code>/etc/init.d/nginx start
-</code></pre><p>访问服务器，如无意外，应该就能看到Nginx欢迎页面了。  </p>
-<p>搞定收工~</p>
-<h1 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h1><p>如果对vim不熟悉的可以百度或者google一下<br>也可以看我写的这篇：<a href="https://www.bluelzy.com/2017/12/28/Vim简单入门/">Vim简单入门</a></p>
+        <p>emmm….<br>接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末<br>这个博客不仅仅会写技术，也会记录日常生活~<br>反正就是一个想到什么写什么的地方<br><br><br><br><br><br></p>
+<p>我是Blue</p>
+<p>嘻嘻</p>
 
       
     </div>
@@ -454,7 +502,7 @@ enabled=1
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/" title="CentOS 6 安装Nginx">https://www.bluelzy.com/2017/12/28/CentOS-6安装Nginx/</a>
+    <a href="https://www.bluelzy.com/first_article.html" title="第一篇文章">https://www.bluelzy.com/first_article.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -469,11 +517,7 @@ enabled=1
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-            <a href="/tags/Nginx/" rel="tag"># Nginx</a>
-          
-            <a href="/tags/CentOS-6/" rel="tag"># CentOS 6</a>
+            <a href="/tags/日常/" rel="tag"># 日常</a>
           
         </div>
       
@@ -486,19 +530,15 @@ enabled=1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/25/Hexo搭建个人博客-一/" rel="next" title="使用Hexo搭建个人博客(一)">
-                <i class="fa fa-chevron-left"></i> 使用Hexo搭建个人博客(一)
+              <a href="/shuttle_brief_introduction.html" rel="prev" title="Shuttle安装以及配置简介">
+                <i class="fa fa-chevron-left"></i> Shuttle安装以及配置简介
               </a>
             
           </div>
 
           <span class="post-nav-divider"></span>
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/28/Vim简单入门/" rel="prev" title="Vim简单入门">
-                Vim简单入门 <i class="fa fa-chevron-right"></i>
-              </a>
+          <div class="post-nav-next post-nav-item">
             
           </div>
         </div>
@@ -547,22 +587,15 @@ enabled=1
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -655,22 +688,6 @@ enabled=1
       </section>
 
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题："><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x95EE;&#x9898;&#xFF1A;" class="headerlink" title="&#x95EE;&#x9898;&#xFF1A;"></a>&#x95EE;&#x9898;&#xFF1A;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决："><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x89E3;&#x51B3;&#xFF1A;" class="headerlink" title="&#x89E3;&#x51B3;&#xFF1A;"></a>&#x89E3;&#x51B3;&#xFF1A;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#备注："><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5907;&#x6CE8;&#xFF1A;" class="headerlink" title="&#x5907;&#x6CE8;&#xFF1A;"></a>&#x5907;&#x6CE8;&#xFF1A;</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
       
         <div class="back-to-top">
@@ -760,22 +777,22 @@ enabled=1
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 
 
   
