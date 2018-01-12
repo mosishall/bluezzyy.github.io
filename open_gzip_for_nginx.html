@@ -68,6 +68,12 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
     
@@ -80,7 +86,7 @@
   
     
     
-    <link href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.cat.net/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -121,19 +127,19 @@
 
 
 
-<meta name="description" content="本文说明这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩 Nginx服务器启用gzip压缩首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下： 1vi /etc/nginx/conf.d/blog.conf 然后">
+<meta name="description" content="本文说明这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩">
 <meta name="keywords" content="Nginx,hexo,博客,gzip">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为博客提速-Nginx开启gzip压缩">
 <meta property="og:url" content="https://www.bluelzy.com/open_gzip_for_nginx.html">
 <meta property="og:site_name" content="BlueLzy&#39;s Blog">
-<meta property="og:description" content="本文说明这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩 Nginx服务器启用gzip压缩首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下： 1vi /etc/nginx/conf.d/blog.conf 然后">
+<meta property="og:description" content="本文说明这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://s1.wailian.download/2018/01/05/artical_2018-01-05.png">
-<meta property="og:updated_time" content="2018-01-12T09:29:09.464Z">
+<meta property="og:updated_time" content="2018-01-12T10:52:58.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为博客提速-Nginx开启gzip压缩">
-<meta name="twitter:description" content="本文说明这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩 Nginx服务器启用gzip压缩首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下： 1vi /etc/nginx/conf.d/blog.conf 然后">
+<meta name="twitter:description" content="本文说明这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩">
 <meta name="twitter:image" content="http://s1.wailian.download/2018/01/05/artical_2018-01-05.png">
 
 
@@ -214,7 +220,7 @@
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description"></h1>
+        <h1 class="site-subtitle" itemprop="description">Genius only means hard-working all one's life</h1>
       
   </div>
 
@@ -482,6 +488,7 @@
 
       
         <h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p>这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩</p>
+<a id="more"></a>
 <h1 id="Nginx服务器启用gzip压缩"><a href="#Nginx服务器启用gzip压缩" class="headerlink" title="Nginx服务器启用gzip压缩"></a>Nginx服务器启用gzip压缩</h1><p>首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下：</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vi</span> /etc/nginx/<span class="keyword">conf</span>.d/blog.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
 <p>然后在配置文件中加入这一段</p>

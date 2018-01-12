@@ -6,6 +6,7 @@
       <title><![CDATA[为博客提速-Nginx开启gzip压缩]]></title>
       <url>/open_gzip_for_nginx.html</url>
       <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p>这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩</p>
+<a id="more"></a>
 <h1 id="Nginx服务器启用gzip压缩"><a href="#Nginx服务器启用gzip压缩" class="headerlink" title="Nginx服务器启用gzip压缩"></a>Nginx服务器启用gzip压缩</h1><p>首先，打开nginx的配置文件，我的博客有单独的配置文件，打开命令如下：</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vi</span> /etc/nginx/<span class="keyword">conf</span>.d/blog.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
 <p>然后在配置文件中加入这一段</p>
@@ -54,6 +55,7 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
 <p>Material主题配置文档：<a href="https://material.viosey.com/docs/#/start" target="_blank" rel="noopener">Click Me</a></p>
 <p>不了解Material主题的可以看这里：<a href="https://github.com/viosey/hexo-theme-material/" target="_blank" rel="noopener">Github地址</a></p>
 <p>前文：<br><a href="https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/">使用Hexo搭建个人博客(一)</a><br><a href="https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-二/">使用Hexo搭建个人博客(二)</a></p>
+<a id="more"></a>
 <h1 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h1><blockquote>
 <p>主题配置文件在：/你的博客目录/themes/material/_config.yml<br>clone下来的时候把名字改成_config.yml即可</p>
 </blockquote>
@@ -199,6 +201,7 @@ bing:                          -- bing随机背景
 </ul>
 <p>关于购买VPS和注册域名，解析域名到IP请看：<a href="https://www.bluelzy.com/2017/12/25/Hexo搭建个人博客-一/">Hexo搭建个人博客(一)</a></p>
 <p>接下来让我们一步步把博客给搭建起来，跟着这篇博客做，最终就可以把博客部署到服务器上，并且运行起来~</p>
+<a id="more"></a>
 <h1 id="本地环境配置"><a href="#本地环境配置" class="headerlink" title="本地环境配置"></a>本地环境配置</h1><h2 id="安装依赖环境"><a href="#安装依赖环境" class="headerlink" title="安装依赖环境"></a>安装依赖环境</h2><p>安装Hexo需要先安装node.js和git</p>
 <ul>
 <li>下载Node.js : <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js下载地址</a></li>
@@ -332,6 +335,7 @@ $ sudo yum install nginx
       <title><![CDATA[Vim简单入门]]></title>
       <url>/vim_guide.html</url>
       <content type="html"><![CDATA[<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>刚进入vim 都是该模式<br>想要插入字符：请按键盘上的i 切换到插入模式<br>键盘上的 “:” 切换到底线命令模式，在最底一行输入命令。</p>
+<a id="more"></a>
 <h3 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h3><p>想要退出到<strong>命令模式</strong><br>请点击键盘上的<strong>esc</strong> </p>
 <p>在输入模式中，可以使用以下按键：  </p>
 <ul>
@@ -385,6 +389,7 @@ $ sudo yum install nginx
       <content type="html"><![CDATA[<h1 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h1><blockquote>
 <p>直接yum install nginx -y 会报package not found 的错</p>
 </blockquote>
+<a id="more"></a>
 <h1 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h1><ul>
 <li>在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo：</li>
 </ul>
@@ -437,6 +442,7 @@ $ sudo yum install nginx
 <p>注意：如果不希望自己花费太多RMB的话，也可以选择部署到github pages上，可以参考<a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="noopener">手把手教你使用Hexo + Github Pages搭建个人独立博客</a>  </p>
 <p>原理其实都是类似的，本博客的搭建使用VPS + Hexo</p>
 <p>OK，接下来就一步步来准备这些所需的搭建环境。</p>
+<a id="more"></a>
 <h1 id="购买VPS"><a href="#购买VPS" class="headerlink" title="购买VPS"></a>购买VPS</h1><h2 id="去哪里买"><a href="#去哪里买" class="headerlink" title="去哪里买"></a>去哪里买</h2><p>我是在搬瓦工上购买的,最便宜的9.9和19.9美元/年的方案已经卖完了，所以我选择的是29.9$/年的，折算下来大概是185RMB，毕竟有自己的服务器，搭建博客只是其中一个小用途而已，还能用他做很多别的事情，所以我觉得还是很划算的。最重要的是 <strong>他支持支付宝啊~</strong></p>
 <p>附上链接：<a href="https://bwh1.net/index.php" target="_blank" rel="noopener">搬瓦工VPS官网</a></p>
 <h2 id="路线选择"><a href="#路线选择" class="headerlink" title="路线选择"></a>路线选择</h2><p>推荐选择KVM + CN2 ping值稳定在150ms左右，速度还是可以接受的</p>
@@ -498,6 +504,7 @@ $ sudo yum install nginx
       <title><![CDATA[Shuttle安装以及配置简介]]></title>
       <url>/shuttle_brief_introduction.html</url>
       <content type="html"><![CDATA[<h1 id="本文说明："><a href="#本文说明：" class="headerlink" title="本文说明："></a>本文说明：</h1><p>本文介绍Shuttle的安装以及配置，主要是根据<strong><a href="https://github.com/fitztrev/shuttle/wiki" target="_blank" rel="noopener">Github上的官方文档</a></strong>进行翻译说明，还有自己的一些补充，如果习惯直接看文档的朋友，可以直接关掉这篇文章了~</p>
+<a id="more"></a>
 <h2 id="Shuttle是什么"><a href="#Shuttle是什么" class="headerlink" title="Shuttle是什么"></a>Shuttle是什么</h2><p><a href="http://fitztrev.github.io/shuttle/" target="_blank" rel="noopener">点击我跳转到Shuttle的Github</a>  </p>
 <p>看一下官方简介，就一句话  </p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A<span class="built_in"> simple </span>SSH shortcut menu <span class="keyword">for</span> macOS</span><br></pre></td></tr></table></figure>
@@ -573,7 +580,9 @@ current 在当前窗口执行命令
     <entry>
       <title><![CDATA[第一篇文章]]></title>
       <url>/first_article.html</url>
-      <content type="html"><![CDATA[<p>emmm….<br>接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末<br>这个博客不仅仅会写技术，也会记录日常生活~<br>反正就是一个想到什么写什么的地方<br><br><br><br><br><br></p>
+      <content type="html"><![CDATA[<p>emmm….<br>接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末<br>这个博客不仅仅会写技术，也会记录日常生活~<br>反正就是一个想到什么写什么的地方</p>
+<a id="more"></a>
+<p><br><br><br><br><br></p>
 <p>我是Blue</p>
 <p>嘻嘻</p>
 ]]></content>
