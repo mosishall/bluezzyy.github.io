@@ -35,11 +35,11 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
         
         <tags>
             
-            <tag> Nginx </tag>
-            
             <tag> hexo </tag>
             
             <tag> 博客 </tag>
+            
+            <tag> Nginx </tag>
             
             <tag> gzip </tag>
             
@@ -50,7 +50,7 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
     <entry>
       <title><![CDATA[使用Hexo搭建个人博客(三)]]></title>
       <url>/ues_Hexo_build_blog_three.html</url>
-      <content type="html"><![CDATA[<h1 id="本文介绍"><a href="#本文介绍" class="headerlink" title="本文介绍"></a>本文介绍</h1><p><strong>2018年的第一篇博客，首先祝大家新年快乐，学习进步，工作顺利！</strong>  </p>
+      <content type="html"><![CDATA[<h1 id="本文说明"><a href="#本文说明" class="headerlink" title="本文说明"></a>本文说明</h1><p><strong>2018年的第一篇博客，首先祝大家新年快乐，学习进步，工作顺利！</strong>  </p>
 <p>这是使用Hexo搭建个人博客系列的最后一篇文章，主要介绍<strong>Material主题</strong>的配置。</p>
 <p>Material主题配置文档：<a href="https://material.viosey.com/docs/#/start" target="_blank" rel="noopener">Click Me</a></p>
 <p>不了解Material主题的可以看这里：<a href="https://github.com/viosey/hexo-theme-material/" target="_blank" rel="noopener">Github地址</a></p>
