@@ -62,7 +62,7 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
 <li>high_res_favicon: “/img/favicon.png” 高清版图标</li>
 <li>apple_touch_icon: “/img/favicon.png” IOS主屏图标</li>
 <li>keywords: Blue’s Blog, Android, Python 网站关键词</li>
-<li>site_verification:<br>   google: 谷歌 Search Console 验证<pre><code>baidu: 百度站长平台验证
+<li>site_verification:<br>   google: 谷歌 Search Console 验证<pre><code>    baidu: 百度站长平台验证
 </code></pre></li>
 </ul>
 <h2 id="样式设定-–-Style-Settings"><a href="#样式设定-–-Style-Settings" class="headerlink" title="样式设定  – Style Settings"></a>样式设定  – Style Settings</h2><h3 id="scheme-–-Material主题样式"><a href="#scheme-–-Material主题样式" class="headerlink" title="scheme  – Material主题样式"></a>scheme  – Material主题样式</h3><p>一般使用Paradox</p>
@@ -193,7 +193,7 @@ tomorrow-night-eighties
 </code></pre><h2 id="第三方服务"><a href="#第三方服务" class="headerlink" title="第三方服务"></a>第三方服务</h2><blockquote>
 <p>其实Material内置的第三方服务已经基本足够使用了，RSS，评论系统，搜索系统，数据统计与分析等等</p>
 </blockquote>
-<p>这部分可以按照自己实际情况，以及配合<a href="https://material.viosey.com/docs/#/config_services" target="_blank" rel="noopener">官方文档</a>服用，效果更佳，在这里我只介绍自己博客用到的配置，包括：</p>
+<p>这部分可以按照自己实际情况，以及配合<a href="https://material.viosey.com/docs/#/config_services" target="_blank" rel="noopener">官方文档</a>服用，效果更佳，在这里我只介绍自己博客用到的配置，包括：<br>​    </p>
 <ul>
 <li>评论系统：来比力</li>
 <li>搜索系统：本地搜索</li>
@@ -324,9 +324,8 @@ chmod 700 ~/.ssh
 $ sudo yum install nginx    
 </code></pre><p>然后再启动Nginx：</p>
 <pre><code>sudo systemctl start nginx
-</code></pre><p>CentOS 6 启动Nginx的命令应该是：</p>
-<pre><code>/etc/init.d/nginx start
-</code></pre><p>这个时候在浏览器输入服务器ip地址或者域名，就能看到Nginx欢迎页。</p>
+</code></pre><p>CentOS 6 启动Nginx的命令应该是：<br>​<br>    /etc/init.d/nginx start</p>
+<p>这个时候在浏览器输入服务器ip地址或者域名，就能看到Nginx欢迎页。</p>
 <h3 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h3><ul>
 <li>在 /etc/nginx/conf.d/ 创建虚拟主机配置文件 blog.conf</li>
 </ul>
@@ -370,7 +369,7 @@ git --work-tree=/var/www/hexo --git-dir=~/blog.git checkout -f
 <p>保存退出(wq)</p>
 <p>然后再赋予这个文件运行的权限</p>
 <pre><code>chmod +x post-receive
-</code></pre><p>OK,到这一步，服务器的配置也已经全部完成了。</p>
+</code></pre><p>​<br>OK,到这一步，服务器的配置也已经全部完成了。</p>
 <p><strong>恭喜你，如果能按着博客一步步看到这里，并且一切正常，那么你离成功搭建一个博客，还差最后一步….</strong></p>
 <h1 id="本地配置-config-yml"><a href="#本地配置-config-yml" class="headerlink" title="本地配置_config.yml"></a>本地配置_config.yml</h1><p>打开Hexo站点目录下的_config.yml文件，找到 <strong>deploy</strong>关键字</p>
 <pre><code>deploy:
@@ -612,10 +611,10 @@ enabled=1
 <li><p>“terminal”: “VALUE”, 设置终端，一般是Terminal.app或者iTerm  </p>
 </li>
 <li><p>“iTerm_version”: “VALUE”, 设置iTerm版本，分别有三种  </p>
-<pre><code>      &quot;iTerm\_version&quot;: &quot;legacy&quot;,  2.14版本  
-   &quot;iTerm\_version&quot;: &quot;stable&quot;, 最新版本
+<p>   “iTerm_version”: “legacy”,  2.14版本  </p>
+<pre><code>   &quot;iTerm\_version&quot;: &quot;stable&quot;, 最新版本
    &quot;iTerm\_version&quot;: &quot;nightly&quot;, nightly build 版本 
-</code></pre><ul>
+</code></pre></li>
 <li><p>“default_theme”: “Homebrew” 设置终端主题  </p>
 </li>
 <li><p>open_in”: “VALUE” 有两个可选项 Tab 或者 new 顾名思义，新建一个Tab 或者 在新窗口执行命令</p>
@@ -629,15 +628,13 @@ enabled=1
 <li><p>“name”: “VALUE” 设置菜单栏显示的名称</p>
 </li>
 <li><p>“inTerminal”: “VALUE” </p>
-<pre><code> new 新建一个窗口执行命令  
- tab 新建一个Tab执行命令  
- current 在当前窗口执行命令
+<p>new 新建一个窗口执行命令  </p>
+<pre><code>tab 新建一个Tab执行命令  
+current 在当前窗口执行命令
 </code></pre></li>
 <li><p>“theme”: “VALUE” 设置主题~我用的是basic</p>
 </li>
 <li>“title”: “VALUE” 这个标题是显示在终端窗口的标题~</li>
-</ul>
-</li>
 </ul>
 </li>
 </ol>
@@ -660,6 +657,7 @@ enabled=1
 </code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>shuttle 除了可以用来当SSH管理工具以外，还能执行多条命令操作，提高效率，只要用分号分隔即可    </p>
 <pre><code> 例如 pwd; ls; cd /; 就会按顺序执行以上三条命令。  
 </code></pre><p>好了，本文只是简单介绍了shuttle的基本用法，欢迎大家一起交流学习~</p>
+<p>​    </p>
 ]]></content>
       
         <categories>
@@ -686,7 +684,7 @@ enabled=1
     <entry>
       <title><![CDATA[第一篇文章]]></title>
       <url>/2017/12/17/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-      <content type="html"><![CDATA[<p>emmm….<br>接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末<br>这个博客不仅仅会写技术，也会记录日常生活~<br>反正就是一个想到什么写什么的地方<br><br><br><br><br><br>  </p>
+      <content type="html"><![CDATA[<p>emmm….<br>接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末<br>这个博客不仅仅会写技术，也会记录日常生活~<br>反正就是一个想到什么写什么的地方<br><br><br><br><br><br></p>
 <p>我是Blue</p>
 <p>嘻嘻</p>
 ]]></content>
