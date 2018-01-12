@@ -14,6 +14,17 @@
 
 
 
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
 
 
 
@@ -101,26 +112,28 @@
 <link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=5.1.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon4.ico?v=5.1.3">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon4.ico?v=5.1.3">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon4.ico?v=5.1.3">
 
 
-  <link rel="mask-icon" href="/images/favicon.png?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="hexo,博客,Nginx,gzip," />
+  <link rel="mask-icon" href="/images/favicon4.ico?v=5.1.3" color="#222">
 
 
 
 
+
+  <meta name="keywords" content="Nginx,hexo,博客,gzip," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="BlueLzy's Blog" type="application/atom+xml" />
 
 
 
@@ -128,7 +141,7 @@
 
 
 <meta name="description" content="本文说明这是对于个人博客优化的一个记录。今天打开博客，发现加载速度有点慢，于是在Google Analytics里面检查了打开速度，没想到谷歌还提供了优化的建议，其中有一项就是开启网页压缩~使用的就是Nginx的gzip压缩">
-<meta name="keywords" content="hexo,博客,Nginx,gzip">
+<meta name="keywords" content="Nginx,hexo,博客,gzip">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为博客提速-Nginx开启gzip压缩">
 <meta property="og:url" content="https://www.bluelzy.com/open_gzip_for_nginx.html">
@@ -361,7 +374,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="image" content="/images/favicon4.ico">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -513,6 +526,16 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
     
     
 
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #636363;font-size:14px;letter-spacing: 10px">本文结束啦<i class="fa fa-bell"></i>感谢您的阅读</div>
+    
+</div>
+  
+</div>
+
     
 
     
@@ -537,15 +560,16 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
       </div>
     
 
+
     <footer class="post-footer">
       
         <div class="post-tags">
           
+            <a href="/tags/Nginx/" rel="tag"> <i class="fa fa-tag"></i> Nginx</a>
+          
             <a href="/tags/hexo/" rel="tag"> <i class="fa fa-tag"></i> hexo</a>
           
             <a href="/tags/博客/" rel="tag"> <i class="fa fa-tag"></i> 博客</a>
-          
-            <a href="/tags/Nginx/" rel="tag"> <i class="fa fa-tag"></i> Nginx</a>
           
             <a href="/tags/gzip/" rel="tag"> <i class="fa fa-tag"></i> gzip</a>
           
@@ -639,7 +663,7 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
+                src="/images/favicon4.ico"
                 alt="BlueLzy" />
             
               <p class="site-author-name" itemprop="name">BlueLzy</p>
@@ -664,7 +688,7 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -675,7 +699,7 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -684,15 +708,16 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
           </nav>
 
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
           <div class="links-of-author motion-element">
             
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:bluehobert@gmail.com" target="_blank" title="E-Mail">
-                    
-                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
               
                 <span class="links-of-author-item">
                   <a href="https://github.com/bluezzyy" target="_blank" title="GitHub">
@@ -701,15 +726,21 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="http://blog.csdn.net/blue_zy" target="_blank" title="csdn">
+                  <a href="http://blog.csdn.net/blue_zy" target="_blank" title="Csdn">
                     
-                      <i class="fa fa-fw fa-grav"></i>csdn</a>
+                      <i class="fa fa-fw fa-grav"></i>Csdn</a>
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="http://www.zhihu.com/people/zy-blue" target="_blank" title="zhihu">
+                  <a href="http://www.zhihu.com/people/zy-blue" target="_blank" title="Zhihu">
                     
-                      <i class="fa fa-fw fa-spinner"></i>zhihu</a>
+                      <i class="fa fa-fw fa-spinner"></i>Zhihu</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:bluehobert@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
             
@@ -763,12 +794,13 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-hourglass-start"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">BlueLzy</span>
+
+  
 
   
 </div>
@@ -782,16 +814,10 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a></div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a></div>
 
 
 
-
-<div class="powered-by">
-<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-  本站访客数:<span id="busuanzi_value_site_pv"></span>
-</span>
-</div>
 
         
 
@@ -1371,5 +1397,7 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
 
   
 
+  <!-- 加入烟花效果-->
+  
 </body>
 </html>
