@@ -448,6 +448,10 @@ The licensor cannot revoke these freedoms as long as you follow the license term
 
           
   
+    <div class="comments" id="comments">
+      <div id="vcomments"></div>
+    </div>
+  
 
 
         </div>
@@ -794,6 +798,28 @@ The licensor cannot revoke these freedoms as long as you follow the license term
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = '';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '5BAdoYEcC7XVT5fuceTX1kNQ-gzGzoHsz',
+        appKey: 'usffwFryW1JT4W4TQDBDLHdD',
+        placeholder: '╮(╯_╰)╭来啊，快活啊！',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'' || 10,
+    });
+  </script>
 
 
 
