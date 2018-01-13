@@ -18,8 +18,8 @@
   
   <entry>
     <title>为博客提速-Nginx开启gzip压缩</title>
-    <link href="https://www.bluelzy.com/open_gzip_for_nginx.html"/>
-    <id>https://www.bluelzy.com/open_gzip_for_nginx.html</id>
+    <link href="https://www.bluelzy.com/articles/open_gzip_for_nginx.html"/>
+    <id>https://www.bluelzy.com/articles/open_gzip_for_nginx.html</id>
     <published>2018-01-04T15:48:36.000Z</published>
     <updated>2018-01-12T10:52:58.924Z</updated>
     
@@ -46,8 +46,8 @@
   
   <entry>
     <title>使用Hexo搭建个人博客(三)</title>
-    <link href="https://www.bluelzy.com/ues_Hexo_build_blog_three.html"/>
-    <id>https://www.bluelzy.com/ues_Hexo_build_blog_three.html</id>
+    <link href="https://www.bluelzy.com/articles/ues_Hexo_build_blog_three.html"/>
+    <id>https://www.bluelzy.com/articles/ues_Hexo_build_blog_three.html</id>
     <published>2018-01-02T03:36:10.000Z</published>
     <updated>2018-01-12T10:54:39.748Z</updated>
     
@@ -78,8 +78,8 @@
   
   <entry>
     <title>使用Hexo搭建个人博客(二)</title>
-    <link href="https://www.bluelzy.com/ues_Hexo_build_blog_two.html"/>
-    <id>https://www.bluelzy.com/ues_Hexo_build_blog_two.html</id>
+    <link href="https://www.bluelzy.com/articles/ues_Hexo_build_blog_two.html"/>
+    <id>https://www.bluelzy.com/articles/ues_Hexo_build_blog_two.html</id>
     <published>2017-12-29T15:50:20.000Z</published>
     <updated>2018-01-12T10:53:07.299Z</updated>
     
@@ -113,8 +113,8 @@
   
   <entry>
     <title>Vim简单入门</title>
-    <link href="https://www.bluelzy.com/vim_guide.html"/>
-    <id>https://www.bluelzy.com/vim_guide.html</id>
+    <link href="https://www.bluelzy.com/articles/vim_guide.html"/>
+    <id>https://www.bluelzy.com/articles/vim_guide.html</id>
     <published>2017-12-28T03:14:54.000Z</published>
     <updated>2018-01-12T10:52:38.098Z</updated>
     
@@ -137,8 +137,8 @@
   
   <entry>
     <title>CentOS 6 安装Nginx</title>
-    <link href="https://www.bluelzy.com/install_nginx_for_centos6.html"/>
-    <id>https://www.bluelzy.com/install_nginx_for_centos6.html</id>
+    <link href="https://www.bluelzy.com/articles/install_nginx_for_centos6.html"/>
+    <id>https://www.bluelzy.com/articles/install_nginx_for_centos6.html</id>
     <published>2017-12-28T02:47:05.000Z</published>
     <updated>2018-01-12T10:52:54.274Z</updated>
     
@@ -165,8 +165,8 @@
   
   <entry>
     <title>使用Hexo搭建个人博客(一)</title>
-    <link href="https://www.bluelzy.com/ues_Hexo_build_blog_one.html"/>
-    <id>https://www.bluelzy.com/ues_Hexo_build_blog_one.html</id>
+    <link href="https://www.bluelzy.com/articles/ues_Hexo_build_blog_one.html"/>
+    <id>https://www.bluelzy.com/articles/ues_Hexo_build_blog_one.html</id>
     <published>2017-12-25T12:45:40.000Z</published>
     <updated>2018-01-12T10:52:50.218Z</updated>
     
@@ -201,8 +201,8 @@
   
   <entry>
     <title>Shuttle安装以及配置简介</title>
-    <link href="https://www.bluelzy.com/shuttle_brief_introduction.html"/>
-    <id>https://www.bluelzy.com/shuttle_brief_introduction.html</id>
+    <link href="https://www.bluelzy.com/articles/shuttle_brief_introduction.html"/>
+    <id>https://www.bluelzy.com/articles/shuttle_brief_introduction.html</id>
     <published>2017-12-21T15:21:00.000Z</published>
     <updated>2018-01-12T10:52:44.631Z</updated>
     
@@ -229,8 +229,8 @@
   
   <entry>
     <title>第一篇文章</title>
-    <link href="https://www.bluelzy.com/first_article.html"/>
-    <id>https://www.bluelzy.com/first_article.html</id>
+    <link href="https://www.bluelzy.com/articles/first_article.html"/>
+    <id>https://www.bluelzy.com/articles/first_article.html</id>
     <published>2017-12-17T10:33:48.000Z</published>
     <updated>2018-01-12T10:53:16.303Z</updated>
     
