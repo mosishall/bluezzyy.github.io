@@ -746,11 +746,11 @@
     });
     new Valine({
         el: '#comments' ,
-        verify: false,
-        notify: false,
+        verify: true,
+        notify: true,
         appId: '5BAdoYEcC7XVT5fuceTX1kNQ-gzGzoHsz',
         appKey: 'usffwFryW1JT4W4TQDBDLHdD',
-        placeholder: '╮(╯_╰)╭来啊，快活啊！',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
         avatar:'',
         guest_info:guest,
         pageSize:'10' || 10,
@@ -1166,46 +1166,6 @@
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <!-- 加入烟花效果-->
-  
-</body>
-</html>
-sitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');
