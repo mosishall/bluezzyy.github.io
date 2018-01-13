@@ -35,11 +35,11 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
         
         <tags>
             
-            <tag> Nginx </tag>
-            
             <tag> hexo </tag>
             
             <tag> 博客 </tag>
+            
+            <tag> Nginx </tag>
             
             <tag> gzip </tag>
             
