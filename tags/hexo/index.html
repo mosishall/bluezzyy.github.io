@@ -853,7 +853,7 @@
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
-    var guest = '';
+    var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
@@ -866,7 +866,7 @@
         placeholder: '╮(╯_╰)╭来啊，快活啊！',
         avatar:'',
         guest_info:guest,
-        pageSize:'' || 10,
+        pageSize:'10' || 10,
     });
   </script>
 
