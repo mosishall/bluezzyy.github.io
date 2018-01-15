@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/change_to_next_theme.html</loc>
+    <lastmod>2018-01-15T15:48:04.987Z</lastmod>
+    <data>
+        <display>
+        <title>弃暗投明-Hexo更换next主题</title>
+        <pubTime>2018-01-14T01:25:40.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/use_valine_for_your_blog.html</loc>
+    <lastmod>2018-01-15T14:05:16.027Z</lastmod>
+    <data>
+        <display>
+        <title>为你的Hexo加上评论系统-Valine</title>
+        <pubTime>2018-01-15T13:28:29.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next</tag>
+         
+        <tag>valine</tag>
+         
+        <tag>评论系统</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/shuttle_brief_introduction.html</loc>
+    <lastmod>2018-01-14T01:29:09.515Z</lastmod>
+    <data>
+        <display>
+        <title>Shuttle安装以及配置简介</title>
+        <pubTime>2017-12-21T15:21:00.000Z</pubTime>
+        
+        <tag>开发工具</tag>
+         
+        <tag>shuttle</tag>
+         
+        <tag>linux</tag>
+         
+        <tag>github</tag>
+         
+         
+           
+             
+              <breadCrumb title="休闲说" url="https://www.bluelzy.com/categories/%E4%BC%91%E9%97%B2%E8%AF%B4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/ues_Hexo_build_blog_three.html</loc>
+    <lastmod>2018-01-12T10:54:39.748Z</lastmod>
+    <data>
+        <display>
+        <title>使用Hexo搭建个人博客(三)</title>
+        <pubTime>2018-01-02T03:36:10.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>主题</tag>
+         
+        <tag>material</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/first_article.html</loc>
+    <lastmod>2018-01-12T10:53:16.303Z</lastmod>
+    <data>
+        <display>
+        <title>第一篇文章</title>
+        <pubTime>2017-12-17T10:33:48.000Z</pubTime>
+        
+        <tag>日常</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常说" url="https://www.bluelzy.com/categories/%E6%97%A5%E5%B8%B8%E8%AF%B4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/ues_Hexo_build_blog_two.html</loc>
+    <lastmod>2018-01-12T10:53:07.299Z</lastmod>
+    <data>
+        <display>
+        <title>使用Hexo搭建个人博客(二)</title>
+        <pubTime>2017-12-29T15:50:20.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>vps</tag>
+         
+        <tag>godaddy</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/open_gzip_for_nginx.html</loc>
+    <lastmod>2018-01-12T10:52:58.924Z</lastmod>
+    <data>
+        <display>
+        <title>为博客提速-Nginx开启gzip压缩</title>
+        <pubTime>2018-01-04T15:48:36.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>Nginx</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>gzip</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/install_nginx_for_centos6.html</loc>
+    <lastmod>2018-01-12T10:52:54.274Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS 6 安装Nginx</title>
+        <pubTime>2017-12-28T02:47:05.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Nginx</tag>
+         
+        <tag>CentOS 6</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/ues_Hexo_build_blog_one.html</loc>
+    <lastmod>2018-01-12T10:52:50.218Z</lastmod>
+    <data>
+        <display>
+        <title>使用Hexo搭建个人博客(一)</title>
+        <pubTime>2017-12-25T12:45:40.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>vps</tag>
+         
+        <tag>godaddy</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/vim_guide.html</loc>
+    <lastmod>2018-01-12T10:52:38.098Z</lastmod>
+    <data>
+        <display>
+        <title>Vim简单入门</title>
+        <pubTime>2017-12-28T03:14:54.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>Vim</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+</urlset>

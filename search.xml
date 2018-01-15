@@ -233,9 +233,9 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
             
             <tag> hexo </tag>
             
-            <tag> 博客 </tag>
-            
             <tag> Nginx </tag>
+            
+            <tag> 博客 </tag>
             
             <tag> gzip </tag>
             
