@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/shuttle_brief_introduction.html</loc>
+    <lastmod>2018-01-16T10:17:07.943Z</lastmod>
+    <data>
+        <display>
+        <title>Shuttle安装以及配置简介</title>
+        <pubTime>2017-12-21T15:21:00.000Z</pubTime>
+        
+        <tag>开发工具</tag>
+         
+        <tag>shuttle</tag>
+         
+        <tag>linux</tag>
+         
+        <tag>github</tag>
+         
+         
+           
+             
+              <breadCrumb title="休闲类" url="https://www.bluelzy.com/categories/%E4%BC%91%E9%97%B2%E7%B1%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/change_to_next_theme.html</loc>
     <lastmod>2018-01-15T15:48:04.987Z</lastmod>
     <data>
@@ -45,32 +71,6 @@
            
              
               <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.bluelzy.com/articles/shuttle_brief_introduction.html</loc>
-    <lastmod>2018-01-14T01:29:09.515Z</lastmod>
-    <data>
-        <display>
-        <title>Shuttle安装以及配置简介</title>
-        <pubTime>2017-12-21T15:21:00.000Z</pubTime>
-        
-        <tag>开发工具</tag>
-         
-        <tag>shuttle</tag>
-         
-        <tag>linux</tag>
-         
-        <tag>github</tag>
-         
-         
-           
-             
-              <breadCrumb title="休闲说" url="https://www.bluelzy.com/categories/%E4%BC%91%E9%97%B2%E8%AF%B4/"/>
           
         </display>
     </data>
@@ -160,9 +160,9 @@
         
         <tag>hexo</tag>
          
-        <tag>Nginx</tag>
-         
         <tag>博客</tag>
+         
+        <tag>Nginx</tag>
          
         <tag>gzip</tag>
          

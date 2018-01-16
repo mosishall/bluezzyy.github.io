@@ -233,9 +233,9 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
             
             <tag> hexo </tag>
             
-            <tag> Nginx </tag>
-            
             <tag> 博客 </tag>
+            
+            <tag> Nginx </tag>
             
             <tag> gzip </tag>
             
@@ -754,7 +754,7 @@ current 在当前窗口执行命令
       
         <categories>
             
-            <category> 休闲说 </category>
+            <category> 休闲类 </category>
             
         </categories>
         
