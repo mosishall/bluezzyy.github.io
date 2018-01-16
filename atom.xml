@@ -94,9 +94,9 @@
     
       <category term="hexo" scheme="https://www.bluelzy.com/tags/hexo/"/>
     
-      <category term="博客" scheme="https://www.bluelzy.com/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
       <category term="Nginx" scheme="https://www.bluelzy.com/tags/Nginx/"/>
+    
+      <category term="博客" scheme="https://www.bluelzy.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
       <category term="gzip" scheme="https://www.bluelzy.com/tags/gzip/"/>
     
