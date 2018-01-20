@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/say_something_about_zhihu.html</loc>
+    <lastmod>2018-01-20T01:17:27.828Z</lastmod>
+    <data>
+        <display>
+        <title>哪有什么真正的言论自由？</title>
+        <pubTime>2018-01-20T00:24:58.000Z</pubTime>
+        
+        <tag>知乎</tag>
+         
+        <tag>日常</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常说" url="https://www.bluelzy.com/categories/%E6%97%A5%E5%B8%B8%E8%AF%B4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/change_to_next_theme.html</loc>
+    <lastmod>2018-01-19T11:35:00.394Z</lastmod>
+    <data>
+        <display>
+        <title>弃暗投明-Hexo更换next主题</title>
+        <pubTime>2018-01-14T01:25:40.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/shuttle_brief_introduction.html</loc>
     <lastmod>2018-01-16T10:17:07.943Z</lastmod>
     <data>
@@ -23,28 +67,6 @@
            
              
               <breadCrumb title="休闲类" url="https://www.bluelzy.com/categories/%E4%BC%91%E9%97%B2%E7%B1%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.bluelzy.com/articles/change_to_next_theme.html</loc>
-    <lastmod>2018-01-15T15:48:04.987Z</lastmod>
-    <data>
-        <display>
-        <title>弃暗投明-Hexo更换next主题</title>
-        <pubTime>2018-01-14T01:25:40.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>next</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
           
         </display>
     </data>

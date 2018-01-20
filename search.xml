@@ -3,6 +3,56 @@
   
     
     <entry>
+      <title><![CDATA[哪有什么真正的言论自由？]]></title>
+      <url>/articles/say_something_about_zhihu.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>我是一个极少在社交平台发表言论的人</p>
+<p>昨天在知乎上首次回答一个问题，就是关于Hexo加入评论系统的</p>
+<p>知乎地址：<a href="https://www.zhihu.com/question/52779874" target="_blank" rel="noopener">有哪些不用登陆的Hexo评论系统？</a></p>
+<p>居然就被知乎封号了…</p>
+</blockquote>
+ <a id="more"></a>
+<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>当时忘了截图了，我的回答大概就是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">推荐Valine，附上我的博客以及官方文档</span><br><span class="line"></span><br><span class="line">我的博客链接</span><br><span class="line"></span><br><span class="line">官网文档链接</span><br></pre></td></tr></table></figure>
+<p>over.就是这么简单</p>
+<p>然后就被告知，需要发短信恢复账号使用</p>
+<p>知乎没有告诉我，到底违反了什么条例，也没有警告。莫名其妙就被停用了。</p>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>于是，只能发短信去恢复使用</p>
+<p><img src="http://s1.wailian.download/2018/01/20/article_20180120.jpg" alt="article_20180120.jpg"></p>
+<p>发完短信以后，知乎还是恢复了我的账号使用，但是并没有告知我到底违反了哪一条规定。</p>
+<p>于是自己去搜索，结果发现和我一样有相同遭遇，甚至比我更惨的人，不在少数。</p>
+<h1 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h1><p>其实我想说的是，既然我违反了条例，为什么你不能通知我，然后让我修改或者删除答案，而是直接停用账号呢？</p>
+<p>这就好比，我欠了电费，你不是把欠费通知单发给我，告知我欠费详情，然后给个期限让我缴费，<strong>而是直接把我的房子都收回去了</strong>。</p>
+<p>我的收藏，我支持的live，这些难道就因为这一个回答，全都受影响了吗？</p>
+<p>知乎作为一个知识分享平台，尚且如此，那么其他平台，对于网友言论的掌控力度，是不是有过之而无不及呢。这样想想，真是有点细思极恐。</p>
+<p>这可能也是，我宁愿在国外买主机，买域名，搭博客，都不愿在在国内备案的原因吧。</p>
+<p>起码，还能有一个让自己说点真心话的地方。</p>
+<p>最后附上一些链接，有兴趣的可以点进去看看：</p>
+<p><a href="https://www.zhihu.com/question/20709896" target="_blank" rel="noopener">知乎账号被停用，如何恢复？</a></p>
+<p><a href="https://www.zhihu.com/question/21477367" target="_blank" rel="noopener">知乎账号为何被停用？</a></p>
+<p><a href="https://www.zhihu.com/question/36689828" target="_blank" rel="noopener">被知乎封号是怎样一个体验？</a></p>
+<p>历史总是惊人的相似，希望我们能成为坐在马车上前进，而不是在车轱辘底下被碾得粉身碎骨的那个人。</p>
+<p>END</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> 日常说 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 知乎 </tag>
+            
+            <tag> 日常 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[为你的Hexo加上评论系统-Valine]]></title>
       <url>/articles/use_valine_for_your_blog.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>简洁，方便，好用的评论系统</p>
@@ -178,6 +228,10 @@
 <p><a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="noopener">为NexT主题添加文章阅读量统计功能</a></p>
 <p><a href="http://theme-next.iissnan.com/third-party-services.html#comment-system" target="_blank" rel="noopener">第三方服务集成</a></p></div>
 <hr>
+
+
+
+
 
 ]]></content>
       
