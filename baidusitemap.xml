@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/forever_young.html</loc>
+    <lastmod>2018-01-21T11:06:09.803Z</lastmod>
+    <data>
+        <display>
+        <title>20180121-无问西东</title>
+        <pubTime>2018-01-21T10:01:09.000Z</pubTime>
+        
+        <tag>无问西东</tag>
+         
+        <tag>日常</tag>
+         
+        <tag>电影</tag>
+         
+         
+           
+             
+              <breadCrumb title="日常说" url="https://www.bluelzy.com/categories/%E6%97%A5%E5%B8%B8%E8%AF%B4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/say_something_about_zhihu.html</loc>
     <lastmod>2018-01-20T02:05:21.255Z</lastmod>
     <data>
@@ -11,9 +35,9 @@
         <title>哪有什么真正的言论自由？</title>
         <pubTime>2018-01-20T00:24:58.000Z</pubTime>
         
-        <tag>知乎</tag>
-         
         <tag>日常</tag>
+         
+        <tag>知乎</tag>
          
          
            
