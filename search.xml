@@ -3,10 +3,12 @@
   
     
     <entry>
-      <title><![CDATA[20180217-Activity传值与回传]]></title>
+      <title><![CDATA[Activity传值与回传]]></title>
       <url>/articles/activity_transmit_value.html</url>
-      <content type="html"><![CDATA[<h1 id="Activity传值与回传"><a href="#Activity传值与回传" class="headerlink" title="Activity传值与回传"></a>Activity传值与回传</h1><p>Android Developers: <a href="https://developer.android.com/training/basics/intents/result.html?hl=zh-cn#StartActivity" target="_blank" rel="noopener">获取Activity的结果</a></p>
-<p>这里只讲了怎么获取返回的数据，没有写返回数据的方法。</p>
+      <content type="html"><![CDATA[<p>记录一个基础问题， Activity传值与回传，后面遇到类似的问题就不用再问人了。</p>
+<a id="more"></a>
+<h1 id="Activity传值与回传"><a href="#Activity传值与回传" class="headerlink" title="Activity传值与回传"></a>Activity传值与回传</h1><p>Android Developers: <a href="https://developer.android.com/training/basics/intents/result.html?hl=zh-cn#StartActivity" target="_blank" rel="noopener">获取Activity的结果</a></p>
+<p>链接只讲了怎么获取返回的数据，没有写返回数据的方法。</p>
 <p>假设</p>
 <p>FirstActivity 为初始Activity，SecondActivity 为跳转Activity</p>
 <p>首先</p>
@@ -110,9 +112,9 @@
             
             <tag> Android </tag>
             
-            <tag> 腾讯地图 </tag>
-            
             <tag> 第三方控件 </tag>
+            
+            <tag> 腾讯地图 </tag>
             
         </tags>
         
@@ -159,9 +161,9 @@
             
             <tag> Android </tag>
             
-            <tag> 第三方控件 </tag>
-            
             <tag> 高德地图 </tag>
+            
+            <tag> 第三方控件 </tag>
             
         </tags>
         
