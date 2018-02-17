@@ -4,6 +4,76 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/activity_transmit_value.html</loc>
+    <lastmod>2018-02-17T09:36:08.051Z</lastmod>
+    <data>
+        <display>
+        <title>20180217-Activity传值与回传</title>
+        <pubTime>2018-02-17T09:32:21.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Android基础</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://www.bluelzy.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/tencent_map_search.html</loc>
+    <lastmod>2018-02-17T09:28:29.319Z</lastmod>
+    <data>
+        <display>
+        <title>使用腾讯地图SDK的自动补全功能</title>
+        <pubTime>2018-02-17T09:11:37.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>腾讯地图</tag>
+         
+        <tag>第三方控件</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://www.bluelzy.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/amap_search.html</loc>
+    <lastmod>2018-02-17T09:26:24.437Z</lastmod>
+    <data>
+        <display>
+        <title>使用高德地图SDK的自动补全功能</title>
+        <pubTime>2018-02-17T08:56:46.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>第三方控件</tag>
+         
+        <tag>高德地图</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://www.bluelzy.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/forever_young.html</loc>
     <lastmod>2018-01-21T11:08:57.289Z</lastmod>
     <data>
@@ -206,9 +276,9 @@
         
         <tag>hexo</tag>
          
-        <tag>博客</tag>
-         
         <tag>Nginx</tag>
+         
+        <tag>博客</tag>
          
         <tag>gzip</tag>
          
