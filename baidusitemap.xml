@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/use_valine_for_your_blog.html</loc>
+    <lastmod>2018-03-18T02:14:48.039Z</lastmod>
+    <data>
+        <display>
+        <title>为你的Hexo加上评论系统-Valine</title>
+        <pubTime>2018-01-15T13:28:29.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next</tag>
+         
+        <tag>valine</tag>
+         
+        <tag>评论系统</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/activity_transmit_value.html</loc>
     <lastmod>2018-02-17T10:43:18.877Z</lastmod>
     <data>
@@ -35,9 +61,9 @@
         
         <tag>Android</tag>
          
-        <tag>第三方控件</tag>
-         
         <tag>腾讯地图</tag>
+         
+        <tag>第三方控件</tag>
          
          
            
@@ -59,9 +85,9 @@
         
         <tag>Android</tag>
          
-        <tag>高德地图</tag>
-         
         <tag>第三方控件</tag>
+         
+        <tag>高德地图</tag>
          
          
            
@@ -161,32 +187,6 @@
            
              
               <breadCrumb title="休闲类" url="https://www.bluelzy.com/categories/%E4%BC%91%E9%97%B2%E7%B1%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.bluelzy.com/articles/use_valine_for_your_blog.html</loc>
-    <lastmod>2018-01-15T14:05:16.027Z</lastmod>
-    <data>
-        <display>
-        <title>为你的Hexo加上评论系统-Valine</title>
-        <pubTime>2018-01-15T13:28:29.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>next</tag>
-         
-        <tag>valine</tag>
-         
-        <tag>评论系统</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
           
         </display>
     </data>
