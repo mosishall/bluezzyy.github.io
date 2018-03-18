@@ -3,6 +3,104 @@
   
     
     <entry>
+      <title><![CDATA[为小绿锁快速续命]]></title>
+      <url>/articles/update-https-by-acme-sh.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>眼看着小绿锁快到期了，但是crontab又失效了</p>
+<p>作为一个懒人，只好上网找现成的工具来解决</p>
+<p>登登登登，主角登场：<a href="https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc" target="_blank" rel="noopener"><strong>acme.sh</strong></a></p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="简单介绍ACME"><a href="#简单介绍ACME" class="headerlink" title="简单介绍ACME"></a>简单介绍ACME</h2><p>ACME 全称是 Automated Certificate Management Environment，直译过来是自动化证书管理环境的意思，Let’s Encrypt 的证书签发过程使用的就是 ACME 协议。有关 ACME 协议的更多资料可以在<a href="https://github.com/ietf-wg-acme/acme/" target="_blank" rel="noopener">这个仓库</a>找到。</p>
+<p>之前我的网站就是用的 <a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a> 这个免费、自动化、开放的证书签发服务。正好到3月19号就到期了，需要续签，于是就找到了acme.sh这个小工具。</p>
+<p>acme.sh的好处:</p>
+<ol>
+<li>一键快捷安装 <strong>acme.sh</strong></li>
+<li>一行命令生成证书</li>
+<li>自动更新证书</li>
+<li>自动更新 <strong>acme.sh</strong></li>
+</ol>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>官方文档（中文）：<a href="https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E" target="_blank" rel="noopener">acme.sh说明</a></p>
+<p>其实官方文档里面已经说很详细了，我也是跟着文档一步步来操作的。</p>
+<p>这篇文章把一些要注意的地方和截图都补上，让大家能清晰快速地更新证书~</p>
+<h3 id="主要步骤："><a href="#主要步骤：" class="headerlink" title="主要步骤："></a>主要步骤：</h3><h3 id="1-安装acme-sh"><a href="#1-安装acme-sh" class="headerlink" title="1.安装acme.sh"></a>1.安装acme.sh</h3><p>安装很简单, 一个命令:</p>
+<blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> curl  https://get.acme.sh | sh</span><br><span class="line"><span class="meta">&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>这个命令把acme.sh安装到<strong>home</strong>目录下，并且自动创建cronjob  </p>
+<p><strong>注意</strong>：<strong>安装过程不会污染已有的系统任何功能和文件</strong>, 所有的修改都限制在安装目录中: <code>~/.acme.sh/</code></p>
+<h3 id="2-生成证书"><a href="#2-生成证书" class="headerlink" title="2.生成证书"></a>2.生成证书</h3><p><strong>acme.sh</strong> 实现了 <strong>acme</strong> 协议支持的所有验证协议. 一般有两种方式验证: http 和 dns 验证</p>
+<p><strong>我使用的是http方式</strong>，如果想用dns验证的请看官方文档</p>
+<p>首先进入/home/.acme.sh/ 目录，然后执行下面这条命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme.sh  --issue  -d bluelzy.com -d www.bluelzy.com  --webroot  /var/www/bluelzy.com</span><br></pre></td></tr></table></figure>
+<p>www.bluelzy.com -&gt; 换成你的域名</p>
+<p>/var/www/bluelzy.com -&gt; 换成你的网站<strong>根目录</strong></p>
+<p>如果你用的 <strong>apache</strong>服务器, <strong>acme.sh</strong> 还可以智能的从 <strong>apache</strong>的配置中自动完成验证, 你不需要指定网站根目录:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme<span class="selector-class">.sh</span> --issue  -d mydomain<span class="selector-class">.com</span>   --apache</span><br></pre></td></tr></table></figure>
+<p>如果你用的 <strong>nginx</strong>服务器, 或者反代, <strong>acme.sh</strong> 还可以智能的从 <strong>nginx</strong>的配置中自动完成验证, 你不需要指定网站根目录:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme<span class="selector-class">.sh</span> --issue  -d mydomain<span class="selector-class">.com</span>   --nginx</span><br></pre></td></tr></table></figure>
+<p>如无意外应该能看到以下输出：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[Sat Mar <span class="number">17</span> <span class="number">22</span>:<span class="number">38</span>:<span class="number">56</span> EDT <span class="number">2018</span>] Your cert is <span class="keyword">in</span>  /root/<span class="selector-class">.acme</span><span class="selector-class">.sh</span>/bluelzy.com/bluelzy<span class="selector-class">.com</span><span class="selector-class">.cer</span></span><br><span class="line">[Sat Mar <span class="number">17</span> <span class="number">22</span>:<span class="number">38</span>:<span class="number">56</span> EDT <span class="number">2018</span>] Your cert key is <span class="keyword">in</span>  /root/<span class="selector-class">.acme</span><span class="selector-class">.sh</span>/bluelzy.com/bluelzy<span class="selector-class">.com</span><span class="selector-class">.key</span></span><br><span class="line">[Sat Mar <span class="number">17</span> <span class="number">22</span>:<span class="number">38</span>:<span class="number">56</span> EDT <span class="number">2018</span>] The intermediate CA cert is <span class="keyword">in</span>  /root/<span class="selector-class">.acme</span><span class="selector-class">.sh</span>/bluelzy.com/ca.cer</span><br><span class="line">[Sat Mar <span class="number">17</span> <span class="number">22</span>:<span class="number">38</span>:<span class="number">56</span> EDT <span class="number">2018</span>] And the full chain certs is there:  /root/<span class="selector-class">.acme</span><span class="selector-class">.sh</span>/bluelzy.com/fullchain.cer</span><br></pre></td></tr></table></figure>
+<p>代表证书已经成功生成了！</p>
+<h3 id="3-copy-安装证书"><a href="#3-copy-安装证书" class="headerlink" title="3.copy/安装证书"></a>3.copy/安装证书</h3><p>前面证书生成以后, 接下来需要把证书 copy 到真正需要用它的地方.</p>
+<p>注意, 默认生成的证书都放在安装目录下: <code>~/.acme.sh/</code>, 请不要直接使用此目录下的文件, 例如: 不要直接让 nginx/apache 的配置文件使用这下面的文件. 这里面的文件都是内部使用, 而且目录结构可能会变化.</p>
+<p>正确的使用方法是使用 <code>--installcert</code> 命令,并指定目标位置, 然后证书文件会被copy到相应的位置, 例如:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">acme<span class="selector-class">.sh</span>  --installcert  -d  &lt;domain&gt;<span class="selector-class">.com</span>   \</span><br><span class="line">        --key-file   /etc/nginx/ssl/&lt;domain&gt;<span class="selector-class">.key</span> \</span><br><span class="line">        --fullchain-file /etc/nginx/ssl/fullchain<span class="selector-class">.cer</span> \</span><br></pre></td></tr></table></figure>
+<p>解释一下：</p>
+<p>Nginx 的配置 <code>ssl_certificate</code> 使用 <code>/etc/nginx/ssl/fullchain.cer</code> ，而非 <code>/etc/nginx/ssl/&lt;domain&gt;.cer</code> ，否则 <a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="noopener">SSL Labs</a> 的测试会报 <code>Chain issues Incomplete</code> 错误。</p>
+<h3 id="4-修改配置文件"><a href="#4-修改配置文件" class="headerlink" title="4.修改配置文件"></a>4.修改配置文件</h3><p>打开nginx的配置文件，找到</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SSL证书配置</span></span><br><span class="line">       <span class="attribute">ssl_certificate</span> /etc/letsencrypt/live/bluelzy.com/fullchain.pem;</span><br><span class="line">       <span class="attribute">ssl_certificate_key</span> /etc/letsencrypt/live/bluelzy.com/privkey.pem;</span><br><span class="line">       <span class="attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span>;</span><br><span class="line">       <span class="attribute">ssl_session_cache</span> shared:SSL:<span class="number">10m</span>;</span><br><span class="line">       <span class="attribute">ssl_session_timeout</span> <span class="number">10m</span>;</span><br></pre></td></tr></table></figure>
+<p>把ssl_certificate路径换成：/etc/nginx/ssl/fullchain.cer</p>
+<p>把ssl_certificate_key路径换成：/etc/nginx/ssl/<domain>.key</domain></p>
+<p><strong>注意</strong>：如何你的证书不是保存在这个路径，请找到正确的路径，再修改！</p>
+<p>保存后执行一下：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">service nginx force-reload</span></span><br></pre></td></tr></table></figure>
+<p>(一个小提醒, 这里用的是 <code>service nginx force-reload</code>, 不是 <code>service nginx reload</code>, 据测试, <code>reload</code> 并不会重新加载证书, 所以用的 <code>force-reload</code>)</p>
+<p>再刷新自己的网站~就能看到证书已经被更新啦！！！</p>
+<p><a href="http://www.wailian.work/image/MyiBOt" target="_blank" rel="noopener"><img src="http://www.wailian.work/images/2018/03/18/Snip20180318_51.png" alt="Snip20180318_51.png"></a></p>
+<h3 id="5-更新证书"><a href="#5-更新证书" class="headerlink" title="5.更新证书"></a>5.更新证书</h3><p>目前证书在 60 天以后会自动更新, 你无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 你不用关心.</p>
+<h3 id="6-更新acme-sh"><a href="#6-更新acme-sh" class="headerlink" title="6.更新acme.sh"></a>6.更新acme.sh</h3><p>目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 acme.sh 也经常更新以保持同步.</p>
+<p>升级 acme.sh 到最新版 :</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme<span class="selector-class">.sh</span> --upgrade</span><br></pre></td></tr></table></figure>
+<p>如果你不想手动升级, 可以开启自动升级:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme<span class="selector-class">.sh</span>  --upgrade  --<span class="attribute">auto</span>-upgrade</span><br></pre></td></tr></table></figure>
+<p>之后, acme.sh 就会自动保持更新了.</p>
+<p>你也可以随时关闭自动更新:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme<span class="selector-class">.sh</span> --upgrade  --<span class="attribute">auto</span>-upgrade  <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>开启自动更新：</p>
+<p><a href="http://www.wailian.work/image/Myb7Hk" target="_blank" rel="noopener"><img src="http://www.wailian.work/images/2018/03/18/Snip20180318_55.png" alt="Snip20180318_55.png"></a></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><h4 id="第一个坑"><a href="#第一个坑" class="headerlink" title="第一个坑"></a>第一个坑</h4><p>在第二步中：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme<span class="selector-class">.sh</span>  --issue  -d bluelzy<span class="selector-class">.com</span> -d www<span class="selector-class">.bluelzy</span><span class="selector-class">.com</span>  --webroot  /var/www/bluelzy.com</span><br></pre></td></tr></table></figure>
+<p>webroot:参数是网站的根目录，否则会报错无法验证域名</p>
+<h4 id="第二个坑"><a href="#第二个坑" class="headerlink" title="第二个坑"></a>第二个坑</h4><p>在第三步中：</p>
+<p>如果复制的文件夹不存在，那么需要先创建文件夹，再执行命令。</p>
+<div class="note primary"><p>参考 </p>
+<p><a href="https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E" target="_blank" rel="noopener">acme.sh官方文档(中文)</a></p>
+<p><a href="https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc" target="_blank" rel="noopener">acme.sh官方文档(英文)</a></p>
+<p><a href="https://github.com/Neilpang/acme.sh/issues/779" target="_blank" rel="noopener">报错：Invalid response from (website)</a></p></div>
+<hr>]]></content>
+      
+        <categories>
+            
+            <category> 技术向 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> https </tag>
+            
+            <tag> ACME </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Activity传值与回传]]></title>
       <url>/articles/activity_transmit_value.html</url>
       <content type="html"><![CDATA[<p>记录一个基础问题， Activity传值与回传，后面遇到类似的问题就不用再问人了。</p>
@@ -256,11 +354,11 @@
         
         <tags>
             
-            <tag> 日常 </tag>
-            
             <tag> 电影 </tag>
             
             <tag> 无问西东 </tag>
+            
+            <tag> 日常 </tag>
             
         </tags>
         
@@ -308,9 +406,9 @@
         
         <tags>
             
-            <tag> 知乎 </tag>
-            
             <tag> 日常 </tag>
+            
+            <tag> 知乎 </tag>
             
         </tags>
         
@@ -551,9 +649,9 @@ gzip_types text/plain text/css application/javascript application/x-javascript t
             
             <tag> hexo </tag>
             
-            <tag> Nginx </tag>
-            
             <tag> 博客 </tag>
+            
+            <tag> Nginx </tag>
             
             <tag> gzip </tag>
             
