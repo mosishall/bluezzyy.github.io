@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bluelzy.com/"/>
-  <updated>2018-03-18T05:19:57.446Z</updated>
+  <updated>2018-03-28T16:30:36.301Z</updated>
   <id>https://www.bluelzy.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客100天总结</title>
+    <link href="https://www.bluelzy.com/articles/one-hundred-days-summary.html"/>
+    <id>https://www.bluelzy.com/articles/one-hundred-days-summary.html</id>
+    <published>2018-03-28T15:37:42.000Z</published>
+    <updated>2018-03-28T16:30:36.301Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>本博客已经运行了100天了</p><p>是时候该总结一下了</p></blockquote> <a id="more"></a><p>##一、本博客主要写什么</p><p>​    作为一名新入职场的菜鸟，最近越来越觉得大学四年时间都被荒废了，没有好好学习该掌握的理论知识，导致现在工作效率的低下。搭建这个博客的初衷就是：在工作中遇到很多问题，以及学到了很多新技术，这些都是我想通过博客写成文章，记录下来的。这些不仅仅是经验之谈，更是人生阅历，也是阶段性的总结。因此，在博客运行100天之际，写下这篇文章，谈谈这段时间都做了什么。</p><p>​    <strong>本博客主要是为了记录</strong></p><ul><li>技术上遇到的问题，好用的小工具，学习到的新技术，目前是Android开发，对Python有兴趣，主要是爬虫和数据分析方向。</li><li>读过的好书，包括读书笔记，以及个人的总结和思考</li><li>看过的电影 — 这个应该比较少，毕竟一部电影2h，还是挺耗时间的  例如:  <a href="https://www.bluelzy.com/articles/forever_young.html">无问西东</a></li><li>日常生活中的琐事，或者是自己的思考过程，也就是碎碎念~</li></ul><p>##二、100天总结</p><p>搭建个人博客100天总结：</p><ul><li>读书</li><li>Android开发</li></ul><p>这两个就是近100天主要进行的活动，由于项目加班较多，因此也没有多少时间总结遇到的问题，踩过的坑，但是我都记在Evernote里面了，以后有时间再挑一些写吧。</p><h3 id="读书"><a href="#读书" class="headerlink" title="读书"></a>读书</h3><p>这段时间读完了以下书籍：</p><p>一月：</p><ul><li><a href="https://book.douban.com/subject/10765018/" target="_blank" rel="noopener">拿工薪，三十几岁你也能赚到600万</a>   2018/01/02  </li><li><a href="https://book.douban.com/subject/2201570/" target="_blank" rel="noopener">爱嘉定投魔法</a>  2018/01/04 </li><li><a href="https://book.douban.com/subject/6519055/" target="_blank" rel="noopener">买基金为自己加薪</a>  2018/01/05  </li></ul><p>二月：</p><ul><li><a href="https://book.douban.com/subject/3558629/" target="_blank" rel="noopener">时间管理：小强升职记</a> 2018/02/22</li><li><a href="https://book.douban.com/subject/19940741/" target="_blank" rel="noopener">罗辑思维2</a>  2018/02/27</li></ul><p>三月：</p><ul><li><a href="https://book.douban.com/subject/27041645/" target="_blank" rel="noopener">百万富翁快车道</a>  2018/03/07  </li><li><a href="https://book.douban.com/subject/27609489/" target="_blank" rel="noopener">远见：如何规划职业生涯3大阶段</a> 2018/03/18  </li><li><a href="https://book.douban.com/subject/26312412/" target="_blank" rel="noopener">发现你的天赋：天分与热情成就人生</a>  2018/03/24</li><li>阿里巴巴Android开发手册 2018/03/26</li></ul><p>​    这段时间主要是想提高理财的能力，以及对时间管理的了解，因此结合之前看过的《刻意练习》和《好好学习》这两本书，加上《小强升职记》，对学习方法，以及工作效率都有新的看法。学习到一些技巧现在也会运用在生活中~</p><p>​    首先必须要推荐的是《爱嘉定投魔法》，在基金投资三部曲当中（也就是我一月份看的这三本书），整体性最强，提供的实操性也是最强的，就是《爱嘉定投魔法》。建议大家对理财有兴趣的都可以去看看，其他两本，第一本是国外的，和社会主义特色有点不大一样。第二本是台湾的，可行性和实操性有局限性，而且内容大部分和前两本类似，所以匆匆过了一遍就没看了。</p><p>​    对于时间管理和学习方法方面的书有很多，《和时间做朋友》《七年就是一辈子》《精进》《跃迁》等等，对于初入职场的人来说，首先可以看看《小强升职记》，如何把自己手头上的事情做好~有了空闲时间，再通过学习别人好的方法，提高效率，不断学习精进。</p><p>​    这些书的笔记其实都保存在EvenNote里面，但是由于比较随性，所以就没有放到博客上，打算把成体系，或者比较完整的笔记放上来，其他的就自己留着偶尔回顾吧。</p><h3 id="Android开发"><a href="#Android开发" class="headerlink" title="Android开发"></a>Android开发</h3><p>​    自己负责一个App Adnroid端的开发，没有造出什么轮子，也没有注重代码的解耦，每天按照需求加班加点开发，好不容易做完了。希望接下来继续review代码，学习优秀的架构思想和设计模式，不仅仅实现功能，还要把代码和项目做得漂亮。提高抽象能力，更加注重基础！</p><p>这段时间还是学习到了很多东西的</p><ul><li>自定义View从0到1，现在基本都能实现出来想要的UI效果</li><li>更加了解事件分发机制，处理了各种各样的滑动冲突，刚开始真的是有点懵逼。。</li><li>对MVP模式更加熟悉</li><li>Kotlin从入门到放弃，慢慢把代码迁移过来吧</li></ul><p>看完了</p><ul><li>Android权威编程指南</li></ul><p>正在看</p><ul><li>Android开发进阶 从小工到专家</li></ul><p>打算看</p><ul><li>Android群英传</li><li>Android开发艺术探索</li><li>Android源码设计模式</li></ul><p>##三、2018年展望和计划</p><h3 id="一、读书"><a href="#一、读书" class="headerlink" title="一、读书"></a>一、读书</h3><p>保持每个月3本书的进度，有时间的话可以把读书笔记和思考总结出来。</p><h3 id="二、技术"><a href="#二、技术" class="headerlink" title="二、技术"></a>二、技术</h3><p>由于深感基础太差，目前跟着萧大的<a href="https://zhuanlan.zhihu.com/p/19959253?columnSlug=xiao-jing-mo" target="_blank" rel="noopener">编程入门指南</a>来学习，2018-03-28正处于启蒙阶段，Python导论和CS50这两门课还是比较简单的，容易激发对计算机科学的兴趣，空闲时间正在读<a href="https://book.douban.com/subject/4822685/" target="_blank" rel="noopener">《编码》</a>，以下这段话摘自<a href="https://zhuanlan.zhihu.com/p/19959253?columnSlug=xiao-jing-mo" target="_blank" rel="noopener">编程入门指南</a></p><blockquote><p>为了更好理解，可以将学习编程类比为学习厨艺：你为了烧得一手好菜买了一些关于菜谱的书，如果你只是想为家人做菜，这会是一个不错的主意，你重复菜谱上的步骤也能做出不赖的菜肴，但是如果你有更大的野心，真的想在朋友面前露一手，做一些独一无二的美味佳肴，甚至成为「大厨」，你必须理解这些菜谱背后大师的想法，理解其中的理论，而不仅仅是一味地实践。但是如果你每天唯一的工作就是阅读那些厚重的理论书籍，因为缺乏实践，你只会成为一个糟糕的厨子，甚至永远成为不了厨子，因为看了几天书后你就因为枯燥放弃了厨艺的学习。</p><p>总之，编程是连接理论与实践的纽带，是<a href="https://link.zhihu.com/?target=http%3A//zh.wikip" target="_blank" rel="noopener">计算机科学</a>与计算机应用技术相交融的领域。正确的编程学习方法应该是：通过自顶而下的探索与项目实践，获得编程直觉与推动力；从自底向上的打基础过程中，获得最重要的通用方法并巩固编程思想的理解。</p><p>作为初学者，应以后者为主，前者为辅。</p></blockquote><h3 id="三、碎碎念"><a href="#三、碎碎念" class="headerlink" title="三、碎碎念"></a>三、碎碎念</h3><ul><li>Android是主线，不断打怪嗑药得经验升级~</li><li>Python和计算机科学的学习可以同时进行</li><li>每天坚持看书~自己也要有思考总结！</li></ul><p>最后的最后，距离2018年已经过去了1/4，还有283天结束，加油吧💪！！！</p><p>需要电子书的童鞋也可以留下书名+邮箱，我有空的时候会发给你们~</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;本博客已经运行了100天了&lt;/p&gt;
+&lt;p&gt;是时候该总结一下了&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="日常说" scheme="https://www.bluelzy.com/categories/%E6%97%A5%E5%B8%B8%E8%AF%B4/"/>
+    
+    
+      <category term="博客总结" scheme="https://www.bluelzy.com/tags/%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>【读书笔记】远见：如何规划职业生涯3大阶段</title>
@@ -122,9 +146,9 @@
     
       <category term="Android" scheme="https://www.bluelzy.com/tags/Android/"/>
     
-      <category term="腾讯地图" scheme="https://www.bluelzy.com/tags/%E8%85%BE%E8%AE%AF%E5%9C%B0%E5%9B%BE/"/>
-    
       <category term="第三方控件" scheme="https://www.bluelzy.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8E%A7%E4%BB%B6/"/>
+    
+      <category term="腾讯地图" scheme="https://www.bluelzy.com/tags/%E8%85%BE%E8%AE%AF%E5%9C%B0%E5%9B%BE/"/>
     
   </entry>
   
@@ -151,9 +175,9 @@
     
       <category term="Android" scheme="https://www.bluelzy.com/tags/Android/"/>
     
-      <category term="第三方控件" scheme="https://www.bluelzy.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8E%A7%E4%BB%B6/"/>
-    
       <category term="高德地图" scheme="https://www.bluelzy.com/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
+    
+      <category term="第三方控件" scheme="https://www.bluelzy.com/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8E%A7%E4%BB%B6/"/>
     
   </entry>
   
@@ -411,9 +435,9 @@
       <category term="技术向" scheme="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="Linux" scheme="https://www.bluelzy.com/tags/Linux/"/>
-    
       <category term="Nginx" scheme="https://www.bluelzy.com/tags/Nginx/"/>
+    
+      <category term="Linux" scheme="https://www.bluelzy.com/tags/Linux/"/>
     
       <category term="CentOS 6" scheme="https://www.bluelzy.com/tags/CentOS-6/"/>
     
