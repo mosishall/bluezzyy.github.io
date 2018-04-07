@@ -4,11 +4,31 @@
 
     
   <url>
-    <loc>https://www.bluelzy.com/articles/raspberry_use_guide.html</loc>
-    <lastmod>2018-04-07T05:11:51.751Z</lastmod>
+    <loc>https://www.bluelzy.com/articles/raspberry_general_setting.html</loc>
+    <lastmod>2018-04-07T10:12:49.043Z</lastmod>
     <data>
         <display>
-        <title>树莓派新手指南</title>
+        <title>树莓派新手指南(二)-必备设置</title>
+        <pubTime>2018-04-07T08:22:32.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/raspberry_use_guide.html</loc>
+    <lastmod>2018-04-07T09:51:25.749Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派新手指南（一）</title>
         <pubTime>2018-03-31T04:33:24.000Z</pubTime>
         
         <tag>树莓派</tag>

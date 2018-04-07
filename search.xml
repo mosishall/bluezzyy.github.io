@@ -3,7 +3,98 @@
   
     
     <entry>
-      <title><![CDATA[树莓派新手指南]]></title>
+      <title><![CDATA[树莓派新手指南(二)-必备设置]]></title>
+      <url>/articles/raspberry_general_setting.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>新手设置指南：</p>
+<p>1、设置中文 2、设置静态IP 3、VNC登录 </p>
+<p>……</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经过了：<a href="https://www.bluelzy.com/articles/raspberry_use_guide.html">树莓派新手指南 </a>后<br>树莓派已经基本能用了，但是还有些地方不太方便，例如：怎么全是英文，能不能不接显示器看到图形界面等等<br>一番折腾以后，就有了这篇 <strong>树莓派新手指南(2)-必备设置</strong></p>
+<h2 id="一、设置中文"><a href="#一、设置中文" class="headerlink" title="一、设置中文"></a>一、设置中文</h2><p>1.语言和区域设置</p>
+<p>在命令行输入</p>
+<blockquote>
+<p>sudo raspi-config</p>
+</blockquote>
+<p>出现树莓派设置界面</p>
+<p><img src="https://img-blog.csdn.net/20180407175304751?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsdWVfenk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>选择第四项“Localisation Options”，然后再选择第一项“Change Locale”</p>
+<p>把zn_CN开头的这几项都选上，然后保存（刚开始应该都是英文界面，我这是改完以后的截图）</p>
+<blockquote>
+<p> Tips：可以使用page down翻页比较快</p>
+</blockquote>
+<p><img src="https://img-blog.csdn.net/20180407175321745?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsdWVfenk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>设置完成后</p>
+<blockquote>
+<p>sudo reboot</p>
+</blockquote>
+<p>重启树莓派即可完成中文设置</p>
+<hr>
+
+<p>如果重启后发现界面的中文显示不出来，那么说明你的系统没有自带中文库字体</p>
+<blockquote>
+<p>sudo apt-get install ttf-wqy-zenhei</p>
+</blockquote>
+<p>命令行安装开源中文字体，然后再重启即可。</p>
+<h2 id="二、设置静态IP"><a href="#二、设置静态IP" class="headerlink" title="二、设置静态IP"></a>二、设置静态IP</h2><h3 id="为什么要使用静态IP"><a href="#为什么要使用静态IP" class="headerlink" title="为什么要使用静态IP"></a>为什么要使用静态IP</h3><p>一、可以防范DHCP自动分配的IP来回变动，导致远程SSH时常无法连接</p>
+<p>二、提高树莓派网络连接速度</p>
+<h3 id="怎么设置静态IP"><a href="#怎么设置静态IP" class="headerlink" title="怎么设置静态IP"></a>怎么设置静态IP</h3><p>网上很多资料是修改 /etc/network/interface配置文件，增加静态IP的设定，不过这个方法有个问题，即使取得了静态IP，DHCP服务依然会自动为树莓派分配动态IP和DNS地址，导致路由表默认网关出现冲突，手动给定的默认DNS不生效的情况。</p>
+<p>解决这个问题的方法特别简单，输入sudo cat /etc/network/interfaces可以看到，interfaces文件的开头注释里告诉我们，要修改静态IP地址，需要修改的是/etc/dhcpcd.conf 也就是DHCP的配置文件</p>
+<p>输入</p>
+<blockquote>
+<p>sudo nano /etc/dhcpcd.conf</p>
+</blockquote>
+<p>打开配置文件，找到</p>
+<blockquote>
+<p>example static ip configuration</p>
+</blockquote>
+<p>这一段，然后修改成(IP可以随意修改，只要不要和已有的冲突就行)</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Example static IP configuration:</span></span><br><span class="line">interface wlan0</span><br><span class="line">static <span class="attribute">ip_address</span>=192.168.1.168/24</span><br><span class="line">static <span class="attribute">routers</span>=192.168.1.1</span><br><span class="line">static <span class="attribute">domain_name_servers</span>=192.168.1.1</span><br></pre></td></tr></table></figure>
+<p>ctrl + o 保存 ctrl + x 退出</p>
+<blockquote>
+<p>Tips:  wlan0: 代表的是无线连接，如果你接了网线，改成eth0</p>
+</blockquote>
+<h2 id="三、VNC登录"><a href="#三、VNC登录" class="headerlink" title="三、VNC登录"></a>三、VNC登录</h2><p>首先我们需要开启VNC</p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>在命令行输入</p>
+<blockquote>
+<p>vncserver </p>
+</blockquote>
+<p>回车就可以了，这个方法重启后需要重启开启</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>命令行输入</p>
+<blockquote>
+<p>sudo raspi-config</p>
+</blockquote>
+<p>选择第五项“5 interface Options ” 然后再选择第三项：”VNC”，再选择enabled，即可。</p>
+<p>在树莓派上开启了VNC后，我们需要在电脑上安装VNC软件</p>
+<ul>
+<li>windows: VNC Viewer</li>
+<li>Mac： VNC Viewer</li>
+</ul>
+<p>输入树莓派的ip，端口(开启VNC后在终端能看到)</p>
+<p><img src="https://img-blog.csdn.net/20180407175346821?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsdWVfenk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>就可以看到树莓派的界面啦</p>
+<p><img src="https://img-blog.csdn.net/20180407175400137?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsdWVfenk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>经过了这些设置，接下来就可以使用树莓派发掘它好玩的地方lalala~</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术向 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 树莓派 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[树莓派新手指南（一）]]></title>
       <url>/articles/raspberry_use_guide.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>最近入手了树莓派3B，从组装到烧录系统，再到远程登录</p>
 <p>花了一个晚上的时间</p>
