@@ -3,6 +3,107 @@
   
     
     <entry>
+      <title><![CDATA[树莓派新手指南]]></title>
+      <url>/articles/raspberry_use_guide.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>最近入手了树莓派3B，从组装到烧录系统，再到远程登录</p>
+<p>花了一个晚上的时间</p>
+<p>于是有了这篇从入门到初级的文章</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="一、组装"><a href="#一、组装" class="headerlink" title="一、组装"></a>一、组装</h2><p>一般来说包括但不限于以下组件</p>
+<ul>
+<li>RASPBERRY PI 3B</li>
+<li>电源</li>
+<li>散热片</li>
+<li>小风扇</li>
+<li>TF卡（注意不是SD卡，而是Micro SD卡）</li>
+</ul>
+<p>跟着说明书的步骤来安装就可以了，只要注意一点，如果用的是官方的红白外壳，那么需要先完成安装再插入TF卡。</p>
+<h2 id="二、下载-amp-烧录系统"><a href="#二、下载-amp-烧录系统" class="headerlink" title="二、下载&amp;烧录系统"></a>二、下载&amp;烧录系统</h2><h3 id="1-下载-Raspbian"><a href="#1-下载-Raspbian" class="headerlink" title="1.下载  Raspbian"></a>1.下载  <strong>Raspbian</strong></h3><p>树莓派官方深度定制的硬件驱动与软件程序，官方推荐系统。如果你第一次使用树莓派，请下载这个。Debian的软件策略偏保守，稳定第一，升级是次要的。</p>
+<p>两个下载源：</p>
+<p>(1)树莓派实验室下载地址</p>
+<p>下载链接：<a href="http://downloads.raspberrypi.org/raspbian_latest" target="_blank" rel="noopener">http://downloads.raspberrypi.org/raspbian_latest</a><br>默认帐号：Username: pi Password: raspberry</p>
+<p>（2）树莓派官网下载地址</p>
+<p>下载链接：<a href="https://www.raspberrypi.org/downloads/" target="_blank" rel="noopener">https://www.raspberrypi.org/downloads/</a></p>
+<p>默认帐号：Username: pi Password: raspberry</p>
+<p>打开官网会看到以下界面，左边的是NOOBS，包括了好几个系统</p>
+<p>我们只要点击右边这个，下载Raspbian系统就足够了。</p>
+<p><img src="http://img.blog.csdn.net/20180407130324325?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="下载树莓派"></p>
+<p>点击进去之后会发现有两个选项，看标题应该就能看懂了</p>
+<p>左边是带图形化界面的，右边是不带图形化界面的。OK，我们选择左边的</p>
+<p><img src="http://img.blog.csdn.net/20180407130359187?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="下载树莓派"></p>
+<h3 id="2-烧录系统"><a href="#2-烧录系统" class="headerlink" title="2.烧录系统"></a>2.烧录系统</h3><p>下载完成后我们就要进行系统烧录了。使用的工具是win32DiskImager，百度直接搜就能找到下载地址。</p>
+<ol>
+<li>选择SD卡</li>
+<li>选择下载好的镜像文件</li>
+<li>点击“写入”</li>
+</ol>
+<p>弹出的对话框点击“Yes”，然后等待烧录完成，这个过程大概要10分钟…</p>
+<h2 id="三、开机"><a href="#三、开机" class="headerlink" title="三、开机"></a>三、开机</h2><p>这部分重点讲一下，因为我没有外接显示器，所以用的是SSH登陆的方式。</p>
+<p>需要准备的工具</p>
+<ul>
+<li>读卡器（必选）</li>
+</ul>
+<ul>
+<li>网线（可选）</li>
+</ul>
+<h3 id="一、有网线的情况"><a href="#一、有网线的情况" class="headerlink" title="一、有网线的情况"></a>一、有网线的情况</h3><p>（1）开启SSH</p>
+<p>由于树莓派3默认关闭了SSH，因此我们需要先用读卡器接入SD卡，在boot目录，也就是根目录下新建一个文件：SSH（无后缀），然后保存，就可以开启SSH功能了。</p>
+<p>（2）获取IP地址</p>
+<p>接上网线后，通过路由器找到树莓派的IP：树莓派Mac地址都是b8开头，很容易就能找到。</p>
+<p>（3）登陆树莓派</p>
+<p>得到树莓派的IP地址后，就可以通过ssh登录了，windows下可以选用putty进行登录，由于我是Mac电脑，用的是shuttle，也可以直接命令行登录，如图：</p>
+<p><img src="http://img.blog.csdn.net/20180407130444847?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmx1ZV96eQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="二、没网线的情况"><a href="#二、没网线的情况" class="headerlink" title="二、没网线的情况"></a>二、没网线的情况</h3><p>这种情况只能通过wifi连接，获取IP地址，然后再SSH登录</p>
+<p>（1）是一样的，需要先开启ssh功能</p>
+<p>（2）连接WIFI</p>
+<p>在boot（根目录）下新建<strong>wpa_supplicant.conf</strong>文件，内容如下：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ctrl_interface</span>=DIR=/var/run/wpa_supplicant <span class="attribute">GROUP</span>=netdev</span><br><span class="line"><span class="attribute">update_config</span>=1</span><br><span class="line"><span class="attribute">country</span>=GB</span><br><span class="line">network=&#123;</span><br><span class="line">        <span class="attribute">ssid</span>=<span class="string">"WIFI-NAME"</span></span><br><span class="line">        <span class="attribute">key_mgmt</span>=WPA-PSK</span><br><span class="line">        <span class="attribute">psk</span>=<span class="string">"wifi-password"</span></span><br><span class="line">        <span class="attribute">priority</span>=5</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ssid：wifi名称</li>
+<li>psk：wifi密码</li>
+<li>priority：优先度    </li>
+<li>key_mgmt：ap加密类型</li>
+</ul>
+<p>（3）登录树莓派</p>
+<p>开机后树莓派会自动连上WIFI，同上面第三步一样，就可以通过ssh登录了。</p>
+<h3 id="附：有显示器的情况"><a href="#附：有显示器的情况" class="headerlink" title="附：有显示器的情况"></a>附：有显示器的情况</h3><p>树莓派的接口为HDMI，如果显示器为VGA的话，就需要一条转接线。</p>
+<p>接上后开启树莓派，能看到绿色指示灯闪烁，显示器就能看到图形化界面了，其他操作和windows差不多~</p>
+<h2 id="四、常见预警标志"><a href="#四、常见预警标志" class="headerlink" title="四、常见预警标志"></a>四、常见预警标志</h2><p>如果看到显示器上显示一个警告图标，说明存在问题</p>
+<p>（1）彩色色块/闪电符号</p>
+<p>供电不足，可能导致系统不稳定，容易死机</p>
+<p>原因：1、供电电源不是标准的电流电源（5V/2-2.5A）2、未使用优质USB线 3、GPIO口负载太多传感器 4、USB口负载外设</p>
+<p>（2）黄色色块/温度计符号</p>
+<p>散热问题，可能导致卡死，甚至烧坏主板</p>
+<p>原因：没有安装散热片和小风扇</p>
+<h2 id="五、待续"><a href="#五、待续" class="headerlink" title="五、待续"></a>五、待续</h2><p>经过上面几个步骤以后，初步可以使用树莓派了，但是还有一些设置没有做好，接下来还会写点设置方面的文章，然后再开始发掘树莓派上好玩的功能。</p>
+<ol>
+<li>设置中文</li>
+<li>设置静态IP</li>
+<li>VNC登陆</li>
+</ol>
+<hr>]]></content>
+      
+        <categories>
+            
+            <category> 技术向 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 树莓派 </tag>
+            
+            <tag> ssh </tag>
+            
+            <tag> vnc </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[博客100天总结]]></title>
       <url>/articles/one-hundred-days-summary.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>本博客已经运行了100天了</p>
@@ -588,11 +689,11 @@
         
         <tags>
             
+            <tag> 日常 </tag>
+            
             <tag> 电影 </tag>
             
             <tag> 无问西东 </tag>
-            
-            <tag> 日常 </tag>
             
         </tags>
         
@@ -640,9 +741,9 @@
         
         <tags>
             
-            <tag> 日常 </tag>
-            
             <tag> 知乎 </tag>
+            
+            <tag> 日常 </tag>
             
         </tags>
         

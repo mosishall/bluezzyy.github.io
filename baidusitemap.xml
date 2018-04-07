@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/raspberry_use_guide.html</loc>
+    <lastmod>2018-04-07T05:11:51.751Z</lastmod>
+    <data>
+        <display>
+        <title>树莓派新手指南</title>
+        <pubTime>2018-03-31T04:33:24.000Z</pubTime>
+        
+        <tag>树莓派</tag>
+         
+        <tag>ssh</tag>
+         
+        <tag>vnc</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/one-hundred-days-summary.html</loc>
     <lastmod>2018-03-29T01:03:59.773Z</lastmod>
     <data>
@@ -175,11 +199,11 @@
         <title>电影-无问西东</title>
         <pubTime>2018-01-21T10:01:09.000Z</pubTime>
         
+        <tag>日常</tag>
+         
         <tag>电影</tag>
          
         <tag>无问西东</tag>
-         
-        <tag>日常</tag>
          
          
            
@@ -199,9 +223,9 @@
         <title>哪有什么真正的言论自由？</title>
         <pubTime>2018-01-20T00:24:58.000Z</pubTime>
         
-        <tag>日常</tag>
-         
         <tag>知乎</tag>
+         
+        <tag>日常</tag>
          
          
            
