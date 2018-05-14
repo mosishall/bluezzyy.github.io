@@ -3,6 +3,60 @@
   
     
     <entry>
+      <title><![CDATA[WebView调用JS失败问题总结]]></title>
+      <url>/articles/webview_and_js_problems.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>最近在项目里需要在WebView调用JS方法，遇到了一些坑，在此记录下来。</p>
+<p>方便以后查找回顾。</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="背景说明"><a href="#背景说明" class="headerlink" title="背景说明"></a>背景说明</h2><p>一般来说，如果需要在WebView调用JS方法，只需要进行以下几步：</p>
+<p>1、设置WebView支持JS</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webSettings.setJavaScriptEnabled(true)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>2、加载html文件/url</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">webView.loadUrl(<span class="string">"file:///android_asset/index.html"</span>)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">webView.loadUrl(<span class="string">"www.baidu.com"</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>3、调用JS方法</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 无参</span></span><br><span class="line"><span class="selector-tag">webView</span><span class="selector-class">.loadUrl</span>(<span class="string">"javascript:helloworld()"</span>);</span><br><span class="line"><span class="comment">// 有参</span></span><br><span class="line"><span class="selector-tag">webView</span><span class="selector-class">.loadUrl</span>(<span class="string">"javascript:helloworld('"</span> + word + <span class="string">"')"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>注意：JS里面的变量需要用’’来表示</strong></p>
+<p>现在遇到的情况就是：在无参数的时候能够正常调用JS，有参情况无法调用，接下来就一步步来排查。</p>
+<h2 id="排查问题"><a href="#排查问题" class="headerlink" title="排查问题"></a>排查问题</h2><p>1、首先要让WebView支持JS</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WebSettings webSettings = webView.getSettings()<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">webSettings.setJavaScriptEnabled(true)<span class="comment">;</span></span><br><span class="line">webSettings.setJavaScriptCanOpenWindowsAutomatically(true)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>2、然后传参的时候记得在变量加上’’</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webView.loadUrl(<span class="string">"javascript:helloworld('"</span> + <span class="built_in">word</span> + <span class="string">"')"</span>);</span><br></pre></td></tr></table></figure>
+<p>这个时候还是不行，上网查了一下，貌似WebView加载url是异步的，js应该在加载完html后再调用，因此再加上下面这段代码</p>
+<p>3、重写onPageFinished方法</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">webView.setWebViewClient(<span class="keyword">new</span> WebViewClient() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> onPageFinished(WebView view, <span class="keyword">String</span> url) &#123;</span><br><span class="line">       <span class="keyword">String</span> <span class="keyword">word</span> = <span class="string">"test"</span>;</span><br><span class="line">       webView.loadUrl(<span class="string">"javascript:helloworld('"</span> + <span class="keyword">word</span> + <span class="string">"')"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这个时候发现还是不行，最后想想，会不会是因为ajax请求有跨域的问题，但是看控制台又没有报错，不管了，先把代码加上</p>
+<p>4、解决跨域问题</p>
+<figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.JELLY_BEAN)&#123;</span><br><span class="line">    forecastWebView.getSettings().setAllowUniversalAccessFromFileURLs(<span class="literal">true</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="class"><span class="keyword">Class</span>&lt;?&gt; <span class="title">clazz</span> = <span class="title">forecastWebView</span>.<span class="title">getSettings</span>().<span class="title">getClass</span>();</span></span><br><span class="line">        <span class="function"><span class="keyword">Method</span> <span class="title">method</span> =</span> clazz.getMethod(<span class="string">"setAllowUniversalAccessFromFileURLs"</span>, boolean.class);</span><br><span class="line">        <span class="keyword">if</span> (<span class="function"><span class="keyword">method</span> !=</span> <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="function"><span class="keyword">method</span>.<span class="title">invoke</span>(</span>forecastWebView.getSettings(), <span class="literal">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (NoSuchMethodException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InvocationTargetException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于在sdk &gt; 16以上，也就是4.1以上就能直接设置，但是低于4.1的版本只能通过反射的方式来设置，代码大家看一下就懂了。</p>
+<p>最后再Build &amp; Run，发现困扰了很久的调用问题居然被解决了。虽然过程比较曲折，但是也算是学习到了一些经验，因此也把这个过程总结下来。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果JS调用失败，一般有以下几个解决方案，大家根据实际情况来使用：</p>
+<ol>
+<li>设置WebView支持JS</li>
+<li>传参的时候记得变量需要加上’’</li>
+<li>重写onPageFinished方法</li>
+<li>解决跨域问题</li>
+</ol>
+<hr>]]></content>
+      
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> WebView </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[树莓派新手指南(二)-必备设置]]></title>
       <url>/articles/raspberry_general_setting.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>新手设置指南：</p>

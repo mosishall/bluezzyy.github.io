@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/webview_and_js_problems.html</loc>
+    <lastmod>2018-05-14T14:39:29.283Z</lastmod>
+    <data>
+        <display>
+        <title>WebView调用JS失败问题总结</title>
+        <pubTime>2018-05-14T14:11:25.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>WebView</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://www.bluelzy.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/raspberry_general_setting.html</loc>
-    <lastmod>2018-04-07T10:12:49.043Z</lastmod>
+    <lastmod>2018-05-10T03:15:04.084Z</lastmod>
     <data>
         <display>
         <title>树莓派新手指南(二)-必备设置</title>
