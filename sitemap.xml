@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.bluelzy.com/articles/java_se_genericity.html</loc>
+    
+    <lastmod>2018-06-02T14:17:09.018Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.bluelzy.com/articles/webview_and_js_problems.html</loc>
     
     <lastmod>2018-05-14T14:39:29.283Z</lastmod>

@@ -116,7 +116,7 @@
 
 
 
-  <meta name="keywords" content="日常," />
+  <meta name="keywords" content="Java,泛型," />
 
 
 
@@ -129,18 +129,18 @@
 
 
 
-<meta name="description" content="emmm….接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末这个博客不仅仅会写技术，也会记录日常生活~反正就是一个想到什么写什么的地方">
-<meta name="keywords" content="日常">
+<meta name="description" content="Java基础第一篇 - 泛型">
+<meta name="keywords" content="Java,泛型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇文章">
-<meta property="og:url" content="https://www.bluelzy.com/articles/first_article.html">
+<meta property="og:title" content="Java基础-泛型">
+<meta property="og:url" content="https://www.bluelzy.com/articles/java_se_genericity.html">
 <meta property="og:site_name" content="BlueLzy&#39;s Blog">
-<meta property="og:description" content="emmm….接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末这个博客不仅仅会写技术，也会记录日常生活~反正就是一个想到什么写什么的地方">
+<meta property="og:description" content="Java基础第一篇 - 泛型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-12T10:53:16.303Z">
+<meta property="og:updated_time" content="2018-06-02T14:17:09.018Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇文章">
-<meta name="twitter:description" content="emmm….接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末这个博客不仅仅会写技术，也会记录日常生活~反正就是一个想到什么写什么的地方">
+<meta name="twitter:title" content="Java基础-泛型">
+<meta name="twitter:description" content="Java基础第一篇 - 泛型">
 
 
 
@@ -174,7 +174,7 @@
 
 
 
-  <title>第一篇文章 | BlueLzy's Blog</title>
+  <title>Java基础-泛型 | BlueLzy's Blog</title>
   
 
 
@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/articles/first_article.html">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/articles/java_se_genericity.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -372,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第一篇文章</h1>
+          <h1 class="post-title" itemprop="name headline">Java基础-泛型</h1>
         
 
         <div class="post-meta">
@@ -384,8 +384,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-17T18:33:48+08:00">
-                2017-12-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T22:11:08+08:00">
+                2018-06-02
               </time>
             
 
@@ -407,8 +407,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日常说/" itemprop="url" rel="index">
-                    <span itemprop="name">日常说</span>
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
                   </a>
                 </span>
 
@@ -424,7 +424,7 @@
 
           
           
-             <span id="/articles/first_article.html" class="leancloud_visitors" data-flag-title="第一篇文章">
+             <span id="/articles/java_se_genericity.html" class="leancloud_visitors" data-flag-title="Java基础-泛型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -455,11 +455,63 @@
       
 
       
-        <p>emmm….<br>接下来打算写写搭建这个博客的过程。毕竟捣鼓了整整一个周末<br>这个博客不仅仅会写技术，也会记录日常生活~<br>反正就是一个想到什么写什么的地方</p>
-<a id="more"></a>
-<p><br><br><br><br><br></p>
-<p>我是Blue</p>
-<p>嘻嘻</p>
+        <blockquote class="blockquote-center"><p>Java基础第一篇 - 泛型</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><h3 id="1-入门："><a href="#1-入门：" class="headerlink" title="1. 入门："></a>1. 入门：</h3><p>泛型的引入是为了让Java能够记住集合中的数据类型，而不是统一用Object来处理。 </p>
+<p>例如： </p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class ListErr </span><br><span class="line">&#123; </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        List strList = <span class="keyword">new</span> ArrayList();</span><br><span class="line">       strList.<span class="built_in">add</span>(“aaaa);</span><br><span class="line">       strList.<span class="built_in">add</span>(<span class="number">5</span>);</span><br><span class="line">       <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>; i&lt;strList.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">String</span> <span class="built_in">str</span> = strList.<span class="built_in">get</span>(i); <span class="comment">// 这里会报错，因为加了一个Int数据</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候程序会报ClassCastException异常。 </p>
+<p>我们可以通过手动实现编译时检查类型。通过组合的方式来复用ArrayList类。 </p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class StrList &#123;</span><br><span class="line">    <span class="keyword">private</span> List strList = <span class="keyword">new</span> ArrayList ();</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">boolean</span> <span class="built_in">add</span>(<span class="keyword">String</span> ele)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> strList.<span class="built_in">add</span>(ele);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">String</span> <span class="built_in">get</span>(<span class="built_in">int</span> index)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">String</span>) strList.<span class="built_in">get</span>(index);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> <span class="built_in">size</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> strList.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class CheckType</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        List strList = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"aaa"</span>);</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"bbb"</span>);</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"ccc"</span>);</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="number">5</span>);  <span class="comment">//这行会导致编译失败</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i=<span class="number">0</span>; i&lt;strList.<span class="built_in">size</span>();i++) &#123;</span><br><span class="line">            <span class="keyword">String</span> <span class="built_in">str</span> = (<span class="keyword">String</span>) strList.<span class="built_in">get</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而当我们使用泛型的时候如下： </p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class GenericList &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        List&lt;<span class="keyword">String</span>&gt; strList = <span class="keyword">new</span> ArrayList&lt;<span class="keyword">String</span>&gt;();</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"aaa"</span>);</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"bbb"</span>);</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"ccc"</span>);</span><br><span class="line">        <span class="comment">//strList.add(5);  这行会导致编译失败</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">String</span> <span class="built_in">str</span> : strList) &#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="built_in">str</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过一个&lt;&gt;指定参数类型，就不会发生上面那种情况了。 </p>
+<h3 id="2-深入泛型"><a href="#2-深入泛型" class="headerlink" title="2. 深入泛型"></a>2. 深入泛型</h3><p>泛型能够在哪些场景下使用呢？  </p>
+<p>定义类，接口，方法时使用类型形参，这个类型形参将在声明变量，创建对象，调用方法时动态指定。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt; </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(E x)</span></span>;</span><br><span class="line">    <span class="function">Iterator&lt;E&gt; <span class="title">iterator</span><span class="params">()</span></span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 定义接口时指定一个类型形参，形参名为E </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span>&lt;<span class="title">E</span>&gt; </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 定义接口时指定了两个类型形参，形参名为K，V </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="function">Set&lt;K&gt; <span class="title">keySet</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    V <span class="title">put</span><span class="params">(K key, V value)</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>除了在集合类里面使用泛型，我们也可以自定义泛型类,例如 </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span>&lt;T&gt; </span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    <span class="keyword">private</span> T info;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Apple</span><span class="params">()</span></span>&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面定义了一个带泛型声明的Apple<t>类，这个T没有实际意义。但是我们可以生成Apple<string> Apple<double>等多个逻辑子类。 </double></string></t></p>
+<blockquote>
+<p>注意： 定义构造器不需要加&lt;&gt;。 </p>
+</blockquote>
+<h3 id="3-泛型类派生子类"><a href="#3-泛型类派生子类" class="headerlink" title="3. 泛型类派生子类"></a>3. 泛型类派生子类</h3><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Apple&lt;T&gt;</span></span>&#123;&#125; <span class="comment">// 错误的，不能再包含类型形参</span></span><br></pre></td></tr></table></figure>
+<p>正确写法： </p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Apple&lt;String&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>这个时候，getInfo() 和 void setInfo(String info)都会由T被替换成为String </p>
+<p>当然，也可以不写类型参数 </p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Apple</span></span></span><br></pre></td></tr></table></figure>
+<p>这样写也是正确的，但是Java编译器可能会发出警告：使用了未经检查或者不安全的操作-这就是泛型检查的警告。 </p>
+<h3 id="4-并不存在泛型类"><a href="#4-并不存在泛型类" class="headerlink" title="4. 并不存在泛型类"></a>4. 并不存在泛型类</h3><p>其实ArrayList<string> 类能否当成ArrayList的子类呢？ 可以的。 </string></p>
+<p>但是系统并没有生成新的class文件。 </p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; <span class="number">11</span> = <span class="literal">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">Integer</span>&gt; <span class="number">12</span> = <span class="literal">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">System.out.printLN(<span class="number">11.</span>getClass() == <span class="number">12.</span>getClass());</span><br></pre></td></tr></table></figure>
+<p>结果输出true.说明无论是实际类型参数是什么，他们运行时都是同样的类。 </p>
+<p>因为泛型在Java中都被当成同一类处理，内存中也只占用一块内存空间，因此静态方法，静态变量等声明不允许使用类型参数。 </p>
+<h3 id="5-使用类型通配符"><a href="#5-使用类型通配符" class="headerlink" title="5. 使用类型通配符"></a>5. 使用类型通配符</h3><p>? 是元素类型未知的意思，也是Java里的类型通配符。 </p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span>(<span class="title">List</span>&lt;?&gt; <span class="title">c</span>)</span>&#123; </span><br><span class="line"> ... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="设定类型通配符的上限"><a href="#设定类型通配符的上限" class="headerlink" title="设定类型通配符的上限"></a>设定类型通配符的上限</h4><p>例如：定义一个类shape，有两个子类circle rectangle  </p>
+<p>再定义一个Canvas类 </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Canvas</span> </span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drawAll</span><span class="params">(List&lt;Shape&gt; shapes)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候，如果调用 </p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Circle&gt; circleList = <span class="keyword">new</span> <span class="type">ArrayList</span>&lt;&gt;(); </span><br><span class="line"></span><br><span class="line">Canvas c = <span class="keyword">new</span> <span class="type">Canvas</span>();</span><br><span class="line"></span><br><span class="line">c.drawAll(circleList);</span><br></pre></td></tr></table></figure>
+<p>就会报错，因为List<circle></circle>并不是List<shape>的子类。我们可以考虑使用List&lt;?&gt;。 </shape></p>
+<p>但是这个方法有个不好的地方，就是需要进行强制类型转换，过于繁琐。因此我们可以使用被限制的泛型通配符 </p>
+<p>List&lt;? extends shape&gt;</p>
+<p>这就代表了所有shape泛型List的父类 </p>
+<p>那么像List<circle></circle>，List<rectangle>这些都可以用了。因为这些都是shape的子类。 </rectangle></p>
+<h4 id="设定类型形参的上限"><a href="#设定类型形参的上限" class="headerlink" title="设定类型形参的上限"></a>设定类型形参的上限</h4><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Apple&lt;T</span> <span class="keyword">extends</span> <span class="title">Number&gt;</span> </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="type">T</span> col;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>表明了col的上限是Number类，传入参数时只能是Number或者Number类的子类。 </p>
+<h3 id="6-泛型方法"><a href="#6-泛型方法" class="headerlink" title="6. 泛型方法"></a>6. 泛型方法</h3><p>用法格式如下： </p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">修饰符<span class="tag">&lt;<span class="name">T,</span> <span class="attr">S</span>&gt;</span> 返回值类型 方法名(形参列表) </span></span><br><span class="line"><span class="xml"></span><span class="template-variable">&#123; </span></span><br><span class="line"><span class="template-variable"> 方法体 </span></span><br><span class="line"><span class="template-variable">&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
+<p>例如： </p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">fromArrayToCollection</span> (<span class="params">T[] a, Collection&lt;T&gt; c</span>) </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">for</span>(T o : a) </span><br><span class="line">    &#123;</span><br><span class="line">        c.<span class="keyword">add</span>(o);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>声明一个泛型方法，带有T类型形参。这个T可以在该方法内当成普通类型使用。并且这个T可以通过系统自动推断类型，不需要显示传入。 </p>
+<h3 id="7-泛型方法和类型通配符的区别"><a href="#7-泛型方法和类型通配符的区别" class="headerlink" title="7. 泛型方法和类型通配符的区别"></a>7. 泛型方法和类型通配符的区别</h3><p>通常情况下泛型方法都可以替代类型通配符。例如： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 类型通配符 </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt; </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">containsAll</span><span class="params">(Collection&lt;?&gt; c)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以采用泛型方法 </p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>Collection&lt;E&gt; </span><br><span class="line">&#123; </span><br><span class="line">    &lt;T&gt; boolean containsAll(Collection&lt;T&gt; c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
 
       
     </div>
@@ -490,7 +542,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.bluelzy.com/articles/first_article.html" title="第一篇文章">https://www.bluelzy.com/articles/first_article.html</a>
+    <a href="https://www.bluelzy.com/articles/java_se_genericity.html" title="Java基础-泛型">https://www.bluelzy.com/articles/java_se_genericity.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -506,7 +558,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/日常/" rel="tag"> <i class="fa fa-tag"></i> 日常</a>
+            <a href="/tags/Java/" rel="tag"> <i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/泛型/" rel="tag"> <i class="fa fa-tag"></i> 泛型</a>
           
         </div>
       
@@ -519,15 +573,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/articles/shuttle_brief_introduction.html" rel="prev" title="Shuttle安装以及配置简介">
-                <i class="fa fa-chevron-left"></i> Shuttle安装以及配置简介
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/articles/webview_and_js_problems.html" rel="prev" title="WebView调用JS失败问题总结">
+                WebView调用JS失败问题总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -583,8 +637,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -680,6 +743,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6CDB;&#x578B;" class="headerlink" title="&#x6CDB;&#x578B;"></a>&#x6CDB;&#x578B;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-入门："><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#1-&#x5165;&#x95E8;&#xFF1A;" class="headerlink" title="1. &#x5165;&#x95E8;&#xFF1A;"></a>1. &#x5165;&#x95E8;&#xFF1A;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-深入泛型"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#2-&#x6DF1;&#x5165;&#x6CDB;&#x578B;" class="headerlink" title="2. &#x6DF1;&#x5165;&#x6CDB;&#x578B;"></a>2. &#x6DF1;&#x5165;&#x6CDB;&#x578B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-泛型类派生子类"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#3-&#x6CDB;&#x578B;&#x7C7B;&#x6D3E;&#x751F;&#x5B50;&#x7C7B;" class="headerlink" title="3. &#x6CDB;&#x578B;&#x7C7B;&#x6D3E;&#x751F;&#x5B50;&#x7C7B;"></a>3. &#x6CDB;&#x578B;&#x7C7B;&#x6D3E;&#x751F;&#x5B50;&#x7C7B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-并不存在泛型类"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#4-&#x5E76;&#x4E0D;&#x5B58;&#x5728;&#x6CDB;&#x578B;&#x7C7B;" class="headerlink" title="4. &#x5E76;&#x4E0D;&#x5B58;&#x5728;&#x6CDB;&#x578B;&#x7C7B;"></a>4. &#x5E76;&#x4E0D;&#x5B58;&#x5728;&#x6CDB;&#x578B;&#x7C7B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-使用类型通配符"><span class="nav-number">1.5.</span> <span class="nav-text"><a href="#5-&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;" class="headerlink" title="5. &#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;"></a>5. &#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设定类型通配符的上限"><span class="nav-number">1.5.1.</span> <span class="nav-text"><a href="#&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x4E0A;&#x9650;" class="headerlink" title="&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x4E0A;&#x9650;"></a>&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x4E0A;&#x9650;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设定类型形参的上限"><span class="nav-number">1.5.2.</span> <span class="nav-text"><a href="#&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x7684;&#x4E0A;&#x9650;" class="headerlink" title="&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x7684;&#x4E0A;&#x9650;"></a>&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x7684;&#x4E0A;&#x9650;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-泛型方法"><span class="nav-number">1.6.</span> <span class="nav-text"><a href="#6-&#x6CDB;&#x578B;&#x65B9;&#x6CD5;" class="headerlink" title="6. &#x6CDB;&#x578B;&#x65B9;&#x6CD5;"></a>6. &#x6CDB;&#x578B;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-泛型方法和类型通配符的区别"><span class="nav-number">1.7.</span> <span class="nav-text"><a href="#7-&#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x533A;&#x522B;" class="headerlink" title="7. &#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x533A;&#x522B;"></a>7. &#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x533A;&#x522B;</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
