@@ -3,6 +3,124 @@
   
     
     <entry>
+      <title><![CDATA[Java基础-集合]]></title>
+      <url>/articles/java_se_collection.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Java基础第二篇-集合</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="Java集合"><a href="#Java集合" class="headerlink" title="Java集合"></a>Java集合</h2><h3 id="1-集合概述"><a href="#1-集合概述" class="headerlink" title="1 集合概述"></a>1 集合概述</h3><p>集合类主要由两个接口派生：Collection和Map </p>
+<p>Set:无序集合，不可重复 </p>
+<p>Queue:队列 </p>
+<p>List:有序集合，可以重复 </p>
+<h3 id="2-Collection和Iterator接口"><a href="#2-Collection和Iterator接口" class="headerlink" title="2.Collection和Iterator接口"></a>2.Collection和Iterator接口</h3><p>Collection接口是List Set Queue接口的父接口，常用的有以下方法： </p>
+<blockquote>
+<p>boolean add(Object o):添加元素 </p>
+<p>boolean addAll(Collection c):把集合中所有元素添加到指定集合中,集合对象被改变了，则返回true </p>
+<p>void clear(): 清除集合所有元素 </p>
+<p>boolean contains(Object c):返回集合是否包含指定元素 </p>
+<p>boolean containsAll(Collection c):返回集合是否包含c中所有元素 </p>
+<p>boolean isEmpty():返回集合是否为空 </p>
+<p>boolean remove(Object c):删除指定元素 </p>
+<p>boolean removeAll(Collection c):从集合中删除集合c包含的所有元素 </p>
+<p>boolean retainAll(Collection c):从集合中删除集合c不包含的元素 </p>
+<p>int size():返回集合元素个数 </p>
+<p>Object[] toArray():把集合转换成数组 </p>
+</blockquote>
+<p>一个小例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CollectionTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="type">String</span>[] args) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">Collection</span> <span class="built_in">c</span> = new <span class="type">ArrayList</span>();</span><br><span class="line"></span><br><span class="line">        <span class="built_in">c</span>.add(<span class="string">"aaa"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">c</span>.add(<span class="number">6</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c集合的元素个数为："</span> + <span class="built_in">c</span>.size());</span><br><span class="line"></span><br><span class="line">        <span class="built_in">c</span>.remove(<span class="number">6</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c集合元素个数为:"</span> + <span class="built_in">c</span>.size());</span><br><span class="line"></span><br><span class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c集合是否包含'aaa':"</span> + <span class="built_in">c</span>.<span class="built_in">contains</span>(<span class="string">"aaa"</span>));</span><br><span class="line"></span><br><span class="line">        <span class="built_in">c</span>.add(<span class="string">"从零开始学Java"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">Collection</span> books = new <span class="type">HashSet</span>();</span><br><span class="line"></span><br><span class="line">        books.add(<span class="string">"从零开始学Java"</span>);</span><br><span class="line"></span><br><span class="line">        books.add(<span class="string">"从零开始学Python"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"集合c是否完全包含集合books:"</span> + <span class="built_in">c</span>.containsAll(books));</span><br><span class="line"></span><br><span class="line">        <span class="built_in">c</span>.removeAll(books);</span><br><span class="line"></span><br><span class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c集合去掉books后的元素："</span> + <span class="built_in">c</span>);</span><br><span class="line"></span><br><span class="line">        books.retainAll(<span class="built_in">c</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"books集合和c集合的交集元素："</span> + books);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-Iterator"><a href="#3-Iterator" class="headerlink" title="3.Iterator"></a>3.Iterator</h3><p>Iterator:迭代器，主要用于遍历集合中的元素 </p>
+<blockquote>
+<p>boolean hasNext() </p>
+<p>Object next() </p>
+<p>void remove() </p>
+</blockquote>
+<p>例子：</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">IteratorTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        Collection books = <span class="keyword">new</span> HashSet();</span><br><span class="line"></span><br><span class="line">        books.<span class="keyword">add</span>(<span class="string">"aaa"</span>);</span><br><span class="line"></span><br><span class="line">        books.<span class="keyword">add</span>(<span class="string">"bbb"</span>);</span><br><span class="line"></span><br><span class="line">        books.<span class="keyword">add</span>(<span class="string">"ccc"</span>);</span><br><span class="line"></span><br><span class="line">        Iterator it = books.iterator();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (it.hasNext())&#123;</span><br><span class="line"></span><br><span class="line">            String book = (String) it.next();</span><br><span class="line"></span><br><span class="line">            System.<span class="keyword">out</span>.println(book);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (book.<span class="keyword">equals</span>(<span class="string">"aaa"</span>)) it.<span class="keyword">remove</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：Iterator必须依附于Collection。 </p>
+</blockquote>
+<h3 id="4-Set集合"><a href="#4-Set集合" class="headerlink" title="4.Set集合"></a>4.Set集合</h3><p>Set集合不允许添加相同元素，判断方法是：equals，因此我们看看以下这个例子 </p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SetTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        Set books = <span class="keyword">new</span> HashSet();</span><br><span class="line"></span><br><span class="line">        books.<span class="keyword">add</span>(<span class="string">"aaa"</span>);</span><br><span class="line"></span><br><span class="line">        boolean result = books.<span class="keyword">add</span>(<span class="string">"aaa"</span>);</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(result + <span class="string">"---&gt;"</span> + books);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印结果为： </p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">false</span><span class="comment">---&gt;[aaa]</span></span><br></pre></td></tr></table></figure>
+<p>因为这两个String不是同一个对象，==返回结果为false，但是Set中判断方式是equals，所以返回的是true,Set中最终只有一个aaa </p>
+<h4 id="HashSet类"><a href="#HashSet类" class="headerlink" title="HashSet类"></a>HashSet类</h4><p>通过hashCode()方法得到hashCode值，然后再决定存储位置。 </p>
+<p>HashSet判断两个元素相等标准是 equals()和hashCode()同时相同 </p>
+<p>特点： </p>
+<p>> 不能保证元素的排列顺序，顺序可能会发生变化 </p>
+<p>> HashSet不是同步的 </p>
+<p>> 集合元素值可以是null </p>
+<p>举个例子： </p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HashSetTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">        HashSet books = <span class="keyword">new</span> HashSet();</span><br><span class="line">        books.<span class="keyword">add</span>(<span class="keyword">new</span> A());</span><br><span class="line">        books.<span class="keyword">add</span>(<span class="keyword">new</span> A());</span><br><span class="line">        books.<span class="keyword">add</span>(<span class="keyword">new</span> B());</span><br><span class="line">        books.<span class="keyword">add</span>(<span class="keyword">new</span> B());</span><br><span class="line">        books.<span class="keyword">add</span>(<span class="keyword">new</span> C());</span><br><span class="line">        books.<span class="keyword">add</span>(<span class="keyword">new</span> C());</span><br><span class="line">        System.<span class="keyword">out</span>.println(books);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">A</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">equals</span>(<span class="params">Object c</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">C</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">equals</span>(<span class="params">Object c</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果： </p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[collection.A@<span class="number">5e2</span>de80c, collection.B@<span class="number">1</span>, collection.B@<span class="number">1</span>, collection.C@<span class="number">2</span>, collection.A@<span class="number">60e53</span>b93]</span><br></pre></td></tr></table></figure>
+<p>两个A对象，两个B对象，一个C对象 </p>
+<p>说明只有equals()或者hashCode()相等，还是HashSet仍然把他们当成两个对象 </p>
+<h4 id="TreeSet类"><a href="#TreeSet类" class="headerlink" title="TreeSet类"></a>TreeSet类</h4><p>特点：确保集合元素处于排序状态。 </p>
+<p>常见方法： </p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        TreeSet nums = <span class="keyword">new</span> TreeSet();</span><br><span class="line"></span><br><span class="line">        nums.<span class="keyword">add</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">        nums.<span class="keyword">add</span>(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        nums.<span class="keyword">add</span>(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        nums.<span class="keyword">add</span>(<span class="number">-2</span>);</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(nums);</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"第一个元素："</span> + nums.first() +<span class="string">" 最后一个元素："</span> +  nums.last());</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"小于4的元素集合："</span> + nums.headSet(<span class="number">4</span>));</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"大于5的元素集合："</span> + nums.tailSet(<span class="number">5</span>));</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"-5到2的集合: "</span> + nums.subSet(<span class="number">-5</span>,<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果： </p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">-2</span>, 2, 5, 10]</span><br><span class="line">第一个元素：<span class="string">-2</span> 最后一个元素：10</span><br><span class="line">小于4的元素集合：[<span class="string">-2</span>, 2]</span><br><span class="line">大于5的元素集合：[5, 10]</span><br><span class="line"><span class="string">-5</span>到2的集合: [<span class="string">-2</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="5-List集合"><a href="#5-List集合" class="headerlink" title="5 List集合"></a>5 List集合</h3><p>常见方法：</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ListTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        List books = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">        books.<span class="keyword">add</span>(<span class="string">"aaa"</span>);</span><br><span class="line">        books.<span class="keyword">add</span>(<span class="string">"bbb"</span>);</span><br><span class="line">        books.<span class="keyword">add</span>(<span class="string">"ccc"</span>);</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(books);</span><br><span class="line">        </span><br><span class="line">        books.<span class="keyword">add</span>(<span class="number">1</span>,<span class="string">"ddd"</span>); <span class="comment">// 在第二个位置插入ddd</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;books.size();i++)</span><br><span class="line"></span><br><span class="line">        &#123;</span><br><span class="line">            System.<span class="keyword">out</span>.println(books.<span class="keyword">get</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//删除第三个元素</span></span><br><span class="line">        books.<span class="keyword">remove</span>(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(books);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断指定元素的位置</span></span><br><span class="line">        System.<span class="keyword">out</span>.println(books.indexOf(<span class="string">"bbb"</span>));</span><br><span class="line"></span><br><span class="line">        books.<span class="keyword">set</span>(<span class="number">1</span>,<span class="string">"eee"</span>); <span class="comment">// 将第二个位置替换成eee</span></span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(books);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-Queue集合"><a href="#6-Queue集合" class="headerlink" title="6.Queue集合"></a>6.Queue集合</h3><p>特点：Queue用于模拟队列这种数据结构，具有FIFO-先进先出的特点。 </p>
+<p>常见方法： </p>
+<blockquote>
+<p>void add(Object c): 指定元素加入队列尾部 </p>
+<p>Object element(): 获取队列头部元素 </p>
+<p>boolean offer(Object c): 将指定元素加入队列尾部 </p>
+<p>Object peek(): 获取队列头部元素 </p>
+<p>Object poll(): 获取队列头部元素，并删除 </p>
+<p>Object remove():删除队列头部元素 </p>
+</blockquote>
+<h3 id="7-Map"><a href="#7-Map" class="headerlink" title="7.Map"></a>7.Map</h3><p>特点：用于保存具有映射关系的数据，通常以键值对的形式存在. </p>
+<p>HashMap和Hashtable实现类 </p>
+<blockquote>
+<p>Hashtable是线程安全的，但是HashMap是线程不安全的。 </p>
+<p>Hashtable不允许使用null作为key和value，但是HashMap可以 </p>
+<p>注意：key是唯一不可重复的 </p>
+</blockquote>
+<h3 id="8-操作集合的工具类：Collections"><a href="#8-操作集合的工具类：Collections" class="headerlink" title="8.操作集合的工具类：Collections"></a>8.操作集合的工具类：Collections</h3><h4 id="排序操作："><a href="#排序操作：" class="headerlink" title="排序操作："></a>排序操作：</h4><blockquote>
+<p>static void reverse(List list)：反转 </p>
+<p>static void shuffle(List list):随机排序 </p>
+<p>static void sort(List list):升序排序 </p>
+<p>static void sort(List list, Comparator c)：根据Comparator产生的顺序排序 </p>
+<p>static void swap(List list,int i,int j):将i和j元素交换 </p>
+<p>static void rotate(List list,int distance):将后distance元素往前移 </p>
+</blockquote>
+<h4 id="查找、替换操作"><a href="#查找、替换操作" class="headerlink" title="查找、替换操作"></a>查找、替换操作</h4><blockquote>
+<p>static int binarySearch(List list,Object key)：二分查找(必须保证有序) </p>
+<p>static Object max(Collection coll):找出最大值 </p>
+<p>static Object min(Collection coll):找出最小值 </p>
+<p>static void fill(List list,Object obj):指定元素obj替换List所有元素 </p>
+<p>static int frequency(Collection c,Object c):返回指定元素出现次数 </p>
+<p>static int indexOfSubList(List source,List target):返回子List对象在父List第一次出现的位置 </p>
+<p>static int lastIndexOfSubList(List source,List target):返回子List对象在父List最后一次出现的位置 </p>
+<p>static boolean replaceAll(List list,Object oldVal,Object newVal):替换 </p>
+</blockquote>
+<h4 id="同步控制"><a href="#同步控制" class="headerlink" title="同步控制"></a>同步控制</h4><p>Collections提供了多个synchronizedXxx()方法，用于把集合包装成线程同步的集合，从而解决多线程并发访问的安全问题。 </p>
+<p>例子： </p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SynchroinizedTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line"></span><br><span class="line">        Collection c = Collections.synchronizedCollection(<span class="keyword">new</span> <span class="type">ArrayList</span>&lt;&gt;());</span><br><span class="line"></span><br><span class="line">        List list = Collections.synchronizedList(<span class="keyword">new</span> <span class="type">ArrayList</span>&lt;&gt;());</span><br><span class="line"></span><br><span class="line">        Set s = Collections.synchronizedSet(<span class="keyword">new</span> <span class="type">HashSet</span>&lt;&gt;());</span><br><span class="line"></span><br><span class="line">        Map m = Collections.synchronizedMap(<span class="keyword">new</span> <span class="type">HashMap</span>&lt;&gt;());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>]]></content>
+      
+        <categories>
+            
+            <category> Java基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 集合 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java基础-泛型]]></title>
       <url>/articles/java_se_genericity.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Java基础第一篇 - 泛型</p>
@@ -913,11 +1031,11 @@
         
         <tags>
             
-            <tag> 日常 </tag>
-            
             <tag> 电影 </tag>
             
             <tag> 无问西东 </tag>
+            
+            <tag> 日常 </tag>
             
         </tags>
         
@@ -965,9 +1083,9 @@
         
         <tags>
             
-            <tag> 知乎 </tag>
-            
             <tag> 日常 </tag>
+            
+            <tag> 知乎 </tag>
             
         </tags>
         
