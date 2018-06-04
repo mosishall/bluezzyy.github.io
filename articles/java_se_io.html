@@ -116,7 +116,7 @@
 
 
 
-  <meta name="keywords" content="Java,泛型," />
+  <meta name="keywords" content="Java,IO," />
 
 
 
@@ -129,18 +129,18 @@
 
 
 
-<meta name="description" content="Java基础第一篇 - 泛型">
-<meta name="keywords" content="Java,泛型">
+<meta name="description" content="Java基础第三篇-IO">
+<meta name="keywords" content="Java,IO">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础-泛型">
-<meta property="og:url" content="https://www.bluelzy.com/articles/java_se_genericity.html">
+<meta property="og:title" content="Java基础-IO">
+<meta property="og:url" content="https://www.bluelzy.com/articles/java_se_io.html">
 <meta property="og:site_name" content="BlueLzy&#39;s Blog">
-<meta property="og:description" content="Java基础第一篇 - 泛型">
+<meta property="og:description" content="Java基础第三篇-IO">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-02T14:17:09.018Z">
+<meta property="og:updated_time" content="2018-06-04T08:18:52.195Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础-泛型">
-<meta name="twitter:description" content="Java基础第一篇 - 泛型">
+<meta name="twitter:title" content="Java基础-IO">
+<meta name="twitter:description" content="Java基础第三篇-IO">
 
 
 
@@ -174,7 +174,7 @@
 
 
 
-  <title>Java基础-泛型 | BlueLzy's Blog</title>
+  <title>Java基础-IO | BlueLzy's Blog</title>
   
 
 
@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/articles/java_se_genericity.html">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/articles/java_se_io.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BlueLzy">
@@ -372,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java基础-泛型</h1>
+          <h1 class="post-title" itemprop="name headline">Java基础-IO</h1>
         
 
         <div class="post-meta">
@@ -384,8 +384,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T22:11:08+08:00">
-                2018-06-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T16:17:41+08:00">
+                2018-06-04
               </time>
             
 
@@ -424,7 +424,7 @@
 
           
           
-             <span id="/articles/java_se_genericity.html" class="leancloud_visitors" data-flag-title="Java基础-泛型">
+             <span id="/articles/java_se_io.html" class="leancloud_visitors" data-flag-title="Java基础-IO">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -455,62 +455,102 @@
       
 
       
-        <blockquote class="blockquote-center"><p>Java基础第一篇 - 泛型</p>
+        <blockquote class="blockquote-center"><p>Java基础第三篇-IO</p>
 </blockquote>
  <a id="more"></a>
-<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><h3 id="1-入门："><a href="#1-入门：" class="headerlink" title="1. 入门："></a>1. 入门：</h3><p>泛型的引入是为了让Java能够记住集合中的数据类型，而不是统一用Object来处理。 </p>
-<p>例如： </p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class ListErr </span><br><span class="line">&#123; </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        List strList = <span class="keyword">new</span> ArrayList();</span><br><span class="line">       strList.<span class="built_in">add</span>(“aaaa);</span><br><span class="line">       strList.<span class="built_in">add</span>(<span class="number">5</span>);</span><br><span class="line">       <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>; i&lt;strList.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">String</span> <span class="built_in">str</span> = strList.<span class="built_in">get</span>(i); <span class="comment">// 这里会报错，因为加了一个Int数据</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个时候程序会报ClassCastException异常。 </p>
-<p>我们可以通过手动实现编译时检查类型。通过组合的方式来复用ArrayList类。 </p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class StrList &#123;</span><br><span class="line">    <span class="keyword">private</span> List strList = <span class="keyword">new</span> ArrayList ();</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">boolean</span> <span class="built_in">add</span>(<span class="keyword">String</span> ele)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> strList.<span class="built_in">add</span>(ele);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">String</span> <span class="built_in">get</span>(<span class="built_in">int</span> index)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">String</span>) strList.<span class="built_in">get</span>(index);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> <span class="built_in">size</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> strList.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class CheckType</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        List strList = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"aaa"</span>);</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"bbb"</span>);</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"ccc"</span>);</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="number">5</span>);  <span class="comment">//这行会导致编译失败</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i=<span class="number">0</span>; i&lt;strList.<span class="built_in">size</span>();i++) &#123;</span><br><span class="line">            <span class="keyword">String</span> <span class="built_in">str</span> = (<span class="keyword">String</span>) strList.<span class="built_in">get</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>而当我们使用泛型的时候如下： </p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class GenericList &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        List&lt;<span class="keyword">String</span>&gt; strList = <span class="keyword">new</span> ArrayList&lt;<span class="keyword">String</span>&gt;();</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"aaa"</span>);</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"bbb"</span>);</span><br><span class="line">        strList.<span class="built_in">add</span>(<span class="string">"ccc"</span>);</span><br><span class="line">        <span class="comment">//strList.add(5);  这行会导致编译失败</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">String</span> <span class="built_in">str</span> : strList) &#123;</span><br><span class="line">            System.out.<span class="built_in">println</span>(<span class="built_in">str</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过一个&lt;&gt;指定参数类型，就不会发生上面那种情况了。 </p>
-<h3 id="2-深入泛型"><a href="#2-深入泛型" class="headerlink" title="2. 深入泛型"></a>2. 深入泛型</h3><p>泛型能够在哪些场景下使用呢？  </p>
-<p>定义类，接口，方法时使用类型形参，这个类型形参将在声明变量，创建对象，调用方法时动态指定。 </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt; </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(E x)</span></span>;</span><br><span class="line">    <span class="function">Iterator&lt;E&gt; <span class="title">iterator</span><span class="params">()</span></span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 定义接口时指定一个类型形参，形参名为E </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span>&lt;<span class="title">E</span>&gt; </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 定义接口时指定了两个类型形参，形参名为K，V </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="function">Set&lt;K&gt; <span class="title">keySet</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    V <span class="title">put</span><span class="params">(K key, V value)</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>除了在集合类里面使用泛型，我们也可以自定义泛型类,例如 </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span>&lt;T&gt; </span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    <span class="keyword">private</span> T info;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Apple</span><span class="params">()</span></span>&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面定义了一个带泛型声明的Apple<t>类，这个T没有实际意义。但是我们可以生成Apple<string> Apple<double>等多个逻辑子类。 </double></string></t></p>
+<h2 id="Charter-15-输入-输出"><a href="#Charter-15-输入-输出" class="headerlink" title="Charter 15 输入/输出"></a>Charter 15 输入/输出</h2><p>主要是总结了一下文件操作以及序列化，NIO。</p>
+<h3 id="1-File类"><a href="#1-File类" class="headerlink" title="1.File类"></a>1.File类</h3><p>访问文件名相关的方法： </p>
 <blockquote>
-<p>注意： 定义构造器不需要加&lt;&gt;。 </p>
+<p>String getName() </p>
+<p>String getPath() </p>
+<p>File getAbsoluteFile() </p>
+<p>String getAbsolutePath() </p>
+<p>String getParent() </p>
 </blockquote>
-<h3 id="3-泛型类派生子类"><a href="#3-泛型类派生子类" class="headerlink" title="3. 泛型类派生子类"></a>3. 泛型类派生子类</h3><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Apple&lt;T&gt;</span></span>&#123;&#125; <span class="comment">// 错误的，不能再包含类型形参</span></span><br></pre></td></tr></table></figure>
-<p>正确写法： </p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Apple&lt;String&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>这个时候，getInfo() 和 void setInfo(String info)都会由T被替换成为String </p>
-<p>当然，也可以不写类型参数 </p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">Apple</span></span></span><br></pre></td></tr></table></figure>
-<p>这样写也是正确的，但是Java编译器可能会发出警告：使用了未经检查或者不安全的操作-这就是泛型检查的警告。 </p>
-<h3 id="4-并不存在泛型类"><a href="#4-并不存在泛型类" class="headerlink" title="4. 并不存在泛型类"></a>4. 并不存在泛型类</h3><p>其实ArrayList<string> 类能否当成ArrayList的子类呢？ 可以的。 </string></p>
-<p>但是系统并没有生成新的class文件。 </p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; <span class="number">11</span> = <span class="literal">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line"><span class="built_in">List</span>&lt;<span class="built_in">Integer</span>&gt; <span class="number">12</span> = <span class="literal">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">System.out.printLN(<span class="number">11.</span>getClass() == <span class="number">12.</span>getClass());</span><br></pre></td></tr></table></figure>
-<p>结果输出true.说明无论是实际类型参数是什么，他们运行时都是同样的类。 </p>
-<p>因为泛型在Java中都被当成同一类处理，内存中也只占用一块内存空间，因此静态方法，静态变量等声明不允许使用类型参数。 </p>
-<h3 id="5-使用类型通配符"><a href="#5-使用类型通配符" class="headerlink" title="5. 使用类型通配符"></a>5. 使用类型通配符</h3><p>? 是元素类型未知的意思，也是Java里的类型通配符。 </p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span>(<span class="title">List</span>&lt;?&gt; <span class="title">c</span>)</span>&#123; </span><br><span class="line"> ... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="设定类型通配符的上限"><a href="#设定类型通配符的上限" class="headerlink" title="设定类型通配符的上限"></a>设定类型通配符的上限</h4><p>例如：定义一个类shape，有两个子类circle rectangle  </p>
-<p>再定义一个Canvas类 </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Canvas</span> </span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drawAll</span><span class="params">(List&lt;Shape&gt; shapes)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个时候，如果调用 </p>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Circle&gt; circleList = <span class="keyword">new</span> <span class="type">ArrayList</span>&lt;&gt;(); </span><br><span class="line"></span><br><span class="line">Canvas c = <span class="keyword">new</span> <span class="type">Canvas</span>();</span><br><span class="line"></span><br><span class="line">c.drawAll(circleList);</span><br></pre></td></tr></table></figure>
-<p>就会报错，因为List<circle></circle>并不是List<shape>的子类。我们可以考虑使用List&lt;?&gt;。 </shape></p>
-<p>但是这个方法有个不好的地方，就是需要进行强制类型转换，过于繁琐。因此我们可以使用被限制的泛型通配符 </p>
-<p>List&lt;? extends shape&gt;</p>
-<p>这就代表了所有shape泛型List的父类 </p>
-<p>那么像List<circle></circle>，List<rectangle>这些都可以用了。因为这些都是shape的子类。 </rectangle></p>
-<h4 id="设定类型形参的上限"><a href="#设定类型形参的上限" class="headerlink" title="设定类型形参的上限"></a>设定类型形参的上限</h4><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Apple&lt;T</span> <span class="keyword">extends</span> <span class="title">Number&gt;</span> </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="type">T</span> col;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>表明了col的上限是Number类，传入参数时只能是Number或者Number类的子类。 </p>
-<h3 id="6-泛型方法"><a href="#6-泛型方法" class="headerlink" title="6. 泛型方法"></a>6. 泛型方法</h3><p>用法格式如下： </p>
-<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">修饰符<span class="tag">&lt;<span class="name">T,</span> <span class="attr">S</span>&gt;</span> 返回值类型 方法名(形参列表) </span></span><br><span class="line"><span class="xml"></span><span class="template-variable">&#123; </span></span><br><span class="line"><span class="template-variable"> 方法体 </span></span><br><span class="line"><span class="template-variable">&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
-<p>例如： </p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">fromArrayToCollection</span> (<span class="params">T[] a, Collection&lt;T&gt; c</span>) </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">for</span>(T o : a) </span><br><span class="line">    &#123;</span><br><span class="line">        c.<span class="keyword">add</span>(o);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>声明一个泛型方法，带有T类型形参。这个T可以在该方法内当成普通类型使用。并且这个T可以通过系统自动推断类型，不需要显示传入。 </p>
-<h3 id="7-泛型方法和类型通配符的区别"><a href="#7-泛型方法和类型通配符的区别" class="headerlink" title="7. 泛型方法和类型通配符的区别"></a>7. 泛型方法和类型通配符的区别</h3><p>通常情况下泛型方法都可以替代类型通配符。例如： </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 类型通配符 </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt; </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">containsAll</span><span class="params">(Collection&lt;?&gt; c)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以采用泛型方法 </p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>Collection&lt;E&gt; </span><br><span class="line">&#123; </span><br><span class="line">    &lt;T&gt; boolean containsAll(Collection&lt;T&gt; c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>文件检测相关方法 </p>
+<blockquote>
+<p>boolean exists() </p>
+<p>boolean canWrite() </p>
+<p>boolean canRead() </p>
+<p>boolean isFile() </p>
+<p>boolean isDirectory() </p>
+</blockquote>
+<p>获取常规文件信息 </p>
+<blockquote>
+<p>long lastModified() </p>
+<p>long length() </p>
+</blockquote>
+<p>文件操作相关方法 </p>
+<blockquote>
+<p>boolean createNewFile():如果File对象对应文件不存在，该方法会新建一个指定的新文件 </p>
+<p>boolean delete():删除File对象对应的文件或路径 </p>
+</blockquote>
+<p>目录操作相关方法 </p>
+<blockquote>
+<p>boolean mkdir():创建一个File对象对应的目录 </p>
+<p>String[] list():列出File对象所有子文件名和路径名 </p>
+<p>File[] listFiles(): 列出File对象所有子文件和路径 </p>
+<p>static File[] listRoots():列出系统所有根路径 </p>
+</blockquote>
+<p>例子：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> FileTest &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">File</span> <span class="keyword">file</span> = <span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"."</span>);</span><br><span class="line"></span><br><span class="line">        System.out.<span class="keyword">println</span>(<span class="keyword">file</span>.getName());</span><br><span class="line"></span><br><span class="line">        System.out.<span class="keyword">println</span>(<span class="keyword">file</span>.getParent()); <span class="comment">// 相对路径的父路径</span></span><br><span class="line"></span><br><span class="line">        System.out.<span class="keyword">println</span>(<span class="keyword">file</span>.getAbsoluteFile()); <span class="comment">// 绝对路径</span></span><br><span class="line"></span><br><span class="line">        System.out.<span class="keyword">println</span>(<span class="keyword">file</span>.getAbsoluteFile().getParent()); <span class="comment">// 上一级路径</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">File</span> tmpFile = <span class="keyword">File</span>.createTempFile(<span class="string">"aaa"</span>,<span class="string">".txt"</span>,<span class="keyword">file</span>);</span><br><span class="line">            tmpFile.deleteOnExit();</span><br><span class="line">            <span class="keyword">File</span> newFile = <span class="keyword">new</span> <span class="keyword">File</span>(System.currentTimeMillis() + <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">            System.out.<span class="keyword">println</span>(<span class="string">"newFile是否存在："</span> + newFile.exists());</span><br><span class="line">            </span><br><span class="line">            newFile.createNewFile(); <span class="comment">// 创建文件</span></span><br><span class="line">            newFile.mkdir(); <span class="comment">// 创建目录</span></span><br><span class="line">            String[] fileList = <span class="keyword">file</span>.list(); <span class="comment">// 列出当前目录下所有文件和路径</span></span><br><span class="line">            System.out.<span class="keyword">println</span>(<span class="string">"当前路径下所有文件和路径如下："</span>);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (String fileName : fileList)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.<span class="keyword">println</span>(fileName);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">File</span>[] roots = <span class="keyword">File</span>.listRoots();  <span class="comment">// 列出所有磁盘根路径</span></span><br><span class="line">            System.out.<span class="keyword">println</span>(<span class="string">"系统所有根路径如下"</span>);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">File</span> root : roots)</span><br><span class="line">            &#123;</span><br><span class="line">                System.out.<span class="keyword">println</span>(root);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-Java的IO流"><a href="#2-Java的IO流" class="headerlink" title="2.Java的IO流"></a>2.Java的IO流</h3><p>InputStream/Reader:所有输入流的基类，前者是字节输入流，后者是字符输入流 </p>
+<p>OutputStream/Writer:所有输出流的基类，前者是字节输出流，后者是字符输出流 </p>
+<h3 id="3-对象序列化"><a href="#3-对象序列化" class="headerlink" title="3.对象序列化"></a>3.对象序列化</h3><p>是什么：实现序列化的Java对象转换成字符序列，这些字符序列可以保存到磁盘上。 </p>
+<p>为什么：为了让对象可以脱离程序的运行而独立存在。 </p>
+<p>主要是Serializable这个接口 </p>
+<h4 id="使用对象流实现序列化"><a href="#使用对象流实现序列化" class="headerlink" title="使用对象流实现序列化"></a>使用对象流实现序列化</h4><p>1.创建一个ObjectOutputStream，这是一个输出流 </p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ObjectOutputStream oos = <span class="keyword">new</span> <span class="type">ObjectOutputStream</span>(<span class="keyword">new</span> <span class="type">FileOutputStream</span>(“Object.txt”));</span><br></pre></td></tr></table></figure>
+<p>2.调用writeObject()方法输出可序列化对象</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oos.writeObject(per)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>3.Person类实现Serializable接口 </p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    ... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.使用ObjectOutputStream将Person对象写入磁盘文件 </p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WriteObject</span> </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args) </span><br><span class="line">    &#123; </span><br><span class="line">        ObjectOutputStream oos = <span class="keyword">new</span> <span class="type">ObjectOutputStream</span>(<span class="keyword">new</span> <span class="type">FileOutputStream</span>(“Object.txt”)))&#123; </span><br><span class="line">            Person per = <span class="keyword">new</span> <span class="type">Person</span>(); </span><br><span class="line">            oos.writeObject(per);  <span class="comment">// 将per对象写入输出流 </span></span><br><span class="line">        &#125; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="从二进制流中恢复Java对象"><a href="#从二进制流中恢复Java对象" class="headerlink" title="从二进制流中恢复Java对象"></a>从二进制流中恢复Java对象</h4><p>1.创建ObjectInputStream输入流 </p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ObjectInputStream ois = <span class="keyword">new</span> <span class="type">ObjectInputStream</span>(<span class="keyword">new</span> <span class="type">FileInputStream</span>(“Object.txt”));</span><br></pre></td></tr></table></figure>
+<p>2.调用readObject()方法读取流中的对象 </p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Person p</span> = (Person)ois.readObject();</span><br></pre></td></tr></table></figure>
+<h3 id="4-NIO"><a href="#4-NIO" class="headerlink" title="4.NIO"></a>4.NIO</h3><p>由于流输入/输出一次只能处理一个字节，为了解决效率不高的问题，从JDK1.4开始加入了一些列改进输入/输出处理的新功能，这些功能简称新IO(NIO) </p>
+<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>新IO将文件或文件的一段区域映射到内存中，这样就可以像访问内存一样访问文件，大大提高了处理输入\输出的速度 </p>
+<p>相关包如下： </p>
+<p>java.nio：包含于Buffer相关的类 </p>
+<p>java.nio.channels：包含Channel和Selector相关的类 </p>
+<p>java.nio.charset：包含字符集相关的类 </p>
+<p>java.nio.channels.spi：包含与Channel相关的服务提供者编程接口 </p>
+<p>java.nio.charset.spi：包含字符集相关的服务提供者编程接口 </p>
+<p>Channel和Buffer是其中核心。 </p>
+<p>Channel与传统的InputStream、OutputStream最大区别是它提供了一个map()方法，可以将数据映射到内存中。 </p>
+<p>Buffer本质上是一个数组，发送到Channel的对象都要先放到Buffer中，Channel读取数据也要到Buffer中读取。 </p>
+<p>Buffer中有3个重要概念 </p>
+<ul>
+<li>capacity:缓冲区的容量，创建后不可改变，不可为负值 </li>
+<li>limit:第一个不应该被读出或者写入的缓冲区位置索引,换句话说，这个索引后的区域都无法读写 </li>
+<li>position:用于指明下一个位置索引 </li>
+</ul>
+<p>例子： </p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class BufferTest &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        <span class="comment">//创建Buffer</span></span><br><span class="line">        CharBuffer buff = CharBuffer.allocate(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"capacity:"</span> + buff.capacity());</span><br><span class="line"></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"limit:"</span> + buff.limit());</span><br><span class="line"></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"position:"</span> + buff.<span class="built_in">position</span>());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 存放数据</span></span><br><span class="line">        buff.<span class="built_in">put</span>(<span class="string">"a"</span>);</span><br><span class="line"></span><br><span class="line">        buff.<span class="built_in">put</span>(<span class="string">"b"</span>);</span><br><span class="line"></span><br><span class="line">        buff.<span class="built_in">put</span>(<span class="string">"c"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"放入三个元素后：position: "</span> + buff.<span class="built_in">position</span>() );</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 调用flip()</span></span><br><span class="line">        buff.flip();</span><br><span class="line"></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"执行flip后,limit:"</span> + buff.limit());</span><br><span class="line"></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"执行flip后,position:"</span> + buff.<span class="built_in">position</span>());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//调用clear()</span></span><br><span class="line">        buff.<span class="built_in">clear</span>();</span><br><span class="line"></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"执行clear后,limit:"</span> + buff.limit());</span><br><span class="line"></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"执行clear后，position:"</span> + buff.<span class="built_in">position</span>());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 读取数据</span></span><br><span class="line">        buff.<span class="built_in">get</span>(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"执行读取数据后，position:"</span> + buff.<span class="built_in">position</span>());</span><br><span class="line"></span><br><span class="line">        System.out.<span class="built_in">println</span>(<span class="string">"执行读取数据后，内容并没有被清除:"</span> + buff.<span class="built_in">get</span>(<span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印结果： </p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">capacity:</span><span class="number">8</span></span><br><span class="line"><span class="string">limit:</span><span class="number">8</span></span><br><span class="line"><span class="string">position:</span><span class="number">0</span></span><br><span class="line">放入三个元素后：<span class="string">position:</span> <span class="number">3</span></span><br><span class="line">执行flip后,<span class="string">limit:</span><span class="number">3</span></span><br><span class="line">执行flip后,<span class="string">position:</span><span class="number">0</span></span><br><span class="line">执行clear后,<span class="string">limit:</span><span class="number">8</span></span><br><span class="line">执行clear后，<span class="string">position:</span><span class="number">0</span></span><br><span class="line">执行读取数据后，<span class="string">position:</span><span class="number">0</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>flip():把limit设置为position所在位置，将position设置为0，也就是做好输出数据准备 </li>
+<li>clear():将position设置为0，将limit设置为capacity，为再次输入数据做好准备，但是内容并没有被清空。 </li>
+</ul>
+<p>上面这个程序的执行过程就是 </p>
+<ul>
+<li>加入三个元素后,position来到了3 </li>
+<li>执行flip(),limit设置为position的值，也就是3，position设置为0 </li>
+<li>执行clear(),position设置为0 </li>
+</ul>
+<p>为什么在写入数据完成后，需要调用flip()方法呢，因为这个时候limit到了position的位置，也就是说后面的无数据区域都无法访问，避免了读到null值。 </p>
+<h3 id="5-使用Channel"><a href="#5-使用Channel" class="headerlink" title="5.使用Channel"></a>5.使用Channel</h3><p>Channel最常用的三类方法shi map()\read()\write()，其中map()方法用于将Channel对应的数据映射成ByteBuffer </p>
+<p>例子： </p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class FileChannelTest &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</span><br><span class="line">        <span class="built_in">File</span> f = <span class="keyword">new</span> <span class="built_in">File</span>(<span class="string">"FileChannelTest.java"</span>);</span><br><span class="line">        <span class="built_in">try</span> &#123;</span><br><span class="line">            FileChannel inChannel = <span class="keyword">new</span> FileInputStream(f).getChannel();</span><br><span class="line"></span><br><span class="line">            FileChannel outChannel = <span class="keyword">new</span> FileOutputStream(<span class="string">"a.txt"</span>).getChannel();</span><br><span class="line"></span><br><span class="line">            MappedByteBuffer <span class="built_in">buffer</span> = inChannel.<span class="built_in">map</span>(FileChannel.MapMode.READ_ONLY,<span class="number">0</span>,f.length());</span><br><span class="line"></span><br><span class="line">            Charset charset = Charset.forName(<span class="string">"GBK"</span>);</span><br><span class="line"></span><br><span class="line">            outChannel.<span class="built_in">write</span>(<span class="built_in">buffer</span>);</span><br><span class="line"></span><br><span class="line">            CharsetDecoder decoder = charset.newDecoder();</span><br><span class="line"></span><br><span class="line">            CharBuffer charBuffer = decoder.decode(<span class="built_in">buffer</span>);</span><br><span class="line"></span><br><span class="line">            System.out.<span class="built_in">println</span>(charBuffer);</span><br><span class="line">        &#125; <span class="built_in">catch</span> (java.io.IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过MappedByteBuffer将channel中的数据映射成ByteBuffer,然后写入FileChannel。 </p>
+<p>除了这种一次性把全部数据映射的方式，我们也可以采取类似传统字节流的方式 </p>
+<p>例子： </p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class ReadFile &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line"></span><br><span class="line">        FileInputStream fis = new FileInputStream(<span class="string">"ReadFile.java"</span>)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        FileChannel fcin = fis.getChannel()<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">ByteBuffer </span><span class="keyword">byteBuffer </span>= <span class="keyword">ByteBuffer.allocate(64);</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword"> </span>       while (fcin.read(<span class="keyword">byteBuffer) </span>!= -<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">byteBuffer.flip();</span></span><br><span class="line"><span class="keyword"> </span>           Charset charset = Charset.forName(<span class="string">"GBK"</span>)<span class="comment">;</span></span><br><span class="line">            CharsetDecoder decoder = charset.newDecoder()<span class="comment">;</span></span><br><span class="line">            CharBuffer cbuff = decoder.decode(<span class="keyword">byteBuffer);</span></span><br><span class="line"><span class="keyword"> </span>           System.out.println(cbuff)<span class="comment">;</span></span><br><span class="line">            cbuff.clear()<span class="comment">;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过flip()和clear()进行读取的限制，防止读出null值。 </p>
 <hr>
 
       
@@ -542,7 +582,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.bluelzy.com/articles/java_se_genericity.html" title="Java基础-泛型">https://www.bluelzy.com/articles/java_se_genericity.html</a>
+    <a href="https://www.bluelzy.com/articles/java_se_io.html" title="Java基础-IO">https://www.bluelzy.com/articles/java_se_io.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -560,7 +600,7 @@
           
             <a href="/tags/Java/" rel="tag"> <i class="fa fa-tag"></i> Java</a>
           
-            <a href="/tags/泛型/" rel="tag"> <i class="fa fa-tag"></i> 泛型</a>
+            <a href="/tags/IO/" rel="tag"> <i class="fa fa-tag"></i> IO</a>
           
         </div>
       
@@ -573,18 +613,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/articles/java_se_collection.html" rel="prev" title="Java基础-集合">
-                <i class="fa fa-chevron-left"></i> Java基础-集合
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/articles/webview_and_js_problems.html" rel="prev" title="WebView调用JS失败问题总结">
-                WebView调用JS失败问题总结 <i class="fa fa-chevron-right"></i>
+              <a href="/articles/java_se_collection.html" rel="prev" title="Java基础-集合">
+                Java基础-集合 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -757,7 +793,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6CDB;&#x578B;" class="headerlink" title="&#x6CDB;&#x578B;"></a>&#x6CDB;&#x578B;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-入门："><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#1-&#x5165;&#x95E8;&#xFF1A;" class="headerlink" title="1. &#x5165;&#x95E8;&#xFF1A;"></a>1. &#x5165;&#x95E8;&#xFF1A;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-深入泛型"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#2-&#x6DF1;&#x5165;&#x6CDB;&#x578B;" class="headerlink" title="2. &#x6DF1;&#x5165;&#x6CDB;&#x578B;"></a>2. &#x6DF1;&#x5165;&#x6CDB;&#x578B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-泛型类派生子类"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#3-&#x6CDB;&#x578B;&#x7C7B;&#x6D3E;&#x751F;&#x5B50;&#x7C7B;" class="headerlink" title="3. &#x6CDB;&#x578B;&#x7C7B;&#x6D3E;&#x751F;&#x5B50;&#x7C7B;"></a>3. &#x6CDB;&#x578B;&#x7C7B;&#x6D3E;&#x751F;&#x5B50;&#x7C7B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-并不存在泛型类"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#4-&#x5E76;&#x4E0D;&#x5B58;&#x5728;&#x6CDB;&#x578B;&#x7C7B;" class="headerlink" title="4. &#x5E76;&#x4E0D;&#x5B58;&#x5728;&#x6CDB;&#x578B;&#x7C7B;"></a>4. &#x5E76;&#x4E0D;&#x5B58;&#x5728;&#x6CDB;&#x578B;&#x7C7B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-使用类型通配符"><span class="nav-number">1.5.</span> <span class="nav-text"><a href="#5-&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;" class="headerlink" title="5. &#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;"></a>5. &#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设定类型通配符的上限"><span class="nav-number">1.5.1.</span> <span class="nav-text"><a href="#&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x4E0A;&#x9650;" class="headerlink" title="&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x4E0A;&#x9650;"></a>&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x4E0A;&#x9650;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设定类型形参的上限"><span class="nav-number">1.5.2.</span> <span class="nav-text"><a href="#&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x7684;&#x4E0A;&#x9650;" class="headerlink" title="&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x7684;&#x4E0A;&#x9650;"></a>&#x8BBE;&#x5B9A;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x7684;&#x4E0A;&#x9650;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-泛型方法"><span class="nav-number">1.6.</span> <span class="nav-text"><a href="#6-&#x6CDB;&#x578B;&#x65B9;&#x6CD5;" class="headerlink" title="6. &#x6CDB;&#x578B;&#x65B9;&#x6CD5;"></a>6. &#x6CDB;&#x578B;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-泛型方法和类型通配符的区别"><span class="nav-number">1.7.</span> <span class="nav-text"><a href="#7-&#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x533A;&#x522B;" class="headerlink" title="7. &#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x533A;&#x522B;"></a>7. &#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x7684;&#x533A;&#x522B;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Charter-15-输入-输出"><span class="nav-number">1.</span> <span class="nav-text"><a href="#Charter-15-&#x8F93;&#x5165;-&#x8F93;&#x51FA;" class="headerlink" title="Charter 15 &#x8F93;&#x5165;/&#x8F93;&#x51FA;"></a>Charter 15 &#x8F93;&#x5165;/&#x8F93;&#x51FA;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-File类"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#1-File&#x7C7B;" class="headerlink" title="1.File&#x7C7B;"></a>1.File&#x7C7B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Java的IO流"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#2-Java&#x7684;IO&#x6D41;" class="headerlink" title="2.Java&#x7684;IO&#x6D41;"></a>2.Java&#x7684;IO&#x6D41;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-对象序列化"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#3-&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;" class="headerlink" title="3.&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;"></a>3.&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用对象流实现序列化"><span class="nav-number">1.3.1.</span> <span class="nav-text"><a href="#&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x6D41;&#x5B9E;&#x73B0;&#x5E8F;&#x5217;&#x5316;" class="headerlink" title="&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x6D41;&#x5B9E;&#x73B0;&#x5E8F;&#x5217;&#x5316;"></a>&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x6D41;&#x5B9E;&#x73B0;&#x5E8F;&#x5217;&#x5316;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从二进制流中恢复Java对象"><span class="nav-number">1.3.2.</span> <span class="nav-text"><a href="#&#x4ECE;&#x4E8C;&#x8FDB;&#x5236;&#x6D41;&#x4E2D;&#x6062;&#x590D;Java&#x5BF9;&#x8C61;" class="headerlink" title="&#x4ECE;&#x4E8C;&#x8FDB;&#x5236;&#x6D41;&#x4E2D;&#x6062;&#x590D;Java&#x5BF9;&#x8C61;"></a>&#x4ECE;&#x4E8C;&#x8FDB;&#x5236;&#x6D41;&#x4E2D;&#x6062;&#x590D;Java&#x5BF9;&#x8C61;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-NIO"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#4-NIO" class="headerlink" title="4.NIO"></a>4.NIO</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述"><span class="nav-number">1.4.1.</span> <span class="nav-text"><a href="#&#x6982;&#x8FF0;" class="headerlink" title="&#x6982;&#x8FF0;"></a>&#x6982;&#x8FF0;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-使用Channel"><span class="nav-number">1.5.</span> <span class="nav-text"><a href="#5-&#x4F7F;&#x7528;Channel" class="headerlink" title="5.&#x4F7F;&#x7528;Channel"></a>5.&#x4F7F;&#x7528;Channel</span></a></li></ol></li></ol></div>
             
 
           </div>
