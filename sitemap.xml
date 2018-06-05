@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.bluelzy.com/articles/java_se_multithreading.html</loc>
+    
+    <lastmod>2018-06-05T13:30:07.991Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.bluelzy.com/articles/java_se_reflect.html</loc>
     
     <lastmod>2018-06-05T07:26:45.746Z</lastmod>

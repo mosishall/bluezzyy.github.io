@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/java_se_multithreading.html</loc>
+    <lastmod>2018-06-05T13:30:07.991Z</lastmod>
+    <data>
+        <display>
+        <title>Java基础-多线程</title>
+        <pubTime>2018-06-05T13:23:55.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>多线程</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="https://www.bluelzy.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/java_se_reflect.html</loc>
     <lastmod>2018-06-05T07:26:45.746Z</lastmod>
     <data>
@@ -329,11 +351,11 @@
         <title>电影-无问西东</title>
         <pubTime>2018-01-21T10:01:09.000Z</pubTime>
         
-        <tag>日常</tag>
-         
         <tag>电影</tag>
          
         <tag>无问西东</tag>
+         
+        <tag>日常</tag>
          
          
            
@@ -353,9 +375,9 @@
         <title>哪有什么真正的言论自由？</title>
         <pubTime>2018-01-20T00:24:58.000Z</pubTime>
         
-        <tag>知乎</tag>
-         
         <tag>日常</tag>
+         
+        <tag>知乎</tag>
          
          
            
