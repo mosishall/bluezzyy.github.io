@@ -3,6 +3,96 @@
   
     
     <entry>
+      <title><![CDATA[Java基础-类加载机制与反射]]></title>
+      <url>/articles/java_se_reflect.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Java基础第四篇-类加载机制与反射</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="类加载机制与反射"><a href="#类加载机制与反射" class="headerlink" title="类加载机制与反射"></a>类加载机制与反射</h2><h3 id="1-类的加载、连接和初始化"><a href="#1-类的加载、连接和初始化" class="headerlink" title="1.类的加载、连接和初始化"></a>1.类的加载、连接和初始化</h3><h4 id="JVM和类"><a href="#JVM和类" class="headerlink" title="JVM和类"></a>JVM和类</h4><p>一个Java程序启动一个Java虚拟机进程，当系统被终结时，JVM进程也会被终止。 </p>
+<p>有以下几种情况： </p>
+<blockquote>
+<p>程序运行到最后正常结束 </p>
+<p>程序使用System.exit()结束程序 </p>
+<p>程序遇到未捕获的异常或者错误而结束 </p>
+<p>程序平台强制结束了JVM进程 </p>
+</blockquote>
+<h4 id="类的加载"><a href="#类的加载" class="headerlink" title="类的加载"></a>类的加载</h4><p>首先将类的class文件读入内存，创建一个java.lang.class对象。 </p>
+<h4 id="类的连接"><a href="#类的连接" class="headerlink" title="类的连接"></a>类的连接</h4><p>当类被加载之后，系统会生成一个对应的Class对象，接着把类的二进制数据合并到JRE中 </p>
+<h4 id="类的初始化"><a href="#类的初始化" class="headerlink" title="类的初始化"></a>类的初始化</h4><p>虚拟机对类进行初始化，主要是静态Field进行初始化 </p>
+<h3 id="2-类加载器"><a href="#2-类加载器" class="headerlink" title="2.类加载器"></a>2.类加载器</h3><p>类加载器负责将.class文件加载到内存中，并生成java.lang.class对象。 </p>
+<p>类加载机制 </p>
+<blockquote>
+<p>全盘负责：当一个雷加载器负责加载某个Class时，该Class所依赖的和引用的其他Class也将由此类加载器负责载入 </p>
+<p>父类委托：先让parent类加载器试图加载该Class </p>
+<p>缓存机制：缓存机制会保证所有加载过的Class都会被缓存，当程序需要使用某个Class时，类加载器先从缓存区找，当缓存区不存在该Class对象，系统才会读取该类对应的二进制数据，转换成Class对象，存入缓存区。这也就是为什么修改了Class，不许重新启动JVM，程序新修改才会生效。 </p>
+</blockquote>
+<p>这个例子可以获取根类加载器的核心类库： </p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ClassLoaderPropTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) throws IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        ClassLoader systemLoader = ClassLoader.getSystemClassLoader();</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"系统类加载器："</span> + systemLoader);</span><br><span class="line"></span><br><span class="line">        Enumeration&lt;URL&gt; eml = systemLoader.getResources(<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (eml.hasMoreElements())</span><br><span class="line">        &#123;</span><br><span class="line">            System.<span class="keyword">out</span>.println(eml.nextElement());</span><br><span class="line">        &#125;</span><br><span class="line">        ClassLoader extensionLoader = systemLoader.getParent();</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"拓展类加载器："</span> + extensionLoader);</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"拓展类加载器的加载路径"</span> + System.getProperty(<span class="string">"java.ext.dirs"</span>));</span><br><span class="line"></span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"拓展类加载器的Parent:"</span> + extensionLoader.getParent());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印结果： </p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">系统类加载器：sun.misc.Launcher$AppClassLoader@<span class="number">18</span>b4aac2</span><br><span class="line"><span class="string">file:</span><span class="regexp">/IdeaProject/</span>out<span class="regexp">/production/</span>IdeaProject/</span><br><span class="line">拓展类加载器：sun.misc.Launcher$ExtClassLoader@<span class="number">60e53</span>b93</span><br><span class="line">拓展类加载器的加载路径<span class="regexp">/Users/</span>blue<span class="regexp">/Library/</span>Java<span class="regexp">/Extensions:/</span>Library<span class="regexp">/Java/</span>JavaVirtualMachines<span class="regexp">/jdk1.8.0_111.jdk/</span>Contents<span class="regexp">/Home/</span>jre<span class="regexp">/lib/</span><span class="string">ext:</span><span class="regexp">/Library/</span>Java<span class="regexp">/Extensions:/</span>Network<span class="regexp">/Library/</span>Java<span class="regexp">/Extensions:/</span>System<span class="regexp">/Library/</span>Java<span class="regexp">/Extensions:/</span>usr<span class="regexp">/lib/</span>java</span><br><span class="line">拓展类加载器的<span class="string">Parent:</span><span class="literal">null</span></span><br></pre></td></tr></table></figure>
+<p>Extension Classloader被称为扩展类加载器，负责加载JRE的拓展目录中JAR包的类 </p>
+<p>从上面结果可以看出，系统类加载器的家在路径是当前程序运行路径，拓展类加载器的加载路径是jdk路径，但是拓展类加载器的父加载器是null，说明并不是根类加载器。 </p>
+<p>最后总结一下类加载器加载Class的步骤 </p>
+<ol>
+<li>检测Class是否再如果，如果有-&gt; step 8 </li>
+<li>如果父类加载器不存在-&gt; step 4，如果父类加载器存在-&gt; step 3 </li>
+<li>请求使用父类加载器去载入Class，成功-&gt; step 8，失败-&gt; step 5 </li>
+<li>请求使用跟雷加载器载入Class，成功-&gt; step 8，失败-&gt; step 5 </li>
+<li>当前类加载器尝试寻找Class文件，找到-&gt; step 6，失败-&gt; step 7 </li>
+<li>从文件中载入Class,成功-&gt; step 8 </li>
+<li>抛出ClassNotFound异常 </li>
+<li>返回java.lang.class对象 </li>
+</ol>
+<h3 id="3-通过反射查看类信息"><a href="#3-通过反射查看类信息" class="headerlink" title="3.通过反射查看类信息"></a>3.通过反射查看类信息</h3><h4 id="获得Class对象"><a href="#获得Class对象" class="headerlink" title="获得Class对象"></a>获得Class对象</h4><p>由于每个类被加载后，系统都会生成一个对应的Class对象，通过该Class对象就可以访问到JVM中的这个类，获得Class对象的方式如下: </p>
+<ul>
+<li>使用Class类的forName(String clazzName)方法，参数是某个类的全限定类名 </li>
+<li>使用某个类的class属性获取对应的Class对象，例如：Person.class </li>
+<li>使用某个对象的getClass(0方法 </li>
+</ul>
+<h4 id="从Class中获取信息"><a href="#从Class中获取信息" class="headerlink" title="从Class中获取信息"></a>从Class中获取信息</h4><p>大致包含了以下几个方法： </p>
+<ul>
+<li>Constructor<t> getConstructor(Class&lt;?&gt;…parameterTypes):返回指定构造器 </t></li>
+<li>Constructor&lt;?&gt;[] getConstructors():返回此类所有构造器 </li>
+<li>Method getMethod(String name,Class&lt;?&gt;…parameterTypes):返回指定方法 </li>
+<li>Method[] getMethods():返回此类所有public方法 </li>
+<li>Field getField(String name):返回此类指定Field </li>
+<li>Field{} getFields():返回此类所有public Field </li>
+<li>… </li>
+</ul>
+<h3 id="4-利用反射生成并操作对象"><a href="#4-利用反射生成并操作对象" class="headerlink" title="4.利用反射生成并操作对象"></a>4.利用反射生成并操作对象</h3><h4 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h4><p>通过反射来生成对象有以下两种方式： </p>
+<ul>
+<li>使用Class对象的newInstance()方法 </li>
+<li>先使用Class对象获取指定的Constructor对象,在调用Constructor对象的newInstance()方法。 </li>
+</ul>
+<p>举个例子： </p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function">Object <span class="title">createObject</span><span class="params">(String className)</span> <span class="keyword">throws</span> ClassNotFoundException, IllegalAccessException, InstantiationException </span>&#123;</span><br><span class="line"></span><br><span class="line">    Class&lt;?&gt; clazz = Class.forName(className);</span><br><span class="line">    <span class="function"><span class="keyword">return</span> clazz.<span class="title">newInstance</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="调用方法"><a href="#调用方法" class="headerlink" title="调用方法"></a>调用方法</h4><p>生成对象后，就可以通过getMethod()方法或者getMethods()方法来获取方法。 </p>
+<p>再通过invoke()方法来执行 </p>
+<h4 id="访问属性值"><a href="#访问属性值" class="headerlink" title="访问属性值"></a>访问属性值</h4><p>通过getFields()或者getField()方法可以获取Class对象的Field。可以用以下两组方法来读取或者设置Field值 </p>
+<ul>
+<li>getXxx(Object obj):获取Field的属性值 </li>
+<li>setXxx(Object obj, Xxx val)：将obj对象的Field设置成val值 </li>
+</ul>
+<hr>]]></content>
+      
+        <categories>
+            
+            <category> Java基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 反射 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Java基础-IO]]></title>
       <url>/articles/java_se_io.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Java基础第三篇-IO</p>

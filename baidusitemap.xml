@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/java_se_reflect.html</loc>
+    <lastmod>2018-06-05T07:26:45.746Z</lastmod>
+    <data>
+        <display>
+        <title>Java基础-类加载机制与反射</title>
+        <pubTime>2018-06-05T07:24:59.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>反射</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="https://www.bluelzy.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/java_se_io.html</loc>
     <lastmod>2018-06-04T08:18:52.195Z</lastmod>
     <data>
