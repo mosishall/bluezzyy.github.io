@@ -3,13 +3,89 @@
   
     
     <entry>
+      <title><![CDATA[Mac安装Scrapy及踩坑经验]]></title>
+      <url>/articles/install_scrapy_for_mac.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Mac下安装Scrapy</p>
+<p>折腾了一下午的踩坑坑坑经验</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>系统 - macOS 10.13.6 </li>
+<li>Python - 2.7 和 3.6 共存</li>
+</ul>
+<p>Mac出厂自带python2.7版本，后面我又自己安装了Python3.X，于是电脑里就有两个版本共存的情况，今天打算装个Scrapy玩玩，不了解Scrapy的童鞋可以看官方文档：<a href="https://doc.scrapy.org/en/latest/intro/overview.html" target="_blank" rel="noopener">Scrapy官网文档</a></p>
+<p>结果没想到一装就是3小时，中间遇到了无数的坑，最终通过曲线救国的方式才把Scrapy装上了，于是趁热打铁，赶紧把踩坑经验写下来，方便以后自己查阅，也方便遇到类似问题的朋友们参考。</p>
+<p>主要遇到的问题有以下几个：</p>
+<ul>
+<li>pip install scrapy 安装速度过慢</li>
+<li>OSError: [Errno 1] Operation not permitted: ‘/tmp/pip-HG6JNq-uninstall/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/six-1.4.1-py2.7.egg-info</li>
+<li>scrapy: command not found</li>
+</ul>
+<p>这几个问题在后面会有解决方法，首先我们按照正常的安装流程走一遍。</p>
+<h2 id="第一步：安装pip"><a href="#第一步：安装pip" class="headerlink" title="第一步：安装pip"></a>第一步：安装pip</h2><p>这里默认大家都已经安装了Homebrew，如果还没了解的，可以百度或者看看我的另一篇博客：<a href="https://blog.csdn.net/blue_zy/article/details/69568240" target="_blank" rel="noopener">Mac安装python3以及问题总结</a></p>
+<p>终端输入：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">python</span> <span class="built_in">get</span>-pip.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
+<p>即可完成pip安装</p>
+<h2 id="第二步：安装Scrapy"><a href="#第二步：安装Scrapy" class="headerlink" title="第二步：安装Scrapy"></a>第二步：安装Scrapy</h2><p>终端输入：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip <span class="keyword">install</span> Scrapy</span><br></pre></td></tr></table></figure>
+<p>如果一切顺利的话（当然这个概率比较小。。），你会看到安装成功的语句，输入 <strong>scrapy -v</strong> 就能看到scrapy的版本号了，目前最新的是1.5.1。</p>
+<p><img src="https://img-blog.csdn.net/20180722172433956?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsdWVfenk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>那么如果没有成功安装，而是报错了怎么办呢。。根据我google到的情况，报错的情况真的是千奇百怪，所以这里我也只能列举自己遇到的，至于其他的只能向搜索引擎求助了。</p>
+<h2 id="第三步：踩坑经验"><a href="#第三步：踩坑经验" class="headerlink" title="第三步：踩坑经验"></a>第三步：踩坑经验</h2><h4 id="1-pip-install-scrapy-的下载速度过慢"><a href="#1-pip-install-scrapy-的下载速度过慢" class="headerlink" title="1.pip install scrapy 的下载速度过慢"></a>1.pip install scrapy 的下载速度过慢</h4><p>解决方式：更换下载源，可以使用国内的豆瓣<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -<span class="selector-tag">i</span>  https:<span class="comment">//pypi.douban.com/simple scrapy</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="2-安装过程报错"><a href="#2-安装过程报错" class="headerlink" title="2.安装过程报错"></a>2.安装过程报错</h4><p>（1）</p>
+<blockquote>
+<p>OSError: [Errno 1] Operation not permitted: ‘/tmp/pip-HG6JNq-uninstall/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/six-1.4.1-py2.7.egg-info</p>
+</blockquote>
+<p>解决方法：忽略已经安装的six包<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip <span class="keyword">install </span><span class="keyword">scrapy </span>--ignore-<span class="keyword">installed </span>six</span><br></pre></td></tr></table></figure></p>
+<p>参考来源：<a href="https://github.com/pypa/pip/issues/3165" target="_blank" rel="noopener">Six issue when installing package</a></p>
+<p>（2）</p>
+<blockquote>
+<p>[Errno 13] Permission denied</p>
+</blockquote>
+<p>解决方法：通过 users 文件夹安装<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install --<span class="keyword">user</span> <span class="title">google-assistant-sdk</span>[samples]</span><br></pre></td></tr></table></figure></p>
+<p>参考来源：<a href="https://github.com/googlesamples/assistant-sdk-python/issues/236" target="_blank" rel="noopener">Permission denied How i solve this problem</a></p>
+<h4 id="3-安装成功但是报command-not-found错误"><a href="#3-安装成功但是报command-not-found错误" class="headerlink" title="3. 安装成功但是报command not found错误"></a>3. 安装成功但是报command not found错误</h4><p>我主要是在这一步卡了很久，网上查到的资料是说，报错原因是环境变量没有配置好，但是我加入环境变量后也还是不行，所以在这里我先附上参考链接，对我没用可能对其他人有用呢。</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/17607944/scrapy-not-installed-correctly-on-mac" target="_blank" rel="noopener">Scrapy not installed correctly on mac?</a></li>
+<li><a href="http://www.mamicode.com/info-detail-2181308.html" target="_blank" rel="noopener">bash: scrapy: command not found</a></li>
+</ul>
+<p>哪怕我把scrapy的路径加入到环境变量中，还是有这个错误。于是我先把scrapy卸载掉，然后再用python3来安装，没想到就完美解决这个问题了。。</p>
+<p>只需一行<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 <span class="keyword">install</span> scrapy</span><br></pre></td></tr></table></figure></p>
+<p>安装完的效果就是文章开头的截图，输入scrapy -v 能看到版本信息，也能通过scrapy来创建爬虫项目了。</p>
+<p>一点猜测：由于mac自带python2.7，在安装的过程中scrapy成功装上了，但是环境变量不对，导致找不到scrapy正确的执行路径。Stack Overflow上也有类似的问题，但是暂时还没有人解答。</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/44469585/python-bash-scrapy-command-not-found-on-mac-os" target="_blank" rel="noopener">Python: -bash: scrapy: command not found on Mac OS
+</a><br>这个哥们遇到的问题和我一模一样，成功安装，可以导入，环境变量也加了，就是死活找不到scrapy。</li>
+</ul>
+<p>关于Scrapy安装经验暂时就这么多，如果有大神能够解除疑惑，欢迎多多交流。</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术向 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Scrapy </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Scrapy入门-第一个爬虫项目]]></title>
       <url>/articles/first_scrapy_project.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Scrapy初体验 </p>
 <p>实现一个最简单的爬虫项目</p>
 </blockquote>
  <a id="more"></a>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>千辛万苦安装完Scrapy，当然要马上体验一下啦。<br>本文采用循序渐进的方式，一步步写出一个完整的爬虫，包括  </p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>千辛万苦安装完Scrapy，当然要马上体验一下啦。详见：<a href="https://www.bluelzy.com/articles/install_scrapy_for_mac.html">Mac安装Scrapy及踩坑经验</a></p>
+<p>本文采用循序渐进的方式，一步步写出一个完整的爬虫，包括  </p>
 <ul>
 <li>使用Scrapy创建项目</li>
 <li>使用Scrapy爬取整个网页</li>

@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/first_scrapy_project.html</loc>
-    <lastmod>2018-07-22T16:28:08.946Z</lastmod>
+    <lastmod>2018-07-22T16:40:00.635Z</lastmod>
     <data>
         <display>
         <title>Scrapy入门-第一个爬虫项目</title>
@@ -19,6 +19,28 @@
            
              
               <breadCrumb title="Python" url="https://www.bluelzy.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/install_scrapy_for_mac.html</loc>
+    <lastmod>2018-07-22T16:36:47.894Z</lastmod>
+    <data>
+        <display>
+        <title>Mac安装Scrapy及踩坑经验</title>
+        <pubTime>2018-07-22T16:34:09.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Scrapy</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
           
         </display>
     </data>

@@ -129,7 +129,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="BlueLzy&#39;s Blog">
-<meta property="og:url" content="https://www.bluelzy.com/tags/Linux/index.html">
+<meta property="og:url" content="https://www.bluelzy.com/tags/linux/index.html">
 <meta property="og:site_name" content="BlueLzy&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -167,7 +167,7 @@
 
 
 
-  <title>标签: Linux | BlueLzy's Blog</title>
+  <title>标签: linux | BlueLzy's Blog</title>
   
 
 
@@ -341,7 +341,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Linux<small>标签</small>
+        <h1>linux<small>标签</small>
         </h1>
       </div>
 
@@ -366,45 +366,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/articles/vim_guide.html" itemprop="url">
+            <a class="post-title-link" href="/articles/shuttle_brief_introduction.html" itemprop="url">
               
-                <span itemprop="name">Vim简单入门</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-28T11:14:54+08:00"
-              content="2017-12-28" >
-          12-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-
-      
-      
-      
-
-     
-      
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/articles/install_nginx_for_centos6.html" itemprop="url">
-              
-                <span itemprop="name">CentOS 6 安装Nginx</span>
+                <span itemprop="name">Shuttle安装以及配置简介</span>
               
             </a>
         
@@ -412,9 +376,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-28T10:47:05+08:00"
-              content="2017-12-28" >
-          12-28
+              datetime="2017-12-21T23:21:00+08:00"
+              content="2017-12-21" >
+          12-21
         </time>
       </div>
 
@@ -480,7 +444,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1209,6 +1173,46 @@
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 加入烟花效果-->
+  
+</body>
+</html>
+sitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');
