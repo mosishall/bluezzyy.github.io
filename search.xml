@@ -1733,7 +1733,9 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  app_id:</span> </span><br><span class="line"><span class="attr">  app_key:</span> </span><br><span class="line"><span class="attr">  notify:</span> <span class="literal">false</span> <span class="comment"># mail notifier , https://github.com/xCss/Valine/wiki</span></span><br><span class="line"><span class="attr">  verify:</span> <span class="literal">false</span> <span class="comment"># Verification code</span></span><br><span class="line"><span class="attr">  placeholder:</span> <span class="string">ヾﾉ≧∀≦)o</span> <span class="string">来呀！快活呀！~</span></span><br><span class="line"><span class="attr">  avatar:</span> <span class="string">mm</span> <span class="comment"># gravatar style</span></span><br><span class="line"><span class="attr">  guest_info:</span> <span class="string">nick,mail,link</span> <span class="comment"># custom comment header</span></span><br><span class="line"><span class="attr">  pageSize:</span> <span class="number">10</span> <span class="comment"># pagination size</span></span><br></pre></td></tr></table></figure>
 <p>看到区别了吗，app_id 和 app_key 这两个字段名是不一样的，如果字段名不对，那么是不会去加载Valine.min.js文件，也就是评论系统根本不会生效。这个问题折腾了一上午，最后还是联系作者才解决。</p>
 <p>因此，在这里我要给作者打call：</p>
-<p>欢迎加入Valine交流群: <strong>80972291</strong>  </p>
+<p>欢迎加入Valine交流群: <del>80972291</del> </p>
+<p>2018/08/12 更：</p>
+<p>感谢热心网友，群号应该为：<strong>480972291</strong>  </p>
 <p>漫漫长夜~又水完了一篇博客。。</p>
 <p>对了，免费版本不支持高并发，大家评论的时候请排好队，不然Leancloud要给我发邮件了~谢谢！</p>
 <div class="note primary"><p>参考 </p>
