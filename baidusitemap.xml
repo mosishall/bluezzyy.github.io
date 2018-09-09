@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/android_databinding_introduction.html</loc>
+    <lastmod>2018-09-09T13:24:24.391Z</lastmod>
+    <data>
+        <display>
+        <title>Android DataBinding基本用法</title>
+        <pubTime>2018-09-09T11:42:22.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>DataBinding</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://www.bluelzy.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/recommand_book_and_movie0821.html</loc>
     <lastmod>2018-08-24T19:24:20.983Z</lastmod>
     <data>
@@ -413,9 +435,9 @@
         
         <tag>Android</tag>
          
-        <tag>腾讯地图</tag>
-         
         <tag>第三方控件</tag>
+         
+        <tag>腾讯地图</tag>
          
          
            
@@ -437,9 +459,9 @@
         
         <tag>Android</tag>
          
-        <tag>第三方控件</tag>
-         
         <tag>高德地图</tag>
+         
+        <tag>第三方控件</tag>
          
          
            
