@@ -1990,11 +1990,11 @@
         
         <tags>
             
+            <tag> 日常 </tag>
+            
             <tag> 电影 </tag>
             
             <tag> 无问西东 </tag>
-            
-            <tag> 日常 </tag>
             
         </tags>
         
@@ -2042,9 +2042,9 @@
         
         <tags>
             
-            <tag> 日常 </tag>
-            
             <tag> 知乎 </tag>
+            
+            <tag> 日常 </tag>
             
         </tags>
         
@@ -2670,9 +2670,9 @@ $ sudo yum install nginx
         
         <tags>
             
-            <tag> Nginx </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> Nginx </tag>
             
             <tag> CentOS 6 </tag>
             

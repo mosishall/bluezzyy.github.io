@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>https://www.bluelzy.com/articles/recyclerview_introduction.html</loc>
     <lastmod>2018-09-10T15:55:48.853Z</lastmod>
@@ -503,11 +504,11 @@
         <title>电影-无问西东</title>
         <pubTime>2018-01-21T10:01:09.000Z</pubTime>
         
+        <tag>日常</tag>
+         
         <tag>电影</tag>
          
         <tag>无问西东</tag>
-         
-        <tag>日常</tag>
          
          
            
@@ -527,9 +528,9 @@
         <title>哪有什么真正的言论自由？</title>
         <pubTime>2018-01-20T00:24:58.000Z</pubTime>
         
-        <tag>日常</tag>
-         
         <tag>知乎</tag>
+         
+        <tag>日常</tag>
          
          
            
@@ -696,9 +697,9 @@
         <title>CentOS 6 安装Nginx</title>
         <pubTime>2017-12-28T02:47:05.000Z</pubTime>
         
-        <tag>Nginx</tag>
-         
         <tag>Linux</tag>
+         
+        <tag>Nginx</tag>
          
         <tag>CentOS 6</tag>
          
