@@ -3,10 +3,29 @@
 
 
     
+  <url>
+    <loc>https://www.bluelzy.com/articles/learning_kotlin_day1.html</loc>
+    <lastmod>2018-10-07T10:26:56.116Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin学习之旅(D1)-学习计划&基本语法</title>
+        <pubTime>2018-10-07T06:57:14.000Z</pubTime>
+        
+        <tag>Kotlin</tag>
+         
+         
+           
+             
+              <breadCrumb title="Kotlin学习之旅" url="https://www.bluelzy.com/categories/Kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>https://www.bluelzy.com/articles/recyclerview_introduction.html</loc>
-    <lastmod>2018-09-10T15:55:48.853Z</lastmod>
+    <lastmod>2018-10-05T14:11:00.904Z</lastmod>
     <data>
         <display>
         <title>RecyclerView基本用法</title>
@@ -25,6 +44,8 @@
     </data>
     </url>
 
+    
+    
     
   <url>
     <loc>https://www.bluelzy.com/articles/android_databinding_introduction.html</loc>
@@ -458,9 +479,9 @@
         
         <tag>Android</tag>
          
-        <tag>第三方控件</tag>
-         
         <tag>腾讯地图</tag>
+         
+        <tag>第三方控件</tag>
          
          
            
@@ -482,9 +503,9 @@
         
         <tag>Android</tag>
          
-        <tag>高德地图</tag>
-         
         <tag>第三方控件</tag>
+         
+        <tag>高德地图</tag>
          
          
            
@@ -589,7 +610,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>https://www.bluelzy.com/articles/ues_Hexo_build_blog_three.html</loc>

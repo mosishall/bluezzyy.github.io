@@ -140,7 +140,8 @@
 <meta property="og:image" content="http://www.wailian.work/images/2018/09/10/Sep-10-201823-30-03.gif">
 <meta property="og:image" content="https://i.imgur.com/D5crJK4.gif">
 <meta property="og:image" content="https://camo.githubusercontent.com/8eb31d3d3bc9f6e272b1210be36a34219a77dbf4/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f313833333930312d363161303864393561623765346632392e6769663f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970">
-<meta property="og:updated_time" content="2018-09-10T15:55:48.853Z">
+<meta property="og:image" content="http://www.wailian.work/images/2018/10/05/Snip20181005_2.png">
+<meta property="og:updated_time" content="2018-10-05T14:11:00.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RecyclerView基本用法">
 <meta name="twitter:description" content="Learning By Doing 一个Demo掌握RecyclerView基本用法">
@@ -518,6 +519,16 @@
 <li><a href="https://google-developer-training.gitbooks.io/android-developer-fundamentals-course-concepts/content/en/Unit%202/44_c_recyclerview.html" target="_blank" rel="noopener">RecyclerView:Android-Developer-Traning </a></li>
 </ul>
 <p>基本上常见的用法和原理的解析都在这里面了，有特定需求的可以上Github找一下第三方库，看一下里面的源码，了解原理之后，其实自己也能实现各种炫酷的效果~</p>
+<h2 id="20181010更新"><a href="#20181010更新" class="headerlink" title="20181010更新"></a>20181010更新</h2><p>评论里有朋友问怎么添加分割线，其实Android官方已经提供了默认实现。只需要一行代码即可：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">recyclerView.addItemDecoration(<span class="keyword">new</span> DividerItemDecoration(context,DividerItemDecoration.VERTICAL));</span><br></pre></td></tr></table></figure>
+<p>效果如图：</p>
+<p><img src="http://www.wailian.work/images/2018/10/05/Snip20181005_2.png" alt="Snip20181005_2.png"></p>
+<p>如果对默认的效果不满意，也可以使用其他的实现方式：</p>
+<p>自定义Drawable文件</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">recyclerView</span><span class="selector-class">.addItemDecoration</span>(<span class="selector-tag">new</span> <span class="selector-tag">RecycleViewDivider</span>(</span><br><span class="line">    <span class="selector-tag">context</span>, <span class="selector-tag">DividerItemDecoration</span><span class="selector-class">.VERTICAL</span>, <span class="selector-tag">R</span><span class="selector-class">.drawable</span><span class="selector-class">.divider_mileage</span>));</span><br></pre></td></tr></table></figure>
+<p>OR</p>
+<p>自定义分割线高度和颜色</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">recyclerView.addItemDecoration(<span class="keyword">new</span> RecycleViewDivider(</span><br><span class="line">    context, DividerItemDecoration.VERTICAL, <span class="number">10</span>, getResources().getColor(R.color.divide_gray_color)));</span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -579,6 +590,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/articles/learning_kotlin_day1.html" rel="prev" title="Kotlin学习之旅(D1)-学习计划&基本语法">
+                <i class="fa fa-chevron-left"></i> Kotlin学习之旅(D1)-学习计划&基本语法
+              </a>
             
           </div>
 
@@ -673,7 +688,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -684,7 +699,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -695,7 +710,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -760,7 +775,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RecyclerView使用"><span class="nav-number">2.</span> <span class="nav-text"><a href="#RecyclerView&#x4F7F;&#x7528;" class="headerlink" title="RecyclerView&#x4F7F;&#x7528;"></a>RecyclerView&#x4F7F;&#x7528;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加RecyclerView依赖库"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x6DFB;&#x52A0;RecyclerView&#x4F9D;&#x8D56;&#x5E93;" class="headerlink" title="&#x6DFB;&#x52A0;RecyclerView&#x4F9D;&#x8D56;&#x5E93;"></a>&#x6DFB;&#x52A0;RecyclerView&#x4F9D;&#x8D56;&#x5E93;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义Model类"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x5B9A;&#x4E49;Model&#x7C7B;" class="headerlink" title="&#x5B9A;&#x4E49;Model&#x7C7B;"></a>&#x5B9A;&#x4E49;Model&#x7C7B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在activity添加RecyclerView"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#&#x5728;activity&#x6DFB;&#x52A0;RecyclerView" class="headerlink" title="&#x5728;activity&#x6DFB;&#x52A0;RecyclerView"></a>&#x5728;activity&#x6DFB;&#x52A0;RecyclerView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建XML布局文件，用于展示item"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#&#x521B;&#x5EFA;XML&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x5C55;&#x793A;item" class="headerlink" title="&#x521B;&#x5EFA;XML&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x5C55;&#x793A;item"></a>&#x521B;&#x5EFA;XML&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x5C55;&#x793A;item</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建adapter和viewholder"><span class="nav-number">2.5.</span> <span class="nav-text"><a href="#&#x521B;&#x5EFA;adapter&#x548C;viewholder" class="headerlink" title="&#x521B;&#x5EFA;adapter&#x548C;viewholder"></a>&#x521B;&#x5EFA;adapter&#x548C;viewholder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在activity绑定adapter和data"><span class="nav-number">2.6.</span> <span class="nav-text"><a href="#&#x5728;activity&#x7ED1;&#x5B9A;adapter&#x548C;data" class="headerlink" title="&#x5728;activity&#x7ED1;&#x5B9A;adapter&#x548C;data"></a>&#x5728;activity&#x7ED1;&#x5B9A;adapter&#x548C;data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compile-amp-run-project"><span class="nav-number">2.7.</span> <span class="nav-text"><a href="#compile-amp-run-project" class="headerlink" title="compile &amp; run project"></a>compile &amp; run project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三方库"><span class="nav-number">2.8.</span> <span class="nav-text"><a href="#&#x7B2C;&#x4E09;&#x65B9;&#x5E93;" class="headerlink" title="&#x7B2C;&#x4E09;&#x65B9;&#x5E93;"></a>&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章-博客"><span class="nav-number">2.9.</span> <span class="nav-text"><a href="#&#x6587;&#x7AE0;-&#x535A;&#x5BA2;" class="headerlink" title="&#x6587;&#x7AE0;/&#x535A;&#x5BA2;"></a>&#x6587;&#x7AE0;/&#x535A;&#x5BA2;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#中文："><span class="nav-number">2.9.1.</span> <span class="nav-text"><a href="#&#x4E2D;&#x6587;&#xFF1A;" class="headerlink" title="&#x4E2D;&#x6587;&#xFF1A;"></a>&#x4E2D;&#x6587;&#xFF1A;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#英文："><span class="nav-number">2.9.2.</span> <span class="nav-text"><a href="#&#x82F1;&#x6587;&#xFF1A;" class="headerlink" title="&#x82F1;&#x6587;&#xFF1A;"></a>&#x82F1;&#x6587;&#xFF1A;</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RecyclerView使用"><span class="nav-number">2.</span> <span class="nav-text"><a href="#RecyclerView&#x4F7F;&#x7528;" class="headerlink" title="RecyclerView&#x4F7F;&#x7528;"></a>RecyclerView&#x4F7F;&#x7528;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加RecyclerView依赖库"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x6DFB;&#x52A0;RecyclerView&#x4F9D;&#x8D56;&#x5E93;" class="headerlink" title="&#x6DFB;&#x52A0;RecyclerView&#x4F9D;&#x8D56;&#x5E93;"></a>&#x6DFB;&#x52A0;RecyclerView&#x4F9D;&#x8D56;&#x5E93;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义Model类"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#&#x5B9A;&#x4E49;Model&#x7C7B;" class="headerlink" title="&#x5B9A;&#x4E49;Model&#x7C7B;"></a>&#x5B9A;&#x4E49;Model&#x7C7B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在activity添加RecyclerView"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#&#x5728;activity&#x6DFB;&#x52A0;RecyclerView" class="headerlink" title="&#x5728;activity&#x6DFB;&#x52A0;RecyclerView"></a>&#x5728;activity&#x6DFB;&#x52A0;RecyclerView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建XML布局文件，用于展示item"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#&#x521B;&#x5EFA;XML&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x5C55;&#x793A;item" class="headerlink" title="&#x521B;&#x5EFA;XML&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x5C55;&#x793A;item"></a>&#x521B;&#x5EFA;XML&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x5C55;&#x793A;item</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建adapter和viewholder"><span class="nav-number">2.5.</span> <span class="nav-text"><a href="#&#x521B;&#x5EFA;adapter&#x548C;viewholder" class="headerlink" title="&#x521B;&#x5EFA;adapter&#x548C;viewholder"></a>&#x521B;&#x5EFA;adapter&#x548C;viewholder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在activity绑定adapter和data"><span class="nav-number">2.6.</span> <span class="nav-text"><a href="#&#x5728;activity&#x7ED1;&#x5B9A;adapter&#x548C;data" class="headerlink" title="&#x5728;activity&#x7ED1;&#x5B9A;adapter&#x548C;data"></a>&#x5728;activity&#x7ED1;&#x5B9A;adapter&#x548C;data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#compile-amp-run-project"><span class="nav-number">2.7.</span> <span class="nav-text"><a href="#compile-amp-run-project" class="headerlink" title="compile &amp; run project"></a>compile &amp; run project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三方库"><span class="nav-number">2.8.</span> <span class="nav-text"><a href="#&#x7B2C;&#x4E09;&#x65B9;&#x5E93;" class="headerlink" title="&#x7B2C;&#x4E09;&#x65B9;&#x5E93;"></a>&#x7B2C;&#x4E09;&#x65B9;&#x5E93;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章-博客"><span class="nav-number">2.9.</span> <span class="nav-text"><a href="#&#x6587;&#x7AE0;-&#x535A;&#x5BA2;" class="headerlink" title="&#x6587;&#x7AE0;/&#x535A;&#x5BA2;"></a>&#x6587;&#x7AE0;/&#x535A;&#x5BA2;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#中文："><span class="nav-number">2.9.1.</span> <span class="nav-text"><a href="#&#x4E2D;&#x6587;&#xFF1A;" class="headerlink" title="&#x4E2D;&#x6587;&#xFF1A;"></a>&#x4E2D;&#x6587;&#xFF1A;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#英文："><span class="nav-number">2.9.2.</span> <span class="nav-text"><a href="#&#x82F1;&#x6587;&#xFF1A;" class="headerlink" title="&#x82F1;&#x6587;&#xFF1A;"></a>&#x82F1;&#x6587;&#xFF1A;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20181010更新"><span class="nav-number">3.</span> <span class="nav-text"><a href="#20181010&#x66F4;&#x65B0;" class="headerlink" title="20181010&#x66F4;&#x65B0;"></a>20181010&#x66F4;&#x65B0;</span></a></li></ol></div>
             
 
           </div>
