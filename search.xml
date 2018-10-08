@@ -3,6 +3,77 @@
   
     
     <entry>
+      <title><![CDATA[Kotlin学习之旅(D2)-基本语法]]></title>
+      <url>/articles/learning_kotlin_d2.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅的<strong>第二天</strong></p>
+<p>今天让我们完成 <strong>基础语法</strong> 的学习</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>昨天，我们学习了一部分的基础语法，文章链接：<a href="https://www.bluelzy.com/articles/learning_kotlin_day1.html">Kotlin学习之旅(D1)-学习计划&amp;基本语法</a></p>
+<p>最后还剩下三个基础语法没讲：</p>
+<ul>
+<li>for循环和while循环</li>
+<li>when表达式</li>
+<li>遍历集合</li>
+</ul>
+<p>今天让我们一个个解决掉~</p>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p>在Java，C，Python等各种编程语言中，都会有循环控制，其中for循环又是最为常见的，在Kotlin中，for循环的语法为：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="built_in">item</span> <span class="keyword">in</span> collection)&#123;</span><br><span class="line">    print(<span class="built_in">item</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过 <strong>in</strong> 关键字来进行循环，当然，也可以指定范围：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="selector-tag">i</span> <span class="keyword">in</span> <span class="number">1</span>..<span class="number">3</span>)&#123;</span><br><span class="line">    println(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过 <strong>“..”</strong> 表示范围，那么如果是只取奇数，或者偶数呢？间隔3个数取值呢？这时候就要用到 step 关键字了</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> 1<span class="built_in">..</span>6 <span class="keyword">step</span> 2)&#123;</span><br><span class="line">    println(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果为：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p>因为我们取值范围是1-6，每隔1个取值（step 2）</p>
+<p>好了，那么如果我们希望从大到小取值呢，kotlin里面提供了一个<strong>downTo</strong>关键字</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">6</span> <span class="keyword">downTo</span> <span class="number">0</span> <span class="keyword">step</span> <span class="number">2</span>) <span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    println(i)</span></span><br><span class="line"><span class="comment">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>这个函数的输出结果就是：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>因为我们取值范围是6-0，每隔1个取值（step 2）</p>
+<p> 除了最基本的int型，我们还可以取数组的值：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line"><span class="keyword">val</span> array = arrayOf(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>)</span><br><span class="line">    <span class="keyword">for</span> (i <span class="keyword">in</span> array.indices) &#123;</span><br><span class="line">        println(array[i])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其他的集合类型我们会在后面的 <strong>遍历集合</strong> 里面再讲</p>
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p>while循环的语法比较简单：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="comment">(x &gt; 0)</span> &#123;</span><br><span class="line">    x--</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    val y = retrieveData<span class="comment">()</span></span><br><span class="line">&#125; <span class="keyword">while</span> <span class="comment">(y != null)</span> <span class="comment">// y is visible here!</span></span><br></pre></td></tr></table></figure>
+<p>通常是 while(“条件语句”) { … } 或者是 do { … } while(“条件语句”)</p>
+<h2 id="when表达式"><a href="#when表达式" class="headerlink" title="when表达式"></a>when表达式</h2><p>上面讲的 for 和 while 在 Java里面都有，所以看一遍基本上就差不多了，但是when表达式，在Java里面是没有的，比较相像的是switch语句，其实when也是条件判断，或者说是控制流的一种。</p>
+<p>基本用法：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">when</span> (x) &#123;</span><br><span class="line">    <span class="selector-tag">1</span> <span class="selector-tag">-</span>&gt; <span class="selector-tag">print</span>(<span class="string">"x == 1"</span>)</span><br><span class="line">    <span class="selector-tag">2</span> <span class="selector-tag">-</span>&gt; <span class="selector-tag">print</span>(<span class="string">"x == 2"</span>)</span><br><span class="line">    <span class="selector-tag">else</span> <span class="selector-tag">-</span>&gt; &#123; <span class="comment">// Note the block</span></span><br><span class="line">        <span class="selector-tag">print</span>(<span class="string">"x is neither 1 nor 2"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是when表达式有个很厉害的地方，他可以接收表达式，或者是普通的语句，什么意思呢？看个例子就明白了：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">when (x) &#123;</span><br><span class="line">    <span class="keyword">in</span> 1<span class="built_in">..</span>10 -&gt; <span class="builtin-name">print</span>(<span class="string">"x is in the range"</span>)</span><br><span class="line">    <span class="keyword">in</span> validNumbers -&gt; <span class="builtin-name">print</span>(<span class="string">"x is valid"</span>)</span><br><span class="line">    !<span class="keyword">in</span> 10<span class="built_in">..</span>20 -&gt; <span class="builtin-name">print</span>(<span class="string">"x is outside the range"</span>)</span><br><span class="line">    <span class="keyword">else</span> -&gt; <span class="builtin-name">print</span>(<span class="string">"none of the above"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果是switch语句，那么case的条件里面只能是string类型，但是在when里面则灵活许多，可以是1-10范围内的数字，可以使用”!”表示“非”，甚至可以在里面调用方法：</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">when</span> &#123;</span><br><span class="line">    x.isOdd<span class="function"><span class="params">()</span> -&gt;</span> <span class="built_in">print</span>(<span class="string">"x is odd"</span>)</span><br><span class="line">    x.isEven<span class="function"><span class="params">()</span> -&gt;</span> <span class="built_in">print</span>(<span class="string">"x is even"</span>)</span><br><span class="line">    <span class="keyword">else</span><span class="function"> -&gt;</span> <span class="built_in">print</span>(<span class="string">"x is funny"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>虽然这种条件判断我们也可以通过if…else 来实现，但是阅读起来，还是when表达式比较好理解。</p>
+<h2 id="遍历集合"><a href="#遍历集合" class="headerlink" title="遍历集合"></a>遍历集合</h2><p>一边遍历集合都会在for循环里面使用，例如：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> items = listOf(<span class="string">"apple"</span>, <span class="string">"banana"</span>, <span class="string">"kiwifruit"</span>)</span><br><span class="line">    <span class="keyword">for</span> (item <span class="keyword">in</span> items) &#123;</span><br><span class="line">        println(item)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果为：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">apple</span></span><br><span class="line"><span class="keyword">banana</span></span><br><span class="line"><span class="keyword">kiwifruit</span></span><br></pre></td></tr></table></figure>
+<p>同样的，在while循环中也可以遍历集合：`</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> items = setOf(<span class="string">"apple"</span>, <span class="string">"banana"</span>, <span class="string">"kiwifruit"</span>)</span><br><span class="line">    <span class="keyword">when</span> &#123;</span><br><span class="line">        <span class="string">"orange"</span> <span class="keyword">in</span> items -&gt; println(<span class="string">"juicy"</span>)</span><br><span class="line">        <span class="string">"apple"</span> <span class="keyword">in</span> items -&gt; println(<span class="string">"apple is fine too"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里虽然不太明显，但是其实通过  “orange” in items 判断 “orange”是否在items中的时候，就需要遍历整个集合，所以说 <strong>“in”</strong> 关键字的作用就是遍历</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好了，基础知识到这里就全部讲完了，这两天学到的基本语法在日常开发中我们经常会用到，貌似Kotlin的特性我们一个都还没说，例如：空安全，lambda表达式，如何自动生成getter和setter的类等等，这些我们会在接下来为期3天的<strong>高级语法之旅</strong>中进行学习。</p>
+<p>这两天的基础语法其实就是让大家对kotlin这门语言有一点印象，想要真正要写出优雅，可读，高效的代码，我们还需要进行其他的理论学习，再加上不断不断的实践。</p>
+<p>  Day 2 - Learning Kotlin Trip，Completed.</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> Kotlin学习之旅 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Kotlin学习之旅(D1)-学习计划&基本语法]]></title>
       <url>/articles/learning_kotlin_day1.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>2017年的Google I/O 开发者大会 </p>

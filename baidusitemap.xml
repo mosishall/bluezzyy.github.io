@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/learning_kotlin_d2.html</loc>
+    <lastmod>2018-10-08T13:12:43.529Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin学习之旅(D2)-基本语法</title>
+        <pubTime>2018-10-08T11:47:13.000Z</pubTime>
+        
+        <tag>Kotlin</tag>
+         
+         
+           
+             
+              <breadCrumb title="Kotlin学习之旅" url="https://www.bluelzy.com/categories/Kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/learning_kotlin_day1.html</loc>
-    <lastmod>2018-10-07T10:26:56.116Z</lastmod>
+    <lastmod>2018-10-08T11:50:15.784Z</lastmod>
     <data>
         <display>
         <title>Kotlin学习之旅(D1)-学习计划&基本语法</title>
