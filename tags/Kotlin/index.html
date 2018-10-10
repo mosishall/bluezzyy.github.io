@@ -129,7 +129,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="BlueLzy&#39;s Blog">
-<meta property="og:url" content="https://www.bluelzy.com/tags/kotlin/index.html">
+<meta property="og:url" content="https://www.bluelzy.com/tags/Kotlin/index.html">
 <meta property="og:site_name" content="BlueLzy&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -167,7 +167,7 @@
 
 
 
-  <title>标签: kotlin | BlueLzy's Blog</title>
+  <title>标签: Kotlin | BlueLzy's Blog</title>
   
 
 
@@ -341,7 +341,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>kotlin<small>标签</small>
+        <h1>Kotlin<small>标签</small>
         </h1>
       </div>
 
@@ -366,9 +366,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/articles/learn_kotlin_day3.html" itemprop="url">
+            <a class="post-title-link" href="/articles/learn_kotlin_day4.html" itemprop="url">
               
-                <span itemprop="name">Kotlin学习之旅(D3)-类与继承</span>
+                <span itemprop="name">Kotlin学习之旅(D4)-函数与Lambda表达式</span>
               
             </a>
         
@@ -376,9 +376,81 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-09T20:06:13+08:00"
-              content="2018-10-09" >
-          10-09
+              datetime="2018-10-10T20:24:32+08:00"
+              content="2018-10-10" >
+          10-10
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+
+      
+      
+      
+
+     
+      
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/articles/learning_kotlin_d2.html" itemprop="url">
+              
+                <span itemprop="name">Kotlin学习之旅(D2)-基本语法</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-10-08T19:47:13+08:00"
+              content="2018-10-08" >
+          10-08
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+
+      
+      
+      
+
+     
+      
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/articles/learning_kotlin_day1.html" itemprop="url">
+              
+                <span itemprop="name">Kotlin学习之旅(D1)-学习计划&基本语法</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-10-07T14:57:14+08:00"
+              content="2018-10-07" >
+          10-07
         </time>
       </div>
 
@@ -444,7 +516,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1172,47 +1244,6 @@
             newcounter.save(null, {
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <!-- 加入烟花效果-->
-  
-</body>
-</html>
-tById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {

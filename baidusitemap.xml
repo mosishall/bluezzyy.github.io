@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/learn_kotlin_day4.html</loc>
+    <lastmod>2018-10-10T13:23:49.457Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin学习之旅(D4)-函数与Lambda表达式</title>
+        <pubTime>2018-10-10T12:24:32.000Z</pubTime>
+        
+        <tag>Kotlin</tag>
+         
+         
+           
+             
+              <breadCrumb title="kotlin学习之旅" url="https://www.bluelzy.com/categories/kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day3.html</loc>
     <lastmod>2018-10-09T13:54:45.939Z</lastmod>
     <data>
@@ -519,9 +539,9 @@
         
         <tag>Android</tag>
          
-        <tag>腾讯地图</tag>
-         
         <tag>第三方控件</tag>
+         
+        <tag>腾讯地图</tag>
          
          
            
@@ -543,9 +563,9 @@
         
         <tag>Android</tag>
          
-        <tag>第三方控件</tag>
-         
         <tag>高德地图</tag>
+         
+        <tag>第三方控件</tag>
          
          
            
@@ -565,11 +585,11 @@
         <title>电影-无问西东</title>
         <pubTime>2018-01-21T10:01:09.000Z</pubTime>
         
-        <tag>日常</tag>
-         
         <tag>电影</tag>
          
         <tag>无问西东</tag>
+         
+        <tag>日常</tag>
          
          
            
@@ -589,9 +609,9 @@
         <title>哪有什么真正的言论自由？</title>
         <pubTime>2018-01-20T00:24:58.000Z</pubTime>
         
-        <tag>知乎</tag>
-         
         <tag>日常</tag>
+         
+        <tag>知乎</tag>
          
          
            
