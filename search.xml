@@ -3,6 +3,63 @@
   
     
     <entry>
+      <title><![CDATA[Kotlin学习之旅(D5)-高级语法]]></title>
+      <url>/articles/learn_kotlin_day5.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第五天</p>
+<p>今天的主题是：高级语法</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://www.bluelzy.com/articles/learning_kotlin_day1.html">Kotlin学习之旅(D1)-学习计划&amp;基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learning_kotlin_d2.html">Kotlin学习之旅(D2)-基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day3.html">Kotlin学习之旅(D3)-类与继承</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day4.html">Kotlin学习之旅(D4)-函数与Lambda表达式</a></p>
+<h2 id="高级语法"><a href="#高级语法" class="headerlink" title="高级语法"></a>高级语法</h2><h3 id="空安全"><a href="#空安全" class="headerlink" title="空安全"></a>空安全</h3><p>写过Java代码的人都知道，空指针异常是时刻都要注意的，特别是在Android里面，一个NullPointerException就会让App Crash，因此在Kotlin里面，为了消除来自代码空引用的危险，默认引用是不能为空的。关于空指针异常，这里还有个趣闻：<a href="http://en.wikipedia.org/wiki/Tony_Hoare#Apologies_and_retractions" target="_blank" rel="noopener">《十亿美元的错误》</a></p>
+<p>在Kotlin里面，如果允许某个变量为null，我们可以通过 “ ? ” 来表示：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b: <span class="built_in">String</span>? = <span class="string">"abc"</span></span><br><span class="line">b = <span class="keyword">null</span> <span class="comment">// ok</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a: <span class="built_in">String</span> = <span class="string">"abc"</span></span><br><span class="line">a = <span class="keyword">null</span> <span class="comment">// 编译错误</span></span><br></pre></td></tr></table></figure>
+<p>如果变量是可以为空的，那么每次都需要显示检查是否为null：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val l = <span class="keyword">if</span>(<span class="selector-tag">b</span> != null) <span class="selector-tag">b</span><span class="selector-class">.length</span> - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>或者，通过安全调用操作符 -&gt; “ ?. “</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> a = <span class="string">"Kotlin"</span></span><br><span class="line">    <span class="keyword">val</span> b: String? = <span class="literal">null</span></span><br><span class="line">    println(b?.length)    <span class="comment">// 如果b为null，则返回null</span></span><br><span class="line">    println(a?.length)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="操作符"><a href="#操作符" class="headerlink" title="!!操作符"></a>!!操作符</h3><p>这个操作符在kotlin里面经常都能看到，他的作用就是：非空断言操作符。例如： a!! ，如果a为null，那么就会抛出异常，如果不为null，则返回a的值</p>
+<p>因此，如果你不希望NPE没有被捕获而导致appcrash，也不希望字符串为null但是没有处理，那么你就需要使用！！操作符，在变量为null的时候会抛出异常，我们就能在控制台看到了。</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>在Kotlin中，我们使用throw - Exception 来抛出异常：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">throw</span> <span class="keyword">Exception</span>(<span class="string">"this is an exception"</span>)</span><br></pre></td></tr></table></figure>
+<p>使用try来捕获异常：</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    </span><br><span class="line">&#125; <span class="keyword">catch</span> (e: Exception)&#123;</span><br><span class="line">    </span><br><span class="line">&#125; finally &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个语法结构和Java里面是很类似的</p>
+<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><h4 id="类引用"><a href="#类引用" class="headerlink" title="类引用"></a>类引用</h4><p>在反射中我们用的比较多的就是<strong><code>类引用</code></strong></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val c = MyClass::<span class="class"><span class="keyword">class</span></span></span><br></pre></td></tr></table></figure>
+<p>该引用是 <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html" target="_blank" rel="noopener">KClass</a> 类型的值。</p>
+<p>请注意，Kotlin 类引用与 Java 类引用不同。要获得 Java 类引用， 请在 <code>KClass</code> 实例上使用 <code>.java</code> 属性。</p>
+<h4 id="函数引用"><a href="#函数引用" class="headerlink" title="函数引用"></a>函数引用</h4><p>通常我们会直接调用函数，通过 xxx() 来调用，但是我们也可以把函数传给另外一个函数当参数，使用的也是 <code>::</code>操作符</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">isOdd</span><span class="params">(x: <span class="type">Int</span>)</span></span> = x % <span class="number">2</span> != <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> numbers = listOf(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">    println(numbers.filter(::isOdd))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个例子里面，我们首先定义了一个函数isOdd() 判断参数x是否为奇数，在main函数里，我们把这个方法作为参数传到了filter()方法里，这里其实是把函数当成 <code>函数类型的值</code> ，这个和Lambda表达式有点类似，都是把函数作为参数。</p>
+<h4 id="属性引用"><a href="#属性引用" class="headerlink" title="属性引用"></a>属性引用</h4><p>同样，我们也是使用<code>::</code>来引用属性</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> x = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    println(::x.<span class="keyword">get</span>())</span><br><span class="line">    println(::x.name) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里，表达式 <code>::x</code> 的意思是：</p>
+<p>求值为 <code>KProperty&lt;Int&gt;</code> 类型的属性对象，它允许我们使用 <code>get()</code> 读取它的值，或者使用 <code>name</code>属性来获取属性名。更多信息请参见<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html" target="_blank" rel="noopener">关于 <code>KProperty</code> 类的文档</a>。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>除了上面说的这几个语法，其实官方文档还有别的，例如：注解，类型别名，类型安全的构造器等等，我觉得这些语法用的都比较少，在看到或者需要用到的时候再去了解也可以，所以这里就没讲。</p>
+<p>其实Kotlin的语法和Java还是很相像的，只是有一些技巧或者特性，需要在实践中掌握，从而提高开发效率。因此明天开始我们就会进入：Kotlin Idioms 环节，介绍一些好用的开发技巧~</p>
+<p>Day 5 - Learn Kotlin Trip， Completed.</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> kotlin学习之旅 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Kotlin学习之旅(D4)-函数与Lambda表达式]]></title>
       <url>/articles/learn_kotlin_day4.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅-第四天</p>
@@ -109,7 +166,7 @@
 </blockquote>
  <a id="more"></a>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://www.bluelzy.com/articles/learning_kotlin_day1.html">Kotlin学习之旅(D1)-学习计划&amp;基本语法</a></p>
-<p><a href="https://www.bluelzy.com/articles/learning_kotlin_d2.html">Kotlin学习之旅(D2)-基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learning_kotlin_da2.html">Kotlin学习之旅(D2)-基本语法</a></p>
 <h2 id="今日目标"><a href="#今日目标" class="headerlink" title="今日目标"></a>今日目标</h2><p>今天空闲的时候 baidu一下，发现简书，掘金上有很多Kotlin学习总结，但是基本上都是把官方文档一字不落地复制粘贴了过来。我不希望自己也是这样子的，因此在Kotlin学习之旅里面：</p>
 <ul>
 <li>我只会把最常用的归纳总结起来，其他的大家可以去官方文档进行查看</li>
@@ -2345,9 +2402,9 @@
             
             <tag> Android </tag>
             
-            <tag> 第三方控件 </tag>
-            
             <tag> 腾讯地图 </tag>
+            
+            <tag> 第三方控件 </tag>
             
         </tags>
         
@@ -2394,9 +2451,9 @@
             
             <tag> Android </tag>
             
-            <tag> 高德地图 </tag>
-            
             <tag> 第三方控件 </tag>
+            
+            <tag> 高德地图 </tag>
             
         </tags>
         
