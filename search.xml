@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[Kotlin学习之旅(D8)-From Java to Kotlin]]></title>
-      <url>/articles/learn_kotlin_d8.html</url>
+      <url>/articles/learn_kotlin_day8.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第八天</p>
 <p>今天的主题是：From Java to Kotlin</p>
 </blockquote>
@@ -2681,9 +2681,9 @@
             
             <tag> Android </tag>
             
-            <tag> 腾讯地图 </tag>
-            
             <tag> 第三方控件 </tag>
+            
+            <tag> 腾讯地图 </tag>
             
         </tags>
         
@@ -2730,9 +2730,9 @@
             
             <tag> Android </tag>
             
-            <tag> 第三方控件 </tag>
-            
             <tag> 高德地图 </tag>
+            
+            <tag> 第三方控件 </tag>
             
         </tags>
         
