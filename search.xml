@@ -3,6 +3,186 @@
   
     
     <entry>
+      <title><![CDATA[Kotlin学习之旅(D7)-Kotlin Idioms part 2]]></title>
+      <url>/articles/learn_kotlin_day7.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第七天</p>
+<p>今天的主题是：Kotlin中的习惯用法-第二部分</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://www.bluelzy.com/articles/learning_kotlin_day1.html">Kotlin学习之旅(D1)-学习计划&amp;基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learning_kotlin_d2.html">Kotlin学习之旅(D2)-基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day3.html">Kotlin学习之旅(D3)-类与继承</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day4.html">Kotlin学习之旅(D4)-函数与Lambda表达式</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day5.html">Kotlin学习之旅(D5)-高级语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day6.html">Kotlin学习之旅(D6)-Kotlin Idioms part 1</a></p>
+<h2 id="今日目标"><a href="#今日目标" class="headerlink" title="今日目标"></a>今日目标</h2><ul>
+<li>使用表达式</li>
+<li>静态方法</li>
+<li>使用命名参数替代setter</li>
+<li>使用apply()</li>
+<li>处理可空对象</li>
+<li>使用as替代is</li>
+<li>快速创建JSON</li>
+</ul>
+<h2 id="使用表达式"><a href="#使用表达式" class="headerlink" title="使用表达式"></a>使用表达式</h2><p>通过使用Lambda表达式，我们可以减少很多的代码量，同时也会牺牲可读性，但是我们还是鼓励使用表达式</p>
+<p>举个栗子：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">getDefaultLocale</span><span class="params">(deliveryArea: <span class="type">String</span>)</span></span>: Locale &#123;</span><br><span class="line">    <span class="keyword">val</span> deliverAreaLower = deliveryArea.toLowerCase()</span><br><span class="line">    <span class="keyword">if</span> (deliverAreaLower == <span class="string">"germany"</span> || deliverAreaLower == <span class="string">"austria"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> Locale.GERMAN</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (deliverAreaLower == <span class="string">"usa"</span> || deliverAreaLower == <span class="string">"great britain"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> Locale.ENGLISH</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (deliverAreaLower == <span class="string">"france"</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> Locale.FRENCH</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Locale.ENGLISH</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个函数的目的是为了获取正确的地区，在函数体中做了很多的判断，每一个需要接手的人都要重新过一遍逻辑，但是由于大量的if，读一遍代码的速度会变慢，时间自然就会变长，那么使用表达式的效果是怎么样的呢？</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">getDefaultLocale2</span><span class="params">(deliveryArea: <span class="type">String</span>)</span></span> = <span class="keyword">when</span> (deliveryArea.toLowerCase()) &#123;</span><br><span class="line">    <span class="string">"germany"</span>, <span class="string">"austria"</span> -&gt; Locale.GERMAN</span><br><span class="line">    <span class="string">"usa"</span>, <span class="string">"great britain"</span> -&gt; Locale.ENGLISH</span><br><span class="line">    <span class="string">"france"</span> -&gt; Locale.FRENCH</span><br><span class="line">    <span class="keyword">else</span> -&gt; Locale.ENGLISH</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>没错，只要6行，就能达到和上面13行代码一样的效果，并且可读性上面我觉得还提升了。因为人的大脑是习惯有关联的东西，when表达式其实就是把并列的条件一个个列出来，对于读代码的人来说是很好理解的。</p>
+<p>因此，考虑多使用 <code>when</code> 而不是<code>if</code></p>
+<h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><p>在Kotlin里面，没有提供static关键字让我们定义静态的变量，方法，类，但是我们可以通过别的方式来实现</p>
+<h4 id="1-通过Object关键字"><a href="#1-通过Object关键字" class="headerlink" title="1.通过Object关键字"></a>1.通过Object关键字</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">object</span> MyUtil &#123;</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">changeAnswer</span><span class="params">(string: <span class="type">String</span>)</span></span> : <span class="built_in">Int</span> &#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">MyUtil</span><span class="selector-class">.changeAnswer</span>(<span class="string">"test"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="2-通过扩展函数"><a href="#2-通过扩展函数" class="headerlink" title="2.通过扩展函数"></a>2.通过扩展函数</h4><p>这个在昨天的 <a href="https://www.bluelzy.com/articles/learn_kotlin_day6.html">Kotlin学习之旅(D6)-Kotlin Idioms part 1</a> 已经讲过了，所以这里就不再重复了。</p>
+<h2 id="使用命名参数替代setter"><a href="#使用命名参数替代setter" class="headerlink" title="使用命名参数替代setter"></a>使用命名参数替代setter</h2><p>在Java里面，我们通过setXXX这样的命名方法来区分每个参数</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">val<span class="built_in"> config </span>= SearchConfig()</span><br><span class="line">       .setRoot(<span class="string">"~/folder"</span>)</span><br><span class="line">       .setTerm(<span class="string">"kotlin"</span>)</span><br><span class="line">       .setRecursive(<span class="literal">true</span>)</span><br><span class="line">       .setFollowSymlinks(<span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+<p>在Kotlin里面，我们通过直接给参数命名~</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">val <span class="attr">config2</span> = SearchConfig2(</span><br><span class="line">       <span class="attr">root</span> = <span class="string">"~/folder"</span>,</span><br><span class="line">       <span class="attr">term</span> = <span class="string">"kotlin"</span>,</span><br><span class="line">       <span class="attr">recursive</span> = <span class="literal">true</span>,</span><br><span class="line">       <span class="attr">followSymlinks</span> = <span class="literal">true</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p> 简洁又明了：<code>参数名 = &quot;参数值&quot;</code></p>
+<h2 id="使用apply"><a href="#使用apply" class="headerlink" title="使用apply()"></a>使用apply()</h2><p>这个用法和上面的差不多</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">val dataSource = BasicDataSource()</span><br><span class="line">dataSource<span class="selector-class">.driverClassName</span> = <span class="string">"com.mysql.jdbc.Driver"</span></span><br><span class="line">dataSource<span class="selector-class">.url</span> = <span class="string">"jdbc:mysql://domain:3309/db"</span></span><br><span class="line">dataSource<span class="selector-class">.username</span> = <span class="string">"username"</span></span><br><span class="line">dataSource<span class="selector-class">.password</span> = <span class="string">"password"</span></span><br><span class="line">dataSource<span class="selector-class">.maxTotal</span> = <span class="number">40</span></span><br><span class="line">dataSource<span class="selector-class">.maxIdle</span> = <span class="number">40</span></span><br><span class="line">dataSource<span class="selector-class">.minIdle</span> = <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>常规操作是这样的，那么Kotlin有什么骚操作呢？</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">val <span class="attr">dataSource</span> = BasicDataSource().apply &#123;</span><br><span class="line">    <span class="attr">driverClassName</span> = <span class="string">"com.mysql.jdbc.Driver"</span></span><br><span class="line">    <span class="attr">url</span> = <span class="string">"jdbc:mysql://domain:3309/db"</span></span><br><span class="line">    <span class="attr">username</span> = <span class="string">"username"</span></span><br><span class="line">    <span class="attr">password</span> = <span class="string">"password"</span></span><br><span class="line">    <span class="attr">maxTotal</span> = <span class="number">40</span></span><br><span class="line">    <span class="attr">maxIdle</span> = <span class="number">40</span></span><br><span class="line">    <span class="attr">minIdle</span> = <span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同样的道理，通过<code>apply()</code> 后面也是 <code>参数名 = &quot;参数值&quot;</code> 就搞定了</p>
+<h2 id="处理可空对象"><a href="#处理可空对象" class="headerlink" title="处理可空对象"></a>处理可空对象</h2><p>大家都知道，Kotlin默认是空安全的，但是也支持可空对象，那么如果对象是可为空的，在使用的时候我们就需要判断是否为空</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">order</span> == <span class="keyword">null</span> || <span class="keyword">order</span>.customer == <span class="keyword">null</span> || <span class="keyword">order</span>.customer.address == <span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="keyword">throw</span> IllegalArgumentException(<span class="string">"Invalid Order"</span>)</span><br><span class="line">&#125;</span><br><span class="line">val city = <span class="keyword">order</span>.customer.address.city</span><br></pre></td></tr></table></figure>
+<p>这是很常见的一种写法，但是如果大量使用，特别是在解析JSON的时候，就会让人觉得做了大量重复的工作，在Kotlin中,我们鼓励用这种写法：</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val city = <span class="keyword">order</span>?.customer?.address?.city ?: <span class="keyword">throw</span> IllegalArgumentException(<span class="string">"Invalid Order"</span>)</span><br></pre></td></tr></table></figure>
+<p>通过 <code>?</code> 来判断是否为空，如果为空会直接抛出异常，避免写大量的<code>if</code> 和 <code>xxx == null</code></p>
+<h2 id="使用as替代is"><a href="#使用as替代is" class="headerlink" title="使用as替代is"></a>使用as替代is</h2><p>同样的，我们在kotlin里面常用的判断还有 <code>is</code> </p>
+<figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (<span class="class"><span class="keyword">service</span> !<span class="title">is</span> CustomerService) </span>&#123;</span><br><span class="line">    throw IllegalArgumentException(<span class="string">"No CustomerService"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">service</span>.<span class="title">getCustomer</span>()</span></span><br></pre></td></tr></table></figure>
+<p>在这里我们可以通过<code>as</code> 来替换</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service <span class="keyword">as</span>? CustomerService ?: <span class="keyword">throw</span> IllegalArgumentException(<span class="string">"No CustomerService"</span>)</span><br><span class="line">service.getCustomer()</span><br></pre></td></tr></table></figure>
+<p>反正出发点就是减少if语句的使用，提高代码的可读性，顺便还能减少代码量</p>
+<h2 id="快速创建JSON"><a href="#快速创建JSON" class="headerlink" title="快速创建JSON"></a>快速创建JSON</h2><p>这个功能也是非常有用的，毕竟写单元测试的时候需要模拟测试数据~</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">val<span class="built_in"> customer </span>= mapOf(</span><br><span class="line">        <span class="string">"name"</span> <span class="keyword">to</span> <span class="string">"Clair Grube"</span>,</span><br><span class="line">        <span class="string">"age"</span> <span class="keyword">to</span> 30,</span><br><span class="line">        <span class="string">"languages"</span> <span class="keyword">to</span> listOf(<span class="string">"german"</span>, <span class="string">"english"</span>),</span><br><span class="line">        <span class="string">"address"</span> <span class="keyword">to</span> mapOf(</span><br><span class="line">                <span class="string">"city"</span> <span class="keyword">to</span> <span class="string">"Leipzig"</span>,</span><br><span class="line">                <span class="string">"street"</span> <span class="keyword">to</span> <span class="string">"Karl-Liebknecht-Straße 1"</span>,</span><br><span class="line">                <span class="string">"zipCode"</span> <span class="keyword">to</span> <span class="string">"04107"</span></span><br><span class="line">        )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>通过 <code>参数名</code>  to <code>参数值</code>  这样的形式来创建JSON，不仅仅是String，Int等常用的数据类型，包括map，list都可以创建，是不是很方便呢？</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在Day 6 和 Day 7 里面我们总结了一些Kotlin的习惯用法，多加练习，掌握这些用法可以提高我们的开发效率，并且促使我们写出好的代码。</p>
+<p>接下里就要进入到Java to Kotlin 的学习里面啦，其实经过了前面Kotlin的语法，用法的学习，对于Kotlin这门语言的常用知识点都了解得差不多了，加油💪</p>
+<p>Day  7 - Learn Kotlin Trip， Completed.</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> Kotlin学习之旅 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Kotlin学习之旅(D6)-Kotlin Idioms part 1]]></title>
+      <url>/articles/learn_kotlin_day6.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第六天</p>
+<p>今天的主题是：Kotlin中的习惯用法-第一部分</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://www.bluelzy.com/articles/learning_kotlin_day1.html">Kotlin学习之旅(D1)-学习计划&amp;基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learning_kotlin_d2.html">Kotlin学习之旅(D2)-基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day3.html">Kotlin学习之旅(D3)-类与继承</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day4.html">Kotlin学习之旅(D4)-函数与Lambda表达式</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day5.html">Kotlin学习之旅(D5)-高级语法</a></p>
+<h2 id="习惯用法"><a href="#习惯用法" class="headerlink" title="习惯用法"></a>习惯用法</h2><ul>
+<li><p>创建DTOs</p>
+</li>
+<li><p>函数的默认参数</p>
+</li>
+<li><p>过滤list</p>
+</li>
+<li><p>String字符串模板</p>
+</li>
+<li><p>类型判断</p>
+</li>
+<li><p>遍历Map</p>
+</li>
+<li><p>扩展函数</p>
+</li>
+<li><p>创建单例</p>
+<p>—————————————————— Part 1</p>
+</li>
+<li><p>使用表达式</p>
+</li>
+<li><p>静态方法</p>
+</li>
+<li><p>使用命名参数替代setter</p>
+</li>
+<li><p>使用apply()</p>
+</li>
+<li><p>处理可空对象</p>
+</li>
+<li><p>使用as替代is</p>
+</li>
+<li><p>快速创建JSON</p>
+</li>
+</ul>
+<h2 id="创建DTOs"><a href="#创建DTOs" class="headerlink" title="创建DTOs"></a>创建DTOs</h2><p>在Android中，我们经常需要创建Bean，也就是包括了setter,getter,toString等常见代码的一种类，一般用于接收后台返回的JSON格式的数据，在Kotlin里面，我们可以用很简单的语法完成Bean类的编写：</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">data</span> class <span class="type">Customer</span>(<span class="title">val</span> <span class="title">name</span>: <span class="type">String</span>, <span class="title">val</span> <span class="title">email</span>: <span class="type">String</span>)</span></span><br></pre></td></tr></table></figure>
+<p>我们定义了一个Customer类，构造方法传入两个参数name, email，这个类包括以下方法：</p>
+<ul>
+<li>所有属性的 getters （对于 <em>var</em> 定义的还有 setters）</li>
+<li><code>equals()</code></li>
+<li><code>hashCode()</code></li>
+<li><code>toString()</code></li>
+<li><code>copy()</code></li>
+</ul>
+<p>在Kotlin中，这种类也叫做数据类，data class，一个关键字即可完成之前在Java里面需要写的大量模板代码，是不是很方便呢？</p>
+<h2 id="函数的默认参数"><a href="#函数的默认参数" class="headerlink" title="函数的默认参数"></a>函数的默认参数</h2><p>这个之前在讲函数的时候也提到过，可以减少重载方法的数量</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun foo(a: <span class="type">Int</span> = <span class="number">0</span>, b: <span class="type">String</span> = <span class="string">""</span>)<span class="meta">&#123;...&#125;</span></span><br></pre></td></tr></table></figure>
+<p>这里定义了一个foo函数，传入a，b两个参数，其中a的默认值为0，b的默认值为空字符串</p>
+<p>那么在调用foo的时候，我们可以直接写</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">foo</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p>不传a，b的话，就使用默认值进行运算。</p>
+<h2 id="过滤list"><a href="#过滤list" class="headerlink" title="过滤list"></a>过滤list</h2><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val positives = list.<span class="keyword">filter</span> &#123; <span class="keyword">x</span> -&gt; <span class="keyword">x</span> &gt; <span class="number">0</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>或者可以更短:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val positives = <span class="built_in">list</span>.filter &#123; <span class="keyword">it</span> &gt; <span class="number">0</span> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="String字符串模板"><a href="#String字符串模板" class="headerlink" title="String字符串模板"></a>String字符串模板</h2><p>这个之前也提到过，就是在字符串里面，加入其它的字符串变量，在Java中，需要通过format函数来进行赋值，在kotlin中也是变得更加简洁：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">println</span><span class="params">(<span class="string">"Name $name"</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>$ 加上 变量名 就可以实现在String中插入变量的功能</p>
+<h2 id="类型判断"><a href="#类型判断" class="headerlink" title="类型判断"></a>类型判断</h2><p>这个特性是经常会用到的，例如在解析JSONObject，或者是需要把JSON转成需要的数据类型时，以前的写法</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">if</span><span class="params">(json.getXXX != null)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (json<span class="selector-class">.getXXX</span> instanceOf Foo)&#123;</span><br><span class="line">        ....</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (json<span class="selector-class">.getXXX</span> instanceOf Bar)&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在Kotlin中，通过when + is 来实现</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">when</span> (x) &#123;</span><br><span class="line">    <span class="keyword">is</span> Foo <span class="comment">//-&gt; ……</span></span><br><span class="line">    <span class="keyword">is</span> Bar <span class="comment">//-&gt; ……</span></span><br><span class="line">    <span class="keyword">else</span>   <span class="comment">//-&gt; ……</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>是不是一目了然，妈妈再也不用担心我看代码看到心烦意乱了？</p>
+<h2 id="遍历map-pair类型的list"><a href="#遍历map-pair类型的list" class="headerlink" title="遍历map/pair类型的list"></a>遍历map/pair类型的list</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ((k, v) <span class="keyword">in</span> map) &#123;</span><br><span class="line">    println(<span class="string">"<span class="variable">$k</span> -&gt; <span class="variable">$v</span>"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果是在Java里面，我们需要通过key来找value，然后再输出，代码量又是蹭蹭的往上串</p>
+<h2 id="扩展函数"><a href="#扩展函数" class="headerlink" title="扩展函数"></a>扩展函数</h2><p>emmm，这个之前在函数那一篇文章里面已经讲得比较清楚了，忘了的童鞋可以重温一下：<a href="https://www.bluelzy.com/articles/learn_kotlin_day4.html">Kotlin学习之旅(D4)-函数与Lambda表达式</a></p>
+<p>直接上代码：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> String.<span class="title">spaceToCamelCase</span><span class="params">()</span></span> &#123; …… &#125;</span><br><span class="line"></span><br><span class="line"><span class="string">"Convert this to camelcase"</span>.spaceToCamelCase()</span><br></pre></td></tr></table></figure>
+<p>String里面是没有spaceToCamelCase这个方法的，但是我们又不想通过继承让所有子类都加上这个方法，那么可以通过扩展函数来实现。</p>
+<h2 id="创建单例"><a href="#创建单例" class="headerlink" title="创建单例"></a>创建单例</h2><p>单例模式我们经常都会用到，在Java里面的写法也是多种多样，但是所有形式的代码量都没有Kotlin里面来的简洁：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">object<span class="built_in"> Resource </span>&#123;</span><br><span class="line">    val name = <span class="string">"Name"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>没错，就是通过object关键字定义单例。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这些习惯用法都是前人通过大量实践总结出来的，可以提高我们的开发效率，所以我们也应该多学习这些用法，努力让自己写出来的代码简洁易懂。</p>
+<p>Day 6 - Learn Kotlin Trip， Completed.</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> Kotlin学习之旅 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Kotlin学习之旅(D5)-高级语法]]></title>
       <url>/articles/learn_kotlin_day5.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第五天</p>
@@ -46,7 +226,7 @@
       
         <categories>
             
-            <category> kotlin学习之旅 </category>
+            <category> Kotlin学习之旅 </category>
             
         </categories>
         
@@ -145,7 +325,7 @@
       
         <categories>
             
-            <category> kotlin学习之旅 </category>
+            <category> Kotlin学习之旅 </category>
             
         </categories>
         
@@ -314,14 +494,14 @@
       
         <categories>
             
-            <category> kotlin学习之旅 </category>
+            <category> Kotlin学习之旅 </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> kotlin </tag>
+            <tag> Kotlin </tag>
             
         </tags>
         
@@ -2546,11 +2726,11 @@
         
         <tags>
             
+            <tag> 日常 </tag>
+            
             <tag> 电影 </tag>
             
             <tag> 无问西东 </tag>
-            
-            <tag> 日常 </tag>
             
         </tags>
         
@@ -2598,9 +2778,9 @@
         
         <tags>
             
-            <tag> 日常 </tag>
-            
             <tag> 知乎 </tag>
+            
+            <tag> 日常 </tag>
             
         </tags>
         
