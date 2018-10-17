@@ -3,6 +3,72 @@
   
     
     <entry>
+      <title><![CDATA[Kotlin学习之旅(D9)-Android Extensions]]></title>
+      <url>/articles/learn_kotlin_day9.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第九天</p>
+<p>今天的主题是 - -Android Extensions</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://www.bluelzy.com/articles/learning_kotlin_day1.html">Kotlin学习之旅(D1)-学习计划&amp;基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learning_kotlin_d2.html">Kotlin学习之旅(D2)-基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day3.html">Kotlin学习之旅(D3)-类与继承</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day4.html">Kotlin学习之旅(D4)-函数与Lambda表达式</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day5.html">Kotlin学习之旅(D5)-高级语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day6.html">Kotlin学习之旅(D6)-Kotlin Idioms part 1</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day7.html">Kotlin学习之旅(D7)-Kotlin Idioms part 2</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day8.html">Kotlin学习之旅(D8)-From Java to Kotlin</a></p>
+<h2 id="Android-Extensions-是什么"><a href="#Android-Extensions-是什么" class="headerlink" title="Android Extensions 是什么"></a>Android Extensions 是什么</h2><p>Kotlin Android Extensions 是 Kotlin 团队开发的一个插件，目的是让我们在开发过程中可以减少代码的编写量。主要的功能就是：视图绑定</p>
+<p>在Java中，我们经常要写的一句代码就是 <code>findViewById()</code>，但是在一个Layou有许多View存在的情况下，重复写这句代码不仅工作量大，而且可读性差，因此各路大神发挥智慧，推出了许多的第三方库，其中最著名的就是<code>ButterKnife</code>了 ，但是使用ButterKnife有个不好的地方，就是需要定义成员变量，代码量和原生的方式差不多。</p>
+<p>现在 Kotlin Android Extensions 能够提供与这些开源库功能相同的体验，并且不需要添加任何额外代码。</p>
+<h2 id="Android-Extensions-怎么用"><a href="#Android-Extensions-怎么用" class="headerlink" title="Android Extensions 怎么用"></a>Android Extensions 怎么用</h2><h4 id="1-在Moudle中的build-gradle文件添加插件配置"><a href="#1-在Moudle中的build-gradle文件添加插件配置" class="headerlink" title="1.在Moudle中的build.gradle文件添加插件配置"></a>1.在Moudle中的build.gradle文件添加插件配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;kotlin-android-extensions&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="2-在View中引入资源文件"><a href="#2-在View中引入资源文件" class="headerlink" title="2. 在View中引入资源文件"></a>2. 在View中引入资源文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import kotlinx.android.synthetic.main.activity_main.*</span><br></pre></td></tr></table></figure>
+<h4 id="3-访问id"><a href="#3-访问id" class="headerlink" title="3.访问id"></a>3.访问id</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">kotlinx</span><span class="selector-class">.android</span><span class="selector-class">.synthetic</span><span class="selector-class">.main</span><span class="selector-class">.activity_main</span>.*</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">class</span> <span class="selector-tag">MainActivity</span> : <span class="selector-tag">AppCompatActivity</span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">override</span> <span class="selector-tag">fun</span> <span class="selector-tag">onCreate</span>(<span class="attribute">savedInstanceState</span>: Bundle?) &#123;</span><br><span class="line">        <span class="selector-tag">super</span><span class="selector-class">.onCreate</span>(savedInstanceState)</span><br><span class="line">        <span class="selector-tag">setContentView</span>(R.layout.activity_main)</span><br><span class="line">		<span class="comment">// 1</span></span><br><span class="line">        <span class="selector-tag">btn_login</span><span class="selector-class">.setOnClickListener</span> &#123;</span><br><span class="line">            <span class="selector-tag">Toast</span><span class="selector-class">.makeText</span>(this<span class="variable">@MainActivity</span>,<span class="string">"Android Extensions test"</span>,Toast.LENGTH_SHORT)<span class="selector-class">.show</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>通过btn_login.setXXX 的方式来访问view，并且调用view相关方法，不需要写<code>findViewById()</code></li>
+</ol>
+<h4 id="import格式"><a href="#import格式" class="headerlink" title="import格式"></a>import格式</h4><p><code>import</code>格式是这样的：<code>kotlinx.android.synthetic.main.布局名称.*</code>。需要注意的是<code>include</code>进来的布局，也是需要通过<code>import</code>导入相应布局，这样才能正常使用。</p>
+<h2 id="ViewHolder-使用Extensions"><a href="#ViewHolder-使用Extensions" class="headerlink" title="ViewHolder 使用Extensions"></a>ViewHolder 使用Extensions</h2><p>刚开始的时候Extensions是不支持在ViewHolder中使用视图绑定的，因此还是需要些findViewById，但是从Kotlin 1.1.4起，Extensions加入了增强功能，由于这项功能还未正式发布，因此需要开启实验标志</p>
+<p>####1.开启experimental </p>
+<p>在Module的build.gradle文件中设置：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">androidExtensions</span> &#123;</span><br><span class="line">    <span class="attribute">experimental</span> = <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-编写ViewHolder"><a href="#2-编写ViewHolder" class="headerlink" title="2.编写ViewHolder"></a>2.编写ViewHolder</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> android.support.v7.widget.RecyclerView</span><br><span class="line"><span class="keyword">import</span> android.view.View</span><br><span class="line"><span class="keyword">import</span> kotlinx.android.extensions.LayoutContainer</span><br><span class="line"><span class="keyword">import</span> kotlinx.android.synthetic.main.activity_main.*</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewHolder</span> <span class="keyword">constructor</span></span>(<span class="keyword">override</span> <span class="keyword">val</span> containerView: View?)</span><br><span class="line">    : RecyclerView.ViewHolder(containerView),</span><br><span class="line">      LayoutContainer &#123;   <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">setContent</span><span class="params">(str: <span class="type">String</span>)</span></span> &#123;</span><br><span class="line">        helloTv.text = str   <span class="comment">// 2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>实现LayoutContainer</li>
+<li>使用helloTv.text</li>
+</ol>
+<h4 id="3-什么是LayoutContainer"><a href="#3-什么是LayoutContainer" class="headerlink" title="3. 什么是LayoutContainer"></a>3. 什么是LayoutContainer</h4><p>在Activity，Fragment，View中我们知道import对应的layout就可以了，但是像ViewHolder这些特殊的，我们就需要通过实现LayoutContainer接口，接口返回一个containerView，按照字面意思理解就是内容视图，这个containerView就包含了ViewHolder里面的所有子View，因此可以直接使用view.setxxx / view.property 的写法</p>
+<h2 id="Android多渠道版本"><a href="#Android多渠道版本" class="headerlink" title="Android多渠道版本"></a>Android多渠道版本</h2><p>Android Extensions 插件支持Android 多渠道版本，假如在你的build.gradle中有一个名为free的版本</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">android</span> &#123;</span><br><span class="line">    <span class="section">productFlavors</span> &#123;</span><br><span class="line">        <span class="section">free</span> &#123;</span><br><span class="line">            <span class="attribute">versionName</span> <span class="string">"1.0-free"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后你就可以通过如下方式导入针对<strong>free/res/layout/activity_free.xml</strong>的所有生成的属性。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import kotlinx<span class="selector-class">.android</span><span class="selector-class">.synthetic</span><span class="selector-class">.free</span><span class="selector-class">.activity_free</span>.*</span><br></pre></td></tr></table></figure>
+<h2 id="内部原理"><a href="#内部原理" class="headerlink" title="内部原理"></a>内部原理</h2><p>Kotlin Android Extensions 是一个Kotlin编译器插件。它执行下面两个操作：</p>
+<ol>
+<li>为每一个Kotlin Activity添加一个隐藏的缓存方法和一个域。这个方法相当之小，基本不会增加APK 的大小。</li>
+<li>用方法调用替换每一个属性调用。</li>
+</ol>
+<p>例如：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyActivity</span>: <span class="type">Activity</span></span>()</span><br><span class="line"><span class="function"><span class="keyword">fun</span> MyActivity.<span class="title">a</span><span class="params">()</span></span> &#123; </span><br><span class="line">        <span class="keyword">this</span>.textView.setText(“”) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Kotlin Android Extensions 的主要功能其实就是视图绑定，但是这一个功能也可以减少许多重复代码的编写，因此有机会还是把这个插件用上吧~</p>
+<p>Day  9 - Learn Kotlin Trip， Completed.</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> Kotlin学习之旅 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Kotlin学习之旅(D8)-From Java to Kotlin]]></title>
       <url>/articles/learn_kotlin_day8.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第八天</p>
@@ -2825,11 +2891,11 @@
         
         <tags>
             
+            <tag> 日常 </tag>
+            
             <tag> 电影 </tag>
             
             <tag> 无问西东 </tag>
-            
-            <tag> 日常 </tag>
             
         </tags>
         
@@ -2877,9 +2943,9 @@
         
         <tags>
             
-            <tag> 日常 </tag>
-            
             <tag> 知乎 </tag>
+            
+            <tag> 日常 </tag>
             
         </tags>
         

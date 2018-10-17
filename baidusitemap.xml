@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/learn_kotlin_day9.html</loc>
+    <lastmod>2018-10-17T15:25:46.461Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin学习之旅(D9)-Android Extensions</title>
+        <pubTime>2018-10-17T14:29:42.000Z</pubTime>
+        
+        <tag>Kotlin</tag>
+         
+         
+           
+             
+              <breadCrumb title="Kotlin学习之旅" url="https://www.bluelzy.com/categories/Kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day8.html</loc>
     <lastmod>2018-10-15T13:28:59.187Z</lastmod>
     <data>
@@ -665,11 +685,11 @@
         <title>电影-无问西东</title>
         <pubTime>2018-01-21T10:01:09.000Z</pubTime>
         
+        <tag>日常</tag>
+         
         <tag>电影</tag>
          
         <tag>无问西东</tag>
-         
-        <tag>日常</tag>
          
          
            
@@ -689,9 +709,9 @@
         <title>哪有什么真正的言论自由？</title>
         <pubTime>2018-01-20T00:24:58.000Z</pubTime>
         
-        <tag>日常</tag>
-         
         <tag>知乎</tag>
+         
+        <tag>日常</tag>
          
          
            
