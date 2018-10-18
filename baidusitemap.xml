@@ -4,8 +4,48 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/learn_kotlin_day10.html</loc>
+    <lastmod>2018-10-18T15:54:44.700Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin学习之旅(D10)- Unit Test with Kotlin</title>
+        <pubTime>2018-10-18T12:33:12.000Z</pubTime>
+        
+        <tag>Kotlin</tag>
+         
+         
+           
+             
+              <breadCrumb title="Kotlin学习之旅" url="https://www.bluelzy.com/categories/Kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/learning_kotlin_day1.html</loc>
+    <lastmod>2018-10-18T12:33:37.396Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin学习之旅(D1)-学习计划&基本语法</title>
+        <pubTime>2018-10-07T06:57:14.000Z</pubTime>
+        
+        <tag>Kotlin</tag>
+         
+         
+           
+             
+              <breadCrumb title="Kotlin学习之旅" url="https://www.bluelzy.com/categories/Kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day9.html</loc>
-    <lastmod>2018-10-17T15:25:46.461Z</lastmod>
+    <lastmod>2018-10-17T15:27:50.898Z</lastmod>
     <data>
         <display>
         <title>Kotlin学习之旅(D9)-Android Extensions</title>
@@ -150,26 +190,6 @@
         <display>
         <title>Kotlin学习之旅(D2)-基本语法</title>
         <pubTime>2018-10-08T11:47:13.000Z</pubTime>
-        
-        <tag>Kotlin</tag>
-         
-         
-           
-             
-              <breadCrumb title="Kotlin学习之旅" url="https://www.bluelzy.com/categories/Kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.bluelzy.com/articles/learning_kotlin_day1.html</loc>
-    <lastmod>2018-10-08T11:50:15.784Z</lastmod>
-    <data>
-        <display>
-        <title>Kotlin学习之旅(D1)-学习计划&基本语法</title>
-        <pubTime>2018-10-07T06:57:14.000Z</pubTime>
         
         <tag>Kotlin</tag>
          
@@ -639,9 +659,9 @@
         
         <tag>Android</tag>
          
-        <tag>第三方控件</tag>
-         
         <tag>腾讯地图</tag>
+         
+        <tag>第三方控件</tag>
          
          
            
@@ -663,9 +683,9 @@
         
         <tag>Android</tag>
          
-        <tag>高德地图</tag>
-         
         <tag>第三方控件</tag>
+         
+        <tag>高德地图</tag>
          
          
            

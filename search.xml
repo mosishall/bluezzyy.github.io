@@ -3,6 +3,121 @@
   
     
     <entry>
+      <title><![CDATA[Kotlin学习之旅(D10)- Unit Test with Kotlin]]></title>
+      <url>/articles/learn_kotlin_day10.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第十天</p>
+<p>今天的主题是 - - Unit Test with Kotlin</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://www.bluelzy.com/articles/learning_kotlin_day1.html">Kotlin学习之旅(D1)-学习计划&amp;基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learning_kotlin_d2.html">Kotlin学习之旅(D2)-基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day3.html">Kotlin学习之旅(D3)-类与继承</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day4.html">Kotlin学习之旅(D4)-函数与Lambda表达式</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day5.html">Kotlin学习之旅(D5)-高级语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day6.html">Kotlin学习之旅(D6)-Kotlin Idioms part 1</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day7.html">Kotlin学习之旅(D7)-Kotlin Idioms part 2</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day8.html">Kotlin学习之旅(D8)-From Java to Kotlin</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day9.html">Kotlin学习之旅(D9)-Android Extensions</a></p>
+<h2 id="添加JUnit依赖"><a href="#添加JUnit依赖" class="headerlink" title="添加JUnit依赖"></a>添加JUnit依赖</h2><p>Kotlin里面的Unit Test 和 java里面大同小异，因此我们直接上手写一个测试就能掌握了。</p>
+<p>说到Unit Test，就不得不提一下<code>JUnit</code>了，这是一个第三方库，用途就是跑测试用例。因此天才第一步，我们需要在build.gradle里面添加依赖</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    ...</span><br><span class="line">     testImplementation <span class="string">"junit:junit:4.12"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>记得依赖方式是testImplementation，这样在打正式包的时候这个依赖被不会编译，可以减少APK的体积</p>
+<p>实际上，在我们新建一个Android项目的时候，Android Studio会自动帮我们生成三个文件夹，分别是</p>
+<ul>
+<li>code</li>
+<li>test</li>
+<li>androidTest</li>
+</ul>
+<p>test 和 androidTest 文件夹就是我们编写Unit Test的地方</p>
+<p><img src="http://www.wailian.work/images/2018/10/18/Snip20181018_3.png" alt="Snip20181018_3.png"></p>
+<h3 id="Unit-Test-例子"><a href="#Unit-Test-例子" class="headerlink" title="Unit Test 例子"></a>Unit Test 例子</h3><p>让我们在 test 文件夹下创建一个名为MyTest的文件：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">proof_of_concept</span><span class="params">()</span></span> &#123;</span><br><span class="line">        assertEquals(<span class="number">4</span> , <span class="number">2</span> + <span class="number">2</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候看到左边有个绿色的箭头，点一下就能运行Unit Test</p>
+<p>运行结果如下：</p>
+<p><img src="" alt=""><img src="http://www.wailian.work/images/2018/10/18/Snip20181018_4.png" alt="Snip20181018_3.png"></p>
+<p>可以看到我们写的这个Unit Test通过了，这就是一个最简单的例子，那么代码里面写的每一句是什么意思呢？</p>
+<ul>
+<li>@Test - 这个注解表示接下来的方法是一个Unit Test 方法，通过上面的import信息也能看出来，这个注解是属于JUnit的</li>
+<li>assertEquals(4, 2+2) - 这行代码表示 判断 4 是否等于 2+2，assertEquals方法同样也是JUnit里面的方法</li>
+</ul>
+<p>所以这段代码的执行结果很明显是相等的，因此测试通过。</p>
+<p>除了assertEquals，JUnit还提供了其他许多的判断方法</p>
+<p><img src="http://www.wailian.work/images/2018/10/18/Snip20181018_5.png" alt="Snip20181018_3.png"></p>
+<p>关于JUnit的一切详情都可以从这里找到：<a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions" target="_blank" rel="noopener">JUnit 5 User Guide</a></p>
+<p>另外推荐一个学习JUnit的网站：<a href="http://wiki.jikexueyuan.com/project/junit/test-framework.html" target="_blank" rel="noopener">极客学院JUnit测试框架</a></p>
+<h2 id="Unit-Test-in-Android"><a href="#Unit-Test-in-Android" class="headerlink" title="Unit Test in Android"></a>Unit Test in Android</h2><p>经过简单的介绍，我们已经知道了什么是Unit Test，如果还不太清楚的话，可以看一下以下几篇文章：</p>
+<p>首先是关于TDD （Test-driven development）- 测试驱动开发</p>
+<p>简单介绍就是：先写测试程序，然后编码实现功能，使得测试程序能够顺利运行的一种开发方法。</p>
+<ol>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91" target="_blank" rel="noopener">测试驱动开发-维基百科</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/linux/l-tdd/index.html" target="_blank" rel="noopener">浅谈测试驱动开发（TDD）</a></li>
+<li><a href="https://news.codecademy.com/test-driven-development/" target="_blank" rel="noopener">Why Use Test-Driven Development?</a></li>
+</ol>
+<p>然后是关于Unit Testing的：</p>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Unit_testing" target="_blank" rel="noopener">Unit testing - Wikipedia</a></li>
+<li><a href="http://softwaretestingfundamentals.com/unit-testing/" target="_blank" rel="noopener">Unit Testing - Fundamentals</a></li>
+</ol>
+<p>虽然在实际开发过程中，我们很少会使用TDD的方式进行项目开发，但是编写Unit Test还是有它的好处的，因此在Android开发里面，我们也需要掌握这项技能。 Let’s do it.</p>
+<p>在Android里面进行测试，经常需要用到另外一个依赖库，叫做Mockito，那么下面我们就使用这个库来做个最简单的Unit Test</p>
+<h3 id="为什么要用Mockito"><a href="#为什么要用Mockito" class="headerlink" title="为什么要用Mockito"></a>为什么要用Mockito</h3><p>在JUnit中，我们可以验证有返回值方法是否正确，但是如果一个方法的返回值为void，也就是没有返回值，特别是这个方法是为了调用另外一个方法，那么这个时候就需要验证这个方法有没有被调用。我们就可以通过Mockito这个框架来验证。</p>
+<h3 id="怎么使用Mockito"><a href="#怎么使用Mockito" class="headerlink" title="怎么使用Mockito"></a>怎么使用Mockito</h3><p>在build.gradle文件中加入：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">testImplementation</span> "<span class="selector-tag">org</span><span class="selector-class">.mockito</span><span class="selector-pseudo">:mockito-core</span><span class="selector-pseudo">:2.18.3"</span></span><br></pre></td></tr></table></figure>
+<p>在我们在MyTest文件中加入以下代码：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">mockito_test</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> mockedList = mock(mutableListOf&lt;String&gt;().javaClass)</span><br><span class="line">    <span class="comment">//using mock object</span></span><br><span class="line">    mockedList.add(<span class="string">"one"</span>)</span><br><span class="line">    mockedList.clear()</span><br><span class="line">    <span class="comment">//verification</span></span><br><span class="line">    verify(mockedList).add(<span class="string">"one"</span>)</span><br><span class="line">    verify(mockedList).clear()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：</p>
+<p><img src="http://www.wailian.work/images/2018/10/18/Snip20181018_6.png" alt="Snip20181018_6.png"></p>
+<p>这个例子是不是特别简单，它来自Mockito的官方，其实学习这些第三方框架，最好的教程就是他们的官方文档，因此这里我把几个不错的学习Mockito的资源列一下：</p>
+<ol>
+<li><a href="https://site.mockito.org/" target="_blank" rel="noopener">Mockito 官网</a></li>
+<li><a href="https://github.com/mockito/mockito" target="_blank" rel="noopener">Mockito Github 地址</a></li>
+<li><a href="https://github.com/nhaarman/mockito-kotlin/wiki/Mocking-and-verifying" target="_blank" rel="noopener">Mocking-and-verifying</a></li>
+<li><a href="http://www.vogella.com/tutorials/Mockito/article.html" target="_blank" rel="noopener">Unit tests with Mockito - Tutorial</a></li>
+</ol>
+<p>上面这个例子首先通过mock()创建List类，然后在mockedList中添加元素one，最后通过verify来验证mockedList有没有成功调用List里面的对应方法。我们一个个来看：</p>
+<h4 id="验证方法调用"><a href="#验证方法调用" class="headerlink" title="验证方法调用"></a>验证方法调用</h4><p>通过<code>verify</code> 来验证方法是否被调用，例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">mockedList</span><span class="selector-class">.add</span>(<span class="string">"once"</span>)</span><br><span class="line"><span class="selector-tag">mockedList</span><span class="selector-class">.add</span>(<span class="string">"twice"</span>)</span><br><span class="line"><span class="selector-tag">mockedList</span><span class="selector-class">.add</span>(<span class="string">"twice"</span>)</span><br><span class="line"><span class="selector-tag">mockedList</span><span class="selector-class">.add</span>(<span class="string">"three times"</span>)</span><br><span class="line"><span class="selector-tag">mockedList</span><span class="selector-class">.add</span>(<span class="string">"three times"</span>)</span><br><span class="line"><span class="selector-tag">mockedList</span><span class="selector-class">.add</span>(<span class="string">"three times"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//following two verifications work exactly the same - times(1) is used by default</span></span><br><span class="line"><span class="selector-tag">verify</span>(mockedList)<span class="selector-class">.add</span>(<span class="string">"once"</span>);</span><br><span class="line"><span class="selector-tag">verify</span>(mockedList, times(<span class="number">1</span>))<span class="selector-class">.add</span>(<span class="string">"once"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//exact number of invocations verification</span></span><br><span class="line"><span class="selector-tag">verify</span>(mockedList, times(<span class="number">2</span>))<span class="selector-class">.add</span>(<span class="string">"twice"</span>)</span><br><span class="line"><span class="selector-tag">verify</span>(mockedList, times(<span class="number">3</span>))<span class="selector-class">.add</span>(<span class="string">"three times"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//verification using never(). never() is an alias to times(0)</span></span><br><span class="line"><span class="selector-tag">verify</span>(mockedList, never())<span class="selector-class">.add</span>(<span class="string">"never happened"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//verification using atLeast()/atMost()</span></span><br><span class="line"><span class="selector-tag">verify</span>(mockedList, atLeastOnce())<span class="selector-class">.add</span>(<span class="string">"three times"</span>)</span><br><span class="line"><span class="selector-tag">verify</span>(mockedList, atLeast(<span class="number">2</span>))<span class="selector-class">.add</span>(<span class="string">"three times"</span>)</span><br><span class="line"><span class="selector-tag">verify</span>(mockedList, atMost(<span class="number">5</span>))<span class="selector-class">.add</span>(<span class="string">"three times"</span>)</span><br></pre></td></tr></table></figure>
+<p>在<code>verify</code> 方法中，我们可以指定方法调用的次数，通过<code>times(1)</code> 的形式，大家有兴趣的话可以跑一下上面的代码，看一下测试能不能通过。</p>
+<h4 id="stubbing指定方法的实现"><a href="#stubbing指定方法的实现" class="headerlink" title="stubbing指定方法的实现"></a>stubbing指定方法的实现</h4><p>除了空方法，我们有时候还需要检验方法的返回值或者实现。这个时候就需要用到<code>when</code>方法</p>
+<p>看一个例子：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//You can mock concrete classes, not just interfaces</span></span><br><span class="line">     <span class="keyword">val</span> mockedList = mock(LinkedList::<span class="class"><span class="keyword">class</span>.<span class="title">java</span>)</span></span><br><span class="line"></span><br><span class="line">     <span class="comment">//stubbing</span></span><br><span class="line">     `<span class="keyword">when</span>`(mockedList.<span class="keyword">get</span>(<span class="number">0</span>)).thenReturn(<span class="string">"first"</span>)</span><br><span class="line">     `<span class="keyword">when</span>`(mockedList.<span class="keyword">get</span>(<span class="number">1</span>)).thenThrow(RuntimeException())</span><br><span class="line"></span><br><span class="line">     <span class="comment">//following prints "first"</span></span><br><span class="line">     System.<span class="keyword">out</span>.println(mockedList.<span class="keyword">get</span>(<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line">     <span class="comment">//following throws runtime exception</span></span><br><span class="line">     System.<span class="keyword">out</span>.println(mockedList.<span class="keyword">get</span>(<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">     <span class="comment">//following prints "null" because get(999) was not stubbed</span></span><br><span class="line">     System.<span class="keyword">out</span>.println(mockedList.<span class="keyword">get</span>(<span class="number">999</span>))</span><br><span class="line"></span><br><span class="line">     <span class="comment">//Although it is possible to verify a stubbed invocation, usually it's just redundant</span></span><br><span class="line">     <span class="comment">//If your code cares what get(0) returns, then something else breaks (often even before verify() gets executed).</span></span><br><span class="line">     <span class="comment">//If your code doesn't care what get(0) returns, then it should not be stubbed. Not convinced? See here.</span></span><br><span class="line">     verify(mockedList).<span class="keyword">get</span>(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>这个例子的运行结果是：</p>
+<p><img src="http://www.wailian.work/images/2018/10/18/Snip20181018_7.png" alt="Snip20181018_7.png"></p>
+<p>为什么会失败呢？ 因为有这么一行代码</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`when`(mockedList.get(<span class="number">1</span>)).thenThrow(RuntimeException())</span><br></pre></td></tr></table></figure>
+<p>当mockedList.get(1)的时候，我们让他抛出异常，因此运行的结果就是我们写的RuntimeException。</p>
+<p>所以<code>when</code> 方法是不是很有用呢，有点像if..else 和 switch…case 的体系，可以通过不同的参数来控制测试方法对应的结果。</p>
+<p>除了方法的运行结果可以控制以外，我们还可以测试方法的参数</p>
+<h4 id="参数匹配"><a href="#参数匹配" class="headerlink" title="参数匹配"></a>参数匹配</h4><p>例子：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">val mockedList = mock(LinkedList::class.java)</span><br><span class="line"><span class="comment">//stubbing using built-in anyInt() argument matcher</span></span><br><span class="line">`when`(mockedList[anyInt()]).thenReturn(<span class="string">"element"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//following prints "element"</span></span><br><span class="line">System<span class="selector-class">.out</span><span class="selector-class">.println</span>(mockedList[<span class="number">999</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">//you can also verify using an argument matcher</span></span><br><span class="line"><span class="function"><span class="title">verify</span><span class="params">(mockedList)</span></span>[anyInt()]</span><br></pre></td></tr></table></figure>
+<p>这个例子的运行结果是pass，因为我们需要的参数是anyInt()，<code>verify</code>的时候参数也是anyInt()。</p>
+<p>注意：当你使用参数匹配的时候，所有的参数都必须是可匹配的，什么意思呢？看例子：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">verify(mock).someMethod(anyInt(), anyString(), e<span class="string">q("third argument")</span>);</span><br><span class="line">//above is correct - e<span class="string">q()</span> is also an argument matcher</span><br><span class="line"></span><br><span class="line">verify(mock).someMethod(anyInt(), anyString(), <span class="string">"third argument"</span>);</span><br><span class="line">//above is incorrect - exception will be thrown because third argument is <span class="keyword">given</span> without an argument matcher.</span><br></pre></td></tr></table></figure>
+<p>第一行代码是正确的，因为eq()也是一种匹配模式，但是第二行代码直接传入一个String就不是匹配模式，在这里会抛出异常。</p>
+<p>最后，由于Mockito的功能十分强大，因此在这里我也只是简单介绍一些常见的用法，对Mockito有一个初步的认识，其他的在需要的时候再去官方文档学习就可以了。</p>
+<p>Mockito官方文档：<a href="http://static.javadoc.io/org.mockito/mockito-core/2.9.0/org/mockito/Mockito.html" target="_blank" rel="noopener">Mockito Docs</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>除了这篇文章里面说到的JUnit，Mockito这两个框架，我们还有可能需要用到一个叫做<code>Robolectric</code> 的框架，这个框架是用来测试运行在JVM上的Android代码的，不过由于暂时我们还接触不到，所以这里就不讲了，在后面进行项目实战的时候如果有需要，我们再去学习~</p>
+<p>到目前为止，使用Kotlin开发Android项目所需要的基本知识都已经学完了，那么接下来就是实战阶段！加油！</p>
+<p>Day  10 - Learn Kotlin Trip， Completed.</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> Kotlin学习之旅 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Kotlin学习之旅(D9)-Android Extensions]]></title>
       <url>/articles/learn_kotlin_day9.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第九天</p>
@@ -761,11 +876,11 @@
 </li>
 <li><p>Kotlin Idioms（2D）</p>
 </li>
-<li><p>From Java to Kotlin（2D）</p>
+<li><p>From Java to Kotlin（1D）</p>
 </li>
-<li><p>Kotlin Android Extensions（2D）</p>
+<li><p>Kotlin Android Extensions（1D）</p>
 </li>
-<li><p>Unit Test with Kotlin（2D）</p>
+<li><p>Unit Test with Kotlin（1D）</p>
 </li>
 <li><p>使用Kotlin完成一个Android小项目（7D）</p>
 </li>
@@ -2747,9 +2862,9 @@
             
             <tag> Android </tag>
             
-            <tag> 第三方控件 </tag>
-            
             <tag> 腾讯地图 </tag>
+            
+            <tag> 第三方控件 </tag>
             
         </tags>
         
@@ -2796,9 +2911,9 @@
             
             <tag> Android </tag>
             
-            <tag> 高德地图 </tag>
-            
             <tag> 第三方控件 </tag>
+            
+            <tag> 高德地图 </tag>
             
         </tags>
         

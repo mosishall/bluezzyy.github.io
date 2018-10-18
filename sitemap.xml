@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.bluelzy.com/articles/learn_kotlin_day10.html</loc>
+    
+    <lastmod>2018-10-18T15:54:44.700Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.bluelzy.com/articles/learning_kotlin_day1.html</loc>
+    
+    <lastmod>2018-10-18T12:33:37.396Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day9.html</loc>
     
-    <lastmod>2018-10-17T15:25:46.461Z</lastmod>
+    <lastmod>2018-10-17T15:27:50.898Z</lastmod>
     
   </url>
   
@@ -54,13 +68,6 @@
     <loc>https://www.bluelzy.com/articles/learning_kotlin_d2.html</loc>
     
     <lastmod>2018-10-11T12:34:37.998Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.bluelzy.com/articles/learning_kotlin_day1.html</loc>
-    
-    <lastmod>2018-10-08T11:50:15.784Z</lastmod>
     
   </url>
   
