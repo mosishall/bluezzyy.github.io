@@ -4,12 +4,52 @@
 
     
   <url>
-    <loc>https://www.bluelzy.com/articles/learn_kotlin_day10.html</loc>
-    <lastmod>2018-10-18T15:54:44.700Z</lastmod>
+    <loc>https://www.bluelzy.com/articles/learn_kotlin_day12.html</loc>
+    <lastmod>2018-10-21T08:52:11.691Z</lastmod>
     <data>
         <display>
-        <title>Kotlin学习之旅(D10)- Unit Test with Kotlin</title>
-        <pubTime>2018-10-18T12:33:12.000Z</pubTime>
+        <title>Kotlin学习之旅(D12)-第一个App之功能实现</title>
+        <pubTime>2018-10-21T03:19:01.000Z</pubTime>
+        
+        <tag>kotlin</tag>
+         
+         
+           
+             
+              <breadCrumb title="Kotlin学习之旅" url="https://www.bluelzy.com/categories/Kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/learn_kotlin_day11.html</loc>
+    <lastmod>2018-10-21T03:33:37.015Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin学习之旅(D11)-第一个App之项目介绍</title>
+        <pubTime>2018-10-20T01:37:11.000Z</pubTime>
+        
+        <tag>kotlin</tag>
+         
+         
+           
+             
+              <breadCrumb title="Kotlin学习之旅" url="https://www.bluelzy.com/categories/Kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/learning_kotlin_day1.html</loc>
+    <lastmod>2018-10-21T01:44:44.115Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin学习之旅(D1)-学习计划&基本语法</title>
+        <pubTime>2018-10-07T06:57:14.000Z</pubTime>
         
         <tag>Kotlin</tag>
          
@@ -24,12 +64,12 @@
 
     
   <url>
-    <loc>https://www.bluelzy.com/articles/learning_kotlin_day1.html</loc>
-    <lastmod>2018-10-18T12:33:37.396Z</lastmod>
+    <loc>https://www.bluelzy.com/articles/learn_kotlin_day10.html</loc>
+    <lastmod>2018-10-18T15:54:44.700Z</lastmod>
     <data>
         <display>
-        <title>Kotlin学习之旅(D1)-学习计划&基本语法</title>
-        <pubTime>2018-10-07T06:57:14.000Z</pubTime>
+        <title>Kotlin学习之旅(D10)- Unit Test with Kotlin</title>
+        <pubTime>2018-10-18T12:33:12.000Z</pubTime>
         
         <tag>Kotlin</tag>
          
@@ -659,9 +699,9 @@
         
         <tag>Android</tag>
          
-        <tag>腾讯地图</tag>
-         
         <tag>第三方控件</tag>
+         
+        <tag>腾讯地图</tag>
          
          
            
@@ -683,9 +723,9 @@
         
         <tag>Android</tag>
          
-        <tag>第三方控件</tag>
-         
         <tag>高德地图</tag>
+         
+        <tag>第三方控件</tag>
          
          
            
@@ -705,11 +745,11 @@
         <title>电影-无问西东</title>
         <pubTime>2018-01-21T10:01:09.000Z</pubTime>
         
-        <tag>日常</tag>
-         
         <tag>电影</tag>
          
         <tag>无问西东</tag>
+         
+        <tag>日常</tag>
          
          
            
@@ -729,9 +769,9 @@
         <title>哪有什么真正的言论自由？</title>
         <pubTime>2018-01-20T00:24:58.000Z</pubTime>
         
-        <tag>知乎</tag>
-         
         <tag>日常</tag>
+         
+        <tag>知乎</tag>
          
          
            
