@@ -3,9 +3,106 @@
   
     
     <entry>
+      <title><![CDATA[Kotlin学习之旅(D13)-第一个App之功能完善]]></title>
+      <url>/articles/learn_kotlin_day13.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第十三天</p>
+<p>今天主要是编写代码，继续实现其他的功能</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://www.bluelzy.com/articles/learning_kotlin_day1.html">Kotlin学习之旅(D1)-学习计划&amp;基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learning_kotlin_d2.html">Kotlin学习之旅(D2)-基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day3.html">Kotlin学习之旅(D3)-类与继承</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day4.html">Kotlin学习之旅(D4)-函数与Lambda表达式</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day5.html">Kotlin学习之旅(D5)-高级语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day6.html">Kotlin学习之旅(D6)-Kotlin Idioms part 1</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day7.html">Kotlin学习之旅(D7)-Kotlin Idioms part 2</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day8.html">Kotlin学习之旅(D8)-From Java to Kotlin</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day9.html">Kotlin学习之旅(D9)-Android Extensions</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day10.html">Kotlin学习之旅(D10)- Unit Test with Kotlin</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day11.html">Kotlin学习之旅(D11)-第一个App之项目介绍</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day12.html">Kotlin学习之旅(D12)-第一个App之功能实现</a></p>
+<h2 id="今日目标"><a href="#今日目标" class="headerlink" title="今日目标"></a>今日目标</h2><p>首先要说的就是，昨天我们已经完成了App基本的添加，编辑功能了，但是有一个很不方便的地方，就是App来查看笔记的时候没有办法直接查看下一条，因此今天我们要做的就是，在ActionBar加入一个Next按钮，点击按钮之后能显示下一条笔记的信息。</p>
+<p><img src="http://www.wailian.work/images/2018/10/21/Oct-21-201810-31-50.gif" alt="Oct-21-201810-31-50.md.gif"></p>
+<p>点击笔记 -&gt; 显示笔记内容 -&gt; 点击右上角的 ‘’&gt;’’  -&gt; 显示下一条笔记</p>
+<p>这种交互方式对用户来说更为友好，顺便我们也能学习一下ActionBar的用法~走你</p>
+<h2 id="修改MenuItem"><a href="#修改MenuItem" class="headerlink" title="修改MenuItem"></a>修改MenuItem</h2><p> 首先我们来看一下res -&gt; menu 文件夹下的 <code>menu_main.xml</code>文件：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">menu</span> xmln<span class="variable">s:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    xmln<span class="variable">s:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span><br><span class="line">    xmln<span class="variable">s:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    tool<span class="variable">s:context</span>=<span class="string">"com.blue.notekeeper.MainActivity"</span>&gt;</span><br><span class="line">    &lt;item</span><br><span class="line">        android:id=<span class="string">"@+id/action_settings"</span></span><br><span class="line">        android:orderInCategory=<span class="string">"100"</span></span><br><span class="line">        android:title=<span class="string">"@string/action_settings"</span></span><br><span class="line">        app:showAsAction=<span class="string">"never"</span> /&gt;</span><br><span class="line">&lt;/<span class="keyword">menu</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>这个时候只有一个item,我们加入Next Item</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;item</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">"@+id/action_next"</span></span><br><span class="line">    android:<span class="attribute">checkable</span>=<span class="string">"true"</span></span><br><span class="line">    android:<span class="attribute">enabled</span>=<span class="string">"true"</span></span><br><span class="line">    android:<span class="attribute">icon</span>=<span class="string">"@drawable/ic_forward_white_24dp"</span></span><br><span class="line">    android:<span class="attribute">title</span>=<span class="string">"Next"</span></span><br><span class="line">    android:<span class="attribute">visible</span>=<span class="string">"true"</span></span><br><span class="line">    app:<span class="attribute">showAsAction</span>=<span class="string">"ifRoom|withText"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>创建<code>icon</code>的方式和前面创建其他图标是一样的</p>
+<ol>
+<li>drawable文件夹右键 -&gt; new  -&gt;  Vector Asset</li>
+<li>在<code>Clip Art</code> 选项中选择 <code>forward</code> </li>
+<li>把颜色设置为白色</li>
+</ol>
+<p>也可以看图片：</p>
+<p><img src="http://www.wailian.work/images/2018/10/22/Snip20181022_18.png" alt="Snip20181022_18.png"></p>
+<p><strong>注意：app:showAsAction=”ifRoom|withText”</strong> 的意思就是 <strong>当屏幕空间足够的时候，这个item会显示到ActionBar</strong> 具体效果大家可以运行项目，然后 <strong>切换屏幕方向</strong> 就懂了</p>
+<ul>
+<li>横屏的时候Next的图标和文字都会显示出来</li>
+<li>竖屏的时候Next只有图标显示出来，文字由于空间不足就隐藏起来了</li>
+</ul>
+<h2 id="修改MainActivity"><a href="#修改MainActivity" class="headerlink" title="修改MainActivity"></a>修改MainActivity</h2><p>xml文件搞定以后，我们就要开始在代码中处理逻辑了</p>
+<p>Menu提供了两个方法给我们处理menu item的相关逻辑</p>
+<ul>
+<li>onPrepareOptionsMenu() - 这个方法很常见，在item被点击的时候会触发，因此我们在这里做对应的点击事件的处理</li>
+<li>onPrepareOptionsMenu() - 这个方法可能用的比较少，在item还未初始化之前会被调用，因此我们可以在这里做一些准备工作，例如对item图标的更换，点击事件的控制等，接下来大家就知道为什么要重新这个方法了</li>
+</ul>
+<h4 id="重写onPrepareOptionsMenu"><a href="#重写onPrepareOptionsMenu" class="headerlink" title="重写onPrepareOptionsMenu()"></a>重写onPrepareOptionsMenu()</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onOptionsItemSelected</span><span class="params">(item: <span class="type">MenuItem</span>)</span></span>: <span class="built_in">Boolean</span> &#123;</span><br><span class="line">    <span class="comment">// Handle action bar item clicks here. The action bar will</span></span><br><span class="line">    <span class="comment">// automatically handle clicks on the Home/Up button, so long</span></span><br><span class="line">    <span class="comment">// as you specify a parent activity in AndroidManifest.xml.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">when</span> (item.itemId) &#123;</span><br><span class="line">        R.id.action_settings -&gt; <span class="literal">true</span></span><br><span class="line">        R.id.action_next -&gt; &#123;</span><br><span class="line">            moveNext()</span><br><span class="line">            <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> -&gt; <span class="keyword">super</span>.onOptionsItemSelected(item)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>知识点：when 表达式</p>
+</blockquote>
+<h5 id="moveNext"><a href="#moveNext" class="headerlink" title="moveNext()"></a>moveNext()</h5><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">moveNext</span></span>() &#123;</span><br><span class="line">    ++notePosition</span><br><span class="line">    displayNote()</span><br><span class="line">    invalidateOptionsMenu()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每一次点击 <code>next</code> 按钮，我们先让记录当前笔记位置的变量<code>notePosition</code> +1，然后再显示下一条笔记，这个方法已经在昨天的文章里实现了，最后就是调用<code>invalidateOptionsMenu()</code> 方法。</p>
+<h4 id="重写onPrepareOptionsMenu-1"><a href="#重写onPrepareOptionsMenu-1" class="headerlink" title="重写onPrepareOptionsMenu()"></a>重写onPrepareOptionsMenu()</h4><p>在没有重写这个方法之前，如果我们不停的点击next,到了最后一条笔记的时候，再点击next，app会crash，原因就是数组下标越界了。这个问题很容易解决，就是当我们已经显示了最后一条笔记时，next按钮变成一个不可点击的状态，如图：</p>
+<p><img src="http://www.wailian.work/images/2018/10/22/Snip20181022_19.png" alt="Snip20181022_19.png"></p>
+<p>在onPrepareOptionsMenu()方法里面，我们通过当前的位置来进行判断是否需要变更图标</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onPrepareOptionsMenu</span><span class="params">(menu: <span class="type">Menu</span>?)</span></span>: <span class="built_in">Boolean</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (notePosition&gt;= DataManager.notes.lastIndex)&#123;</span><br><span class="line">           <span class="keyword">val</span> menuItem = menu?.findItem(R.id.action_next)</span><br><span class="line">           <span class="keyword">if</span> (menuItem != <span class="literal">null</span>)&#123;</span><br><span class="line">               menuItem.icon = getDrawable(R.drawable.ic_block_white_24dp)</span><br><span class="line">               menuItem.isEnabled = <span class="literal">false</span></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">super</span>.onPrepareOptionsMenu(menu)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>如果还没到最后一条笔记，那么就显示next，否则的话就显示<code>block</code>，并且设置为不可点击。</p>
+<blockquote>
+<p>关于如何生成 block icon，这里就不重复了，步骤和上面生成Next图标是一样的</p>
+</blockquote>
+<p>最后再运行一遍App，看一下效果，应该就和Day11那篇文章开头的动图是一样的了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在这个笔记App中，我们实现了以下功能：</p>
+<ul>
+<li>新增笔记</li>
+<li>查看和编辑笔记</li>
+<li>通过Next查看下一条笔记</li>
+<li>横竖屏切换时保存笔记状态</li>
+</ul>
+<p>但是其实还有许多可以改进的地方，例如：</p>
+<ul>
+<li>删除笔记（List 左滑 / 长按 / 进入编辑页面删除 等等）</li>
+<li>优化控件（RecyclerView 替换 ListView）</li>
+<li>优化界面（让笔记通过卡片形式展示，加入点击和过场动画，使用不同颜色的字体 等等）</li>
+<li>优化笔记功能（可以插入图片，url，等额外的信息）</li>
+</ul>
+<p>有兴趣的童鞋可以在此基础上继续开发~通过实战提高自己的技术！！</p>
+<p>不过我们Kotlin学习之旅的目的还是达到了，虽然只是一个简单的半成品App，通过前期学习Kotlin的语法和特性，然后到一步步写出这个App，这个过程中的成就感还是非常大的，同时也让自己对Android和Kotlin得以一直保持热度和兴趣。</p>
+<p>明天就是Kotlin学习之旅的最后一天了，我会做一个Kotlin学习资料的总结，包括文档，博客，视频，Github的开源项目等</p>
+<p>Day  13 - Learn Kotlin Trip， Completed.</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> Kotlin学习之旅 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> kotlin </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Kotlin学习之旅(D12)-第一个App之功能实现]]></title>
       <url>/articles/learn_kotlin_day12.html</url>
-      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第十一天</p>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第十二天</p>
 <p>今天主要是Koltin编写代码，进行功能实现</p>
 </blockquote>
  <a id="more"></a>
@@ -134,6 +231,8 @@
             
             <tag> kotlin </tag>
             
+            <tag> App开发 </tag>
+            
         </tags>
         
     </entry>
@@ -142,7 +241,7 @@
       <title><![CDATA[Kotlin学习之旅(D11)-第一个App之项目介绍]]></title>
       <url>/articles/learn_kotlin_day11.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Kotlin学习之旅第十一天</p>
-<p>接下来这三天，我们会用Kotlin编写一个App</p>
+<p>接下来这三天，我们会用Kotlin编写一个记事本App</p>
 <p>今天主要是项目介绍</p>
 </blockquote>
  <a id="more"></a>
@@ -233,6 +332,8 @@
         <tags>
             
             <tag> kotlin </tag>
+            
+            <tag> App开发 </tag>
             
         </tags>
         
@@ -3242,11 +3343,11 @@
         
         <tags>
             
+            <tag> 日常 </tag>
+            
             <tag> 电影 </tag>
             
             <tag> 无问西东 </tag>
-            
-            <tag> 日常 </tag>
             
         </tags>
         
@@ -3294,9 +3395,9 @@
         
         <tags>
             
-            <tag> 日常 </tag>
-            
             <tag> 知乎 </tag>
+            
+            <tag> 日常 </tag>
             
         </tags>
         

@@ -116,6 +116,8 @@
 
 
 
+  <meta name="keywords" content="kotlin," />
+
 
 
 
@@ -127,17 +129,22 @@
 
 
 
-<meta name="description" content="关于知识共享协议的说明  -  BlueLzy（以下简称本人），是“BlueLzy&amp;#39;s blog”博客（以下简称本博客）的拥有者。本博客上创造和发布的内容可用于传播和共享，对于本人发布的原创内容（包含图片、文字、音乐、视频）采用 CreativeCommons 3.0 Unported 协议，即 知识共享许可协议 3.0 未本地化版本 加以许可保护。作者在发布内容时，如果没有特殊注明，默认">
-<meta property="og:type" content="website">
-<meta property="og:title" content="BlueLzy&#39;s Blog">
-<meta property="og:url" content="https://www.bluelzy.com/creativecommons.html">
+<meta name="description" content="Kotlin学习之旅第十三天 今天主要是编写代码，继续实现其他的功能">
+<meta name="keywords" content="kotlin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kotlin学习之旅(D13)-第一个App之功能完善">
+<meta property="og:url" content="https://www.bluelzy.com/articles/learn_kotlin_day13.html">
 <meta property="og:site_name" content="BlueLzy&#39;s Blog">
-<meta property="og:description" content="关于知识共享协议的说明  -  BlueLzy（以下简称本人），是“BlueLzy&amp;#39;s blog”博客（以下简称本博客）的拥有者。本博客上创造和发布的内容可用于传播和共享，对于本人发布的原创内容（包含图片、文字、音乐、视频）采用 CreativeCommons 3.0 Unported 协议，即 知识共享许可协议 3.0 未本地化版本 加以许可保护。作者在发布内容时，如果没有特殊注明，默认">
+<meta property="og:description" content="Kotlin学习之旅第十三天 今天主要是编写代码，继续实现其他的功能">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-19T09:15:54.109Z">
+<meta property="og:image" content="http://www.wailian.work/images/2018/10/21/Oct-21-201810-31-50.gif">
+<meta property="og:image" content="http://www.wailian.work/images/2018/10/22/Snip20181022_18.png">
+<meta property="og:image" content="http://www.wailian.work/images/2018/10/22/Snip20181022_19.png">
+<meta property="og:updated_time" content="2018-10-22T13:25:56.360Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BlueLzy&#39;s Blog">
-<meta name="twitter:description" content="关于知识共享协议的说明  -  BlueLzy（以下简称本人），是“BlueLzy&amp;#39;s blog”博客（以下简称本博客）的拥有者。本博客上创造和发布的内容可用于传播和共享，对于本人发布的原创内容（包含图片、文字、音乐、视频）采用 CreativeCommons 3.0 Unported 协议，即 知识共享许可协议 3.0 未本地化版本 加以许可保护。作者在发布内容时，如果没有特殊注明，默认">
+<meta name="twitter:title" content="Kotlin学习之旅(D13)-第一个App之功能完善">
+<meta name="twitter:description" content="Kotlin学习之旅第十三天 今天主要是编写代码，继续实现其他的功能">
+<meta name="twitter:image" content="http://www.wailian.work/images/2018/10/21/Oct-21-201810-31-50.gif">
 
 
 
@@ -171,7 +178,7 @@
 
 
 
-  <title> | BlueLzy's Blog</title>
+  <title>Kotlin学习之旅(D13)-第一个App之功能完善 | BlueLzy's Blog</title>
   
 
 
@@ -340,91 +347,282 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.bluelzy.com/articles/learn_kotlin_day13.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BlueLzy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon4.ico">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BlueLzy's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline"></h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h1>关于知识共享协议的说明</h1>
-
-<p>-</p>
-
-<p>BlueLzy（以下简称本人），是“BlueLzy&#39;s blog”博客（以下简称本博客）的拥有者。本博客上创造和发布的内容可用于传播和共享，对于本人发布的原创内容（包含图片、文字、音乐、视频）采用 <strong>CreativeCommons 3.0 Unported</strong> 协议，即 <strong>知识共享许可协议 3.0 未本地化版本 加以许可保护</strong>。作者在发布内容时，如果没有特殊注明，默认将会采用 <strong>知识共享协议 署名 - 非商业性使用 - 相同方式共享 3.0 未本地化版本 (CC BY-NC-SA 3.0 Unported)</strong> 对原创内容进行保护。</p>
-
-<h2>CC 3.0 Unported 协议概要</h2>
-
-<h2>语言：中文</h2>
-
-<p>您可以自由地：</p>
-
-<ul><li>分享 — 在任何媒介以任何形式复制、发行本作品</li><li>演绎 — 修改、转换或以本作品为基础进行创作
-只要你遵守许可协议条款，许可人就无法收回你的这些权利。</li></ul>
-
-<h4>惟须遵守下列条件：</h4>
-
-<ul><li>署名 — 你必须遵守信用，注明来源链接和演绎内容，并提供一个通往与 原作所用协议并不冲突的知识共享协议 许可证页面的链接。你可以用任何合适的方式实现这个，但这并不暗示许可证拥有者和原作者认可该分享方式。</li><li>非商业性使用 — 您不得将本作品用于商业目的。</li><li>相同方式共享 — 如果你节选、翻译、重排版，或基于本作品二次创作，你必须将你的贡献用 相同的协议 进行分享，并分别注明原作者与你的贡献。</li><li>没有附加限制 — 虽然您可能依旧不适用那些法律上限制的任何关于知识产权的法律条款或技术措施，即使你的行为符合知识共享协议。</li></ul>
-
-<h2>Language:English</h2>
-
-<p><strong>You are free to:</strong></p>
-
-<ul><li>Share — copy and redistribute the material in any medium or format</li><li>Adapt — remix, transform, and build upon the material
-The licensor cannot revoke these freedoms as long as you follow the license terms.</li></ul>
-
-<h4>Under the following terms:</h4>
-
-<ul><li>Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li><li>NonCommercial — You may not use the material for commercial purposes.</li><li>ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</li><li>No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</li></ul>
-
-<h2>CC 3.0 Unported 完整协议</h2>
-
-<h2>Language:English</h2>
-
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/legalcod" target="_blank" rel="noopener">CC by-nc-sa 3.0 Unported Legalcodee</a></p>
-
-<h2>语言：中文</h2>
-
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/legalcode" target="_blank" rel="noopener">知识共享协议署名 - 非商业性使用 - 相同方式共享 3.0 中国大陆 许可协议</a></p>
-
-<h1>如何在不违反知识共享协议条约的基础上使用本博客的原创内容</h1>
-
-<h3>商业使用</h3>
-
-<p>CC 3.0 BY-NC-SA Unported 协议规定，只要他人注明本人的姓名并在以本人的作品为基础创作的新作品上适用同一类型的许可协议，该他人就可基于非商业目的对您的作品重新编排、节选或者以本人的作品为基础进行创作。基于本人的作品创作的所有新作品都要适用同一类型的许可协议，因此适用该项协议则对任何以您的原作为基础创作的演绎作品自然同样 都不得进行商业性使用。</p>
-
-<h3>署名方法</h3>
-
-<p>在转载本博客中任何内容时必须给出原页面的 URL 链接，并注明文章（全文，部分）从“BlueLzy&#39;s Blog” 或转载，并提供一个与 CC 3.0 BY-NC-SA Unported 不相违背的知识共享协议的许可证；
-如果你对本博客的原创内容进行了演绎，则必须注明演绎的内容；并提供 CC 3.0 BY-NC-SA 协议 的 许可证</p>
-
-<h3>演绎政策</h3>
-
-<p>本博客属于所有在网络上公开发表的，任何人可访问的作品，故本人在这里明确声明 所有原创内容均 允许演绎。</p>
-
-<br>
-<br>
-
-<p>你将会在我的博客的每一篇文章结尾，看到如下所示的版权说明：</p>
+          <h1 class="post-title" itemprop="name headline">Kotlin学习之旅(D13)-第一个App之功能完善</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-22T08:41:48+08:00">
+                2018-10-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Kotlin学习之旅/" itemprop="url" rel="index">
+                    <span itemprop="name">Kotlin学习之旅</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/articles/learn_kotlin_day13.html" class="leancloud_visitors" data-flag-title="Kotlin学习之旅(D13)-第一个App之功能完善">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <blockquote class="blockquote-center"><p>Kotlin学习之旅第十三天</p>
+<p>今天主要是编写代码，继续实现其他的功能</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://www.bluelzy.com/articles/learning_kotlin_day1.html">Kotlin学习之旅(D1)-学习计划&amp;基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learning_kotlin_d2.html">Kotlin学习之旅(D2)-基本语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day3.html">Kotlin学习之旅(D3)-类与继承</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day4.html">Kotlin学习之旅(D4)-函数与Lambda表达式</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day5.html">Kotlin学习之旅(D5)-高级语法</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day6.html">Kotlin学习之旅(D6)-Kotlin Idioms part 1</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day7.html">Kotlin学习之旅(D7)-Kotlin Idioms part 2</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day8.html">Kotlin学习之旅(D8)-From Java to Kotlin</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day9.html">Kotlin学习之旅(D9)-Android Extensions</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day10.html">Kotlin学习之旅(D10)- Unit Test with Kotlin</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day11.html">Kotlin学习之旅(D11)-第一个App之项目介绍</a></p>
+<p><a href="https://www.bluelzy.com/articles/learn_kotlin_day12.html">Kotlin学习之旅(D12)-第一个App之功能实现</a></p>
+<h2 id="今日目标"><a href="#今日目标" class="headerlink" title="今日目标"></a>今日目标</h2><p>首先要说的就是，昨天我们已经完成了App基本的添加，编辑功能了，但是有一个很不方便的地方，就是App来查看笔记的时候没有办法直接查看下一条，因此今天我们要做的就是，在ActionBar加入一个Next按钮，点击按钮之后能显示下一条笔记的信息。</p>
+<p><img src="http://www.wailian.work/images/2018/10/21/Oct-21-201810-31-50.gif" alt="Oct-21-201810-31-50.md.gif"></p>
+<p>点击笔记 -&gt; 显示笔记内容 -&gt; 点击右上角的 ‘’&gt;’’  -&gt; 显示下一条笔记</p>
+<p>这种交互方式对用户来说更为友好，顺便我们也能学习一下ActionBar的用法~走你</p>
+<h2 id="修改MenuItem"><a href="#修改MenuItem" class="headerlink" title="修改MenuItem"></a>修改MenuItem</h2><p> 首先我们来看一下res -&gt; menu 文件夹下的 <code>menu_main.xml</code>文件：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">menu</span> xmln<span class="variable">s:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    xmln<span class="variable">s:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span><br><span class="line">    xmln<span class="variable">s:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    tool<span class="variable">s:context</span>=<span class="string">"com.blue.notekeeper.MainActivity"</span>&gt;</span><br><span class="line">    &lt;item</span><br><span class="line">        android:id=<span class="string">"@+id/action_settings"</span></span><br><span class="line">        android:orderInCategory=<span class="string">"100"</span></span><br><span class="line">        android:title=<span class="string">"@string/action_settings"</span></span><br><span class="line">        app:showAsAction=<span class="string">"never"</span> /&gt;</span><br><span class="line">&lt;/<span class="keyword">menu</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>这个时候只有一个item,我们加入Next Item</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;item</span><br><span class="line">    android:<span class="attribute">id</span>=<span class="string">"@+id/action_next"</span></span><br><span class="line">    android:<span class="attribute">checkable</span>=<span class="string">"true"</span></span><br><span class="line">    android:<span class="attribute">enabled</span>=<span class="string">"true"</span></span><br><span class="line">    android:<span class="attribute">icon</span>=<span class="string">"@drawable/ic_forward_white_24dp"</span></span><br><span class="line">    android:<span class="attribute">title</span>=<span class="string">"Next"</span></span><br><span class="line">    android:<span class="attribute">visible</span>=<span class="string">"true"</span></span><br><span class="line">    app:<span class="attribute">showAsAction</span>=<span class="string">"ifRoom|withText"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>创建<code>icon</code>的方式和前面创建其他图标是一样的</p>
+<ol>
+<li>drawable文件夹右键 -&gt; new  -&gt;  Vector Asset</li>
+<li>在<code>Clip Art</code> 选项中选择 <code>forward</code> </li>
+<li>把颜色设置为白色</li>
+</ol>
+<p>也可以看图片：</p>
+<p><img src="http://www.wailian.work/images/2018/10/22/Snip20181022_18.png" alt="Snip20181022_18.png"></p>
+<p><strong>注意：app:showAsAction=”ifRoom|withText”</strong> 的意思就是 <strong>当屏幕空间足够的时候，这个item会显示到ActionBar</strong> 具体效果大家可以运行项目，然后 <strong>切换屏幕方向</strong> 就懂了</p>
+<ul>
+<li>横屏的时候Next的图标和文字都会显示出来</li>
+<li>竖屏的时候Next只有图标显示出来，文字由于空间不足就隐藏起来了</li>
+</ul>
+<h2 id="修改MainActivity"><a href="#修改MainActivity" class="headerlink" title="修改MainActivity"></a>修改MainActivity</h2><p>xml文件搞定以后，我们就要开始在代码中处理逻辑了</p>
+<p>Menu提供了两个方法给我们处理menu item的相关逻辑</p>
+<ul>
+<li>onPrepareOptionsMenu() - 这个方法很常见，在item被点击的时候会触发，因此我们在这里做对应的点击事件的处理</li>
+<li>onPrepareOptionsMenu() - 这个方法可能用的比较少，在item还未初始化之前会被调用，因此我们可以在这里做一些准备工作，例如对item图标的更换，点击事件的控制等，接下来大家就知道为什么要重新这个方法了</li>
+</ul>
+<h4 id="重写onPrepareOptionsMenu"><a href="#重写onPrepareOptionsMenu" class="headerlink" title="重写onPrepareOptionsMenu()"></a>重写onPrepareOptionsMenu()</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onOptionsItemSelected</span><span class="params">(item: <span class="type">MenuItem</span>)</span></span>: <span class="built_in">Boolean</span> &#123;</span><br><span class="line">    <span class="comment">// Handle action bar item clicks here. The action bar will</span></span><br><span class="line">    <span class="comment">// automatically handle clicks on the Home/Up button, so long</span></span><br><span class="line">    <span class="comment">// as you specify a parent activity in AndroidManifest.xml.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">when</span> (item.itemId) &#123;</span><br><span class="line">        R.id.action_settings -&gt; <span class="literal">true</span></span><br><span class="line">        R.id.action_next -&gt; &#123;</span><br><span class="line">            moveNext()</span><br><span class="line">            <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> -&gt; <span class="keyword">super</span>.onOptionsItemSelected(item)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>知识点：when 表达式</p>
+</blockquote>
+<h5 id="moveNext"><a href="#moveNext" class="headerlink" title="moveNext()"></a>moveNext()</h5><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">moveNext</span></span>() &#123;</span><br><span class="line">    ++notePosition</span><br><span class="line">    displayNote()</span><br><span class="line">    invalidateOptionsMenu()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每一次点击 <code>next</code> 按钮，我们先让记录当前笔记位置的变量<code>notePosition</code> +1，然后再显示下一条笔记，这个方法已经在昨天的文章里实现了，最后就是调用<code>invalidateOptionsMenu()</code> 方法。</p>
+<h4 id="重写onPrepareOptionsMenu-1"><a href="#重写onPrepareOptionsMenu-1" class="headerlink" title="重写onPrepareOptionsMenu()"></a>重写onPrepareOptionsMenu()</h4><p>在没有重写这个方法之前，如果我们不停的点击next,到了最后一条笔记的时候，再点击next，app会crash，原因就是数组下标越界了。这个问题很容易解决，就是当我们已经显示了最后一条笔记时，next按钮变成一个不可点击的状态，如图：</p>
+<p><img src="http://www.wailian.work/images/2018/10/22/Snip20181022_19.png" alt="Snip20181022_19.png"></p>
+<p>在onPrepareOptionsMenu()方法里面，我们通过当前的位置来进行判断是否需要变更图标</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onPrepareOptionsMenu</span><span class="params">(menu: <span class="type">Menu</span>?)</span></span>: <span class="built_in">Boolean</span> &#123;</span><br><span class="line">       <span class="keyword">if</span> (notePosition&gt;= DataManager.notes.lastIndex)&#123;</span><br><span class="line">           <span class="keyword">val</span> menuItem = menu?.findItem(R.id.action_next)</span><br><span class="line">           <span class="keyword">if</span> (menuItem != <span class="literal">null</span>)&#123;</span><br><span class="line">               menuItem.icon = getDrawable(R.drawable.ic_block_white_24dp)</span><br><span class="line">               menuItem.isEnabled = <span class="literal">false</span></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">super</span>.onPrepareOptionsMenu(menu)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>如果还没到最后一条笔记，那么就显示next，否则的话就显示<code>block</code>，并且设置为不可点击。</p>
+<blockquote>
+<p>关于如何生成 block icon，这里就不重复了，步骤和上面生成Next图标是一样的</p>
+</blockquote>
+<p>最后再运行一遍App，看一下效果，应该就和Day11那篇文章开头的动图是一样的了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在这个笔记App中，我们实现了以下功能：</p>
+<ul>
+<li>新增笔记</li>
+<li>查看和编辑笔记</li>
+<li>通过Next查看下一条笔记</li>
+<li>横竖屏切换时保存笔记状态</li>
+</ul>
+<p>但是其实还有许多可以改进的地方，例如：</p>
+<ul>
+<li>删除笔记（List 左滑 / 长按 / 进入编辑页面删除 等等）</li>
+<li>优化控件（RecyclerView 替换 ListView）</li>
+<li>优化界面（让笔记通过卡片形式展示，加入点击和过场动画，使用不同颜色的字体 等等）</li>
+<li>优化笔记功能（可以插入图片，url，等额外的信息）</li>
+</ul>
+<p>有兴趣的童鞋可以在此基础上继续开发~通过实战提高自己的技术！！</p>
+<p>不过我们Kotlin学习之旅的目的还是达到了，虽然只是一个简单的半成品App，通过前期学习Kotlin的语法和特性，然后到一步步写出这个App，这个过程中的成就感还是非常大的，同时也让自己对Android和Kotlin得以一直保持热度和兴趣。</p>
+<p>明天就是Kotlin学习之旅的最后一天了，我会做一个Kotlin学习资料的总结，包括文档，博客，视频，Github的开源项目等</p>
+<p>Day  13 - Learn Kotlin Trip， Completed.</p>
+<hr>
+
       
     </div>
     
     
     
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #636363;font-size:14px;letter-spacing: 10px">本文结束啦<i class="fa fa-bell"></i>感谢您的阅读</div>
+    
+</div>
+  
+</div>
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    BlueLzy
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.bluelzy.com/articles/learn_kotlin_day13.html" title="Kotlin学习之旅(D13)-第一个App之功能完善">https://www.bluelzy.com/articles/learn_kotlin_day13.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/kotlin/" rel="tag"> <i class="fa fa-tag"></i> kotlin</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/articles/learn_kotlin_day12.html" rel="prev" title="Kotlin学习之旅(D12)-第一个App之功能实现">
+                Kotlin学习之旅(D12)-第一个App之功能实现 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -577,7 +775,7 @@ The licensor cannot revoke these freedoms as long as you follow the license term
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">&#x5173;&#x4E8E;&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x534F;&#x8BAE;&#x7684;&#x8BF4;&#x660E;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">CC 3.0 Unported &#x534F;&#x8BAE;&#x6982;&#x8981;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">&#x8BED;&#x8A00;&#xFF1A;&#x4E2D;&#x6587;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">&#x60DF;&#x987B;&#x9075;&#x5B88;&#x4E0B;&#x5217;&#x6761;&#x4EF6;&#xFF1A;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">Language:English</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">Under the following terms:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.</span> <span class="nav-text">CC 3.0 Unported &#x5B8C;&#x6574;&#x534F;&#x8BAE;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text">Language:English</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.</span> <span class="nav-text">&#x8BED;&#x8A00;&#xFF1A;&#x4E2D;&#x6587;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">&#x5982;&#x4F55;&#x5728;&#x4E0D;&#x8FDD;&#x53CD;&#x77E5;&#x8BC6;&#x5171;&#x4EAB;&#x534F;&#x8BAE;&#x6761;&#x7EA6;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x4F7F;&#x7528;&#x672C;&#x535A;&#x5BA2;&#x7684;&#x539F;&#x521B;&#x5185;&#x5BB9;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.1.</span> <span class="nav-text">&#x5546;&#x4E1A;&#x4F7F;&#x7528;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.2.</span> <span class="nav-text">&#x7F72;&#x540D;&#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.3.</span> <span class="nav-text">&#x6F14;&#x7ECE;&#x653F;&#x7B56;</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#今日目标"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x4ECA;&#x65E5;&#x76EE;&#x6807;" class="headerlink" title="&#x4ECA;&#x65E5;&#x76EE;&#x6807;"></a>&#x4ECA;&#x65E5;&#x76EE;&#x6807;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改MenuItem"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x4FEE;&#x6539;MenuItem" class="headerlink" title="&#x4FEE;&#x6539;MenuItem"></a>&#x4FEE;&#x6539;MenuItem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改MainActivity"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x4FEE;&#x6539;MainActivity" class="headerlink" title="&#x4FEE;&#x6539;MainActivity"></a>&#x4FEE;&#x6539;MainActivity</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#重写onPrepareOptionsMenu"><span class="nav-number">4.0.1.</span> <span class="nav-text"><a href="#&#x91CD;&#x5199;onPrepareOptionsMenu" class="headerlink" title="&#x91CD;&#x5199;onPrepareOptionsMenu()"></a>&#x91CD;&#x5199;onPrepareOptionsMenu()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#moveNext"><span class="nav-number">4.0.1.1.</span> <span class="nav-text"><a href="#moveNext" class="headerlink" title="moveNext()"></a>moveNext()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重写onPrepareOptionsMenu-1"><span class="nav-number">4.0.2.</span> <span class="nav-text"><a href="#&#x91CD;&#x5199;onPrepareOptionsMenu-1" class="headerlink" title="&#x91CD;&#x5199;onPrepareOptionsMenu()"></a>&#x91CD;&#x5199;onPrepareOptionsMenu()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li></ol></div>
             
 
           </div>
