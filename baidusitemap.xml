@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/learn_kotlin_day14.html</loc>
+    <lastmod>2018-10-24T14:15:22.734Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin学习之旅(D14)-学习资料汇总</title>
+        <pubTime>2018-10-24T12:51:05.000Z</pubTime>
+        
+        <tag>kotlin</tag>
+         
+         
+           
+             
+              <breadCrumb title="Kotlin学习之旅" url="https://www.bluelzy.com/categories/Kotlin%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day13.html</loc>
     <lastmod>2018-10-22T13:25:56.360Z</lastmod>
     <data>
@@ -723,9 +743,9 @@
         
         <tag>Android</tag>
          
-        <tag>第三方控件</tag>
-         
         <tag>腾讯地图</tag>
+         
+        <tag>第三方控件</tag>
          
          
            
@@ -747,9 +767,9 @@
         
         <tag>Android</tag>
          
-        <tag>高德地图</tag>
-         
         <tag>第三方控件</tag>
+         
+        <tag>高德地图</tag>
          
          
            
