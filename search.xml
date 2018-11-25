@@ -3,6 +3,114 @@
   
     
     <entry>
+      <title><![CDATA[Ubuntu使用魅族手机进行Debug]]></title>
+      <url>/articles/ubuntu_use_meizu_mobile_debug.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>最近在使用Ubuntu系统进行Android开发</p>
+<p>结果发现连接真机Debug的时候居然无法识别</p>
+<p>一番折腾以后解决了问题，同时把过程记录下来。</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于公司的项目过大，用15年款13寸的乞丐版Macbook Pro 已经跑不动了，于是只好把项目导入到自己的PC上。</p>
+<p>而自己又用习惯了Macbook Pro的开发环境，对于Windows的命令行实在是无法忍受了，于是给PC装了个Ubuntu 16.04. </p>
+<p>诶，没想到Ubuntu还挺好用的。具体可以看 <a href="https://www.bluelzy.com/use_ubuntu_to_develop_android.html">从Mac转投Ubuntu进行Android开发</a></p>
+<p>但是，常在河边走，哪有不湿鞋。Android Studio + 模拟器 这个组合我觉得还是有点慢，想着要不试试真机，可能编译速度会快些呢，于是便接上了 <strong>魅蓝Note 6</strong> ，开始了日常踩坑~</p>
+<h2 id="无法识别手机"><a href="#无法识别手机" class="headerlink" title="无法识别手机"></a>无法识别手机</h2><p>连接手机后点击 <strong>Run</strong> 按钮，会发现手机那一项的版本是<strong>Null</strong>，运行项目的话也会失败。</p>
+<p>在终端输入：</p>
+<blockquote>
+<p> adb devices </p>
+</blockquote>
+<p>会看到手机是无法被识别的。这个时候就需要祭出谷歌大法了： <a href="use_ubuntu_to_develop_android">在硬件设备上运行应用</a></p>
+<p>但是由于魅族不在谷歌的USB供应商ID列表里面，我们只能自己找办法了。</p>
+<p>其他HTC ，Sony，ZTE，LG，Huawei，Samsung 都是有的~</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li>连接电脑后在手机上选择 <strong>usb计算机连接 </strong>  -&gt;  <strong>内置光盘</strong></li>
+<li>在弹出来的文件夹中选择 <strong>USB Reference Manual</strong> -&gt; <strong>简体</strong> </li>
+<li>打开 <strong>ADB_参考说明</strong> 一步步进行操作就可以了</li>
+</ol>
+<blockquote>
+<p>注意：修改完之后不需要重启电脑，只要重启服务，然后把手机连接选项改回来就可以了</p>
+</blockquote>
+<p>成功后的截图：</p>
+<p><img src="http://www.wailian.work/images/2018/11/25/Success.png" alt="Success.png"></p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> Android </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> Debug </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[从Mac转投Ubuntu进行Android开发]]></title>
+      <url>/articles/use_ubuntu_to_develop_android.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>Macbook Pro 13寸 乞丐版：开始撤退</p>
+<p>I7 7700 Win 10： 猥琐发育，别浪</p>
+<p>I5 4570 Ubuntu ：进攻敌方水晶</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于公司的Android项目过大，15年款13寸的乞丐版Macbook Pro 已经跑不动了，于是只好把项目导入到自己的PC上。</p>
+<p>而自己又用习惯了Macbook Pro的开发环境，对于Windows的命令行实在是无法忍受，于是给PC装了Ubuntu 16.04. </p>
+<p>诶，没想到Ubuntu还挺好用的，不仅速度快，开发起来还很顺手（就是有点想念渣渣辉，古天乐了），于是就把其他的开发环境都一并配上，开始用Ubuntu作为主要开发环境。</p>
+<h3 id="首先对三个机器对同一个项目的编译速度做个比较吧"><a href="#首先对三个机器对同一个项目的编译速度做个比较吧" class="headerlink" title="首先对三个机器对同一个项目的编译速度做个比较吧"></a>首先对三个机器对同一个项目的编译速度做个比较吧</h3><h4 id="Macbook-Pro-2015-Early-13"><a href="#Macbook-Pro-2015-Early-13" class="headerlink" title="Macbook Pro 2015 Early 13"></a>Macbook Pro 2015 Early 13</h4><p><img src="http://www.wailian.work/images/2018/11/25/Snip20181125_3.png" alt="Snip20181125_3.png"></p>
+<h4 id="公司PC"><a href="#公司PC" class="headerlink" title="公司PC"></a>公司PC</h4><p>CPU：I7 7700</p>
+<p>内存：16G DDR4</p>
+<p>系统：Win 10</p>
+<p>因为这篇文章是周末在家写的，就不放图片了</p>
+<h4 id="个人PC-Ubuntu"><a href="#个人PC-Ubuntu" class="headerlink" title="个人PC - Ubuntu"></a>个人PC - Ubuntu</h4><p><img src="http://www.wailian.work/images/2018/11/25/ubuntu_pc.png" alt="ubuntu_pc.png"></p>
+<h4 id="项目大小（Build后）"><a href="#项目大小（Build后）" class="headerlink" title="项目大小（Build后）"></a>项目大小（Build后）</h4><p><img src="http://www.wailian.work/images/2018/11/25/_002.png" alt="_002.png"></p>
+<h4 id="编译速度"><a href="#编译速度" class="headerlink" title="编译速度"></a>编译速度</h4><h5 id="第一次编译-（包括切换分支后的第一次编译时间）"><a href="#第一次编译-（包括切换分支后的第一次编译时间）" class="headerlink" title="第一次编译 （包括切换分支后的第一次编译时间）"></a>第一次编译 （包括切换分支后的第一次编译时间）</h5><p>Macbook Pro ： 12 min + 风扇的怒吼</p>
+<p>公司PC：4min 30s - 6min 10s</p>
+<p>Ubuntu：1min 39s - 2min 16s</p>
+<h5 id="Instant-Run"><a href="#Instant-Run" class="headerlink" title="Instant Run"></a>Instant Run</h5><p>Macbook Pro ： 12 min + 风扇的怒吼</p>
+<p>公司PC：2min 8s - 4min</p>
+<p>Ubuntu：3s</p>
+<p>虽然公司的PC是 I7 7700 的CPU + 16G 内存，但是每次编译的时间都够我去泡个咖啡了，哪怕是Instant Run 都需要2分钟左右。再加上Macbook Pro的阵亡，我一开始对家里用了4年的PC老年机真的没抱任何希望。刚开始在Win 10 环境下的编译时间和Mac差不多，没想到换成Ubuntu后会有这么 <strong>Perfect</strong> 的表现，<strong>Perfect！ Perfect！ Perfect！</strong> </p>
+<p>最后上个图吧</p>
+<p><strong>Ubuntu下第一次编译时间：</strong></p>
+<p><img src="http://www.wailian.work/images/2018/11/25/ubuntu_time.png" alt="ubuntu_time.png"></p>
+<p><strong>Instant Run的编译时间：</strong></p>
+<p><img src="http://www.wailian.work/images/2018/11/25/ubuntu_least.png" alt="ubuntu_least.png"></p>
+<h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><p>Macbook Pro 2015款比不过是很正常的，但是为什么I7 7700 的 win10 PC 还会比不过i5 4570 的 Ubuntu呢…</p>
+<p>而且这个差距不像游戏的FPS 差 5 -10 帧， 用编译时间来算的话这个差别已经是200 % - 4000%( 2min / 3s)了。</p>
+<p>仿佛在Win10上是不存在Instant Run的，哪怕我一句代码都没有改，点击Build 和 Instant Run 的时间都需要2min以上…</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过这一个多月的Ubuntu使用来看，作为程序员的生产环境真是一点问题都没有，对我而言是这样的。如果需要玩游戏的话还是选择Windows吧。</p>
+<p>而且美化过后的Ubuntu其实还是挺好看的~</p>
+<p><img src="http://www.wailian.work/images/2018/11/25/_003.png" alt="_003.png"></p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术向 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Ubuntu </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Kotlin学习之旅(D14)-学习资料汇总]]></title>
       <url>/articles/learn_kotlin_day14.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>首先祝所有程序员1024节日快乐</p>
@@ -3430,11 +3538,11 @@
         
         <tags>
             
-            <tag> 日常 </tag>
-            
             <tag> 电影 </tag>
             
             <tag> 无问西东 </tag>
+            
+            <tag> 日常 </tag>
             
         </tags>
         
@@ -3482,9 +3590,9 @@
         
         <tags>
             
-            <tag> 知乎 </tag>
-            
             <tag> 日常 </tag>
+            
+            <tag> 知乎 </tag>
             
         </tags>
         

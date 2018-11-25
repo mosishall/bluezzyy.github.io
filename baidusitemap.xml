@@ -4,6 +4,52 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/ubuntu_use_meizu_mobile_debug.html</loc>
+    <lastmod>2018-11-25T12:53:31.016Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu使用魅族手机进行Debug</title>
+        <pubTime>2018-11-25T11:22:12.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Ubuntu</tag>
+         
+        <tag>Debug</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://www.bluelzy.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.bluelzy.com/articles/use_ubuntu_to_develop_android.html</loc>
+    <lastmod>2018-11-25T12:52:21.599Z</lastmod>
+    <data>
+        <display>
+        <title>从Mac转投Ubuntu进行Android开发</title>
+        <pubTime>2018-11-24T11:49:54.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Ubuntu</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day14.html</loc>
     <lastmod>2018-10-24T14:15:22.734Z</lastmod>
     <data>
@@ -789,11 +835,11 @@
         <title>电影-无问西东</title>
         <pubTime>2018-01-21T10:01:09.000Z</pubTime>
         
-        <tag>日常</tag>
-         
         <tag>电影</tag>
          
         <tag>无问西东</tag>
+         
+        <tag>日常</tag>
          
          
            
@@ -813,9 +859,9 @@
         <title>哪有什么真正的言论自由？</title>
         <pubTime>2018-01-20T00:24:58.000Z</pubTime>
         
-        <tag>知乎</tag>
-         
         <tag>日常</tag>
+         
+        <tag>知乎</tag>
          
          
            
