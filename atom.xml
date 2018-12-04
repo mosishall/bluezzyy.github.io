@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bluelzy.com/"/>
-  <updated>2018-11-25T12:53:31.016Z</updated>
+  <updated>2018-12-04T14:38:40.251Z</updated>
   <id>https://www.bluelzy.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.bluelzy.com/articles/ubuntu_use_meizu_mobile_debug.html"/>
     <id>https://www.bluelzy.com/articles/ubuntu_use_meizu_mobile_debug.html</id>
     <published>2018-11-25T11:22:12.000Z</published>
-    <updated>2018-11-25T12:53:31.016Z</updated>
+    <updated>2018-12-04T14:38:40.251Z</updated>
     
-    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>最近在使用Ubuntu系统进行Android开发</p><p>结果发现连接真机Debug的时候居然无法识别</p><p>一番折腾以后解决了问题，同时把过程记录下来。</p></blockquote> <a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于公司的项目过大，用15年款13寸的乞丐版Macbook Pro 已经跑不动了，于是只好把项目导入到自己的PC上。</p><p>而自己又用习惯了Macbook Pro的开发环境，对于Windows的命令行实在是无法忍受了，于是给PC装了个Ubuntu 16.04. </p><p>诶，没想到Ubuntu还挺好用的。具体可以看 <a href="https://www.bluelzy.com/use_ubuntu_to_develop_android.html">从Mac转投Ubuntu进行Android开发</a></p><p>但是，常在河边走，哪有不湿鞋。Android Studio + 模拟器 这个组合我觉得还是有点慢，想着要不试试真机，可能编译速度会快些呢，于是便接上了 <strong>魅蓝Note 6</strong> ，开始了日常踩坑~</p><h2 id="无法识别手机"><a href="#无法识别手机" class="headerlink" title="无法识别手机"></a>无法识别手机</h2><p>连接手机后点击 <strong>Run</strong> 按钮，会发现手机那一项的版本是<strong>Null</strong>，运行项目的话也会失败。</p><p>在终端输入：</p><blockquote><p> adb devices </p></blockquote><p>会看到手机是无法被识别的。这个时候就需要祭出谷歌大法了： <a href="use_ubuntu_to_develop_android">在硬件设备上运行应用</a></p><p>但是由于魅族不在谷歌的USB供应商ID列表里面，我们只能自己找办法了。</p><p>其他HTC ，Sony，ZTE，LG，Huawei，Samsung 都是有的~</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol><li>连接电脑后在手机上选择 <strong>usb计算机连接 </strong>  -&gt;  <strong>内置光盘</strong></li><li>在弹出来的文件夹中选择 <strong>USB Reference Manual</strong> -&gt; <strong>简体</strong> </li><li>打开 <strong>ADB_参考说明</strong> 一步步进行操作就可以了</li></ol><blockquote><p>注意：修改完之后不需要重启电脑，只要重启服务，然后把手机连接选项改回来就可以了</p></blockquote><p>成功后的截图：</p><p><img src="http://www.wailian.work/images/2018/11/25/Success.png" alt="Success.png"></p><hr>]]></content>
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>最近在使用Ubuntu系统进行Android开发</p><p>结果发现连接真机Debug的时候居然无法识别</p><p>一番折腾以后解决了问题，同时把过程记录下来。</p></blockquote> <a id="more"></a><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于公司的项目过大，用15年款13寸的乞丐版Macbook Pro 已经跑不动了，于是只好把项目导入到自己的PC上。</p><p>而自己又用习惯了Macbook Pro的开发环境，对于Windows的命令行实在是无法忍受了，于是给PC装了个Ubuntu 16.04. </p><p>诶，没想到Ubuntu还挺好用的。具体可以看 <a href="https://www.bluelzy.com/use_ubuntu_to_develop_android.html">从Mac转投Ubuntu进行Android开发</a></p><p>但是，常在河边走，哪有不湿鞋。Android Studio + 模拟器 这个组合我觉得还是有点慢，想着要不试试真机，可能编译速度会快些呢，于是便接上了 <strong>魅蓝Note 6</strong> ，开始了日常踩坑~</p><h2 id="无法识别手机"><a href="#无法识别手机" class="headerlink" title="无法识别手机"></a>无法识别手机</h2><p>连接手机后点击 <strong>Run</strong> 按钮，会发现手机那一项的版本是<strong>Null</strong>，运行项目的话也会失败。</p><p>在终端输入：</p><blockquote><p> adb devices </p></blockquote><p>会看到手机是无法被识别的。这个时候就需要祭出谷歌大法了： <a href="https://developer.android.com/studio/run/device?hl=zh-cn" target="_blank" rel="noopener">在硬件设备上运行应用</a></p><p>但是由于魅族不在谷歌的USB供应商ID列表里面，我们只能自己找办法了。</p><p>其他HTC ，Sony，ZTE，LG，Huawei，Samsung 都是有的~</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol><li>连接电脑后在手机上选择 <strong>usb计算机连接 </strong>  -&gt;  <strong>内置光盘</strong></li><li>在弹出来的文件夹中选择 <strong>USB Reference Manual</strong> -&gt; <strong>简体</strong> </li><li>打开 <strong>ADB_参考说明</strong> 一步步进行操作就可以了</li></ol><blockquote><p>注意：修改完之后不需要重启电脑，只要重启服务，然后把手机连接选项改回来就可以了</p></blockquote><p>成功后的截图：</p><p><img src="http://www.wailian.work/images/2018/11/25/Success.png" alt="Success.png"></p><hr>]]></content>
     
     <summary type="html">
     

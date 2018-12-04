@@ -19,7 +19,7 @@
 <blockquote>
 <p> adb devices </p>
 </blockquote>
-<p>会看到手机是无法被识别的。这个时候就需要祭出谷歌大法了： <a href="use_ubuntu_to_develop_android">在硬件设备上运行应用</a></p>
+<p>会看到手机是无法被识别的。这个时候就需要祭出谷歌大法了： <a href="https://developer.android.com/studio/run/device?hl=zh-cn" target="_blank" rel="noopener">在硬件设备上运行应用</a></p>
 <p>但是由于魅族不在谷歌的USB供应商ID列表里面，我们只能自己找办法了。</p>
 <p>其他HTC ，Sony，ZTE，LG，Huawei，Samsung 都是有的~</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
@@ -3538,11 +3538,11 @@
         
         <tags>
             
+            <tag> 日常 </tag>
+            
             <tag> 电影 </tag>
             
             <tag> 无问西东 </tag>
-            
-            <tag> 日常 </tag>
             
         </tags>
         
@@ -3590,9 +3590,9 @@
         
         <tags>
             
-            <tag> 日常 </tag>
-            
             <tag> 知乎 </tag>
+            
+            <tag> 日常 </tag>
             
         </tags>
         
