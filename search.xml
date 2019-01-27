@@ -3503,9 +3503,9 @@
             
             <tag> Android </tag>
             
-            <tag> 第三方控件 </tag>
-            
             <tag> 腾讯地图 </tag>
+            
+            <tag> 第三方控件 </tag>
             
         </tags>
         
@@ -3552,9 +3552,9 @@
             
             <tag> Android </tag>
             
-            <tag> 高德地图 </tag>
-            
             <tag> 第三方控件 </tag>
+            
+            <tag> 高德地图 </tag>
             
         </tags>
         
@@ -3750,6 +3750,9 @@
 <p>感谢热心网友，群号应该为：<strong>480972291</strong>  </p>
 <p>漫漫长夜~又水完了一篇博客。。</p>
 <p>对了，免费版本不支持高并发，大家评论的时候请排好队，不然Leancloud要给我发邮件了~谢谢！</p>
+<p><strong>2019/01/27 更新:</strong></p>
+<p>无意义评论我会删掉，例如1234，abcd，这种，哪怕输入 <strong>测试 , test,  6666</strong> 也可以啊</p>
+<p>因为在后台看到这种留言会很烦。如果你们写文章，或者做分享，别人的反馈是毫无意义的，相信你们心里也会有点不爽吧，希望大家相互理解。Peace &amp; Love.</p>
 <div class="note primary"><p>参考 </p>
 <p><a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="noopener">Valine官方文档</a></p>
 <p><a href="http://theme-next.iissnan.com/third-party-services.html#comment-system" target="_blank" rel="noopener">Valine作者博客</a></p>

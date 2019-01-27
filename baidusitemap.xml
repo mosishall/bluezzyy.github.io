@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/use_valine_for_your_blog.html</loc>
+    <lastmod>2019-01-27T09:41:52.637Z</lastmod>
+    <data>
+        <display>
+        <title>为你的Hexo加上评论系统-Valine</title>
+        <pubTime>2018-01-15T13:28:29.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next</tag>
+         
+        <tag>valine</tag>
+         
+        <tag>评论系统</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/blog_one_anniversary.html</loc>
     <lastmod>2018-12-19T13:53:17.123Z</lastmod>
     <data>
@@ -420,32 +446,6 @@
 
     
   <url>
-    <loc>https://www.bluelzy.com/articles/use_valine_for_your_blog.html</loc>
-    <lastmod>2018-08-11T20:45:02.330Z</lastmod>
-    <data>
-        <display>
-        <title>为你的Hexo加上评论系统-Valine</title>
-        <pubTime>2018-01-15T13:28:29.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>next</tag>
-         
-        <tag>valine</tag>
-         
-        <tag>评论系统</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.bluelzy.com/articles/first_scrapy_project.html</loc>
     <lastmod>2018-07-22T16:40:00.635Z</lastmod>
     <data>
@@ -809,9 +809,9 @@
         
         <tag>Android</tag>
          
-        <tag>第三方控件</tag>
-         
         <tag>腾讯地图</tag>
+         
+        <tag>第三方控件</tag>
          
          
            
@@ -833,9 +833,9 @@
         
         <tag>Android</tag>
          
-        <tag>高德地图</tag>
-         
         <tag>第三方控件</tag>
+         
+        <tag>高德地图</tag>
          
          
            
