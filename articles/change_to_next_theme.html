@@ -138,7 +138,7 @@
 <meta property="og:description" content="用了将近一个月的Material主题后，终于决定换成next主题     这篇博客主要是美化和踩坑的总结   Let’s go…">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://s1.wailian.download/2018/01/14/article_20180114.png">
-<meta property="og:updated_time" content="2018-01-19T11:35:00.394Z">
+<meta property="og:updated_time" content="2019-02-08T10:03:15.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="弃暗投明-Hexo更换next主题">
 <meta name="twitter:description" content="用了将近一个月的Material主题后，终于决定换成next主题     这篇博客主要是美化和踩坑的总结   Let’s go…">
@@ -466,13 +466,17 @@
 <p>文件：/themes/next/layout/_macro/post.swig</p>
 </blockquote>
 <ol>
-<li><p>搜索 rel=”tag”&gt;#   </p>
+<li><p>搜索 </p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rel=<span class="string">"tag"</span>&gt;<span class="comment">#</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>将 # 换成 将 # 换成 &lt; i class=”fa fa-tag” &gt;  &lt;/i&gt;   </p>
+<li><p>将 # 换成 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt; i <span class="class"><span class="keyword">class</span></span>=<span class="string">"fa fa-tag"</span> &gt; <span class="xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>其中 “fa fa-tag” 可以换成自己喜欢的图标 详情请戳：<a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">Font Awesome</a>   </p>
+<li><p>其中 </p>
 </li>
 </ol>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"fa fa-tag"</span></span><br></pre></td></tr></table></figure>
+<p>可以换成自己喜欢的图标 详情请戳：<a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">Font Awesome</a>   </p>
 <h2 id="在文末添加”本文结束”"><a href="#在文末添加”本文结束”" class="headerlink" title="在文末添加”本文结束”"></a>在文末添加”本文结束”</h2><blockquote>
 <p>在 \themes\next\layout\_macro 新建 passage-end-tag.swig 文件 </p>
 </blockquote>

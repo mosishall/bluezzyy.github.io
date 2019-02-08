@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/change_to_next_theme.html</loc>
+    <lastmod>2019-02-08T10:03:15.176Z</lastmod>
+    <data>
+        <display>
+        <title>弃暗投明-Hexo更换next主题</title>
+        <pubTime>2018-01-14T01:25:40.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>next</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/use_valine_for_your_blog.html</loc>
-    <lastmod>2019-01-27T09:41:52.637Z</lastmod>
+    <lastmod>2019-01-27T09:41:52.638Z</lastmod>
     <data>
         <display>
         <title>为你的Hexo加上评论系统-Valine</title>
@@ -97,7 +119,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day14.html</loc>
-    <lastmod>2018-10-24T14:15:22.734Z</lastmod>
+    <lastmod>2018-10-24T14:15:22.735Z</lastmod>
     <data>
         <display>
         <title>Kotlin学习之旅(D14)-学习资料汇总</title>
@@ -117,7 +139,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day13.html</loc>
-    <lastmod>2018-10-22T13:25:56.360Z</lastmod>
+    <lastmod>2018-10-22T13:25:56.361Z</lastmod>
     <data>
         <display>
         <title>Kotlin学习之旅(D13)-第一个App之功能完善</title>
@@ -159,7 +181,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day11.html</loc>
-    <lastmod>2018-10-21T08:56:04.842Z</lastmod>
+    <lastmod>2018-10-21T08:56:04.843Z</lastmod>
     <data>
         <display>
         <title>Kotlin学习之旅(D11)-第一个App之项目介绍</title>
@@ -181,7 +203,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/learning_kotlin_day1.html</loc>
-    <lastmod>2018-10-21T01:44:44.115Z</lastmod>
+    <lastmod>2018-10-21T01:44:44.116Z</lastmod>
     <data>
         <display>
         <title>Kotlin学习之旅(D1)-学习计划&基本语法</title>
@@ -221,7 +243,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day9.html</loc>
-    <lastmod>2018-10-17T15:27:50.898Z</lastmod>
+    <lastmod>2018-10-17T15:27:50.899Z</lastmod>
     <data>
         <display>
         <title>Kotlin学习之旅(D9)-Android Extensions</title>
@@ -301,7 +323,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day5.html</loc>
-    <lastmod>2018-10-13T14:42:24.868Z</lastmod>
+    <lastmod>2018-10-13T14:42:24.869Z</lastmod>
     <data>
         <display>
         <title>Kotlin学习之旅(D5)-高级语法</title>
@@ -427,7 +449,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/recommand_book_and_movie0821.html</loc>
-    <lastmod>2018-08-24T19:24:20.983Z</lastmod>
+    <lastmod>2018-08-24T19:24:20.984Z</lastmod>
     <data>
         <display>
         <title>近况还有书籍推荐</title>
@@ -447,7 +469,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/first_scrapy_project.html</loc>
-    <lastmod>2018-07-22T16:40:00.635Z</lastmod>
+    <lastmod>2018-07-22T16:40:00.636Z</lastmod>
     <data>
         <display>
         <title>Scrapy入门-第一个爬虫项目</title>
@@ -491,7 +513,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/android_room_overview.html</loc>
-    <lastmod>2018-07-08T15:40:56.276Z</lastmod>
+    <lastmod>2018-07-08T15:40:56.277Z</lastmod>
     <data>
         <display>
         <title>Android Room概述</title>
@@ -513,7 +535,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/android_room_entity_use.html</loc>
-    <lastmod>2018-07-08T15:38:33.691Z</lastmod>
+    <lastmod>2018-07-08T15:38:33.692Z</lastmod>
     <data>
         <display>
         <title>Android Room Entity使用</title>
@@ -535,7 +557,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/java_se_multithreading.html</loc>
-    <lastmod>2018-06-05T13:30:07.991Z</lastmod>
+    <lastmod>2018-06-05T13:30:07.992Z</lastmod>
     <data>
         <display>
         <title>Java基础-多线程</title>
@@ -557,7 +579,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/java_se_reflect.html</loc>
-    <lastmod>2018-06-05T07:26:45.746Z</lastmod>
+    <lastmod>2018-06-05T07:26:45.747Z</lastmod>
     <data>
         <display>
         <title>Java基础-类加载机制与反射</title>
@@ -579,7 +601,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/java_se_io.html</loc>
-    <lastmod>2018-06-04T08:18:52.195Z</lastmod>
+    <lastmod>2018-06-04T08:18:52.196Z</lastmod>
     <data>
         <display>
         <title>Java基础-IO</title>
@@ -601,7 +623,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/java_se_collection.html</loc>
-    <lastmod>2018-06-03T03:57:47.839Z</lastmod>
+    <lastmod>2018-06-03T03:57:47.840Z</lastmod>
     <data>
         <display>
         <title>Java基础-集合</title>
@@ -623,7 +645,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/java_se_genericity.html</loc>
-    <lastmod>2018-06-02T14:17:09.018Z</lastmod>
+    <lastmod>2018-06-02T14:17:09.019Z</lastmod>
     <data>
         <display>
         <title>Java基础-泛型</title>
@@ -645,7 +667,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/webview_and_js_problems.html</loc>
-    <lastmod>2018-05-14T14:39:29.283Z</lastmod>
+    <lastmod>2018-05-14T14:39:29.284Z</lastmod>
     <data>
         <display>
         <title>WebView调用JS失败问题总结</title>
@@ -667,7 +689,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/raspberry_general_setting.html</loc>
-    <lastmod>2018-05-10T03:15:04.084Z</lastmod>
+    <lastmod>2018-05-10T03:15:04.085Z</lastmod>
     <data>
         <display>
         <title>树莓派新手指南(二)-必备设置</title>
@@ -687,7 +709,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/raspberry_use_guide.html</loc>
-    <lastmod>2018-04-07T09:51:25.749Z</lastmod>
+    <lastmod>2018-04-07T09:51:25.750Z</lastmod>
     <data>
         <display>
         <title>树莓派新手指南（一）</title>
@@ -711,7 +733,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/one-hundred-days-summary.html</loc>
-    <lastmod>2018-03-29T01:03:59.773Z</lastmod>
+    <lastmod>2018-03-29T01:03:59.774Z</lastmod>
     <data>
         <display>
         <title>博客100天总结</title>
@@ -731,7 +753,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/reading-career-planing.html</loc>
-    <lastmod>2018-03-18T05:19:57.446Z</lastmod>
+    <lastmod>2018-03-18T05:19:57.447Z</lastmod>
     <data>
         <display>
         <title>【读书笔记】远见：如何规划职业生涯3大阶段</title>
@@ -753,7 +775,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/update-https-by-acme-sh.html</loc>
-    <lastmod>2018-03-18T04:42:30.873Z</lastmod>
+    <lastmod>2018-03-18T04:42:30.874Z</lastmod>
     <data>
         <display>
         <title>为小绿锁快速续命</title>
@@ -779,7 +801,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/activity_transmit_value.html</loc>
-    <lastmod>2018-02-17T10:43:18.877Z</lastmod>
+    <lastmod>2018-02-17T10:43:18.878Z</lastmod>
     <data>
         <display>
         <title>Activity传值与回传</title>
@@ -801,7 +823,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/tencent_map_search.html</loc>
-    <lastmod>2018-02-17T09:28:29.319Z</lastmod>
+    <lastmod>2018-02-17T09:28:29.320Z</lastmod>
     <data>
         <display>
         <title>使用腾讯地图SDK的自动补全功能</title>
@@ -825,7 +847,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/amap_search.html</loc>
-    <lastmod>2018-02-17T09:26:24.437Z</lastmod>
+    <lastmod>2018-02-17T09:26:24.438Z</lastmod>
     <data>
         <display>
         <title>使用高德地图SDK的自动补全功能</title>
@@ -849,7 +871,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/forever_young.html</loc>
-    <lastmod>2018-01-21T11:08:57.289Z</lastmod>
+    <lastmod>2018-01-21T11:08:57.290Z</lastmod>
     <data>
         <display>
         <title>电影-无问西东</title>
@@ -887,28 +909,6 @@
            
              
               <breadCrumb title="日常说" url="https://www.bluelzy.com/categories/%E6%97%A5%E5%B8%B8%E8%AF%B4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.bluelzy.com/articles/change_to_next_theme.html</loc>
-    <lastmod>2018-01-19T11:35:00.394Z</lastmod>
-    <data>
-        <display>
-        <title>弃暗投明-Hexo更换next主题</title>
-        <pubTime>2018-01-14T01:25:40.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-        <tag>next</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
           
         </display>
     </data>
@@ -969,7 +969,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/first_article.html</loc>
-    <lastmod>2018-01-12T10:53:16.303Z</lastmod>
+    <lastmod>2018-01-12T10:53:16.304Z</lastmod>
     <data>
         <display>
         <title>第一篇文章</title>
@@ -989,7 +989,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/ues_Hexo_build_blog_two.html</loc>
-    <lastmod>2018-01-12T10:53:07.299Z</lastmod>
+    <lastmod>2018-01-12T10:53:07.300Z</lastmod>
     <data>
         <display>
         <title>使用Hexo搭建个人博客(二)</title>
@@ -1015,7 +1015,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/open_gzip_for_nginx.html</loc>
-    <lastmod>2018-01-12T10:52:58.924Z</lastmod>
+    <lastmod>2018-01-12T10:52:58.925Z</lastmod>
     <data>
         <display>
         <title>为博客提速-Nginx开启gzip压缩</title>
@@ -1041,7 +1041,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/install_nginx_for_centos6.html</loc>
-    <lastmod>2018-01-12T10:52:54.274Z</lastmod>
+    <lastmod>2018-01-12T10:52:54.275Z</lastmod>
     <data>
         <display>
         <title>CentOS 6 安装Nginx</title>
@@ -1091,7 +1091,7 @@
     
   <url>
     <loc>https://www.bluelzy.com/articles/vim_guide.html</loc>
-    <lastmod>2018-01-12T10:52:38.098Z</lastmod>
+    <lastmod>2018-01-12T10:52:38.099Z</lastmod>
     <data>
         <display>
         <title>Vim简单入门</title>

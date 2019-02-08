@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.bluelzy.com/articles/change_to_next_theme.html</loc>
+    
+    <lastmod>2019-02-08T10:03:15.176Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.bluelzy.com/articles/use_valine_for_your_blog.html</loc>
     
-    <lastmod>2019-01-27T09:41:52.637Z</lastmod>
+    <lastmod>2019-01-27T09:41:52.638Z</lastmod>
     
   </url>
   
@@ -32,14 +39,14 @@
   <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day14.html</loc>
     
-    <lastmod>2018-10-24T14:15:22.734Z</lastmod>
+    <lastmod>2018-10-24T14:15:22.735Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day13.html</loc>
     
-    <lastmod>2018-10-22T13:25:56.360Z</lastmod>
+    <lastmod>2018-10-22T13:25:56.361Z</lastmod>
     
   </url>
   
@@ -53,14 +60,14 @@
   <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day11.html</loc>
     
-    <lastmod>2018-10-21T08:56:04.842Z</lastmod>
+    <lastmod>2018-10-21T08:56:04.843Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/learning_kotlin_day1.html</loc>
     
-    <lastmod>2018-10-21T01:44:44.115Z</lastmod>
+    <lastmod>2018-10-21T01:44:44.116Z</lastmod>
     
   </url>
   
@@ -74,7 +81,7 @@
   <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day9.html</loc>
     
-    <lastmod>2018-10-17T15:27:50.898Z</lastmod>
+    <lastmod>2018-10-17T15:27:50.899Z</lastmod>
     
   </url>
   
@@ -102,7 +109,7 @@
   <url>
     <loc>https://www.bluelzy.com/articles/learn_kotlin_day5.html</loc>
     
-    <lastmod>2018-10-13T14:42:24.868Z</lastmod>
+    <lastmod>2018-10-13T14:42:24.869Z</lastmod>
     
   </url>
   
@@ -137,14 +144,14 @@
   <url>
     <loc>https://www.bluelzy.com/categories/index.html</loc>
     
-    <lastmod>2018-09-21T23:38:05.770Z</lastmod>
+    <lastmod>2018-09-21T23:38:05.771Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/404.html</loc>
     
-    <lastmod>2018-09-20T00:20:19.361Z</lastmod>
+    <lastmod>2018-09-20T00:20:19.362Z</lastmod>
     
   </url>
   
@@ -158,14 +165,14 @@
   <url>
     <loc>https://www.bluelzy.com/articles/recommand_book_and_movie0821.html</loc>
     
-    <lastmod>2018-08-24T19:24:20.983Z</lastmod>
+    <lastmod>2018-08-24T19:24:20.984Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/first_scrapy_project.html</loc>
     
-    <lastmod>2018-07-22T16:40:00.635Z</lastmod>
+    <lastmod>2018-07-22T16:40:00.636Z</lastmod>
     
   </url>
   
@@ -179,119 +186,119 @@
   <url>
     <loc>https://www.bluelzy.com/articles/android_room_overview.html</loc>
     
-    <lastmod>2018-07-08T15:40:56.276Z</lastmod>
+    <lastmod>2018-07-08T15:40:56.277Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/android_room_entity_use.html</loc>
     
-    <lastmod>2018-07-08T15:38:33.691Z</lastmod>
+    <lastmod>2018-07-08T15:38:33.692Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/java_se_multithreading.html</loc>
     
-    <lastmod>2018-06-05T13:30:07.991Z</lastmod>
+    <lastmod>2018-06-05T13:30:07.992Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/java_se_reflect.html</loc>
     
-    <lastmod>2018-06-05T07:26:45.746Z</lastmod>
+    <lastmod>2018-06-05T07:26:45.747Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/java_se_io.html</loc>
     
-    <lastmod>2018-06-04T08:18:52.195Z</lastmod>
+    <lastmod>2018-06-04T08:18:52.196Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/java_se_collection.html</loc>
     
-    <lastmod>2018-06-03T03:57:47.839Z</lastmod>
+    <lastmod>2018-06-03T03:57:47.840Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/java_se_genericity.html</loc>
     
-    <lastmod>2018-06-02T14:17:09.018Z</lastmod>
+    <lastmod>2018-06-02T14:17:09.019Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/webview_and_js_problems.html</loc>
     
-    <lastmod>2018-05-14T14:39:29.283Z</lastmod>
+    <lastmod>2018-05-14T14:39:29.284Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/raspberry_general_setting.html</loc>
     
-    <lastmod>2018-05-10T03:15:04.084Z</lastmod>
+    <lastmod>2018-05-10T03:15:04.085Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/raspberry_use_guide.html</loc>
     
-    <lastmod>2018-04-07T09:51:25.749Z</lastmod>
+    <lastmod>2018-04-07T09:51:25.750Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/one-hundred-days-summary.html</loc>
     
-    <lastmod>2018-03-29T01:03:59.773Z</lastmod>
+    <lastmod>2018-03-29T01:03:59.774Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/reading-career-planing.html</loc>
     
-    <lastmod>2018-03-18T05:19:57.446Z</lastmod>
+    <lastmod>2018-03-18T05:19:57.447Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/update-https-by-acme-sh.html</loc>
     
-    <lastmod>2018-03-18T04:42:30.873Z</lastmod>
+    <lastmod>2018-03-18T04:42:30.874Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/activity_transmit_value.html</loc>
     
-    <lastmod>2018-02-17T10:43:18.877Z</lastmod>
+    <lastmod>2018-02-17T10:43:18.878Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/tencent_map_search.html</loc>
     
-    <lastmod>2018-02-17T09:28:29.319Z</lastmod>
+    <lastmod>2018-02-17T09:28:29.320Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/amap_search.html</loc>
     
-    <lastmod>2018-02-17T09:26:24.437Z</lastmod>
+    <lastmod>2018-02-17T09:26:24.438Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/forever_young.html</loc>
     
-    <lastmod>2018-01-21T11:08:57.289Z</lastmod>
+    <lastmod>2018-01-21T11:08:57.290Z</lastmod>
     
   </url>
   
@@ -299,13 +306,6 @@
     <loc>https://www.bluelzy.com/articles/say_something_about_zhihu.html</loc>
     
     <lastmod>2018-01-20T02:05:21.255Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.bluelzy.com/articles/change_to_next_theme.html</loc>
-    
-    <lastmod>2018-01-19T11:35:00.394Z</lastmod>
     
   </url>
   
@@ -326,28 +326,28 @@
   <url>
     <loc>https://www.bluelzy.com/articles/first_article.html</loc>
     
-    <lastmod>2018-01-12T10:53:16.303Z</lastmod>
+    <lastmod>2018-01-12T10:53:16.304Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/ues_Hexo_build_blog_two.html</loc>
     
-    <lastmod>2018-01-12T10:53:07.299Z</lastmod>
+    <lastmod>2018-01-12T10:53:07.300Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/open_gzip_for_nginx.html</loc>
     
-    <lastmod>2018-01-12T10:52:58.924Z</lastmod>
+    <lastmod>2018-01-12T10:52:58.925Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.bluelzy.com/articles/install_nginx_for_centos6.html</loc>
     
-    <lastmod>2018-01-12T10:52:54.274Z</lastmod>
+    <lastmod>2018-01-12T10:52:54.275Z</lastmod>
     
   </url>
   
@@ -361,7 +361,7 @@
   <url>
     <loc>https://www.bluelzy.com/articles/vim_guide.html</loc>
     
-    <lastmod>2018-01-12T10:52:38.098Z</lastmod>
+    <lastmod>2018-01-12T10:52:38.099Z</lastmod>
     
   </url>
   
