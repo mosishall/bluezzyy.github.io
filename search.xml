@@ -3,6 +3,96 @@
   
     
     <entry>
+      <title><![CDATA[LeetCode 219.Contains Duplicate II]]></title>
+      <url>/articles/leetcode_219_solutions.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>今天是大年初七，祝大家新年快乐！万事如意！恭喜发财！</p>
+<p>同时也是实现今年小目标的第一篇文章：LeetCode 219 题解</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="说说LeetCode"><a href="#说说LeetCode" class="headerlink" title="说说LeetCode"></a>说说LeetCode</h2><p>作为大名鼎鼎的面试刷题网站，最近也出了中文版，如果之前没有了解过的童鞋，建议去网站看看，里面有各大互联网公司的算法面试题，包括谷歌，Fackbook，微软，亚马逊等等，近年来国内的互联网公司也越来越重视算法和数据结构了，特别是后端，经常看到<strong>高级工程师</strong> 职位以上的jd都写明，算法水平需要到LeetCode Hard程度，前端稍微好一点，但是也需要LeetCode Easy 水平，因此无论是为了巩固基础，还是找工作跳槽，我们都需要不断练习算法，那么比较好的方式自然就是找一个靠谱的平台刷题了。</p>
+<p>英文网站：<a href="https://leetcode.com/" target="_blank" rel="noopener">https://leetcode.com/</a></p>
+<p>中文网站：<a href="https://leetcode-cn.com/" target="_blank" rel="noopener">https://leetcode-cn.com/</a></p>
+<blockquote>
+<p>值得一提的是，现在中文LeetCode【力扣】 还支持同步英文网站的账号数据，但是就个人而言，英语过得去的还是建议上英文，因为里面的功能比中文网多一点，而且最重要的是，Discuss里面的人数也会多一些，经常能看到NB的解法，还是很有帮助的。</p>
+</blockquote>
+<p><strong>那么为什么刷题还要写文章记录下来呢？</strong></p>
+<p>其实这篇文章的题目我在两年前就已经做过了，但是今天重新看，发现还是需要花很多时间去想解法，一方面当然是因为没有坚持做算法题，思维跟不上，另外一方面就是当时做完就算了，没有进一步思考，除了自己的这个解法，是否还有更好的方法。</p>
+<p>因此我选择了把思考和改进的过程记录下来，当然大家用笔记类的工具记录，或者放到Github上都可以，目的都是为了锻炼自己的思维，提高算法水平罢了。</p>
+<p>我当时的提交记录：</p>
+<p><img src="http://www.wailian.work/images/2019/02/11/Snip20190211_2.png" alt="Snip20190211_2.png"></p>
+<p>我打败了58%的人，那么前面的算法是怎么样的呢？</p>
+<p>之前使用的是Java，那么如果换成C，C++，Python等语言，结果又是怎么样呢？</p>
+<p>除了算法之外，是不是也有一些编程语言的技巧呢？</p>
+<p>通过进一步的思考，我们会发现越来越多可以深入学习的地方。</p>
+<p>因此，我决定把一部分题目写成博客，初衷就是为了方便自己，如果正好也能给予他人一点帮助的话，那就更好了。</p>
+<h2 id="219-Contains-Duplicate-II"><a href="#219-Contains-Duplicate-II" class="headerlink" title="219.Contains Duplicate II"></a>219.Contains Duplicate II</h2><h3 id="难度：-Easy-分类：Array"><a href="#难度：-Easy-分类：Array" class="headerlink" title="难度： Easy   分类：Array"></a>难度： Easy   分类：Array</h3><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>Given an array of integers and an integer <em>k</em>, find out whether there are two distinct indices <em>i</em> and <em>j</em> in the array such that <strong>nums[i] = nums[j]</strong> and the <strong>absolute</strong> difference between <em>i</em> and <em>j</em> is at most <em>k</em>.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Input:</span> <span class="string">nums</span> <span class="string">=</span> <span class="string">[1,2,3,1],</span> <span class="string">k</span> <span class="string">=</span> <span class="number">3</span></span><br><span class="line"><span class="attr">Output:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Input:</span> <span class="string">nums</span> <span class="string">=</span> <span class="string">[1,0,1,1],</span> <span class="string">k</span> <span class="string">=</span> <span class="number">1</span></span><br><span class="line"><span class="attr">Output:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p><strong>Example 3:</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Input:</span> <span class="string">nums</span> <span class="string">=</span> <span class="string">[1,2,3,1,2,3],</span> <span class="string">k</span> <span class="string">=</span> <span class="number">2</span></span><br><span class="line"><span class="attr">Output:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>翻译：</p>
+<p>给定一个数组和一个整数k，找出是否存在两个不同下标i和j，满足nums[i] = nums[j]，并且这两个数字的绝对值不大于k。</p>
+<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><p>思路：</p>
+<ol>
+<li>根据题目可知：我们需要一个数组和一个整形，返回值是Boolean类型的。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> isTrue = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> isTrue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>然后我们要找出是否存在满足题目条件的两个数，这里我的想法是使用一个HashMap来存储下标，然后遍历找出满足条件的数组下标</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> isTrue = <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// Setp 2</span></span><br><span class="line">		HashMap&lt;Integer,Integer&gt; hashMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">		<span class="comment">// 通过遍历数组，把数组的值存到HashMap中，再找后面是否存在值一样，而且下标差值&lt;=k的数，有的话返回			  true</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hashMap.containsKey(nums[i]) &amp;&amp; i - hashMap.get(nums[i]) &lt;= k)&#123;</span><br><span class="line">                isTrue = <span class="keyword">true</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;  </span><br><span class="line">                hashMap.put(nums[i], i);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> isTrue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>考虑边界条件，虽然这样做就可以达到题目的要求了，但是提交的时候没能通过test cast，原因是没有考虑到当数组大小&lt;=1的情况，加上这个条件，最终我的提交结果为：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> isTrue = <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// Step 3</span></span><br><span class="line">        <span class="keyword">if</span>(nums.length&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> isTrue;</span><br><span class="line">        &#125;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; hashMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hashMap.containsKey(nums[i]) &amp;&amp; i - hashMap.get(nums[i]) &lt;= k)&#123;</span><br><span class="line">                isTrue = <span class="keyword">true</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;  </span><br><span class="line">                hashMap.put(nums[i], i);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> isTrue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个解答的时间是：11ms，打败了58%的人，那么有没有更简单更好的解答呢？</p>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>这个是LeetCode Discuss上的解答，经过我在LeetCode上Run Code，<strong>Runtime为 0 ms</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt; k) set.remove(nums[i-k-<span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">if</span>(!set.add(nums[i])) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>思路：</p>
+<p>同样是通过遍历数组，</p>
+<ol>
+<li>如果i&gt;k，那么说明前面的值已经不满足|i-j| &lt;= k 的条件，可以移除 <strong>i-k-1</strong>的值</li>
+<li>然后再判断，如果发现，咦，有一个数已经在集合里面了，我没办法加进去， <strong>set.add()</strong> 返回的是 <strong>false</strong>，那么这个数就是符合题目要求的，存在这样的数，因此我们直接 <strong>return true</strong></li>
+</ol>
+<p>我们来看看HashSet的源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Adds the specified element to this set if it is not already present.</span></span><br><span class="line"><span class="comment">     * More formally, adds the specified element &lt;tt&gt;e&lt;/tt&gt; to this set if</span></span><br><span class="line"><span class="comment">     * this set contains no element &lt;tt&gt;e2&lt;/tt&gt; such that</span></span><br><span class="line"><span class="comment">     * &lt;tt&gt;(e==null&amp;nbsp;?&amp;nbsp;e2==null&amp;nbsp;:&amp;nbsp;e.equals(e2))&lt;/tt&gt;.</span></span><br><span class="line"><span class="comment">     * If this set already contains the element, the call leaves the set</span></span><br><span class="line"><span class="comment">     * unchanged and returns &lt;tt&gt;false&lt;/tt&gt;.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> e element to be added to this set</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> &lt;tt&gt;true&lt;/tt&gt; if this set did not already contain the specified</span></span><br><span class="line"><span class="comment">     * element</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> map.put(e, PRESENT)==<span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>通过这个方法就可以判断当前元素是否已经在集合里面了。</p>
+<p>其实这个解法的思路和我的解法是大同小异的，但是代码写得很巧妙，值得学习的地方有好几个：</p>
+<ol>
+<li>通过set.add()的方法来判断，不需要  i - hashMap.get(nums[i]) &lt;= k</li>
+<li><p>通过set.remove(nums[i-k-1]) 来移除不满足条件的数字，而不是像我的方法，通过add，再一个个判断，减少了工作量</p>
+</li>
+<li><p>除了学习算法思路以外，也可以学习到集合的一些源码和实现，也就是数据结构的知识</p>
+</li>
+</ol>
+<h3 id="C-解法-Runtime-8-ms"><a href="#C-解法-Runtime-8-ms" class="headerlink" title="C++ 解法 - Runtime: 8 ms"></a>C++ 解法 - Runtime: 8 ms</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; k) &#123;</span><br><span class="line">                st.erase(nums[i - k - <span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!st.insert(nums[i]).second) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Python解法-Runtime-24-ms"><a href="#Python解法-Runtime-24-ms" class="headerlink" title="Python解法 - Runtime: 24 ms"></a>Python解法 - Runtime: 24 ms</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">containsNearbyDuplicate</span><span class="params">(self, nums, k)</span>:</span></span><br><span class="line">    dic = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i, v <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">        <span class="keyword">if</span> v <span class="keyword">in</span> dic <span class="keyword">and</span> i - dic[v] &lt;= k:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        dic[v] = i</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今年立下的目标就是巩固基础，包括设计模式，算法与数据结构，学习第三方框架源码等，每天都要进步一点点，量变引起质变！与大家共勉！</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> Algorithm </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> Array Question </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Blog一周年心路历程]]></title>
       <url>/articles/blog_one_anniversary.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>不知不觉一年的时间过去了</p>
@@ -3503,9 +3593,9 @@
             
             <tag> Android </tag>
             
-            <tag> 腾讯地图 </tag>
-            
             <tag> 第三方控件 </tag>
+            
+            <tag> 腾讯地图 </tag>
             
         </tags>
         
@@ -3552,9 +3642,9 @@
             
             <tag> Android </tag>
             
-            <tag> 第三方控件 </tag>
-            
             <tag> 高德地图 </tag>
+            
+            <tag> 第三方控件 </tag>
             
         </tags>
         
@@ -3800,10 +3890,10 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt; i <span class="class"><span class="keyword">class</span></span>=<span class="string">"fa fa-tag"</span> &gt; <span class="xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>其中 </p>
+ <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"fa fa-tag"</span></span><br></pre></td></tr></table></figure>
+<p> 可以换成自己喜欢的图标 详情请戳：<a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">Font Awesome</a>   </p>
 </li>
 </ol>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"fa fa-tag"</span></span><br></pre></td></tr></table></figure>
-<p>可以换成自己喜欢的图标 详情请戳：<a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">Font Awesome</a>   </p>
 <h2 id="在文末添加”本文结束”"><a href="#在文末添加”本文结束”" class="headerlink" title="在文末添加”本文结束”"></a>在文末添加”本文结束”</h2><blockquote>
 <p>在 \themes\next\layout\_macro 新建 passage-end-tag.swig 文件 </p>
 </blockquote>
