@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://www.bluelzy.com/articles/ubuntu_can_not_open_netease_cloud_music.html</loc>
+    <lastmod>2019-02-16T05:32:50.948Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu18.04 网易云音乐无法打开</title>
+        <pubTime>2019-02-16T05:14:39.000Z</pubTime>
+        
+        <tag>Ubuntu</tag>
+         
+        <tag>Netease Cloud Music</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术向" url="https://www.bluelzy.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.bluelzy.com/articles/leetcode_219_solutions.html</loc>
     <lastmod>2019-02-11T16:08:39.983Z</lastmod>
     <data>
@@ -855,9 +877,9 @@
         
         <tag>Android</tag>
          
-        <tag>第三方控件</tag>
-         
         <tag>腾讯地图</tag>
+         
+        <tag>第三方控件</tag>
          
          
            
@@ -879,9 +901,9 @@
         
         <tag>Android</tag>
          
-        <tag>高德地图</tag>
-         
         <tag>第三方控件</tag>
+         
+        <tag>高德地图</tag>
          
          
            

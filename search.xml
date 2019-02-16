@@ -3,6 +3,90 @@
   
     
     <entry>
+      <title><![CDATA[Ubuntu18.04 网易云音乐无法打开]]></title>
+      <url>/articles/ubuntu_can_not_open_netease_cloud_music.html</url>
+      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>最近发现家里PC升级到Ubuntu18.04之后，网易云音乐无法打开了</p>
+<p>把解决问题的过程记录下来，也方便遇到这个问题的人。</p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><ul>
+<li>命令行打开网易云音乐（下面简称<code>网易云</code>）</li>
+</ul>
+<blockquote>
+<p>sudo netease-cloud-music</p>
+</blockquote>
+<p>终端报错：</p>
+<blockquote>
+<p>error while loading shared libraries: libvlc.so.5: cannot open shared obect file: No such file or direcory</p>
+</blockquote>
+<ul>
+<li>点击启动图标启动网易云</li>
+</ul>
+<blockquote>
+<p>无反应，不能显示网易云的界面</p>
+</blockquote>
+<p>但是终端报错已经给我们提供了思路，既然是libvlc.so.5这个依赖库找不到，那么我们把它装上不就好了嘛</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>首先用命令查看一下<code>libvlc.so.5</code>在哪里：</p>
+<blockquote>
+<p>whereis libvlc.so.5</p>
+</blockquote>
+<p>终端输出：</p>
+<blockquote>
+<p>libvlc.so: /usr/lib/x86_64-linux-gnu/libvlc.so.12</p>
+</blockquote>
+<p>OK, 既然我们Ubuntu里面没有so.5，但是有so.12，那么可不可以尝试用软连接的方式呢？</p>
+<p>试一下：</p>
+<blockquote>
+<p>cd /usr/lib/x86_64-linux-gnu/</p>
+<p>sudo ln -s libvlc.so.12 libvlc.so.5</p>
+</blockquote>
+<p>把so.12 和 so.5 连接起来，然后再看看结果：</p>
+<blockquote>
+<p>ls -il | grep vlc</p>
+</blockquote>
+<p>一切正常的话应该可以看到所有vlc的软连接，这个时候我们再来运行网易云发现一切正常了~</p>
+<ul>
+<li><p>命令行启动：</p>
+<blockquote>
+<p>sudo netease-cloud-music    </p>
+</blockquote>
+</li>
+</ul>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>如果启动需要sudo的话，可以修改<code>netease-cloud-music.desktop</code>文件</p>
+<p>找到该文件：</p>
+<blockquote>
+<p>dpkg -L netease-cloud-music|grep desktop   </p>
+</blockquote>
+<p>打开：</p>
+<blockquote>
+<p>sudo vim /usr/share/applications/netease-cloud-music.desktop</p>
+</blockquote>
+<p>找到<code>Exec</code>这行并修改为：</p>
+<blockquote>
+<p>Exec=sh -c “unset SESSION_MANAGER &amp;&amp; netease-cloud-music %U     </p>
+</blockquote>
+<p>最后保存并退出，就可以了。</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术向 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> Netease Cloud Music </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[LeetCode 219.Contains Duplicate II]]></title>
       <url>/articles/leetcode_219_solutions.html</url>
       <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>今天是大年初七，祝大家新年快乐！万事如意！恭喜发财！</p>
@@ -3593,9 +3677,9 @@
             
             <tag> Android </tag>
             
-            <tag> 第三方控件 </tag>
-            
             <tag> 腾讯地图 </tag>
+            
+            <tag> 第三方控件 </tag>
             
         </tags>
         
@@ -3642,9 +3726,9 @@
             
             <tag> Android </tag>
             
-            <tag> 高德地图 </tag>
-            
             <tag> 第三方控件 </tag>
+            
+            <tag> 高德地图 </tag>
             
         </tags>
         
